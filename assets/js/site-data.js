@@ -56,7 +56,7 @@
     {
       id: 'rbs-voice-cloner',
       name: 'RBS Voice Cloner',
-      icon: '🎙️',
+      icon: '🎤',
       version: '1.0.0',
       category: 'AI Tools',
       categories: ['AI Tools', 'Audio'],
@@ -92,7 +92,7 @@
     {
       id: 'life-dashboard',
       name: 'Life Dashboard',
-      icon: '📊',
+      icon: '📅',
       version: '1.0.0',
       category: 'Productivity',
       categories: ['Productivity', 'Lifestyle'],
