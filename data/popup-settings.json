@@ -1,9 +1,9 @@
 {
   "enabled": true,
   "title": "Download Started!",
-  "subtitle": "RBS Software is 100% free — no strings attached.\nIf this tool helped you, consider supporting development ❤",
+  "subtitle": "Rare Build Software is 100% free — no strings attached.\nIf this tool helped you, consider supporting development ❤",
   "showDonation": true,
   "showNewsletter": true,
   "newsletterTitle": "📬 Stay Updated",
-  "newsletterSubtitle": "Get notified about new RBS software releases. No spam."
+  "newsletterSubtitle": "Get notified about new Rare Build Software releases. No spam."
 }

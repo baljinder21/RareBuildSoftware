@@ -937,7 +937,7 @@
         </div>
         <div class="fg" style="margin-top:12px;">
           <label>Popup Subtitle <span style="font-size:.78rem;color:var(--text3);">(use \n for new lines)</span></label>
-          <textarea id="popup-subtitle" rows="3" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;color:var(--text);font-family:inherit;font-size:.9rem;resize:vertical;">RBS Software is 100% free — no strings attached.
+          <textarea id="popup-subtitle" rows="3" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;color:var(--text);font-family:inherit;font-size:.9rem;resize:vertical;">Rare Build Software is 100% free — no strings attached.
 If this tool helped you, consider supporting development ❤</textarea>
         </div>
       </div>
@@ -970,7 +970,7 @@ If this tool helped you, consider supporting development ❤</textarea>
         </div>
         <div class="fg" style="margin-top:12px;">
           <label>Newsletter Section Subtitle</label>
-          <input type="text" id="popup-nl-subtitle" value="Get notified about new RBS software releases. No spam." />
+          <input type="text" id="popup-nl-subtitle" value="Get notified about new Rare Build Software releases. No spam." />
         </div>
       </div>
     </div>
@@ -3383,11 +3383,11 @@ function getPopupSettings() {
   return {
     enabled: true,
     title: 'Download Started!',
-    subtitle: 'RBS Software is 100% free — no strings attached.\nIf this tool helped you, consider supporting development ❤',
+    subtitle: 'Rare Build Software is 100% free — no strings attached.\nIf this tool helped you, consider supporting development ❤',
     showDonation: true,
     showNewsletter: true,
     newsletterTitle: '📬 Stay Updated',
-    newsletterSubtitle: 'Get notified about new RBS software releases. No spam.',
+    newsletterSubtitle: 'Get notified about new Rare Build Software releases. No spam.',
     hiddenMethods: []
   };
 }
@@ -3402,7 +3402,7 @@ function renderPopupManager() {
   el('popup-show-donation').checked   = s.showDonation !== false;
   el('popup-show-newsletter').checked = s.showNewsletter !== false;
   el('popup-nl-title').value          = s.newsletterTitle || '📬 Stay Updated';
-  el('popup-nl-subtitle').value       = s.newsletterSubtitle || 'Get notified about new RBS software releases. No spam.';
+  el('popup-nl-subtitle').value       = s.newsletterSubtitle || 'Get notified about new Rare Build Software releases. No spam.';
 
   /* Build checkboxes for each donation method */
   const d = getDonationData();

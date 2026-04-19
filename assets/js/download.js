@@ -20,11 +20,11 @@
     return {
       enabled: true,
       title: 'Download Started!',
-      subtitle: 'RBS is 100% free — no strings attached.\nIf this tool helped you, consider supporting development ❤',
+      subtitle: 'Rare Build Software is 100% free — no strings attached.\nIf this tool helped you, consider supporting development ❤',
       showDonation: true,
       showNewsletter: true,
       newsletterTitle: 'Stay Updated',
-      newsletterSubtitle: 'Get notified about new RBS software releases. No spam.'
+      newsletterSubtitle: 'Get notified about new Rare Build Software releases. No spam.'
     };
   }
 
@@ -379,7 +379,7 @@
         <div class="rbs-popup-section" id="rbs-popup-nl-section" style="${ps.showNewsletter === false ? 'display:none' : ''}">
           <p class="rbs-section-label">📬 Stay Updated</p>
           <p class="rbs-nl-title" id="rbs-nl-title-el">${ps.newsletterTitle || 'Stay Updated'}</p>
-          <p class="rbs-nl-sub"   id="rbs-nl-sub-el">${ps.newsletterSubtitle || 'Get notified about new RBS software releases. No spam.'}</p>
+          <p class="rbs-nl-sub"   id="rbs-nl-sub-el">${ps.newsletterSubtitle || 'Get notified about new Rare Build Software releases. No spam.'}</p>
           <div class="rbs-nl-fields" id="rbs-nl-fields">
             <input type="text"  class="rbs-nl-input" id="rbs-nl-name"  placeholder="Your name (optional)" autocomplete="name">
             <input type="email" class="rbs-nl-input" id="rbs-nl-email" placeholder="Email address *" autocomplete="email">

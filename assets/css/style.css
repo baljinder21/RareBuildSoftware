@@ -2567,10 +2567,25 @@ body.light-mode .font-size-btn.active { background: var(--accent); border-color:
   .newsletter-section { padding: 40px 24px; }
   .filter-bar { gap: 8px; }
   .nav-search { display: none; }
+
+  /* Detail page hero — shrink on mobile */
+  .software-detail-hero { padding: 88px 0 36px; }
+  .software-detail-icon { width: 72px; height: 72px; font-size: 2.2rem; border-radius: 18px; }
+  .software-detail-header { gap: 16px; }
+
+  /* Key features — prevent any internal overflow */
+  .features-big { width: 100%; }
+  .feature-big-item { min-width: 0; }
+  .feature-big-text { min-width: 0; flex: 1; word-wrap: break-word; overflow-wrap: break-word; }
+
+  /* Screenshot preview — force internal mockup to stay within bounds */
+  .screenshot-area { min-width: 0; }
+  .screenshot-area > div { max-width: 100%; }
 }
 @media (max-width: 480px) {
   .newsletter-form { flex-direction: column; }
   .newsletter-input { width: 100%; }
+  .software-detail-hero { padding: 72px 0 28px; }
 }
 
 /* ══════════════════════════════════════════
