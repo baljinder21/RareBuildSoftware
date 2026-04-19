@@ -175,7 +175,10 @@
       .then(r => r.ok ? r.json() : null)
       .then(data => {
         if (!Array.isArray(data) || !data.length) return;
-        software = data;
+        software = data.map(sw => {
+          const def = DEFAULT_SOFTWARE.find(d => d.id === sw.id);
+          return def ? Object.assign({}, sw, { icon: def.icon }) : sw;
+        });
         window._rbsSoftware = software; /* keep global in sync */
         // Re-apply dynamic sections after fetch
         applySoftware();
