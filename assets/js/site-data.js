@@ -629,7 +629,7 @@
 
             <div class="download-box" style="background:linear-gradient(135deg,rgba(0,200,150,0.08),rgba(0,200,150,0.02));border-color:rgba(0,200,150,0.25);">
               <h4>Love it? Support RBS</h4>
-              <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:14px;line-height:1.5;">All RBS software is 100% free. A small donation keeps development going.</p>
+              <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:14px;line-height:1.5;">All Rare Build Software is 100% free. A small donation keeps development going.</p>
               <a href="donate.html" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;">❤ Donate</a>
             </div>
           </div>
@@ -910,7 +910,7 @@
 
               <div class="download-box" style="background:linear-gradient(135deg,rgba(0,200,150,0.08),rgba(0,200,150,0.02));border-color:rgba(0,200,150,0.25);">
                 <h4>Support RBS ❤</h4>
-                <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:14px;line-height:1.5;">Keep RBS software free by making a small donation.</p>
+                <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:14px;line-height:1.5;">Keep Rare Build Software free by making a small donation.</p>
                 <a href="../donate.html" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;">❤ Donate</a>
               </div>
             </div>
