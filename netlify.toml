@@ -54,7 +54,13 @@
 # ── Redirect old/wrong domain if someone types it ──
 [[redirects]]
   from = "https://rbs-software.com/*"
-  to   = "https://rbssoftware.com/:splat"
+  to   = "https://rarebuildsoftware.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from = "https://rbssoftware.com/*"
+  to   = "https://rarebuildsoftware.com/:splat"
   status = 301
   force  = true
 

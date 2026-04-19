@@ -1002,7 +1002,7 @@
     const allArticles = [...adminArticles, ...staticArticles];
 
     container.innerHTML = allArticles.map(a => `
-      <div class="blog-card animate-on-scroll">
+      <div class="blog-card animate-on-scroll" data-tag="${esc(a.tag || 'Article')}">
         <div class="blog-card-thumb">${a.emoji || '📝'}</div>
         <div class="blog-card-body">
           <div class="blog-card-tag">${esc(a.tag || 'Article')}</div>

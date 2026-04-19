@@ -4,4 +4,4 @@ Disallow: /admin/
 Disallow: /data/
 Disallow: /downloads/
 
-Sitemap: https://rbssoftware.com/sitemap.xml
+Sitemap: https://rarebuildsoftware.com/sitemap.xml
