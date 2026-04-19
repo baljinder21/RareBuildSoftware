@@ -1832,6 +1832,7 @@ ul { list-style: none; }
   .about-grid             { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid           { grid-template-columns: 1fr; }
   .footer-grid            { grid-template-columns: 1fr 1fr; }
+  .detail-layout          { grid-template-columns: 1fr !important; gap: 32px !important; }
 }
 
 @media (max-width: 900px) {
