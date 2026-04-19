@@ -1,0 +1,31 @@
+{
+  "buttons": [
+    {
+      "id": "kofi",
+      "label": "Buy Me a Coffee",
+      "url": "https://ko-fi.com/rbsshop/tip",
+      "icon": "☕",
+      "color": "#ff5e5b",
+      "visible": true,
+      "description": "Support us with a small coffee donation — every contribution helps keep RBS Software free and regularly updated."
+    }
+  ],
+  "crypto": [
+    {
+      "id": "btc",
+      "coin": "Bitcoin (BTC)",
+      "address": "36boft8xKukMQeTZpWNjJfVxGS2kA3uzjY",
+      "network": "Bitcoin Mainnet",
+      "qr": "assets/images/crypto/bitcoin.jpg",
+      "visible": true
+    },
+    {
+      "id": "eth",
+      "coin": "Ethereum (ETH / ERC-20)",
+      "address": "0x3C8D5bf5c5c78B73814B17d61d9b2b39D722132c",
+      "network": "Ethereum Mainnet",
+      "qr": "assets/images/crypto/etherium.jpg",
+      "visible": true
+    }
+  ]
+}

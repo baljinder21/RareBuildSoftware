@@ -1,0 +1,62 @@
+# ══════════════════════════════════════════
+#   RBS Software — Netlify Configuration
+#   Security headers + redirects
+# ══════════════════════════════════════════
+
+[build]
+  publish = "."
+
+# ── Global security headers (applied to every page) ──
+[[headers]]
+  for = "/*"
+  [headers.values]
+
+    # Prevent site being embedded in iframes (clickjacking protection)
+    X-Frame-Options = "DENY"
+
+    # Stop browsers guessing file types (MIME sniffing attacks)
+    X-Content-Type-Options = "nosniff"
+
+    # Enable browser XSS filter
+    X-XSS-Protection = "1; mode=block"
+
+    # Control referrer info sent to other sites
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Disable browser features that RBS doesn't use
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=()"
+
+    # Force HTTPS for 1 year (HSTS)
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # Content Security Policy — allows inline scripts/styles (needed for RBS site)
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://api.qrserver.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://api.openweathermap.org https://api.github.com https://api.qrserver.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;"
+
+# ── Cache static assets aggressively ──
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── Redirect old/wrong domain if someone types it ──
+[[redirects]]
+  from = "https://rbs-software.com/*"
+  to   = "https://rbssoftware.com/:splat"
+  status = 301
+  force  = true
+
+# ── 404 page ──
+[[redirects]]
+  from   = "/*"
+  to     = "/404.html"
+  status = 404

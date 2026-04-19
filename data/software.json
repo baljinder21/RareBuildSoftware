@@ -1,0 +1,106 @@
+[
+  {
+    "id": "rbs-optimizer-pro",
+    "name": "RBS Optimizer Pro",
+    "version": "1.0.0",
+    "category": "Optimization",
+    "categories": ["Optimization", "System Tools"],
+    "description": "The ultimate free Windows optimization suite. Clean junk files, manage startup programs, boost performance, and monitor your system in real time — all in one polished application.",
+    "fileSize": "~23 MB",
+    "downloadUrl": "https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip",
+    "downloadType": "external",
+    "screenshot": null,
+    "screenshotPath": "",
+    "visible": true,
+    "released": "2025-01-01",
+    "downloads": 0,
+    "features": [
+      { "icon": "🧹", "title": "Deep Junk Cleaner",   "desc": "Remove temporary files, cache, old logs, and other system clutter safely and automatically." },
+      { "icon": "🚀", "title": "Startup Manager",      "desc": "Control which programs launch at startup. Disable unnecessary entries to reduce boot time." },
+      { "icon": "📊", "title": "Performance Monitor",  "desc": "Real-time graphs for CPU, RAM, and disk usage so you always know what's running." },
+      { "icon": "⚙️", "title": "One-Click Optimize",   "desc": "Single button runs a full system tune-up — clean, optimize, and boost all at once." },
+      { "icon": "🛡️", "title": "Privacy First",        "desc": "No telemetry, no data collection, no internet required. Your data stays on your machine." },
+      { "icon": "🎨", "title": "Modern Interface",     "desc": "Clean, dark-themed UI that is intuitive for beginners and powerful for advanced users." }
+    ],
+    "sysReqs": [
+      "Windows 10 or Windows 11 (64-bit)",
+      "50 MB free disk space",
+      "2 GB RAM minimum (4 GB recommended)",
+      "1 GHz or faster processor",
+      "No internet required to run",
+      "Administrator rights for full features"
+    ],
+    "changelog": [
+      { "version": "1.0.0", "date": "2025-01-01", "notes": ["Initial release", "Junk cleaner, startup manager, performance monitor", "One-click optimize mode", "Dark mode UI"] }
+    ]
+  },
+  {
+    "id": "rbs-voice-cloner",
+    "name": "RBS Voice Cloner",
+    "version": "1.0.0",
+    "category": "AI Tools",
+    "categories": ["AI Tools", "Audio"],
+    "description": "Clone any voice with just a 5-second audio sample. Powered by XTTS v2 AI engine, generate natural-sounding speech in 28+ languages — completely free, runs locally on your PC.",
+    "fileSize": "~1.4 GB (includes AI model)",
+    "downloadUrl": "https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSVoiceClonerRelease.zip",
+    "downloadType": "external",
+    "screenshot": null,
+    "screenshotPath": "",
+    "visible": true,
+    "released": "2026-04-12",
+    "downloads": 0,
+    "features": [
+      { "icon": "🎙️", "title": "Voice Cloning",        "desc": "Clone any voice from a 5-30 second audio sample with stunning realism using XTTS v2." },
+      { "icon": "🌍", "title": "28+ Languages",         "desc": "Generate speech in English, Spanish, French, German, Hindi, Japanese, Chinese, and many more." },
+      { "icon": "📝", "title": "Text to Speech",        "desc": "Convert any text to natural speech using your cloned voice profiles." },
+      { "icon": "🎚️", "title": "Audio Editor",          "desc": "Built-in audio editor with waveform view, trim, noise reduction and pitch control." },
+      { "icon": "⚡", "title": "GPU Accelerated",       "desc": "Runs on your RTX GPU via CUDA for ultra-fast generation — CPU fallback for other PCs." },
+      { "icon": "🔒", "title": "100% Offline",          "desc": "After the first model download, everything runs locally. No cloud, no data sent anywhere." }
+    ],
+    "sysReqs": [
+      "Windows 10 or Windows 11 (64-bit)",
+      "8 GB RAM minimum (16 GB recommended)",
+      "4 GB free disk space (10 GB recommended for models)",
+      "Internet connection required for first-time model download (~2 GB)",
+      "NVIDIA GPU with CUDA recommended (CPU works but slower)",
+      "Administrator rights for installation"
+    ],
+    "changelog": [
+      { "version": "1.0.0", "date": "2026-04-12", "notes": ["Initial release", "XTTS v2 voice cloning engine", "28+ language support", "Built-in audio editor", "Batch processing", "GPU acceleration via CUDA"] }
+    ]
+  },
+  {
+    "id": "life-dashboard",
+    "name": "Life Dashboard",
+    "version": "1.0.0",
+    "category": "Productivity",
+    "categories": ["Productivity", "Lifestyle"],
+    "description": "Your all-in-one personal productivity command center. 16 powerful widgets — track habits, tasks, finances, weather, sleep, diet and more — all in one beautiful dashboard.",
+    "fileSize": "~101 MB",
+    "downloadUrl": "https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/Life-Dashboard.zip",
+    "downloadType": "external",
+    "screenshot": null,
+    "screenshotPath": "",
+    "visible": true,
+    "released": "2026-04-14",
+    "downloads": 0,
+    "features": [
+      { "icon": "✅", "title": "Tasks & Habits",      "desc": "To-do list with priorities and a daily habit tracker with streak counter to keep you on track." },
+      { "icon": "💰", "title": "Finance Tracker",     "desc": "Log income and expenses with visual charts to understand where your money goes." },
+      { "icon": "🌤️", "title": "Live Weather",        "desc": "Real-time weather with a 3-day forecast for any city in the world." },
+      { "icon": "🎯", "title": "Goals & Countdown",   "desc": "Set long-term goals with progress bars and count down to important events." },
+      { "icon": "🍎", "title": "Health Tracking",     "desc": "Track water intake, sleep quality, and diet plans with country-based meal templates." },
+      { "icon": "🧩", "title": "16 Widgets",          "desc": "Clock, calendar, notes, Pomodoro timer, RSS news, quick links, motivational quotes and more." }
+    ],
+    "sysReqs": [
+      "Windows 10 or Windows 11 (64-bit)",
+      "100 MB free disk space",
+      "4 GB RAM minimum",
+      "Internet connection for weather and news widgets",
+      "No administrator rights required"
+    ],
+    "changelog": [
+      { "version": "1.0.0", "date": "2026-04-14", "notes": ["Initial release", "16 widgets including tasks, habits, finance, weather, sleep, diet", "Drag and resize widgets", "All data saved locally"] }
+    ]
+  }
+]

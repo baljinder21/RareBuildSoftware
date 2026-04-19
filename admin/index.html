@@ -1,0 +1,3520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — RBS Software</title>
+  <style>
+    /* ── Reset ── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:        #1a1a2e;
+      --bg2:       #16213e;
+      --bg3:       #0f3460;
+      --accent:    #0066ff;
+      --accent-h:  #0052cc;
+      --accent-l:  #4d94ff;
+      --text:      #ffffff;
+      --text2:     #b0b8c8;
+      --text3:     #6b7a99;
+      --border:    rgba(0,102,255,.2);
+      --border-h:  rgba(0,102,255,.5);
+      --success:   #00d084;
+      --warning:   #ffb800;
+      --danger:    #ff4d4d;
+      --r:         10px;
+      --r-sm:      6px;
+      --shadow:    0 4px 24px rgba(0,0,0,.4);
+      --tr:        .25s cubic-bezier(.4,0,.2,1);
+      --sidebar-w: 240px;
+      --font:      'Segoe UI',system-ui,-apple-system,sans-serif;
+    }
+    html{font-size:16px;height:100%}
+    body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.5;min-height:100%;overflow-x:hidden}
+    a{color:var(--accent-l);text-decoration:none}
+    img{max-width:100%;display:block}
+    ul{list-style:none}
+    input,textarea,select{font-family:var(--font);font-size:.9rem;outline:none}
+    button{font-family:var(--font);cursor:pointer}
+
+    /* ────────────────────────────────────────
+       LOGIN SCREEN
+    ──────────────────────────────────────── */
+    #login-screen{
+      min-height:100vh;display:flex;align-items:center;justify-content:center;
+      background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(0,102,255,.18),transparent 70%),var(--bg);
+    }
+    .login-box{
+      background:var(--bg2);border:1px solid var(--border);border-radius:16px;
+      padding:48px 40px;width:100%;max-width:420px;box-shadow:var(--shadow);
+    }
+    .login-logo{
+      display:flex;align-items:center;gap:10px;font-size:1.3rem;font-weight:800;
+      justify-content:center;margin-bottom:32px;
+    }
+    .logo-icon{
+      width:38px;height:38px;background:linear-gradient(135deg,var(--accent),var(--accent-l));
+      border-radius:10px;display:flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:.9rem;color:#fff;
+    }
+    .login-box h2{font-size:1.05rem;font-weight:600;color:var(--text2);text-align:center;margin-bottom:28px;}
+    .form-group{margin-bottom:16px;}
+    .form-group label{display:block;font-size:.82rem;font-weight:600;color:var(--text2);margin-bottom:6px;}
+    .form-group input{
+      width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-sm);
+      padding:11px 14px;color:var(--text);transition:border-color var(--tr),box-shadow var(--tr);
+    }
+    .form-group input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,102,255,.15);}
+    #login-error{color:var(--danger);font-size:.82rem;margin-bottom:12px;display:none;text-align:center;}
+    .btn-login{
+      width:100%;padding:13px;background:var(--accent);color:#fff;border:none;
+      border-radius:var(--r-sm);font-size:.95rem;font-weight:700;
+      transition:background var(--tr),transform var(--tr),box-shadow var(--tr);
+      box-shadow:0 4px 16px rgba(0,102,255,.3);
+    }
+    .btn-login:hover{background:var(--accent-h);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,102,255,.45);}
+
+    /* ────────────────────────────────────────
+       ADMIN APP SHELL
+    ──────────────────────────────────────── */
+    #admin-app{display:none;min-height:100vh;flex-direction:row;}
+    #admin-app.show{display:flex;}
+
+    /* Sidebar */
+    .admin-sidebar{
+      width:var(--sidebar-w);flex-shrink:0;background:var(--bg2);
+      border-right:1px solid var(--border);display:flex;flex-direction:column;
+      position:fixed;top:0;left:0;bottom:0;z-index:100;overflow-y:auto;
+    }
+    .sidebar-header{padding:20px 20px 0;}
+    .sidebar-logo{
+      display:flex;align-items:center;gap:8px;font-size:1rem;font-weight:800;
+      color:var(--text);padding-bottom:20px;border-bottom:1px solid var(--border);
+    }
+    .sidebar-logo .logo-icon{width:30px;height:30px;font-size:.75rem;}
+    .sidebar-label{
+      font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;
+      color:var(--text3);padding:20px 20px 8px;
+    }
+    .sidebar-nav{padding:0 12px;flex:1;}
+    .nav-item{
+      display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--r-sm);
+      color:var(--text2);font-size:.9rem;font-weight:500;cursor:pointer;
+      transition:background var(--tr),color var(--tr);margin-bottom:2px;user-select:none;
+    }
+    .nav-item:hover{background:rgba(255,255,255,.06);color:var(--text);}
+    .nav-item.active{background:rgba(0,102,255,.15);color:#fff;}
+    .nav-item .nav-icon{font-size:1rem;width:20px;text-align:center;}
+    .sidebar-footer{padding:16px 20px;border-top:1px solid var(--border);}
+    .btn-logout{
+      width:100%;padding:9px;background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);
+      color:#ff8080;border-radius:var(--r-sm);font-size:.85rem;font-weight:600;
+      transition:all var(--tr);
+    }
+    .btn-logout:hover{background:rgba(255,77,77,.2);color:#ffaaaa;}
+
+    /* Main content area */
+    .admin-main{
+      margin-left:var(--sidebar-w);flex:1;padding:32px;min-height:100vh;
+    }
+
+    /* Panel pages */
+    .panel{display:none;}
+    .panel.active{display:block;}
+
+    /* Page header */
+    .page-header{
+      display:flex;align-items:center;justify-content:space-between;
+      margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border);
+      flex-wrap:wrap;gap:12px;
+    }
+    .page-header h1{font-size:1.4rem;font-weight:800;}
+    .page-header p{color:var(--text2);font-size:.88rem;margin-top:2px;}
+
+    /* Cards */
+    .card{
+      background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);
+      padding:24px;margin-bottom:20px;
+    }
+    .card h3{font-size:1rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+    .card-subtitle{font-size:.82rem;color:var(--text3);margin-bottom:20px;}
+
+    /* Stat cards */
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:24px;}
+    .stat-card{
+      background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);
+      padding:20px;
+    }
+    .stat-card .stat-val{font-size:2rem;font-weight:900;letter-spacing:-1px;color:var(--accent-l);}
+    .stat-card .stat-lbl{font-size:.78rem;color:var(--text3);margin-top:4px;font-weight:500;}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex;align-items:center;gap:6px;padding:9px 18px;
+      border-radius:var(--r-sm);font-size:.85rem;font-weight:700;cursor:pointer;
+      border:none;transition:all var(--tr);white-space:nowrap;
+    }
+    .btn-primary{background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(0,102,255,.25);}
+    .btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+    .btn-secondary{background:rgba(255,255,255,.07);color:var(--text2);border:1px solid var(--border);}
+    .btn-secondary:hover{background:rgba(255,255,255,.12);color:var(--text);}
+    .btn-danger{background:rgba(255,77,77,.12);color:#ff8080;border:1px solid rgba(255,77,77,.3);}
+    .btn-danger:hover{background:rgba(255,77,77,.22);color:#ffaaaa;}
+    .btn-success{background:rgba(0,208,132,.12);color:var(--success);border:1px solid rgba(0,208,132,.3);}
+    .btn-success:hover{background:rgba(0,208,132,.22);}
+    .btn-sm{padding:6px 12px;font-size:.78rem;}
+
+    /* Form elements */
+    .fg{margin-bottom:16px;}
+    .fg label{display:block;font-size:.82rem;font-weight:600;color:var(--text2);margin-bottom:6px;}
+    .fg input,.fg textarea,.fg select{
+      width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-sm);
+      padding:10px 13px;color:var(--text);transition:border-color var(--tr),box-shadow var(--tr);
+      resize:vertical;
+    }
+    .fg input:focus,.fg textarea:focus,.fg select:focus{
+      border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,102,255,.15);
+    }
+    .fg input::placeholder,.fg textarea::placeholder{color:var(--text3);}
+    .fg select option{background:var(--bg2);}
+    .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .fg-hint{font-size:.75rem;color:var(--text3);margin-top:5px;}
+    .sw-cat-check{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:rgba(255,255,255,.04);cursor:pointer;transition:all .2s;}
+    .sw-cat-check:hover{border-color:rgba(0,200,150,.4);color:var(--accent-l);}
+    .sw-cat-check input[type=checkbox]{accent-color:var(--accent-l);width:14px;height:14px;cursor:pointer;}
+    .sw-cat-check:has(input:checked){background:rgba(0,200,150,.1);border-color:rgba(0,200,150,.4);color:var(--accent-l);}
+
+    /* Toggle switch */
+    .toggle-wrap{display:flex;align-items:center;gap:10px;}
+    .toggle{position:relative;width:42px;height:24px;flex-shrink:0;}
+    .toggle input{opacity:0;width:0;height:0;position:absolute;}
+    .toggle-slider{
+      position:absolute;inset:0;background:rgba(255,255,255,.1);border:1px solid var(--border);
+      border-radius:12px;cursor:pointer;transition:all var(--tr);
+    }
+    .toggle-slider::before{
+      content:'';position:absolute;height:16px;width:16px;left:3px;top:3px;
+      background:#fff;border-radius:50%;transition:transform var(--tr);
+    }
+    .toggle input:checked+.toggle-slider{background:var(--accent);border-color:var(--accent);}
+    .toggle input:checked+.toggle-slider::before{transform:translateX(18px);}
+    .toggle-label{font-size:.88rem;color:var(--text2);}
+
+    /* Table */
+    .table-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--border);}
+    table{width:100%;border-collapse:collapse;}
+    th{
+      background:var(--bg3);font-size:.75rem;text-transform:uppercase;letter-spacing:.8px;
+      color:var(--text3);font-weight:700;padding:12px 16px;text-align:left;
+      border-bottom:1px solid var(--border);
+    }
+    td{
+      padding:12px 16px;font-size:.88rem;border-bottom:1px solid rgba(255,255,255,.04);
+      color:var(--text2);
+    }
+    tr:last-child td{border-bottom:none;}
+    tr:hover td{background:rgba(255,255,255,.02);}
+    .table-actions{display:flex;gap:6px;}
+
+    /* Tabs */
+    .tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:24px;}
+    .tab-btn{
+      padding:10px 20px;font-size:.88rem;font-weight:600;color:var(--text3);
+      background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;
+      transition:color var(--tr),border-color var(--tr);margin-bottom:-1px;
+    }
+    .tab-btn.active,.tab-btn:hover{color:var(--text);}
+    .tab-btn.active{border-bottom-color:var(--accent);color:var(--accent-l);}
+    .tab-pane{display:none;}
+    .tab-pane.active{display:block;}
+
+    /* Image preview */
+    .img-preview-wrap{
+      position:relative;width:100%;aspect-ratio:16/9;background:var(--bg);
+      border:2px dashed var(--border);border-radius:var(--r-sm);overflow:hidden;
+      display:flex;align-items:center;justify-content:center;flex-direction:column;
+      gap:8px;cursor:pointer;transition:border-color var(--tr);
+    }
+    .img-preview-wrap:hover{border-color:var(--accent);}
+    .img-preview-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+    .img-preview-wrap .upload-hint{font-size:.8rem;color:var(--text3);text-align:center;padding:12px;z-index:1;}
+    .img-preview-wrap .upload-hint span{font-size:1.8rem;display:block;margin-bottom:6px;opacity:.4;}
+
+    /* QR preview (square) */
+    .qr-preview-wrap{
+      width:150px;height:150px;background:var(--bg);
+      border:2px dashed var(--border);border-radius:var(--r-sm);overflow:hidden;
+      display:flex;align-items:center;justify-content:center;flex-direction:column;
+      gap:4px;cursor:pointer;transition:border-color var(--tr);margin:0 auto 10px;
+      position:relative;
+    }
+    .qr-preview-wrap:hover{border-color:var(--accent);}
+    .qr-preview-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:6px;}
+    .qr-preview-wrap .qr-hint{font-size:.72rem;color:var(--text3);text-align:center;padding:8px;z-index:1;}
+    .qr-preview-wrap .qr-hint span{font-size:1.4rem;display:block;margin-bottom:4px;opacity:.4;}
+
+    /* Badge */
+    .badge{
+      display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:50px;
+      font-size:.72rem;font-weight:600;
+    }
+    .badge-green{background:rgba(0,208,132,.15);color:var(--success);border:1px solid rgba(0,208,132,.3);}
+    .badge-blue{background:rgba(0,102,255,.15);color:var(--accent-l);border:1px solid rgba(0,102,255,.3);}
+    .badge-gray{background:rgba(255,255,255,.07);color:var(--text3);border:1px solid rgba(255,255,255,.1);}
+
+    /* Toast */
+    #toast{
+      position:fixed;bottom:24px;right:24px;
+      background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);
+      padding:12px 20px;font-size:.88rem;color:var(--text);box-shadow:var(--shadow);
+      transform:translateY(20px);opacity:0;transition:all var(--tr);z-index:9999;
+      display:flex;align-items:center;gap:10px;max-width:320px;
+    }
+    #toast.show{transform:translateY(0);opacity:1;}
+    #toast.toast-success{border-left:3px solid var(--success);}
+    #toast.toast-error{border-left:3px solid var(--danger);}
+
+    /* Modal */
+    .modal-backdrop{
+      position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:500;
+      display:none;align-items:center;justify-content:center;padding:20px;
+    }
+    .modal-backdrop.open{display:flex;}
+    .modal{
+      background:var(--bg2);border:1px solid var(--border);border-radius:14px;
+      width:100%;max-width:680px;max-height:90vh;overflow-y:auto;
+      box-shadow:var(--shadow);
+    }
+    .modal-header{
+      padding:20px 24px;border-bottom:1px solid var(--border);
+      display:flex;justify-content:space-between;align-items:center;
+      position:sticky;top:0;background:var(--bg2);z-index:1;
+    }
+    .modal-header h3{font-size:1.05rem;font-weight:700;}
+    .modal-close{background:none;border:none;color:var(--text3);font-size:1.3rem;cursor:pointer;padding:4px 8px;}
+    .modal-close:hover{color:var(--text);}
+    .modal-body{padding:24px;}
+    .modal-footer{
+      padding:16px 24px;border-top:1px solid var(--border);
+      display:flex;justify-content:flex-end;gap:10px;
+      position:sticky;bottom:0;background:var(--bg2);
+    }
+
+    /* Announcement preview */
+    .ann-preview{
+      border-radius:var(--r-sm);padding:10px 18px;font-size:.88rem;font-weight:500;
+      margin-top:16px;display:none;line-height:1.4;
+    }
+
+    /* Color picker chips */
+    .type-chips{display:flex;gap:8px;flex-wrap:wrap;}
+    .type-chip{
+      padding:7px 16px;border-radius:50px;font-size:.8rem;font-weight:600;cursor:pointer;
+      border:2px solid transparent;transition:all var(--tr);
+    }
+    .type-chip[data-type="info"]   {background:rgba(0,102,255,.12);color:var(--accent-l);}
+    .type-chip[data-type="success"]{background:rgba(0,208,132,.12);color:var(--success);}
+    .type-chip[data-type="warning"]{background:rgba(255,184,0,.12); color:var(--warning);}
+    .type-chip.selected{border-color:currentColor;}
+
+    /* ── Security Settings & 2FA ── */
+    .setup-secret-box{
+      background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-sm);
+      padding:14px 18px;font-family:'Cascadia Code','Consolas','Courier New',monospace;
+      font-size:1.05rem;letter-spacing:3px;text-align:center;color:var(--text);
+      margin:12px 0;word-break:break-all;
+    }
+    .backup-codes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:14px 0;}
+    .backup-code-item{
+      background:var(--bg3);border:1px solid var(--border);border-radius:6px;
+      padding:9px 12px;font-family:monospace;font-size:.88rem;color:var(--text2);
+      text-align:center;letter-spacing:2px;
+    }
+    .tfa-status-badge{
+      display:inline-flex;align-items:center;gap:6px;padding:5px 14px;
+      border-radius:50px;font-size:.8rem;font-weight:700;margin-bottom:16px;
+    }
+    .tfa-on{background:rgba(0,208,132,.15);color:var(--success);border:1px solid rgba(0,208,132,.3);}
+    .tfa-off{background:rgba(255,77,77,.1);color:#ff8080;border:1px solid rgba(255,77,77,.3);}
+    .tfa-qr-wrap{text-align:center;margin:16px 0;}
+    .tfa-qr-wrap img{border:6px solid #fff;border-radius:10px;width:190px;height:190px;}
+    .tfa-code-input{
+      font-size:1.6rem;letter-spacing:10px;text-align:center;width:100%;max-width:260px;
+      display:block;margin:0 auto 12px;
+      background:var(--bg);border:1px solid var(--border);border-radius:var(--r-sm);
+      padding:12px;color:var(--text);font-family:monospace;
+    }
+    .tfa-step{display:none;margin-top:16px;}
+    .tfa-step.active{display:block;}
+    .info-box{
+      background:rgba(0,102,255,.08);border:1px solid rgba(0,102,255,.2);
+      border-radius:var(--r-sm);padding:12px 16px;font-size:.83rem;
+      color:var(--text2);line-height:1.6;margin-bottom:16px;
+    }
+    /* Login 2FA step */
+    #login-2fa-step{display:none;animation:fadeIn .3s ease;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+    .otp-input{
+      width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-sm);
+      padding:14px;color:var(--text);font-size:1.6rem;letter-spacing:12px;
+      text-align:center;font-family:monospace;transition:border-color var(--tr),box-shadow var(--tr);
+    }
+    .otp-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,102,255,.15);}
+
+    /* Responsive */
+    @media(max-width:768px){
+      .admin-sidebar{transform:translateX(-100%);transition:transform .25s ease;}
+      .admin-sidebar.open{transform:translateX(0);}
+      .admin-main{margin-left:0;padding:20px 16px;}
+      .fg-row{grid-template-columns:1fr;}
+      .mobile-menu-btn{
+        display:flex;position:fixed;top:16px;left:16px;z-index:200;
+        background:var(--bg2);border:1px solid var(--border);
+        border-radius:8px;padding:8px;cursor:pointer;
+      }
+    }
+    @media(min-width:769px){.mobile-menu-btn{display:none;}}
+    /* Popup preview overlay */
+    .popup-preview-overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;}
+    .popup-preview-close{position:fixed;top:14px;right:14px;z-index:10000;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:8px 16px;cursor:pointer;font-size:.88rem;font-weight:700;font-family:inherit;}
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     LOGIN SCREEN
+══════════════════════════════════════════ -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="logo-icon">RBS</div>
+      RBS Software
+    </div>
+    <h2 id="login-heading">Admin Panel Login</h2>
+
+    <div id="login-error" style="color:var(--danger);font-size:.82rem;margin-bottom:12px;display:none;text-align:center;">
+      Incorrect username or password.
+    </div>
+
+    <!-- Step 1: Credentials -->
+    <div id="login-creds-step">
+      <form id="login-form" autocomplete="off">
+        <div class="form-group">
+          <label for="l-user">Username</label>
+          <input type="text" id="l-user" placeholder="Enter username" required />
+        </div>
+        <div class="form-group">
+          <label for="l-pass">Password</label>
+          <input type="password" id="l-pass" placeholder="Enter password" required />
+        </div>
+        <button type="submit" class="btn-login" id="login-btn">Sign In →</button>
+      </form>
+    </div>
+
+    <!-- Step 2: 2FA Code -->
+    <div id="login-2fa-step">
+      <div style="text-align:center;margin-bottom:20px;">
+        <div style="font-size:2rem;margin-bottom:8px;">🔐</div>
+        <p style="font-size:.9rem;color:var(--text2);line-height:1.6;">
+          Two-factor authentication is enabled.<br>
+          Enter the 6-digit code from your authenticator app.
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="l-2fa-code">Authenticator Code</label>
+        <input type="text" id="l-2fa-code" class="otp-input" placeholder="000000"
+               maxlength="6" pattern="[0-9]{6}" inputmode="numeric" autocomplete="one-time-code" />
+      </div>
+      <div id="login-2fa-error" style="color:var(--danger);font-size:.82rem;margin-bottom:12px;display:none;text-align:center;">
+        Invalid code. Please try again.
+      </div>
+      <button type="button" class="btn-login" id="btn-verify-2fa">Verify Code →</button>
+      <p style="text-align:center;margin-top:12px;">
+        <button type="button" onclick="show2FABackupEntry()"
+                style="background:none;border:none;color:var(--text3);font-size:.78rem;cursor:pointer;text-decoration:underline;">
+          Use backup code instead
+        </button>
+      </p>
+      <div id="backup-entry-wrap" style="display:none;margin-top:12px;">
+        <div class="form-group">
+          <label for="l-backup-code">Backup Code</label>
+          <input type="text" id="l-backup-code" placeholder="xxxx-xxxx"
+                 style="text-align:center;letter-spacing:2px;" />
+        </div>
+        <button type="button" class="btn-login" id="btn-use-backup" style="margin-top:8px;">Use Backup Code →</button>
+      </div>
+      <p style="text-align:center;margin-top:12px;">
+        <button type="button" onclick="resetLoginTo2FAStep(false)"
+                style="background:none;border:none;color:var(--text3);font-size:.78rem;cursor:pointer;">
+          ← Back to login
+        </button>
+      </p>
+    </div>
+
+    <p style="text-align:center;margin-top:20px;font-size:.78rem;color:var(--text3);">
+      <a href="../index.html" style="color:var(--text3);">← Back to website</a>
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     ADMIN APP
+══════════════════════════════════════════ -->
+<div id="admin-app">
+
+  <!-- Mobile menu toggle -->
+  <button class="mobile-menu-btn" id="mobile-sidebar-toggle" aria-label="Toggle sidebar">
+    ☰
+  </button>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="logo-icon">RBS</div>
+        Admin Panel
+      </div>
+    </div>
+
+    <div class="sidebar-label">Management</div>
+    <nav class="sidebar-nav">
+      <div class="nav-item active" data-panel="dashboard">
+        <span class="nav-icon">📊</span> Dashboard
+      </div>
+      <div class="nav-item" data-panel="software">
+        <span class="nav-icon">📦</span> Software
+      </div>
+      <div class="nav-item" data-panel="content">
+        <span class="nav-icon">✏️</span> Content Editor
+      </div>
+      <div class="nav-item" data-panel="donation">
+        <span class="nav-icon">❤</span> Donations
+      </div>
+      <div class="nav-item" data-panel="popup-manager">
+        <span class="nav-icon">🪟</span> Popup Manager
+      </div>
+      <div class="nav-item" data-panel="announcements">
+        <span class="nav-icon">📣</span> Announcements
+      </div>
+      <div class="nav-item" data-panel="settings">
+        <span class="nav-icon">🔐</span> Security
+      </div>
+
+      <div class="sidebar-label" style="padding-left:0;margin-top:16px;">Content</div>
+      <div class="nav-item" data-panel="blog-manager">
+        <span class="nav-icon">📝</span> Blog Manager
+      </div>
+      <div class="nav-item" data-panel="faq-manager">
+        <span class="nav-icon">❓</span> FAQ Manager
+      </div>
+      <div class="nav-item" data-panel="subscribers">
+        <span class="nav-icon">📬</span> Subscribers
+      </div>
+      <div class="nav-item" data-panel="reviews">
+        <span class="nav-icon">⭐</span> Reviews
+      </div>
+      <div class="nav-item" data-panel="analytics">
+        <span class="nav-icon">📈</span> Analytics
+      </div>
+
+      <div class="sidebar-label" style="padding-left:0;margin-top:16px;">Website</div>
+      <a href="../index.html"    target="_blank" class="nav-item" style="text-decoration:none;">
+        <span class="nav-icon">🏠</span> Homepage ↗
+      </a>
+      <a href="../software.html" target="_blank" class="nav-item" style="text-decoration:none;">
+        <span class="nav-icon">⬇</span> Software Page ↗
+      </a>
+      <a href="../blog.html"     target="_blank" class="nav-item" style="text-decoration:none;">
+        <span class="nav-icon">📝</span> Blog ↗
+      </a>
+      <a href="../faq.html"      target="_blank" class="nav-item" style="text-decoration:none;">
+        <span class="nav-icon">❓</span> FAQ ↗
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="btn-logout" id="logout-btn">Sign Out</button>
+    </div>
+  </aside>
+
+  <!-- ── Main Content ── -->
+  <main class="admin-main">
+
+    <!-- ═══════════════════
+         DASHBOARD
+    ═══════════════════ -->
+    <div class="panel active" id="panel-dashboard">
+      <div class="page-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Overview of RBS Software website</p>
+        </div>
+        <a href="../index.html" target="_blank" class="btn btn-secondary">View Site ↗</a>
+      </div>
+
+      <div class="stats-grid" id="dash-stats">
+        <!-- populated by JS -->
+      </div>
+
+      <div class="card">
+        <h3>⚡ Quick Actions</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <button class="btn btn-primary" onclick="showPanel('software')">📦 Manage Software</button>
+          <button class="btn btn-secondary" onclick="showPanel('content')">✏️ Edit Content</button>
+          <button class="btn btn-secondary" onclick="showPanel('blog-manager')">📝 Blog</button>
+          <button class="btn btn-secondary" onclick="showPanel('faq-manager')">❓ FAQ</button>
+          <button class="btn btn-secondary" onclick="showPanel('subscribers')">📬 Subscribers</button>
+          <button class="btn btn-secondary" onclick="showPanel('analytics')">📈 Analytics</button>
+          <button class="btn btn-secondary" onclick="showPanel('announcements')">📣 Announcements</button>
+          <button class="btn btn-secondary" onclick="showPanel('donation')">❤ Donations</button>
+          <button class="btn btn-secondary" onclick="showPanel('popup-manager')">🪟 Popup Manager</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📤 Data Export / Backup</h3>
+        <p style="font-size:.85rem;color:var(--text2);margin-bottom:16px;line-height:1.6;">
+          Export all your admin data to a JSON file for backup. Import it back later to restore.
+        </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button class="btn btn-secondary" onclick="exportData()">📥 Export Backup</button>
+          <label class="btn btn-secondary" style="cursor:pointer;">
+            📤 Import Backup
+            <input type="file" accept=".json" id="import-file" style="display:none;" onchange="importData(event)" />
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ℹ️ About This Admin Panel</h3>
+        <p style="font-size:.88rem;color:var(--text2);line-height:1.7;">
+          All changes are saved to your browser's <code style="background:var(--bg3);padding:1px 6px;border-radius:4px;font-size:.82rem;">localStorage</code>
+          and reflected on the website immediately when pages are reloaded. No server or internet connection is required.<br><br>
+          <strong>2FA status:</strong> <span id="dash-2fa-status">—</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════
+         SOFTWARE MANAGER
+    ═══════════════════ -->
+    <div class="panel" id="panel-software">
+      <div class="page-header">
+        <div>
+          <h1>Software Manager</h1>
+          <p>Add, edit, and manage your software listings</p>
+        </div>
+        <button class="btn btn-primary" onclick="openSoftwareModal()">+ Add Software</button>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div class="table-wrap">
+          <table id="software-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Version</th>
+                <th>Size</th>
+                <th>Visible</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="software-tbody">
+              <!-- populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════
+         CONTENT EDITOR
+    ═══════════════════ -->
+    <div class="panel" id="panel-content">
+      <div class="page-header">
+        <div>
+          <h1>Content Editor</h1>
+          <p>Edit text and content across all pages</p>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="tab-homepage">🏠 Homepage</button>
+        <button class="tab-btn" data-tab="tab-about">ℹ️ About</button>
+        <button class="tab-btn" data-tab="tab-contact">📧 Contact</button>
+        <button class="tab-btn" data-tab="tab-counter">🔢 Counter</button>
+      </div>
+
+      <!-- Homepage tab -->
+      <div class="tab-pane active" id="tab-homepage">
+        <div class="card">
+          <h3>🏠 Homepage Hero Section</h3>
+          <div class="fg">
+            <label>Announcement Tag (small text above title)</label>
+            <input type="text" id="hero-tag" placeholder="e.g. Now Available — RBS Optimizer Pro v1.0.0" />
+          </div>
+          <div class="fg-row">
+            <div class="fg">
+              <label>Hero Title — Line 1</label>
+              <input type="text" id="hero-title1" placeholder="e.g. Professional" />
+            </div>
+            <div class="fg">
+              <label>Hero Title — Line 2 (accent/gradient)</label>
+              <input type="text" id="hero-title2" placeholder="e.g. Software Solutions" />
+            </div>
+          </div>
+          <div class="fg">
+            <label>Hero Description</label>
+            <textarea id="hero-desc" rows="3" placeholder="Main hero paragraph text..."></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="saveContent('hero')">💾 Save Homepage Hero</button>
+        </div>
+      </div>
+
+      <!-- About tab -->
+      <div class="tab-pane" id="tab-about">
+        <div class="card">
+          <h3>ℹ️ About Page</h3>
+          <div class="fg">
+            <label>Intro Paragraph</label>
+            <textarea id="about-intro" rows="3" placeholder="About RBS intro text..."></textarea>
+          </div>
+          <div class="fg">
+            <label>Body Paragraph</label>
+            <textarea id="about-body" rows="3" placeholder="What we do paragraph..."></textarea>
+          </div>
+          <div class="fg">
+            <label>Mission Statement (shown in quote box)</label>
+            <input type="text" id="about-mission" placeholder="e.g. Building free, powerful tools for everyone." />
+          </div>
+          <button class="btn btn-primary" onclick="saveContent('about')">💾 Save About Content</button>
+        </div>
+      </div>
+
+      <!-- Contact tab -->
+      <div class="tab-pane" id="tab-contact">
+        <div class="card">
+          <h3>📧 Contact Page</h3>
+          <div class="fg">
+            <label>Support Email Address</label>
+            <input type="email" id="contact-email" placeholder="support@rarebuildsoftware.com" />
+          </div>
+          <div class="fg-row">
+            <div class="fg">
+              <label>GitHub URL</label>
+              <input type="url" id="contact-github" placeholder="https://github.com/..." />
+            </div>
+            <div class="fg">
+              <label>Twitter / X URL</label>
+              <input type="url" id="contact-twitter" placeholder="https://twitter.com/..." />
+            </div>
+          </div>
+          <div class="fg">
+            <label>YouTube URL</label>
+            <input type="url" id="contact-youtube" placeholder="https://youtube.com/..." />
+          </div>
+          <div class="fg">
+            <label>Contact Form Endpoint (Formspree URL)</label>
+            <input type="url" id="contact-form-endpoint" placeholder="https://formspree.io/f/xxxxxxxx" />
+            <p class="fg-hint">
+              Sign up at <strong>formspree.io</strong> for free to receive contact form emails.
+              Paste your form endpoint URL here. Leave blank to use demo/simulation mode.
+            </p>
+          </div>
+          <button class="btn btn-primary" onclick="saveContent('contact')">💾 Save Contact Info</button>
+        </div>
+      </div>
+
+      <!-- Counter tab -->
+      <div class="tab-pane" id="tab-counter">
+        <div class="card">
+          <h3>🔢 Download Counter</h3>
+          <p class="card-subtitle">The download counter shown on the homepage. Update this manually.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+            <div class="stat-card">
+              <div class="stat-val" id="counter-clicks-stat">—</div>
+              <div class="stat-lbl">Actual Download Clicks (auto-tracked)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-val" id="counter-display-stat">—</div>
+              <div class="stat-lbl">Displayed on Website</div>
+            </div>
+          </div>
+
+          <div class="fg" style="max-width:280px;">
+            <label>Override / Seed Count</label>
+            <input type="number" id="dl-counter" min="0" placeholder="e.g. 1247" />
+            <p class="fg-hint" id="counter-real-hint">Actual click-tracked downloads: 0</p>
+            <p class="fg-hint">
+              The displayed counter shows whichever is higher — your override OR actual clicks.
+              Use this to seed the counter with a starting number.
+            </p>
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="btn btn-primary" onclick="saveContent('counter')">💾 Save Override</button>
+            <button class="btn btn-danger btn-sm" onclick="resetCounter()">↺ Reset Click Count to 0</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════
+         DONATION MANAGER (Full)
+    ═══════════════════════════ -->
+    <div class="panel" id="panel-donation">
+      <div class="page-header">
+        <div>
+          <h1>Donation Manager</h1>
+          <p>Manage payment buttons and cryptocurrency addresses</p>
+        </div>
+        <button class="btn btn-secondary" onclick="window.open('../donate.html','_blank')">👁 Preview Donate Page</button>
+      </div>
+
+      <!-- ── Payment Buttons ── -->
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+          <div>
+            <h3>💳 Payment Buttons</h3>
+            <p class="card-subtitle">Add unlimited buttons (Ko-fi, PayPal, Patreon, GrabPay, PayNow, etc.)</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="openDonBtnModal(null)">+ Add Button</button>
+        </div>
+        <div id="don-btn-list">
+          <p style="color:var(--text3);text-align:center;padding:24px 0;">Loading…</p>
+        </div>
+      </div>
+
+      <!-- ── Cryptocurrency ── -->
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+          <div>
+            <h3>₿ Cryptocurrency</h3>
+            <p class="card-subtitle">Add any coin: Bitcoin, Ethereum, USDT TRC20, Solana, BNB, and more.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="openDonCryptoModal(null)">+ Add Crypto</button>
+        </div>
+        <div id="don-crypto-list">
+          <p style="color:var(--text3);text-align:center;padding:24px 0;">Loading…</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Button Modal -->
+    <div class="modal-backdrop" id="don-btn-modal">
+      <div class="modal" style="max-width:500px;">
+        <div class="modal-header">
+          <h3 id="don-btn-modal-title">Add Payment Button</h3>
+          <button class="modal-close" onclick="closeDonBtnModal()">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="fg-row">
+            <div class="fg" style="flex:.6;">
+              <label>Button Label *</label>
+              <input type="text" id="don-btn-label" placeholder="e.g. Donate via PayPal" />
+            </div>
+            <div class="fg" style="flex:.4;">
+              <label>Icon / Emoji</label>
+              <input type="text" id="don-btn-icon" placeholder="☕" maxlength="4" />
+            </div>
+          </div>
+          <div class="fg">
+            <label>Donation URL *</label>
+            <input type="url" id="don-btn-url" placeholder="https://ko-fi.com/yourname/tip" />
+          </div>
+          <div class="fg">
+            <label>Description <span style="font-size:.78rem;color:var(--text3);">(shown below button on donate page)</span></label>
+            <textarea id="don-btn-description" rows="2" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;color:var(--text);font-family:inherit;font-size:.88rem;resize:vertical;" placeholder="e.g. Support us with a small coffee donation — every contribution helps keep RBS Software free."></textarea>
+          </div>
+          <div class="fg-row">
+            <div class="fg">
+              <label>Button Color</label>
+              <input type="color" id="don-btn-color" value="#ff5e5b" style="height:42px;padding:4px;border-radius:8px;border:1px solid var(--border);width:100%;cursor:pointer;" />
+            </div>
+            <div class="fg" style="align-self:flex-end;">
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+                <input type="checkbox" id="don-btn-visible" checked />
+                <span>Visible on website</span>
+              </label>
+            </div>
+          </div>
+          <div style="margin-top:8px;padding:12px;background:var(--bg);border-radius:8px;border:1px solid var(--border);">
+            <span style="font-size:.78rem;color:var(--text3);">Preview:</span>
+            <div style="margin-top:8px;">
+              <span id="don-btn-preview" style="display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:8px;font-weight:700;color:#fff;font-size:.9rem;background:#ff5e5b;">
+                ☕ Donate via Ko-fi
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="closeDonBtnModal()">Cancel</button>
+          <button class="btn btn-primary" onclick="saveDonBtn()">💾 Save Button</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Crypto Modal -->
+    <div class="modal-backdrop" id="don-crypto-modal">
+      <div class="modal" style="max-width:500px;">
+        <div class="modal-header">
+          <h3 id="don-crypto-modal-title">Add Cryptocurrency</h3>
+          <button class="modal-close" onclick="closeDonCryptoModal()">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="fg-row">
+            <div class="fg">
+              <label>Coin Name *</label>
+              <input type="text" id="don-crypto-coin" placeholder="e.g. Bitcoin (BTC)" />
+            </div>
+            <div class="fg">
+              <label>Network / Chain (optional)</label>
+              <input type="text" id="don-crypto-network" placeholder="e.g. ERC20, TRC20, BEP20" />
+            </div>
+          </div>
+          <div class="fg">
+            <label>Wallet Address *</label>
+            <input type="text" id="don-crypto-address" placeholder="Enter wallet address…" style="font-family:monospace;font-size:.82rem;" />
+          </div>
+          <div class="fg">
+            <label>QR Code Image</label>
+            <div class="qr-preview-wrap" id="don-crypto-qr-wrap" onclick="document.getElementById('don-crypto-qr-input').click()" style="cursor:pointer;">
+              <img id="don-crypto-qr-preview" src="" alt="" style="display:none;width:140px;height:140px;object-fit:contain;border-radius:8px;border:2px solid var(--border);" />
+              <div class="qr-hint" id="don-crypto-qr-hint"><span>📷</span>Click to upload QR</div>
+            </div>
+            <input type="file" id="don-crypto-qr-input" accept="image/*" style="display:none;" onchange="previewDonCryptoQR(event)" />
+            <button class="btn btn-danger btn-sm" id="don-crypto-qr-clear" style="display:none;margin-top:6px;" onclick="clearDonCryptoQR()">Remove QR</button>
+          </div>
+          <div class="fg">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+              <input type="checkbox" id="don-crypto-visible" checked />
+              <span>Visible on website</span>
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="closeDonCryptoModal()">Cancel</button>
+          <button class="btn btn-primary" onclick="saveDonCrypto()">💾 Save Crypto</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════
+         POPUP MANAGER
+    ═══════════════════ -->
+    <div class="panel" id="panel-popup-manager">
+      <div class="page-header">
+        <div>
+          <h1>Download Popup Manager</h1>
+          <p>Control the post-download popup appearance and content</p>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-secondary" onclick="previewPopup()">👁 Preview Popup</button>
+          <button class="btn btn-primary" onclick="savePopupSettings()">💾 Save Settings</button>
+        </div>
+      </div>
+
+      <!-- Enable/Disable -->
+      <div class="card" style="margin-bottom:16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <h3>🪟 Popup Status</h3>
+            <p class="card-subtitle">Enable or disable the post-download popup entirely</p>
+          </div>
+          <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-weight:600;">
+            <input type="checkbox" id="popup-enabled" checked style="width:18px;height:18px;cursor:pointer;" />
+            Popup Enabled
+          </label>
+        </div>
+      </div>
+
+      <!-- Title & Subtitle -->
+      <div class="card" style="margin-bottom:16px;">
+        <h3 style="margin-bottom:16px;">📝 Popup Text</h3>
+        <div class="fg">
+          <label>Popup Title</label>
+          <input type="text" id="popup-title" value="Download Started!" placeholder="Download Started!" />
+        </div>
+        <div class="fg" style="margin-top:12px;">
+          <label>Popup Subtitle <span style="font-size:.78rem;color:var(--text3);">(use \n for new lines)</span></label>
+          <textarea id="popup-subtitle" rows="3" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;color:var(--text);font-family:inherit;font-size:.9rem;resize:vertical;">RBS Software is 100% free — no strings attached.
+If this tool helped you, consider supporting development ❤</textarea>
+        </div>
+      </div>
+
+      <!-- Donation section toggle + method selection -->
+      <div class="card" style="margin-bottom:16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+          <h3>❤ Donation Section</h3>
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+            <input type="checkbox" id="popup-show-donation" checked /> Show in popup
+          </label>
+        </div>
+        <p class="card-subtitle" style="margin-bottom:16px;">Choose which payment methods appear in the popup (unchecked = hidden in popup only)</p>
+        <div id="popup-donation-checkboxes" style="display:flex;flex-direction:column;gap:10px;">
+          <p style="color:var(--text3);font-size:.85rem;">Loading donation methods…</p>
+        </div>
+      </div>
+
+      <!-- Newsletter toggle -->
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+          <h3>📬 Newsletter Section</h3>
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+            <input type="checkbox" id="popup-show-newsletter" checked /> Show in popup
+          </label>
+        </div>
+        <div class="fg">
+          <label>Newsletter Section Title</label>
+          <input type="text" id="popup-nl-title" value="📬 Stay Updated" />
+        </div>
+        <div class="fg" style="margin-top:12px;">
+          <label>Newsletter Section Subtitle</label>
+          <input type="text" id="popup-nl-subtitle" value="Get notified about new RBS software releases. No spam." />
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════
+         ANNOUNCEMENTS
+    ═══════════════════ -->
+    <div class="panel" id="panel-announcements">
+      <div class="page-header">
+        <div>
+          <h1>Announcements</h1>
+          <p>Manage the site-wide announcement banner</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📣 Announcement Banner</h3>
+        <p class="card-subtitle">
+          The banner appears at the top of every page (below the navigation).
+          Visitors can dismiss it by clicking ✕.
+        </p>
+
+        <div class="fg">
+          <div class="toggle-wrap">
+            <label class="toggle">
+              <input type="checkbox" id="ann-enabled" />
+              <span class="toggle-slider"></span>
+            </label>
+            <span class="toggle-label">Show announcement banner on all pages</span>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label>Banner Text</label>
+          <input type="text" id="ann-text"
+                 placeholder="e.g. 🎉 RBS Optimizer Pro v1.1 is out! Click to download." />
+          <p class="fg-hint">Keep it short and clear — one sentence works best.</p>
+        </div>
+
+        <div class="fg">
+          <label>Banner Type (colour)</label>
+          <div class="type-chips">
+            <div class="type-chip selected" data-type="info">ℹ️ Info (Blue)</div>
+            <div class="type-chip" data-type="success">✅ Success (Green)</div>
+            <div class="type-chip" data-type="warning">⚠️ Warning (Yellow)</div>
+          </div>
+        </div>
+
+        <div class="fg-row">
+          <div class="fg">
+            <label>Optional Link URL</label>
+            <input type="url" id="ann-link" placeholder="https://..." />
+          </div>
+          <div class="fg">
+            <label>Link Button Text</label>
+            <input type="text" id="ann-link-text" placeholder="e.g. Download Now" />
+          </div>
+        </div>
+
+        <!-- Live preview -->
+        <label style="font-size:.82rem;font-weight:600;color:var(--text2);display:block;margin-bottom:8px;">
+          Preview
+        </label>
+        <div id="ann-preview-box" class="ann-preview">
+          <span id="ann-preview-text"></span>
+          <span id="ann-preview-link"></span>
+        </div>
+
+        <div style="margin-top:20px;display:flex;gap:10px;">
+          <button class="btn btn-primary" onclick="saveAnnouncement()">💾 Save &amp; Publish</button>
+          <button class="btn btn-secondary" onclick="previewAnnouncement()">👁 Preview</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════
+         SECURITY SETTINGS
+    ═══════════════════ -->
+    <div class="panel" id="panel-settings">
+      <div class="page-header">
+        <div>
+          <h1>Security Settings</h1>
+          <p>Manage admin credentials and two-factor authentication</p>
+        </div>
+      </div>
+
+      <!-- Change Password -->
+      <div class="card">
+        <h3>🔑 Change Password</h3>
+        <div class="info-box">
+          Passwords are stored locally in your browser. Make sure to remember your new password — there is no email recovery.
+        </div>
+        <div class="fg" style="max-width:400px;">
+          <label>Current Password</label>
+          <input type="password" id="pw-current" placeholder="Enter current password" />
+        </div>
+        <div class="fg" style="max-width:400px;">
+          <label>New Password</label>
+          <input type="password" id="pw-new" placeholder="At least 8 characters" />
+        </div>
+        <div class="fg" style="max-width:400px;">
+          <label>Confirm New Password</label>
+          <input type="password" id="pw-confirm" placeholder="Repeat new password" />
+        </div>
+        <div id="pw-msg" style="font-size:.82rem;margin-bottom:12px;display:none;padding:8px 12px;border-radius:6px;"></div>
+        <button class="btn btn-primary" onclick="changePassword()">🔑 Update Password</button>
+      </div>
+
+      <!-- Change Username -->
+      <div class="card">
+        <h3>👤 Change Username</h3>
+        <div class="fg" style="max-width:400px;">
+          <label>Current Password (required to change username)</label>
+          <input type="password" id="un-current-pass" placeholder="Enter current password" />
+        </div>
+        <div class="fg" style="max-width:400px;">
+          <label>New Username</label>
+          <input type="text" id="un-new" placeholder="Enter new username" />
+        </div>
+        <div id="un-msg" style="font-size:.82rem;margin-bottom:12px;display:none;padding:8px 12px;border-radius:6px;"></div>
+        <button class="btn btn-primary" onclick="changeUsername()">👤 Update Username</button>
+      </div>
+
+      <!-- Two-Factor Authentication -->
+      <div class="card">
+        <h3>🔐 Two-Factor Authentication (TOTP)</h3>
+        <div id="tfa-panel-content">
+          <!-- rendered by render2FAPanel() -->
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════
+         BLOG MANAGER
+    ═══════════════════════════ -->
+    <div class="panel" id="panel-blog-manager">
+      <div class="page-header">
+        <div><h1>Blog Manager</h1><p>Add, edit, and delete blog articles</p></div>
+        <button class="btn btn-primary" onclick="openBlogModal(null)">+ New Article</button>
+      </div>
+
+      <div class="card">
+        <h3>📝 Articles</h3>
+        <p class="card-subtitle">Static articles (speed-windows-11.html, best-free-tools-2025.html) are always shown. Manage additional articles here.</p>
+        <div class="table-wrap">
+          <table id="blog-table">
+            <thead><tr><th>Title</th><th>Tag</th><th>Date</th><th>Actions</th></tr></thead>
+            <tbody id="blog-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Modal -->
+    <div class="modal-backdrop" id="blog-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 id="blog-modal-title">New Article</h3>
+          <button class="modal-close" onclick="closeBlogModal()">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="fg"><label>Title *</label><input type="text" id="blog-title" placeholder="Article title" /></div>
+          <div class="fg-row">
+            <div class="fg"><label>Tag</label>
+              <select id="blog-tag">
+                <option value="Guide">Guide</option>
+                <option value="Review">Review</option>
+                <option value="News">News</option>
+                <option value="Tips">Tips</option>
+              </select>
+            </div>
+            <div class="fg"><label>Date</label><input type="date" id="blog-date" /></div>
+          </div>
+          <div class="fg"><label>Emoji / Thumbnail</label><input type="text" id="blog-emoji" placeholder="🚀" maxlength="4" /></div>
+          <div class="fg"><label>Excerpt (shown in listing)</label><textarea id="blog-excerpt" rows="3" placeholder="Short description shown in blog grid…"></textarea></div>
+          <div class="fg"><label>Article URL (link)</label><input type="text" id="blog-url" placeholder="blog/my-article.html or https://…" /></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="closeBlogModal()">Cancel</button>
+          <button class="btn btn-primary" onclick="saveBlogArticle()">💾 Save Article</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════
+         FAQ MANAGER
+    ═══════════════════════════ -->
+    <div class="panel" id="panel-faq-manager">
+      <div class="page-header">
+        <div><h1>FAQ Manager</h1><p>Add, edit, and delete FAQ items</p></div>
+        <button class="btn btn-primary" onclick="openFaqModal(null)">+ New FAQ Item</button>
+      </div>
+
+      <div class="card">
+        <h3>❓ FAQ Items</h3>
+        <p class="card-subtitle">These appear in addition to the default FAQ items on faq.html.</p>
+        <div class="table-wrap">
+          <table id="faq-table">
+            <thead><tr><th>Question</th><th>Actions</th></tr></thead>
+            <tbody id="faq-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div class="modal-backdrop" id="faq-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 id="faq-modal-title">New FAQ Item</h3>
+          <button class="modal-close" onclick="closeFaqModal()">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="fg"><label>Question *</label><input type="text" id="faq-q-input" placeholder="Enter the question…" /></div>
+          <div class="fg"><label>Answer *</label><textarea id="faq-a-input" rows="5" placeholder="Enter the answer…"></textarea></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="closeFaqModal()">Cancel</button>
+          <button class="btn btn-primary" onclick="saveFaqItem()">💾 Save Item</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════
+         SUBSCRIBERS
+    ═══════════════════════════ -->
+    <div class="panel" id="panel-subscribers">
+      <div class="page-header">
+        <div><h1>Newsletter Subscribers</h1><p>View and export newsletter subscribers</p></div>
+        <div style="display:flex;gap:10px;">
+          <button class="btn btn-secondary" onclick="exportSubscribers('csv')">📥 Export CSV</button>
+          <button class="btn btn-secondary" onclick="exportSubscribers('json')">📥 Export JSON</button>
+          <button class="btn btn-danger btn-sm" onclick="clearSubscribers()">🗑 Clear All</button>
+        </div>
+      </div>
+
+      <div class="stats-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="stat-card">
+          <div class="stat-val" id="sub-total">0</div>
+          <div class="stat-lbl">Total Subscribers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="sub-today">0</div>
+          <div class="stat-lbl">Joined Today</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="sub-week">0</div>
+          <div class="stat-lbl">Joined This Week</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📬 Subscriber List</h3>
+        <div style="margin-bottom:12px;">
+          <input type="text" id="sub-search" placeholder="Search by email…"
+            style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 12px;color:var(--text);width:280px;outline:none;"
+            oninput="renderSubscriberTable(this.value)" />
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Name</th><th>Email</th><th>Joined</th><th>Actions</th></tr></thead>
+            <tbody id="sub-tbody"></tbody>
+          </table>
+        </div>
+        <p id="sub-empty" style="text-align:center;padding:32px;color:var(--text3);display:none;">
+          No subscribers yet. Newsletter subscription forms are on the homepage, software page, and blog.
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════
+         REVIEWS
+    ═══════════════════════════ -->
+    <div class="panel" id="panel-reviews">
+      <div class="page-header">
+        <div>
+          <h1>Reviews Manager</h1>
+          <p>Approve, reply to, and manage user reviews</p>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="btn btn-secondary btn-sm" onclick="adminExportReviewsCSV()">⬇ Export CSV</button>
+          <button class="btn btn-secondary btn-sm" onclick="adminRefreshReviews()">🔄 Refresh</button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid" id="review-stats-grid" style="margin-bottom:20px;"></div>
+
+      <!-- Filters -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;align-items:center;">
+        <select id="rv-filter-status" style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:7px 12px;color:var(--text);font-size:.85rem;cursor:pointer;">
+          <option value="all">All Reviews</option>
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+        </select>
+        <select id="rv-filter-software" style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:7px 12px;color:var(--text);font-size:.85rem;cursor:pointer;">
+          <option value="all">All Software</option>
+        </select>
+        <select id="rv-filter-rating" style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:7px 12px;color:var(--text);font-size:.85rem;cursor:pointer;">
+          <option value="all">All Ratings</option>
+          <option value="5">★★★★★ 5 Stars</option>
+          <option value="4">★★★★☆ 4 Stars</option>
+          <option value="3">★★★☆☆ 3 Stars</option>
+          <option value="2">★★☆☆☆ 2 Stars</option>
+          <option value="1">★☆☆☆☆ 1 Star</option>
+        </select>
+        <input type="text" id="rv-search" placeholder="Search reviews…"
+               style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:7px 12px;color:var(--text);font-size:.85rem;outline:none;min-width:180px;"
+               oninput="adminRenderReviews()" />
+      </div>
+
+      <div id="reviews-table-wrap" class="table-wrap">
+        <table id="reviews-table">
+          <thead><tr>
+            <th>Software</th><th>Reviewer</th><th>Rating</th><th>Review</th><th>Date</th><th>Status</th><th>Actions</th>
+          </tr></thead>
+          <tbody id="reviews-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Reply Modal -->
+    <div class="modal-backdrop" id="rv-reply-modal">
+      <div class="modal" style="max-width:500px;">
+        <div class="modal-header">
+          <h3>Reply to Review</h3>
+          <button class="modal-close" onclick="document.getElementById('rv-reply-modal').classList.remove('open')">✕</button>
+        </div>
+        <div class="modal-body">
+          <div id="rv-reply-preview" style="background:var(--bg);border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:.88rem;color:var(--text2);"></div>
+          <div class="fg">
+            <label>Your Reply</label>
+            <textarea id="rv-reply-text" rows="4" placeholder="Write your reply…" style="resize:vertical;"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="document.getElementById('rv-reply-modal').classList.remove('open')">Cancel</button>
+          <button class="btn btn-primary" onclick="adminSubmitReply()">Save Reply</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════
+         ANALYTICS
+    ═══════════════════════════ -->
+    <div class="panel" id="panel-analytics">
+      <div class="page-header">
+        <div><h1>Analytics</h1><p>Downloads, subscribers, and activity overview</p></div>
+        <button class="btn btn-secondary" onclick="refreshAnalytics()">🔄 Refresh</button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-val" id="an-downloads">0</div>
+          <div class="stat-lbl">Total Downloads</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="an-subscribers">0</div>
+          <div class="stat-lbl">Subscribers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="an-software">0</div>
+          <div class="stat-lbl">Software Listed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="an-blog">0</div>
+          <div class="stat-lbl">Blog Articles</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📦 Downloads per Software</h3>
+        <div id="an-sw-table" class="table-wrap">
+          <table>
+            <thead><tr><th>Software</th><th>Version</th><th>Downloads</th><th>Status</th></tr></thead>
+            <tbody id="an-sw-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📬 Recent Subscribers</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Email</th><th>Date</th></tr></thead>
+            <tbody id="an-sub-tbody"></tbody>
+          </table>
+        </div>
+        <p id="an-sub-empty" style="text-align:center;padding:20px;color:var(--text3);display:none;">No subscribers yet.</p>
+      </div>
+
+      <div class="card">
+        <h3>📝 Recent Download Activity</h3>
+        <div id="an-activity-wrap">
+          <p style="color:var(--text3);font-size:.88rem;">
+            Downloads are tracked via browser localStorage. Total: <strong id="an-dl-total" style="color:var(--accent-l);">0</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main><!-- /.admin-main -->
+</div><!-- /#admin-app -->
+
+<!-- ═══════════════════════════════════════════
+     SOFTWARE ADD / EDIT MODAL
+═══════════════════════════════════════════ -->
+<div class="modal-backdrop" id="sw-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="sw-modal-title">Add Software</h3>
+      <button class="modal-close" onclick="closeModal('sw-modal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="sw-id" />
+
+      <div class="fg-row">
+        <div class="fg">
+          <label>Software Name *</label>
+          <input type="text" id="sw-name" placeholder="e.g. RBS Optimizer Pro" required />
+        </div>
+        <div class="fg">
+          <label>Version *</label>
+          <input type="text" id="sw-version" placeholder="e.g. 1.0.0" required />
+        </div>
+      </div>
+
+      <div class="fg">
+        <label>Short Description *</label>
+        <textarea id="sw-desc" rows="3" placeholder="Describe what this software does..." required></textarea>
+      </div>
+
+      <div class="fg">
+        <label>File Size</label>
+        <input type="text" id="sw-size" placeholder="e.g. ~23 MB" style="max-width:200px;" />
+      </div>
+
+      <div class="fg">
+        <label>Categories <span style="font-size:.75rem;color:var(--text3);font-weight:400;">(select one or more)</span></label>
+        <div id="sw-categories-wrap" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
+          <label class="sw-cat-check"><input type="checkbox" value="Optimization"> Optimization</label>
+          <label class="sw-cat-check"><input type="checkbox" value="System Tools"> System Tools</label>
+          <label class="sw-cat-check"><input type="checkbox" value="Utilities"> Utilities</label>
+          <label class="sw-cat-check"><input type="checkbox" value="Security"> Security</label>
+          <label class="sw-cat-check"><input type="checkbox" value="AI Tools"> AI Tools</label>
+          <label class="sw-cat-check"><input type="checkbox" value="Editing Tools"> Editing Tools</label>
+          <label class="sw-cat-check"><input type="checkbox" value="Daily Use"> Daily Use</label>
+          <label class="sw-cat-check"><input type="checkbox" value="Productivity"> Productivity</label>
+        </div>
+      </div>
+
+      <!-- ── Download Source ── -->
+      <div class="fg">
+        <label>Download Source</label>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;" id="dl-type-chips">
+          <button type="button" class="dl-type-chip active" data-type="url"
+            onclick="setDlType('url')"
+            style="padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;
+                   background:rgba(0,102,255,.2);color:var(--accent-l);border:1px solid rgba(0,102,255,.4);">
+            🌐 Direct URL
+          </button>
+          <button type="button" class="dl-type-chip" data-type="local"
+            onclick="setDlType('local')"
+            style="padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;
+                   background:rgba(255,255,255,.06);color:var(--text2);border:1px solid var(--border);">
+            💾 Local File
+          </button>
+          <button type="button" class="dl-type-chip" data-type="cdn"
+            onclick="setDlType('cdn')"
+            style="padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:700;cursor:pointer;
+                   background:rgba(255,255,255,.06);color:var(--text2);border:1px solid var(--border);">
+            ☁ CDN / External
+          </button>
+        </div>
+        <input type="hidden" id="sw-dl-type" value="url" />
+
+        <!-- URL/CDN input -->
+        <div id="dl-url-group">
+          <input type="text" id="sw-url"
+            placeholder="https://drive.google.com/... or https://github.com/.../releases/download/..." />
+          <p class="fg-hint">Paste any shareable direct download URL — Google Drive, GitHub Releases, Netlify, Dropbox, OneDrive, etc.</p>
+        </div>
+
+        <!-- Local file input -->
+        <div id="dl-local-group" style="display:none;">
+          <div style="display:flex;gap:10px;align-items:center;">
+            <code style="background:rgba(0,102,255,.1);border:1px solid var(--border);border-radius:6px;padding:8px 12px;font-size:.82rem;color:var(--text2);white-space:nowrap;">D:\RBSWebsite\downloads\</code>
+            <input type="text" id="sw-local-filename"
+                   placeholder="RBSOptimizerPro_v1.0.0_Setup.exe"
+                   style="flex:1;" />
+          </div>
+          <p class="fg-hint">Place your .exe file in the <strong>downloads/</strong> folder, then enter its filename above. The download button will link to <code>downloads/[filename]</code>.</p>
+        </div>
+      </div>
+
+      <!-- ── Screenshot ── -->
+      <div class="fg">
+        <label>Screenshot</label>
+
+        <!-- Option A: Upload image (stored as base64) -->
+        <div class="img-preview-wrap" id="sw-screenshot-wrap"
+             onclick="document.getElementById('sw-screenshot-input').click()"
+             style="margin-bottom:8px;">
+          <img id="sw-screenshot-preview" src="" alt="" style="display:none;" />
+          <div class="upload-hint"><span>🖼️</span>Click to upload screenshot<br/><small>PNG/JPG — keep under 500 KB for best performance</small></div>
+        </div>
+        <input type="file" id="sw-screenshot-input" accept="image/*" style="display:none;" />
+
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:4px;flex-wrap:wrap;">
+          <button class="btn btn-secondary btn-sm" onclick="clearScreenshot()">✕ Remove uploaded image</button>
+          <span style="font-size:.75rem;color:var(--text3);">— or enter image path/URL instead:</span>
+        </div>
+
+        <!-- Option B: Image path/URL -->
+        <input type="text" id="sw-screenshot-path"
+               placeholder="assets/images/software/optimizer-pro.png  or  https://..."
+               style="font-size:.82rem;" />
+        <p class="fg-hint">
+          Path is relative to website root, e.g. <code>assets/images/software/optimizer-pro.png</code>.
+          Uploaded image above takes priority over this path.
+        </p>
+      </div>
+
+      <div class="fg">
+        <div class="toggle-wrap">
+          <label class="toggle">
+            <input type="checkbox" id="sw-visible" checked />
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label">Visible on website</span>
+        </div>
+      </div>
+
+      <!-- Features editor -->
+      <div class="fg">
+        <label>Features (up to 6)</label>
+        <div id="features-editor">
+          <!-- populated by renderFeaturesEditor() -->
+        </div>
+        <button class="btn btn-secondary btn-sm" style="margin-top:8px;" onclick="addFeatureRow()">+ Add Feature</button>
+      </div>
+
+      <!-- System requirements editor -->
+      <div class="fg">
+        <label>System Requirements</label>
+        <div id="sysreqs-editor"></div>
+        <button class="btn btn-secondary btn-sm" style="margin-top:8px;" onclick="addSysReqRow()">+ Add Requirement</button>
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('sw-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveSoftware()">💾 Save Software</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div id="toast"></div>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ── localStorage helpers ── */
+const store = {
+  get(key, fallback = null) {
+    try { const v = localStorage.getItem('rbs_' + key); return v ? JSON.parse(v) : fallback; } catch(_) { return fallback; }
+  },
+  set(key, val) {
+    try { localStorage.setItem('rbs_' + key, JSON.stringify(val)); return true; } catch(_) { return false; }
+  }
+};
+
+/* ── Credentials: loaded from localStorage only — no hardcoded defaults ── */
+function getCreds() {
+  return store.get('admin_creds', null); // null = not set up yet
+}
+function isFirstRun() {
+  return getCreds() === null;
+}
+
+/* ════════════════════════════════════════
+   TOTP — RFC 6238 implementation (SubtleCrypto)
+════════════════════════════════════════ */
+const TOTP = {
+  B32: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567',
+
+  generateSecret(len = 20) {
+    const buf = new Uint8Array(len);
+    crypto.getRandomValues(buf);
+    return Array.from(buf).map(b => this.B32[b % 32]).join('');
+  },
+
+  b32decode(s) {
+    s = s.toUpperCase().replace(/=+$/, '').replace(/\s/g, '');
+    let bits = '';
+    for (const c of s) {
+      const idx = this.B32.indexOf(c);
+      if (idx < 0) continue;
+      bits += idx.toString(2).padStart(5, '0');
+    }
+    const bytes = [];
+    for (let i = 0; i + 8 <= bits.length; i += 8)
+      bytes.push(parseInt(bits.slice(i, i + 8), 2));
+    return new Uint8Array(bytes);
+  },
+
+  async generate(secret, epochSeconds) {
+    const T = Math.floor((epochSeconds ?? (Date.now() / 1000)) / 30);
+    const ctr = new Uint8Array(8);
+    let tmp = T;
+    for (let i = 7; i >= 0; i--) { ctr[i] = tmp & 0xff; tmp = Math.floor(tmp / 256); }
+    const key = await crypto.subtle.importKey(
+      'raw', this.b32decode(secret), { name: 'HMAC', hash: 'SHA-1' }, false, ['sign']
+    );
+    const sig    = new Uint8Array(await crypto.subtle.sign('HMAC', key, ctr));
+    const offset = sig[19] & 0x0f;
+    const code   = (((sig[offset] & 0x7f) << 24) | ((sig[offset+1] & 0xff) << 16) |
+                    ((sig[offset+2] & 0xff) << 8)  |  (sig[offset+3] & 0xff)) % 1_000_000;
+    return code.toString().padStart(6, '0');
+  },
+
+  async verify(secret, token) {
+    const now = Date.now() / 1000;
+    for (const off of [-1, 0, 1]) {
+      if (await this.generate(secret, now + off * 30) === token) return true;
+    }
+    return false;
+  }
+};
+
+/* ── 2FA state helpers ── */
+function get2FA()      { return store.get('admin_2fa', { enabled: false, secret: null, backupCodes: [] }); }
+function save2FA(obj)  { store.set('admin_2fa', obj); }
+function generateBackupCodes() {
+  return Array.from({ length: 8 }, () => {
+    const a = Math.random().toString(36).slice(2, 6).toUpperCase();
+    const b = Math.random().toString(36).slice(2, 6).toUpperCase();
+    return a + '-' + b;
+  });
+}
+
+/* ── Default data ── */
+const defaultContent = {
+  hero: { tag: '3 Free Windows Apps — No Subscriptions, Ever', titleLine1: 'Free Windows Software', titleLine2: 'for Everyone', description: 'RBS builds free, powerful tools designed for everyone. No subscriptions, no paywalls — just high-quality software that gets the job done.' },
+  about: { intro: 'RBS was founded on a simple frustration: too much software that should be free is locked behind subscriptions, trials, and paywalls. We decided to do something about it.', body: 'We build practical Windows utilities — optimizers, cleaners, and productivity tools — that are completely free to download and use. No accounts, no activation codes, no "pro upgrades". Just software that works.', mission: 'Building free, powerful tools for everyone.' },
+  contact: { email: 'support@rarebuildsoftware.com', github: '#', twitter: '#', youtube: '#' },
+  downloadCounter: 1247,
+  announcement: { enabled: false, text: '🎉 Welcome to RBS Software! Download our 3 free apps today.', type: 'info', link: '', linkText: 'Download Now' },
+  donation: { kofiUrl: 'https://ko-fi.com/rbsshop/tip', ethAddress: '0x3C8D5bf5c5c78B73814B17d61d9b2b39D722132c', btcAddress: '36boft8xKukMQeTZpWNjJfVxGS2kA3uzjY', btcQR: null, ethQR: null }
+};
+
+const defaultSoftware = [
+  { id: 'rbs-optimizer-pro', name: 'RBS Optimizer Pro', version: '1.0.0', icon: '⚡',
+    description: 'The ultimate free Windows optimization suite. Clean junk, boost performance, manage startup programs and monitor your system in real time.',
+    fileSize: '~23 MB', downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip',
+    screenshot: null, visible: true,
+    features: [
+      {icon:'🧹',title:'Deep Junk Cleaner',desc:'Remove temporary files and cache.'},
+      {icon:'🚀',title:'Startup Manager',desc:'Control startup programs.'},
+      {icon:'📊',title:'Performance Monitor',desc:'Real-time CPU/RAM graphs.'},
+      {icon:'⚙️',title:'One-Click Optimize',desc:'Full system tune-up in one click.'},
+      {icon:'🛡️',title:'Privacy First',desc:'No telemetry or data collection.'},
+      {icon:'🎨',title:'Modern Interface',desc:'Clean dark-themed UI.'}
+    ],
+    sysReqs: ['Windows 10 or Windows 11 (64-bit)', '50 MB free disk space', '2 GB RAM (4 GB recommended)', '1 GHz or faster processor', 'No internet required', 'Administrator rights recommended']
+  },
+  { id: 'rbs-voice-cloner', name: 'RBS Voice Cloner', version: '1.0.0', icon: '🎙️',
+    description: 'Clone any voice from a 5-second sample using XTTS v2 AI. Generate speech in 28+ languages — runs fully offline after first setup.',
+    fileSize: '~1.4 GB', downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSVoiceClonerRelease.zip',
+    screenshot: null, visible: true,
+    features: [
+      {icon:'🎤',title:'Voice Cloning',desc:'Clone any voice from a 5-second audio sample.'},
+      {icon:'🌍',title:'28+ Languages',desc:'Generate speech in 28+ languages with XTTS v2.'},
+      {icon:'⚡',title:'GPU Accelerated',desc:'Faster generation with NVIDIA GPU support.'},
+      {icon:'✂️',title:'Built-in Audio Editor',desc:'Trim, export and manage generated audio.'},
+      {icon:'🔒',title:'Fully Offline',desc:'No internet required after initial model download.'},
+      {icon:'🎵',title:'Multiple Voices',desc:'Save and manage multiple voice profiles.'}
+    ],
+    sysReqs: ['Windows 10 or Windows 11 (64-bit)', '4 GB RAM minimum (8 GB recommended)', 'NVIDIA GPU with 4GB+ VRAM (optional, for speed)', '5 GB free disk space (for models)', 'Python 3.10+ (bundled)', 'No internet required after setup']
+  },
+  { id: 'life-dashboard', name: 'Life Dashboard', version: '1.0.0', icon: '📊',
+    description: 'Your all-in-one personal productivity hub. 16 widgets — habits, tasks, finance, weather, sleep, diet, goals and more in one window.',
+    fileSize: '~101 MB', downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/Life-Dashboard.zip',
+    screenshot: null, visible: true,
+    features: [
+      {icon:'🧩',title:'16 Widgets',desc:'Clock, weather, tasks, habits, finance, sleep and more.'},
+      {icon:'🔄',title:'Drag-and-Drop Layout',desc:'Rearrange widgets to fit your workflow.'},
+      {icon:'✅',title:'Habit Tracker',desc:'Build and track daily habits with streaks.'},
+      {icon:'💰',title:'Finance Tracker',desc:'Log income, expenses and budgets.'},
+      {icon:'🔒',title:'100% Private',desc:'All data stored locally — nothing sent online.'},
+      {icon:'🌦️',title:'Live Weather',desc:'Real-time weather widget with location support.'}
+    ],
+    sysReqs: ['Windows 10 or Windows 11 (64-bit)', '200 MB free disk space', '2 GB RAM', '1 GHz or faster processor', 'Internet required for weather widget only', 'No admin rights required']
+  }
+];
+
+/* ── State ── */
+let content  = store.get('content',  defaultContent);
+let software = store.get('software', defaultSoftware);
+let editingSwId = null;
+let selectedAnnType = 'info';
+
+/* ═══════════════════════════════
+   AUTH
+═══════════════════════════════ */
+let _pendingUser = null; // holds username after step 1 while waiting for 2FA
+
+document.getElementById('login-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const u = document.getElementById('l-user').value.trim();
+  const p = document.getElementById('l-pass').value;
+  const errEl = document.getElementById('login-error');
+
+  // First-run: no credentials saved yet — treat this as account setup
+  if (isFirstRun()) {
+    if (!u || u.length < 3) { errEl.textContent = 'Username must be at least 3 characters.'; errEl.style.display='block'; return; }
+    if (!p || p.length < 8) { errEl.textContent = 'Password must be at least 8 characters.'; errEl.style.display='block'; return; }
+    store.set('admin_creds', { username: u, password: p });
+    sessionStorage.setItem('rbs_admin_auth', '1');
+    document.getElementById('login-form').closest('.login-box').querySelector('h2').textContent = 'Admin Login';
+    showApp();
+    return;
+  }
+
+  const creds = getCreds();
+
+  if (u === creds.username && p === creds.password) {
+    errEl.style.display = 'none';
+    const tfa = get2FA();
+    if (tfa.enabled && tfa.secret) {
+      // Step 2: show 2FA
+      _pendingUser = u;
+      document.getElementById('login-creds-step').style.display = 'none';
+      document.getElementById('login-2fa-step').style.display = 'block';
+      setTimeout(() => document.getElementById('l-2fa-code').focus(), 50);
+    } else {
+      sessionStorage.setItem('rbs_admin_auth', '1');
+      showApp();
+    }
+  } else {
+    errEl.textContent = 'Incorrect username or password.';
+    errEl.style.display = 'block';
+    document.getElementById('l-pass').value = '';
+  }
+});
+
+document.getElementById('btn-verify-2fa').addEventListener('click', async () => {
+  const code  = document.getElementById('l-2fa-code').value.trim();
+  const errEl = document.getElementById('login-2fa-error');
+  const tfa   = get2FA();
+  const valid = await TOTP.verify(tfa.secret, code);
+  if (valid) {
+    errEl.style.display = 'none';
+    sessionStorage.setItem('rbs_admin_auth', '1');
+    showApp();
+  } else {
+    errEl.style.display = 'block';
+    document.getElementById('l-2fa-code').value = '';
+    document.getElementById('l-2fa-code').focus();
+  }
+});
+
+// Allow Enter key in 2FA input
+document.getElementById('l-2fa-code').addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('btn-verify-2fa').click();
+});
+
+document.getElementById('btn-use-backup').addEventListener('click', () => {
+  const code = document.getElementById('l-backup-code').value.trim().toUpperCase();
+  const tfa  = get2FA();
+  const idx  = (tfa.backupCodes || []).indexOf(code);
+  if (idx !== -1) {
+    // Consume the backup code
+    tfa.backupCodes.splice(idx, 1);
+    save2FA(tfa);
+    sessionStorage.setItem('rbs_admin_auth', '1');
+    showApp();
+  } else {
+    document.getElementById('login-2fa-error').textContent = 'Invalid backup code.';
+    document.getElementById('login-2fa-error').style.display = 'block';
+  }
+});
+
+function show2FABackupEntry() {
+  const wrap = document.getElementById('backup-entry-wrap');
+  wrap.style.display = wrap.style.display === 'none' ? 'block' : 'none';
+}
+
+function resetLoginTo2FAStep(show2FA) {
+  document.getElementById('login-2fa-step').style.display = 'none';
+  document.getElementById('login-creds-step').style.display = 'block';
+  document.getElementById('login-2fa-error').style.display = 'none';
+  document.getElementById('l-2fa-code').value = '';
+  document.getElementById('backup-entry-wrap').style.display = 'none';
+  _pendingUser = null;
+}
+
+document.getElementById('logout-btn').addEventListener('click', () => {
+  sessionStorage.removeItem('rbs_admin_auth');
+  location.reload();
+});
+
+function showApp() {
+  document.getElementById('login-screen').style.display = 'none';
+  const app = document.getElementById('admin-app');
+  app.classList.add('show');
+  initApp();
+}
+
+// Auto-login if session exists
+if (sessionStorage.getItem('rbs_admin_auth') === '1') {
+  showApp();
+} else if (isFirstRun()) {
+  // First time — update login UI to show setup mode
+  const heading = document.getElementById('login-heading');
+  const btn = document.getElementById('login-btn');
+  if (heading) heading.textContent = '👋 Create Your Admin Account';
+  if (btn) btn.textContent = 'Create Account & Sign In →';
+  const passInput = document.getElementById('l-pass');
+  if (passInput) passInput.placeholder = 'Choose a password (min. 8 chars)';
+}
+
+/* ═══════════════════════════════
+   NAVIGATION
+═══════════════════════════════ */
+document.querySelectorAll('.nav-item[data-panel]').forEach(item => {
+  item.addEventListener('click', () => {
+    showPanel(item.dataset.panel);
+    // close mobile sidebar
+    document.getElementById('sidebar').classList.remove('open');
+  });
+});
+
+document.getElementById('mobile-sidebar-toggle').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('open');
+});
+
+function showPanel(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item[data-panel]').forEach(n => n.classList.remove('active'));
+  const panel = document.getElementById('panel-' + id);
+  if (panel) panel.classList.add('active');
+  const nav = document.querySelector(`.nav-item[data-panel="${id}"]`);
+  if (nav) nav.classList.add('active');
+  if (id === 'settings')      render2FAPanel();
+  if (id === 'blog-manager')  renderBlogTable();
+  if (id === 'faq-manager')   renderFaqTable();
+  if (id === 'subscribers')   renderSubscriberTable();
+  if (id === 'reviews')       adminRefreshReviews();
+  if (id === 'analytics')     refreshAnalytics();
+  if (id === 'donation')      { renderDonBtnList(); renderDonCryptoList(); }
+  if (id === 'popup-manager') { renderPopupManager(); }
+}
+
+/* ── Tabs ── */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tabId = btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+  });
+});
+
+/* ═══════════════════════════════
+   INIT — populate all fields
+═══════════════════════════════ */
+function initApp() {
+  // Reload from storage
+  content  = store.get('content',  defaultContent);
+  software = store.get('software', defaultSoftware);
+
+  /* ─ Dashboard stats ─ */
+  const actualClicks = parseInt(localStorage.getItem('rbs_dl_count') || '0', 10);
+  const adminCount   = parseInt(content.downloadCounter || 0, 10);
+  const displayCount = Math.max(actualClicks, adminCount);
+  const tfa2fa = get2FA();
+  const subCount = getSubscribers().length;
+  const blogCount = getBlogArticles().length + 2; // +2 static articles
+  const allReviews   = adminGetReviews();
+  const pendingReviews = allReviews.filter(r => !r.approved).length;
+  const avgRatingRaw = allReviews.length ? allReviews.reduce((s,r)=>s+(r.rating||0),0)/allReviews.length : 0;
+  const avgRating    = allReviews.length ? (Math.round(avgRatingRaw*10)/10) + '★' : '—';
+  const stats = [
+    { label: 'Software Listed',  val: software.length },
+    { label: 'Total Downloads',  val: displayCount.toLocaleString() },
+    { label: 'Subscribers',      val: subCount },
+    { label: 'Blog Articles',    val: blogCount },
+    { label: 'Total Reviews',    val: allReviews.length },
+    { label: 'Pending Reviews',  val: pendingReviews },
+    { label: 'Avg Rating',       val: avgRating },
+    { label: '2FA Security',     val: (tfa2fa.enabled) ? '🔐 ON' : '⚠️ OFF' }
+  ];
+
+  // Update 2FA status in info card
+  const tfa2faEl = document.getElementById('dash-2fa-status');
+  if (tfa2faEl) tfa2faEl.textContent = tfa2fa.enabled ? '🔐 Enabled' : '⚠️ Disabled — enable in Security tab';
+  document.getElementById('dash-stats').innerHTML = stats.map(s =>
+    `<div class="stat-card"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`
+  ).join('');
+
+  /* ─ Content fields ─ */
+  const h = content.hero || defaultContent.hero;
+  setVal('hero-tag',    h.tag);
+  setVal('hero-title1', h.titleLine1);
+  setVal('hero-title2', h.titleLine2);
+  setVal('hero-desc',   h.description);
+
+  const a = content.about || defaultContent.about;
+  setVal('about-intro',   a.intro);
+  setVal('about-body',    a.body);
+  setVal('about-mission', a.mission);
+
+  const c = content.contact || defaultContent.contact;
+  setVal('contact-email',         c.email);
+  setVal('contact-github',        c.github === '#' ? '' : c.github);
+  setVal('contact-twitter',       c.twitter === '#' ? '' : c.twitter);
+  setVal('contact-youtube',       c.youtube === '#' ? '' : c.youtube);
+  setVal('contact-form-endpoint', c.formEndpoint || '');
+
+  /* Show both actual click count and admin-set value */
+  const realClicks = parseInt(localStorage.getItem('rbs_dl_count') || '0', 10);
+  const adminVal   = parseInt(content.downloadCounter || 0, 10);
+  setVal('dl-counter', Math.max(realClicks, adminVal));
+  const counterHint = document.getElementById('counter-real-hint');
+  if (counterHint) counterHint.textContent = `Actual click-tracked downloads: ${realClicks.toLocaleString()}`;
+
+  /* ─ Donation lists (rendered when panel is opened) ─ */
+  // Donation data is loaded lazily by renderDonBtnList / renderDonCryptoList
+
+  /* ─ Announcement fields ─ */
+  const ann = content.announcement || defaultContent.announcement;
+  document.getElementById('ann-enabled').checked = !!ann.enabled;
+  setVal('ann-text',      ann.text);
+  setVal('ann-link',      ann.link);
+  setVal('ann-link-text', ann.linkText);
+  selectedAnnType = ann.type || 'info';
+  document.querySelectorAll('.type-chip').forEach(chip => {
+    chip.classList.toggle('selected', chip.dataset.type === selectedAnnType);
+  });
+
+  /* ─ Software table ─ */
+  renderSoftwareTable();
+
+  /* ─ File inputs ─ */
+  setupFileInput('btc-qr-input', 'btc-qr-preview');
+  setupFileInput('eth-qr-input', 'eth-qr-preview');
+  setupFileInput('sw-screenshot-input', 'sw-screenshot-preview');
+
+  /* ─ Counter stats tab ─ */
+  updateCounterStats();
+
+  /* ─ Security panel ─ */
+  render2FAPanel();
+}
+
+/* ═══════════════════════════════
+   HELPERS
+═══════════════════════════════ */
+function setVal(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.value = val || '';
+}
+function getVal(id) {
+  const el = document.getElementById(id);
+  return el ? el.value.trim() : '';
+}
+function genId() {
+  return 'sw-' + Date.now().toString(36);
+}
+function toast(msg, type='success') {
+  const t = document.getElementById('toast');
+  t.textContent = (type === 'success' ? '✅ ' : '❌ ') + msg;
+  t.className = 'show toast-' + type;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.className = '', 3000);
+}
+function openModal(id)  { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+/* ═══════════════════════════════
+   SOFTWARE MANAGER
+═══════════════════════════════ */
+function renderSoftwareTable() {
+  const tbody = document.getElementById('software-tbody');
+  if (!software.length) {
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text3);padding:32px;">No software yet. Click "Add Software" to get started.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = software.map((sw, i) => `
+    <tr>
+      <td><strong>${sw.name}</strong></td>
+      <td><span class="badge badge-blue">v${sw.version}</span></td>
+      <td>${sw.fileSize || '—'}</td>
+      <td>
+        <label class="toggle" style="display:inline-block;">
+          <input type="checkbox" ${sw.visible !== false ? 'checked' : ''}
+                 onchange="toggleSoftwareVisibility('${sw.id}', this.checked)" />
+          <span class="toggle-slider"></span>
+        </label>
+      </td>
+      <td>
+        <div class="table-actions">
+          <button class="btn btn-secondary btn-sm" onclick="openSoftwareModal('${sw.id}')">✏️ Edit</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteSoftware('${sw.id}')">🗑 Delete</button>
+        </div>
+      </td>
+    </tr>`).join('');
+}
+
+function openSoftwareModal(id) {
+  editingSwId = id || null;
+  const sw = id ? software.find(s => s.id === id) : null;
+
+  document.getElementById('sw-modal-title').textContent = sw ? 'Edit Software' : 'Add Software';
+  setVal('sw-id',      sw ? sw.id      : '');
+  setVal('sw-name',    sw ? sw.name    : '');
+  setVal('sw-version', sw ? sw.version : '');
+  setVal('sw-desc',    sw ? sw.description : '');
+  setVal('sw-size',    sw ? sw.fileSize : '');
+  document.getElementById('sw-visible').checked = sw ? sw.visible !== false : true;
+
+  // Download type + URL/path
+  const dlType = (sw && sw.downloadType) || 'url';
+  setDlType(dlType);
+  if (dlType === 'local') {
+    // Extract just filename from full path
+    const filename = sw.downloadUrl ? sw.downloadUrl.replace(/^downloads\//, '') : '';
+    setVal('sw-local-filename', filename);
+    setVal('sw-url', '');
+  } else {
+    setVal('sw-url', (sw && sw.downloadUrl !== '#') ? sw.downloadUrl : '');
+    setVal('sw-local-filename', '');
+  }
+
+  // Categories
+  const swCats = sw ? (sw.categories || (sw.category ? [sw.category] : ['Optimization'])) : ['Optimization'];
+  document.querySelectorAll('#sw-categories-wrap input[type=checkbox]').forEach(cb => {
+    cb.checked = swCats.includes(cb.value);
+  });
+
+  // Screenshot
+  const prevImg = document.getElementById('sw-screenshot-preview');
+  if (sw && sw.screenshot) {
+    prevImg.src = sw.screenshot;
+    prevImg.style.display = 'block';
+  } else {
+    prevImg.src = '';
+    prevImg.style.display = 'none';
+  }
+  setVal('sw-screenshot-path', (sw && sw.screenshotPath) ? sw.screenshotPath : '');
+
+  // Features & requirements
+  renderFeaturesEditor(sw ? sw.features : []);
+  renderSysReqEditor(sw ? sw.sysReqs : []);
+
+  openModal('sw-modal');
+}
+
+function renderFeaturesEditor(features) {
+  const container = document.getElementById('features-editor');
+  const list = features && features.length ? features : [];
+  container.innerHTML = list.map((f, i) => `
+    <div style="display:grid;grid-template-columns:48px 1fr 1fr auto;gap:8px;margin-bottom:8px;align-items:center;">
+      <input type="text" value="${f.icon||''}" placeholder="icon" style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px;color:var(--text);text-align:center;font-size:1.1rem;" />
+      <input type="text" value="${f.title||''}" placeholder="Feature title" style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px;color:var(--text);" />
+      <input type="text" value="${f.desc||''}" placeholder="Short description" style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px;color:var(--text);" />
+      <button onclick="this.closest('div').remove()" style="background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);color:#ff8080;border-radius:6px;padding:8px;cursor:pointer;">✕</button>
+    </div>`).join('');
+}
+
+function addFeatureRow() {
+  const container = document.getElementById('features-editor');
+  const div = document.createElement('div');
+  div.style.cssText = 'display:grid;grid-template-columns:48px 1fr 1fr auto;gap:8px;margin-bottom:8px;align-items:center;';
+  div.innerHTML = `
+    <input type="text" placeholder="icon" style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px;color:var(--text);text-align:center;font-size:1.1rem;" />
+    <input type="text" placeholder="Feature title" style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px;color:var(--text);" />
+    <input type="text" placeholder="Short description" style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px;color:var(--text);" />
+    <button onclick="this.closest('div').remove()" style="background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);color:#ff8080;border-radius:6px;padding:8px;cursor:pointer;">✕</button>`;
+  container.appendChild(div);
+}
+
+function getFeatures() {
+  const rows = document.getElementById('features-editor').querySelectorAll('div');
+  return Array.from(rows).map(row => {
+    const inputs = row.querySelectorAll('input');
+    return { icon: inputs[0].value.trim(), title: inputs[1].value.trim(), desc: inputs[2].value.trim() };
+  }).filter(f => f.title);
+}
+
+function renderSysReqEditor(reqs) {
+  const container = document.getElementById('sysreqs-editor');
+  container.innerHTML = (reqs||[]).map(r => `
+    <div style="display:grid;grid-template-columns:1fr auto;gap:8px;margin-bottom:8px;align-items:center;">
+      <input type="text" value="${r||''}" placeholder="e.g. Windows 10 64-bit" style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px;color:var(--text);" />
+      <button onclick="this.closest('div').remove()" style="background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);color:#ff8080;border-radius:6px;padding:8px;cursor:pointer;">✕</button>
+    </div>`).join('');
+}
+
+function addSysReqRow() {
+  const container = document.getElementById('sysreqs-editor');
+  const div = document.createElement('div');
+  div.style.cssText = 'display:grid;grid-template-columns:1fr auto;gap:8px;margin-bottom:8px;align-items:center;';
+  div.innerHTML = `
+    <input type="text" placeholder="e.g. Windows 10 64-bit" style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px;color:var(--text);" />
+    <button onclick="this.closest('div').remove()" style="background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);color:#ff8080;border-radius:6px;padding:8px;cursor:pointer;">✕</button>`;
+  container.appendChild(div);
+}
+
+function getSysReqs() {
+  return Array.from(document.getElementById('sysreqs-editor').querySelectorAll('input'))
+    .map(i => i.value.trim()).filter(Boolean);
+}
+
+function saveSoftware() {
+  const name = getVal('sw-name');
+  if (!name) { toast('Software name is required.', 'error'); return; }
+
+  /* Screenshot: uploaded base64 takes priority over path */
+  const prevImg    = document.getElementById('sw-screenshot-preview');
+  const screenshot = (prevImg && prevImg.style.display !== 'none' && prevImg.src && prevImg.src.startsWith('data:'))
+                     ? prevImg.src : null;
+  const screenshotPath = getVal('sw-screenshot-path');
+
+  /* Download URL */
+  const dlType   = document.getElementById('sw-dl-type').value || 'url';
+  let   dlUrl    = '#';
+  if (dlType === 'local') {
+    const fname = getVal('sw-local-filename');
+    dlUrl = fname ? 'downloads/' + fname : '#';
+  } else {
+    const raw = getVal('sw-url');
+    dlUrl = raw || '#';
+  }
+
+  const selectedCats = Array.from(
+    document.querySelectorAll('#sw-categories-wrap input[type=checkbox]:checked')
+  ).map(cb => cb.value);
+  const categories = selectedCats.length ? selectedCats : ['Optimization'];
+
+  const entry = {
+    id:             editingSwId || genId(),
+    name,
+    version:        getVal('sw-version') || '1.0.0',
+    description:    getVal('sw-desc'),
+    fileSize:       getVal('sw-size'),
+    category:       categories[0],
+    categories,
+    downloadUrl:    dlUrl,
+    downloadType:   dlType,
+    screenshot,
+    screenshotPath: screenshotPath || '',
+    visible:        document.getElementById('sw-visible').checked,
+    features:       getFeatures(),
+    sysReqs:        getSysReqs(),
+    added:          Date.now()
+  };
+
+  if (editingSwId) {
+    const idx = software.findIndex(s => s.id === editingSwId);
+    if (idx !== -1) software[idx] = entry;
+  } else {
+    software.push(entry);
+  }
+
+  store.set('software', software);
+  renderSoftwareTable();
+  closeModal('sw-modal');
+  toast('Software saved successfully!');
+  initApp(); // refresh dashboard stats
+}
+
+function deleteSoftware(id) {
+  if (!confirm('Delete this software? This cannot be undone.')) return;
+  software = software.filter(s => s.id !== id);
+  store.set('software', software);
+  renderSoftwareTable();
+  toast('Software deleted.');
+  initApp();
+}
+
+function toggleSoftwareVisibility(id, visible) {
+  const sw = software.find(s => s.id === id);
+  if (sw) { sw.visible = visible; store.set('software', software); toast(visible ? 'Software is now visible.' : 'Software hidden from website.'); initApp(); }
+}
+
+function clearScreenshot() {
+  const img = document.getElementById('sw-screenshot-preview');
+  img.src = ''; img.style.display = 'none';
+  document.getElementById('sw-screenshot-input').value = '';
+}
+
+/* ── Download type selector ── */
+function setDlType(type) {
+  document.getElementById('sw-dl-type').value = type;
+
+  /* Update chip styles */
+  document.querySelectorAll('.dl-type-chip').forEach(chip => {
+    const isActive = chip.dataset.type === type;
+    chip.style.background = isActive ? 'rgba(0,102,255,.2)'  : 'rgba(255,255,255,.06)';
+    chip.style.color      = isActive ? 'var(--accent-l)'     : 'var(--text2)';
+    chip.style.borderColor= isActive ? 'rgba(0,102,255,.4)'  : 'var(--border)';
+  });
+
+  /* Show/hide groups */
+  const urlGroup   = document.getElementById('dl-url-group');
+  const localGroup = document.getElementById('dl-local-group');
+  if (urlGroup)   urlGroup.style.display   = (type === 'local') ? 'none' : 'block';
+  if (localGroup) localGroup.style.display = (type === 'local') ? 'block' : 'none';
+
+  /* Update placeholder for CDN */
+  const urlInput = document.getElementById('sw-url');
+  if (urlInput && type === 'cdn') urlInput.placeholder = 'https://cdn.example.com/downloads/setup.exe';
+  if (urlInput && type === 'url') urlInput.placeholder = 'https://drive.google.com/... or GitHub Releases URL...';
+}
+
+/* ── Reset download counter ── */
+function resetCounter() {
+  if (!confirm('Reset actual download click count to 0? This cannot be undone.')) return;
+  localStorage.setItem('rbs_dl_count', '0');
+  toast('Download count reset to 0.');
+  initApp();
+}
+
+/* ── Update counter tab stats ── */
+function updateCounterStats() {
+  const clicks = parseInt(localStorage.getItem('rbs_dl_count') || '0', 10);
+  const admin  = parseInt(content.downloadCounter || 0, 10);
+  const el1 = document.getElementById('counter-clicks-stat');
+  const el2 = document.getElementById('counter-display-stat');
+  if (el1) el1.textContent = clicks.toLocaleString();
+  if (el2) el2.textContent = Math.max(clicks, admin).toLocaleString();
+}
+
+/* ═══════════════════════════════
+   CONTENT EDITOR
+═══════════════════════════════ */
+function saveContent(section) {
+  if (!content) content = { ...defaultContent };
+
+  if (section === 'hero') {
+    content.hero = {
+      tag:         getVal('hero-tag'),
+      titleLine1:  getVal('hero-title1'),
+      titleLine2:  getVal('hero-title2'),
+      description: getVal('hero-desc')
+    };
+  } else if (section === 'about') {
+    content.about = {
+      intro:   getVal('about-intro'),
+      body:    getVal('about-body'),
+      mission: getVal('about-mission')
+    };
+  } else if (section === 'contact') {
+    content.contact = {
+      email:        getVal('contact-email'),
+      github:       getVal('contact-github')        || '#',
+      twitter:      getVal('contact-twitter')       || '#',
+      youtube:      getVal('contact-youtube')       || '#',
+      formEndpoint: getVal('contact-form-endpoint') || ''
+    };
+  } else if (section === 'counter') {
+    const n = parseInt(getVal('dl-counter'), 10);
+    content.downloadCounter = isNaN(n) ? 0 : n;
+  }
+
+  store.set('content', content);
+  toast('Content saved! Reload the website to see changes.');
+  initApp();
+}
+
+/* ═══════════════════════════════════════
+   DONATION MANAGER (Full Flexible)
+═══════════════════════════════════════ */
+function _qrFromAddr(addr) {
+  return 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + encodeURIComponent(addr);
+}
+const DEFAULT_DONATION = {
+  buttons: [
+    { id: 'kofi', label: 'Buy Me a Coffee', url: 'https://ko-fi.com/rbsshop/tip', icon: '☕', color: '#ff5e5b', visible: true }
+  ],
+  crypto: [
+    { id: 'btc', coin: 'Bitcoin (BTC)',         address: '36boft8xKukMQeTZpWNjJfVxGS2kA3uzjY',       network: 'Bitcoin Mainnet',    qr: _qrFromAddr('36boft8xKukMQeTZpWNjJfVxGS2kA3uzjY'), visible: true },
+    { id: 'eth', coin: 'Ethereum (ETH / ERC-20)', address: '0x3C8D5bf5c5c78B73814B17d61d9b2b39D722132c', network: 'Ethereum Mainnet', qr: _qrFromAddr('0x3C8D5bf5c5c78B73814B17d61d9b2b39D722132c'), visible: true }
+  ]
+};
+
+function getDonationData() {
+  try { return JSON.parse(localStorage.getItem('rbs_donation') || 'null') || JSON.parse(JSON.stringify(DEFAULT_DONATION)); }
+  catch (_) { return JSON.parse(JSON.stringify(DEFAULT_DONATION)); }
+}
+function saveDonationData(d) {
+  localStorage.setItem('rbs_donation', JSON.stringify(d));
+}
+
+/* ── List Rendering ── */
+let _donDragSrc = null;
+
+function renderDonBtnList() {
+  const d = getDonationData();
+  const el = document.getElementById('don-btn-list');
+  if (!el) return;
+  if (!d.buttons.length) {
+    el.innerHTML = `<p style="color:var(--text3);text-align:center;padding:24px 0;">No payment buttons yet. Click "+ Add Button" to create one.</p>`;
+    return;
+  }
+  el.innerHTML = d.buttons.map((b, i) => `
+    <div class="table-row" draggable="true"
+         style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--bg);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;cursor:grab;transition:all .2s;"
+         ondragstart="donDragStart(event,${i},'btn')" ondragover="donDragOver(event,this)" ondrop="donDrop(event,${i},'btn')">
+      <span style="color:var(--text3);font-size:1.1rem;cursor:grab;">⠿</span>
+      <span style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:7px;font-weight:700;font-size:.85rem;color:#fff;background:${escHtml(b.color||'#00c896')};flex-shrink:0;">${escHtml(b.icon||'')} ${escHtml(b.label)}</span>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:.8rem;color:var(--text3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escHtml(b.url)}</div>
+      </div>
+      <label class="toggle" style="margin:0;flex-shrink:0;" title="${b.visible?'Visible':'Hidden'}">
+        <input type="checkbox" ${b.visible!==false?'checked':''} onchange="toggleDonBtn(${i},this.checked)">
+        <span class="toggle-slider"></span>
+      </label>
+      <button class="btn btn-secondary btn-sm" onclick="openDonBtnModal(${i})">Edit</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteDonBtn(${i})">Delete</button>
+    </div>`).join('');
+}
+
+function renderDonCryptoList() {
+  const d = getDonationData();
+  const el = document.getElementById('don-crypto-list');
+  if (!el) return;
+  if (!d.crypto.length) {
+    el.innerHTML = `<p style="color:var(--text3);text-align:center;padding:24px 0;">No cryptocurrency addresses yet. Click "+ Add Crypto" to create one.</p>`;
+    return;
+  }
+  el.innerHTML = d.crypto.map((c, i) => `
+    <div class="table-row" draggable="true"
+         style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--bg);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;cursor:grab;transition:all .2s;"
+         ondragstart="donDragStart(event,${i},'crypto')" ondragover="donDragOver(event,this)" ondrop="donDrop(event,${i},'crypto')">
+      <span style="color:var(--text3);font-size:1.1rem;cursor:grab;">⠿</span>
+      ${c.qr ? `<img src="${c.qr}" style="width:36px;height:36px;object-fit:cover;border-radius:6px;border:1px solid var(--border);flex-shrink:0;">` : '<span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--bg-secondary);border-radius:6px;font-size:1.2rem;flex-shrink:0;">🪙</span>'}
+      <div style="flex:1;min-width:0;">
+        <div style="font-weight:700;font-size:.9rem;">${escHtml(c.coin)}${c.network?` <span style="font-size:.72rem;color:var(--text3);font-weight:400;">(${escHtml(c.network)})</span>`:''}</div>
+        <div style="font-size:.75rem;color:var(--text3);font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escHtml(c.address)}</div>
+      </div>
+      <label class="toggle" style="margin:0;flex-shrink:0;">
+        <input type="checkbox" ${c.visible!==false?'checked':''} onchange="toggleDonCrypto(${i},this.checked)">
+        <span class="toggle-slider"></span>
+      </label>
+      <button class="btn btn-secondary btn-sm" onclick="openDonCryptoModal(${i})">Edit</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteDonCrypto(${i})">Delete</button>
+    </div>`).join('');
+}
+
+/* ── Drag-to-Reorder ── */
+function donDragStart(e, idx, type) {
+  _donDragSrc = { idx, type };
+  e.dataTransfer.effectAllowed = 'move';
+}
+function donDragOver(e, el) {
+  e.preventDefault(); e.dataTransfer.dropEffect = 'move';
+  el.style.background = 'rgba(0,200,150,0.08)';
+  setTimeout(() => el.style.background = '', 200);
+}
+function donDrop(e, targetIdx, type) {
+  e.preventDefault();
+  if (!_donDragSrc || _donDragSrc.type !== type || _donDragSrc.idx === targetIdx) return;
+  const d = getDonationData();
+  const arr = type === 'btn' ? d.buttons : d.crypto;
+  const [moved] = arr.splice(_donDragSrc.idx, 1);
+  arr.splice(targetIdx, 0, moved);
+  saveDonationData(d);
+  if (type === 'btn') renderDonBtnList(); else renderDonCryptoList();
+  _donDragSrc = null;
+}
+
+/* ── Toggle Visibility ── */
+function toggleDonBtn(idx, visible) {
+  const d = getDonationData();
+  if (d.buttons[idx]) { d.buttons[idx].visible = visible; saveDonationData(d); }
+}
+function toggleDonCrypto(idx, visible) {
+  const d = getDonationData();
+  if (d.crypto[idx]) { d.crypto[idx].visible = visible; saveDonationData(d); }
+}
+
+/* ── Payment Button Modal ── */
+let _donBtnEditIdx = null;
+
+function openDonBtnModal(idx) {
+  _donBtnEditIdx = idx;
+  const modal = document.getElementById('don-btn-modal');
+  const title = document.getElementById('don-btn-modal-title');
+  if (idx === null) {
+    title.textContent = 'Add Payment Button';
+    document.getElementById('don-btn-label').value   = '';
+    document.getElementById('don-btn-icon').value    = '❤';
+    document.getElementById('don-btn-url').value     = '';
+    document.getElementById('don-btn-color').value   = '#00c896';
+    document.getElementById('don-btn-visible').checked = true;
+    document.getElementById('don-btn-description').value = '';
+  } else {
+    const b = getDonationData().buttons[idx];
+    if (!b) return;
+    title.textContent = 'Edit Payment Button';
+    document.getElementById('don-btn-label').value   = b.label || '';
+    document.getElementById('don-btn-icon').value    = b.icon  || '';
+    document.getElementById('don-btn-url').value     = b.url   || '';
+    document.getElementById('don-btn-color').value   = b.color || '#00c896';
+    document.getElementById('don-btn-visible').checked = b.visible !== false;
+    document.getElementById('don-btn-description').value = b.description || '';
+  }
+  updateDonBtnPreview();
+  modal.style.display = 'flex';
+  ['don-btn-label','don-btn-icon','don-btn-color'].forEach(id => {
+    document.getElementById(id)?.addEventListener('input', updateDonBtnPreview);
+  });
+}
+
+function updateDonBtnPreview() {
+  const label = document.getElementById('don-btn-label')?.value || 'Button';
+  const icon  = document.getElementById('don-btn-icon')?.value  || '';
+  const color = document.getElementById('don-btn-color')?.value || '#00c896';
+  const prev  = document.getElementById('don-btn-preview');
+  if (prev) { prev.textContent = `${icon} ${label}`.trim(); prev.style.background = color; }
+}
+
+function closeDonBtnModal() {
+  document.getElementById('don-btn-modal').style.display = 'none';
+  _donBtnEditIdx = null;
+}
+
+function saveDonBtn() {
+  const label       = document.getElementById('don-btn-label').value.trim();
+  const icon        = document.getElementById('don-btn-icon').value.trim() || '❤';
+  const url         = document.getElementById('don-btn-url').value.trim();
+  const color       = document.getElementById('don-btn-color').value;
+  const visible     = document.getElementById('don-btn-visible').checked;
+  const description = (document.getElementById('don-btn-description')?.value || '').trim();
+
+  if (!label) { toast('Button label is required.', 'error'); return; }
+  if (!url)   { toast('URL is required.', 'error'); return; }
+
+  const d = getDonationData();
+  const entry = { id: Date.now().toString(36), label, icon, url, color, visible, description };
+  if (_donBtnEditIdx === null) { d.buttons.push(entry); }
+  else { d.buttons[_donBtnEditIdx] = { ...d.buttons[_donBtnEditIdx], ...entry }; }
+  saveDonationData(d);
+  renderDonBtnList();
+  closeDonBtnModal();
+  toast(_donBtnEditIdx === null ? 'Payment button added!' : 'Payment button updated!');
+}
+
+function deleteDonBtn(idx) {
+  if (!confirm('Delete this payment button?')) return;
+  const d = getDonationData();
+  d.buttons.splice(idx, 1);
+  saveDonationData(d);
+  renderDonBtnList();
+  toast('Payment button deleted.');
+}
+
+/* ── Crypto Modal ── */
+let _donCryptoEditIdx = null;
+let _donCryptoQRData  = null;
+
+function openDonCryptoModal(idx) {
+  _donCryptoEditIdx = idx;
+  _donCryptoQRData  = null;
+  const modal = document.getElementById('don-crypto-modal');
+  const title = document.getElementById('don-crypto-modal-title');
+  if (idx === null) {
+    title.textContent = 'Add Cryptocurrency';
+    document.getElementById('don-crypto-coin').value    = '';
+    document.getElementById('don-crypto-network').value = '';
+    document.getElementById('don-crypto-address').value = '';
+    document.getElementById('don-crypto-visible').checked = true;
+    resetDonCryptoQRUI(null);
+  } else {
+    const c = getDonationData().crypto[idx];
+    if (!c) return;
+    title.textContent = 'Edit Cryptocurrency';
+    document.getElementById('don-crypto-coin').value    = c.coin    || '';
+    document.getElementById('don-crypto-network').value = c.network || '';
+    document.getElementById('don-crypto-address').value = c.address || '';
+    document.getElementById('don-crypto-visible').checked = c.visible !== false;
+    resetDonCryptoQRUI(c.qr || null);
+    _donCryptoQRData = c.qr || null;
+  }
+  modal.style.display = 'flex';
+}
+
+function resetDonCryptoQRUI(src) {
+  const img   = document.getElementById('don-crypto-qr-preview');
+  const hint  = document.getElementById('don-crypto-qr-hint');
+  const clear = document.getElementById('don-crypto-qr-clear');
+  if (src) {
+    img.src = src; img.style.display = 'block';
+    if (hint)  hint.style.display  = 'none';
+    if (clear) clear.style.display = 'inline-flex';
+  } else {
+    img.src = ''; img.style.display = 'none';
+    if (hint)  hint.style.display  = 'flex';
+    if (clear) clear.style.display = 'none';
+  }
+}
+
+function previewDonCryptoQR(e) {
+  const file = e.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    _donCryptoQRData = ev.target.result;
+    resetDonCryptoQRUI(ev.target.result);
+  };
+  reader.readAsDataURL(file);
+}
+
+function clearDonCryptoQR() {
+  _donCryptoQRData = null;
+  resetDonCryptoQRUI(null);
+  document.getElementById('don-crypto-qr-input').value = '';
+}
+
+function closeDonCryptoModal() {
+  document.getElementById('don-crypto-modal').style.display = 'none';
+  _donCryptoEditIdx = null; _donCryptoQRData = null;
+}
+
+function saveDonCrypto() {
+  const coin    = document.getElementById('don-crypto-coin').value.trim();
+  const network = document.getElementById('don-crypto-network').value.trim();
+  const address = document.getElementById('don-crypto-address').value.trim();
+  const visible = document.getElementById('don-crypto-visible').checked;
+
+  if (!coin)    { toast('Coin name is required.', 'error'); return; }
+  if (!address) { toast('Wallet address is required.', 'error'); return; }
+
+  const d = getDonationData();
+  const entry = { id: Date.now().toString(36), coin, network, address, qr: _donCryptoQRData, visible };
+  if (_donCryptoEditIdx === null) { d.crypto.push(entry); }
+  else { d.crypto[_donCryptoEditIdx] = { ...d.crypto[_donCryptoEditIdx], ...entry }; }
+  saveDonationData(d);
+  renderDonCryptoList();
+  closeDonCryptoModal();
+  toast(_donCryptoEditIdx === null ? 'Cryptocurrency added!' : 'Cryptocurrency updated!');
+}
+
+function deleteDonCrypto(idx) {
+  if (!confirm('Delete this cryptocurrency entry?')) return;
+  const d = getDonationData();
+  d.crypto.splice(idx, 1);
+  saveDonationData(d);
+  renderDonCryptoList();
+  toast('Cryptocurrency entry deleted.');
+}
+
+/* ═══════════════════════════════
+   ANNOUNCEMENTS
+═══════════════════════════════ */
+/* Type chips */
+document.querySelectorAll('.type-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    selectedAnnType = chip.dataset.type;
+    document.querySelectorAll('.type-chip').forEach(c => c.classList.remove('selected'));
+    chip.classList.add('selected');
+    previewAnnouncement();
+  });
+});
+
+function previewAnnouncement() {
+  const colours = {
+    info:    { bg: 'rgba(0,102,255,.15)',  border: 'rgba(0,102,255,.4)',  text: '#4d94ff' },
+    success: { bg: 'rgba(0,208,132,.15)',  border: 'rgba(0,208,132,.4)',  text: '#00d084' },
+    warning: { bg: 'rgba(255,184,0,.15)',   border: 'rgba(255,184,0,.4)',   text: '#ffb800' }
+  };
+  const col = colours[selectedAnnType] || colours.info;
+  const box = document.getElementById('ann-preview-box');
+  box.style.cssText = `display:block;background:${col.bg};border:1px solid ${col.border};color:${col.text};`;
+  const text     = getVal('ann-text');
+  const linkUrl  = getVal('ann-link');
+  const linkText = getVal('ann-link-text');
+  let html = text;
+  if (linkUrl && linkText) html += ` <a href="${linkUrl}" style="color:inherit;font-weight:700;text-decoration:underline;">${linkText} →</a>`;
+  box.innerHTML = html;
+}
+
+function saveAnnouncement() {
+  if (!content) content = { ...defaultContent };
+  content.announcement = {
+    enabled:  document.getElementById('ann-enabled').checked,
+    text:     getVal('ann-text'),
+    type:     selectedAnnType,
+    link:     getVal('ann-link'),
+    linkText: getVal('ann-link-text')
+  };
+  store.set('content', content);
+  toast('Announcement saved! It will appear on the site immediately on page reload.');
+  initApp();
+}
+
+/* ═══════════════════════════════
+   DATA EXPORT / IMPORT
+═══════════════════════════════ */
+function exportData() {
+  const data = {
+    rbs_content:     store.get('content',  {}),
+    rbs_software:    store.get('software', []),
+    rbs_dl_count:    parseInt(localStorage.getItem('rbs_dl_count') || '0', 10),
+    rbs_blog:        getBlogArticles(),
+    rbs_faq:         getFaqItems(),
+    rbs_subscribers: getSubscribers(),
+    exported:        new Date().toISOString()
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = Object.assign(document.createElement('a'), {
+    href: url, download: 'rbs-admin-backup-' + new Date().toISOString().slice(0,10) + '.json'
+  });
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); document.body.removeChild(a); }, 200);
+  toast('Backup exported!');
+}
+
+function importData(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (data.rbs_content)     store.set('content',  data.rbs_content);
+      if (data.rbs_software)    store.set('software', data.rbs_software);
+      if (data.rbs_dl_count !== undefined) localStorage.setItem('rbs_dl_count', data.rbs_dl_count);
+      if (data.rbs_blog)        localStorage.setItem('rbs_blog',        JSON.stringify(data.rbs_blog));
+      if (data.rbs_faq)         localStorage.setItem('rbs_faq',         JSON.stringify(data.rbs_faq));
+      if (data.rbs_subscribers) localStorage.setItem('rbs_subscribers', JSON.stringify(data.rbs_subscribers));
+      toast('Backup imported! Reloading…');
+      setTimeout(() => location.reload(), 1000);
+    } catch (_) {
+      toast('Invalid backup file.', 'error');
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = '';
+}
+
+/* ═══════════════════════════════
+   FILE INPUT / IMAGE PREVIEW
+═══════════════════════════════ */
+function setupFileInput(inputId, previewId) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  input.addEventListener('change', function () {
+    const file = this.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = document.getElementById(previewId);
+      if (img) { img.src = e.target.result; img.style.display = 'block'; }
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+/* ═══════════════════════════════
+   SECURITY SETTINGS
+═══════════════════════════════ */
+
+/* ── Change Password ── */
+function changePassword() {
+  const current  = document.getElementById('pw-current').value;
+  const newPw    = document.getElementById('pw-new').value;
+  const confirm  = document.getElementById('pw-confirm').value;
+  const msgEl    = document.getElementById('pw-msg');
+  const creds    = getCreds();
+
+  function showMsg(text, ok) {
+    msgEl.textContent = text;
+    msgEl.style.display = 'block';
+    msgEl.style.background  = ok ? 'rgba(0,208,132,.1)'  : 'rgba(255,77,77,.1)';
+    msgEl.style.border      = '1px solid ' + (ok ? 'rgba(0,208,132,.3)' : 'rgba(255,77,77,.3)');
+    msgEl.style.color       = ok ? 'var(--success)' : '#ff8080';
+  }
+
+  if (current !== creds.password) { showMsg('Current password is incorrect.', false); return; }
+  if (newPw.length < 8)           { showMsg('New password must be at least 8 characters.', false); return; }
+  if (newPw !== confirm)          { showMsg('New passwords do not match.', false); return; }
+
+  store.set('admin_creds', { ...creds, password: newPw });
+  showMsg('Password updated successfully!', true);
+  document.getElementById('pw-current').value = '';
+  document.getElementById('pw-new').value     = '';
+  document.getElementById('pw-confirm').value = '';
+}
+
+/* ── Change Username ── */
+function changeUsername() {
+  const currentPass = document.getElementById('un-current-pass').value;
+  const newUser     = document.getElementById('un-new').value.trim();
+  const msgEl       = document.getElementById('un-msg');
+  const creds       = getCreds();
+
+  function showMsg(text, ok) {
+    msgEl.textContent = text;
+    msgEl.style.display = 'block';
+    msgEl.style.background = ok ? 'rgba(0,208,132,.1)' : 'rgba(255,77,77,.1)';
+    msgEl.style.border     = '1px solid ' + (ok ? 'rgba(0,208,132,.3)' : 'rgba(255,77,77,.3)');
+    msgEl.style.color      = ok ? 'var(--success)' : '#ff8080';
+  }
+
+  if (currentPass !== creds.password) { showMsg('Current password is incorrect.', false); return; }
+  if (!newUser || newUser.length < 3) { showMsg('Username must be at least 3 characters.', false); return; }
+
+  store.set('admin_creds', { ...creds, username: newUser });
+  showMsg('Username updated successfully! Please sign in again.', true);
+  setTimeout(() => { sessionStorage.removeItem('rbs_admin_auth'); location.reload(); }, 2000);
+}
+
+/* ── 2FA Panel ── */
+let _tfaSetupSecret = null; // temporary secret during setup flow
+
+function render2FAPanel() {
+  const tfa = get2FA();
+  const container = document.getElementById('tfa-panel-content');
+  if (!container) return;
+
+  if (tfa.enabled && tfa.secret) {
+    container.innerHTML = `
+      <div class="tfa-status-badge tfa-on">✓ 2FA is ENABLED</div>
+      <p style="font-size:.88rem;color:var(--text2);margin-bottom:20px;line-height:1.6;">
+        Your admin panel is protected with TOTP two-factor authentication.
+        Anyone logging in will need your authenticator app code.
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn btn-secondary" onclick="showBackupCodes()">🗝 View Backup Codes</button>
+        <button class="btn btn-danger" onclick="disable2FA()">⛔ Disable 2FA</button>
+      </div>
+      <div id="backup-codes-view" style="display:none;margin-top:20px;">
+        <p style="font-size:.82rem;color:var(--text2);margin-bottom:12px;">
+          Store these backup codes safely. Each can be used once if you lose access to your authenticator app.
+        </p>
+        <div class="backup-codes-grid">
+          ${(tfa.backupCodes || []).map(c => `<div class="backup-code-item">${c}</div>`).join('')}
+        </div>
+        <button class="btn btn-secondary btn-sm" onclick="regenerateBackupCodes()">↺ Regenerate Backup Codes</button>
+      </div>`;
+  } else {
+    container.innerHTML = `
+      <div class="tfa-status-badge tfa-off">✕ 2FA is DISABLED</div>
+      <p style="font-size:.88rem;color:var(--text2);margin-bottom:20px;line-height:1.6;">
+        Enable two-factor authentication to add an extra layer of security to your admin panel.
+        You'll need an authenticator app (Google Authenticator, Authy, etc.).
+      </p>
+      <button class="btn btn-primary" onclick="startSetup2FA()">🔐 Enable Two-Factor Authentication</button>
+      <div id="tfa-setup-flow" class="tfa-step" style="margin-top:24px;"></div>`;
+  }
+}
+
+async function startSetup2FA() {
+  _tfaSetupSecret = TOTP.generateSecret();
+  const issuer   = 'RBS%20Admin';
+  const account  = encodeURIComponent(getCreds().username + '@rbs-admin');
+  const otpauth  = `otpauth://totp/${account}?secret=${_tfaSetupSecret}&issuer=${issuer}&algorithm=SHA1&digits=6&period=30`;
+  const qrUrl    = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(otpauth)}`;
+
+  const flow = document.getElementById('tfa-setup-flow');
+  if (!flow) return;
+  flow.classList.add('active');
+  flow.innerHTML = `
+    <hr style="border-color:var(--border);margin-bottom:20px;" />
+    <h4 style="margin-bottom:12px;font-size:.95rem;">Step 1 — Scan QR Code</h4>
+    <div class="info-box">
+      Open your authenticator app (Google Authenticator, Authy, 1Password, etc.)
+      and scan the QR code below. If you can't scan, enter the secret key manually.
+    </div>
+    <div class="tfa-qr-wrap">
+      <img src="${qrUrl}" alt="2FA QR Code" onerror="this.style.display='none';document.getElementById('qr-fallback').style.display='block'" />
+      <div id="qr-fallback" style="display:none;font-size:.8rem;color:var(--text3);margin-top:8px;">
+        (QR image requires internet — use manual entry below)
+      </div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text3);text-align:center;margin-bottom:8px;">Manual entry secret key:</p>
+    <div class="setup-secret-box">${_tfaSetupSecret.match(/.{1,4}/g).join(' ')}</div>
+
+    <h4 style="margin:20px 0 12px;font-size:.95rem;">Step 2 — Verify Code</h4>
+    <p style="font-size:.85rem;color:var(--text2);margin-bottom:12px;text-align:center;">
+      Enter the 6-digit code from your authenticator app to confirm setup.
+    </p>
+    <input type="text" id="tfa-verify-input" class="tfa-code-input"
+           placeholder="000000" maxlength="6" inputmode="numeric" autocomplete="off" />
+    <div id="tfa-verify-error" style="color:var(--danger);font-size:.82rem;text-align:center;margin:8px 0;display:none;">
+      Invalid code. Make sure you scanned the QR code, then try again.
+    </div>
+    <div style="text-align:center;margin-top:16px;">
+      <button class="btn btn-primary" onclick="confirmSetup2FA()">✓ Confirm &amp; Enable 2FA</button>
+      <button class="btn btn-secondary" style="margin-left:8px;" onclick="render2FAPanel()">Cancel</button>
+    </div>`;
+  setTimeout(() => document.getElementById('tfa-verify-input')?.focus(), 100);
+}
+
+async function confirmSetup2FA() {
+  const code   = document.getElementById('tfa-verify-input')?.value.trim();
+  const errEl  = document.getElementById('tfa-verify-error');
+  if (!_tfaSetupSecret) return;
+
+  const valid = await TOTP.verify(_tfaSetupSecret, code);
+  if (!valid) {
+    if (errEl) errEl.style.display = 'block';
+    return;
+  }
+
+  const backupCodes = generateBackupCodes();
+  save2FA({ enabled: true, secret: _tfaSetupSecret, backupCodes });
+  _tfaSetupSecret = null;
+
+  // Show backup codes before finishing
+  const container = document.getElementById('tfa-panel-content');
+  container.innerHTML = `
+    <div class="tfa-status-badge tfa-on">✓ 2FA Successfully Enabled!</div>
+    <div class="info-box" style="border-color:rgba(255,184,0,.4);background:rgba(255,184,0,.08);color:var(--warning);">
+      ⚠️ Save these backup codes now. They will not be shown again. Store them somewhere safe.
+      Each code can be used once if you lose access to your authenticator app.
+    </div>
+    <div class="backup-codes-grid">
+      ${backupCodes.map(c => `<div class="backup-code-item">${c}</div>`).join('')}
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+      <button class="btn btn-primary" onclick="render2FAPanel()">Done — I've saved my backup codes</button>
+      <button class="btn btn-secondary btn-sm" onclick="copyBackupCodes()">📋 Copy All Codes</button>
+    </div>`;
+  toast('2FA enabled successfully!');
+}
+
+function disable2FA() {
+  if (!confirm('Are you sure you want to disable two-factor authentication? This will reduce your account security.')) return;
+  save2FA({ enabled: false, secret: null, backupCodes: [] });
+  render2FAPanel();
+  toast('2FA has been disabled.');
+}
+
+function showBackupCodes() {
+  const el = document.getElementById('backup-codes-view');
+  if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+
+function regenerateBackupCodes() {
+  if (!confirm('Regenerate backup codes? Your old codes will stop working.')) return;
+  const tfa = get2FA();
+  tfa.backupCodes = generateBackupCodes();
+  save2FA(tfa);
+  render2FAPanel();
+  showBackupCodes();
+  toast('Backup codes regenerated!');
+}
+
+function copyBackupCodes() {
+  const tfa = get2FA();
+  const text = (tfa.backupCodes || []).join('\n');
+  navigator.clipboard.writeText(text).then(() => toast('Backup codes copied to clipboard!'))
+    .catch(() => toast('Could not copy — please copy manually.', 'error'));
+}
+
+/* ═══════════════════════════════
+   BLOG MANAGER
+═══════════════════════════════ */
+let _blogEditId = null;
+
+function getBlogArticles() {
+  try { return JSON.parse(localStorage.getItem('rbs_blog') || '[]'); } catch (_) { return []; }
+}
+function saveBlogArticles(arr) {
+  localStorage.setItem('rbs_blog', JSON.stringify(arr));
+}
+
+function renderBlogTable() {
+  const tbody = document.getElementById('blog-tbody');
+  if (!tbody) return;
+  const articles = getBlogArticles();
+  if (!articles.length) {
+    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:24px;">No admin articles yet. Static articles (speed-windows-11.html, best-free-tools-2025.html) are always shown on the site.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = articles.map((a, i) => `
+    <tr>
+      <td>${escHtml(a.title || '—')}</td>
+      <td><span class="badge">${escHtml(a.tag || 'Guide')}</span></td>
+      <td>${escHtml(a.date || '—')}</td>
+      <td>
+        <button class="btn btn-secondary btn-sm" onclick="openBlogModal(${i})">Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteBlogArticle(${i})">Delete</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function openBlogModal(idx) {
+  _blogEditId = idx;
+  const modal = document.getElementById('blog-modal');
+  const titleEl = document.getElementById('blog-modal-title');
+  if (idx === null) {
+    titleEl.textContent = 'New Article';
+    document.getElementById('blog-title').value   = '';
+    document.getElementById('blog-tag').value     = 'Guide';
+    document.getElementById('blog-date').value    = new Date().toISOString().slice(0,10);
+    document.getElementById('blog-emoji').value   = '📝';
+    document.getElementById('blog-excerpt').value = '';
+    document.getElementById('blog-url').value     = '';
+  } else {
+    const a = getBlogArticles()[idx];
+    if (!a) return;
+    titleEl.textContent = 'Edit Article';
+    document.getElementById('blog-title').value   = a.title   || '';
+    document.getElementById('blog-tag').value     = a.tag     || 'Guide';
+    document.getElementById('blog-date').value    = a.date    || '';
+    document.getElementById('blog-emoji').value   = a.emoji   || '📝';
+    document.getElementById('blog-excerpt').value = a.excerpt || '';
+    document.getElementById('blog-url').value     = a.url     || '';
+  }
+  modal.style.display = 'flex';
+}
+
+function closeBlogModal() {
+  document.getElementById('blog-modal').style.display = 'none';
+  _blogEditId = null;
+}
+
+function saveBlogArticle() {
+  const title   = document.getElementById('blog-title').value.trim();
+  const tag     = document.getElementById('blog-tag').value;
+  const date    = document.getElementById('blog-date').value;
+  const emoji   = document.getElementById('blog-emoji').value.trim() || '📝';
+  const excerpt = document.getElementById('blog-excerpt').value.trim();
+  const url     = document.getElementById('blog-url').value.trim();
+
+  if (!title) { toast('Title is required.', 'error'); return; }
+  if (!url)   { toast('Article URL is required.', 'error'); return; }
+
+  const articles = getBlogArticles();
+  const entry = { title, tag, date, emoji, excerpt, url };
+
+  if (_blogEditId === null) {
+    articles.unshift(entry);
+    logActivity('blog_add', `Added blog article: ${title}`);
+  } else {
+    articles[_blogEditId] = entry;
+    logActivity('blog_edit', `Edited blog article: ${title}`);
+  }
+  saveBlogArticles(articles);
+  renderBlogTable();
+  closeBlogModal();
+  toast(_blogEditId === null ? 'Article added!' : 'Article updated!');
+}
+
+function deleteBlogArticle(idx) {
+  if (!confirm('Delete this article?')) return;
+  const articles = getBlogArticles();
+  const title = articles[idx]?.title || 'article';
+  articles.splice(idx, 1);
+  saveBlogArticles(articles);
+  renderBlogTable();
+  logActivity('blog_delete', `Deleted blog article: ${title}`);
+  toast('Article deleted.');
+}
+
+/* ═══════════════════════════════
+   FAQ MANAGER
+═══════════════════════════════ */
+let _faqEditId = null;
+
+function getFaqItems() {
+  try { return JSON.parse(localStorage.getItem('rbs_faq') || '[]'); } catch (_) { return []; }
+}
+function saveFaqItems(arr) {
+  localStorage.setItem('rbs_faq', JSON.stringify(arr));
+}
+
+function renderFaqTable() {
+  const tbody = document.getElementById('faq-tbody');
+  if (!tbody) return;
+  const items = getFaqItems();
+  if (!items.length) {
+    tbody.innerHTML = '<tr><td colspan="2" style="text-align:center;color:var(--text3);padding:24px;">No custom FAQ items yet. Default FAQ items are always shown on faq.html.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = items.map((f, i) => `
+    <tr>
+      <td>${escHtml(f.q || '—')}</td>
+      <td>
+        <button class="btn btn-secondary btn-sm" onclick="openFaqModal(${i})">Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteFaqItem(${i})">Delete</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function openFaqModal(idx) {
+  _faqEditId = idx;
+  const modal = document.getElementById('faq-modal');
+  const titleEl = document.getElementById('faq-modal-title');
+  if (idx === null) {
+    titleEl.textContent = 'New FAQ Item';
+    document.getElementById('faq-q-input').value = '';
+    document.getElementById('faq-a-input').value = '';
+  } else {
+    const f = getFaqItems()[idx];
+    if (!f) return;
+    titleEl.textContent = 'Edit FAQ Item';
+    document.getElementById('faq-q-input').value = f.q || '';
+    document.getElementById('faq-a-input').value = f.a || '';
+  }
+  modal.style.display = 'flex';
+}
+
+function closeFaqModal() {
+  document.getElementById('faq-modal').style.display = 'none';
+  _faqEditId = null;
+}
+
+function saveFaqItem() {
+  const q = document.getElementById('faq-q-input').value.trim();
+  const a = document.getElementById('faq-a-input').value.trim();
+  if (!q) { toast('Question is required.', 'error'); return; }
+  if (!a) { toast('Answer is required.', 'error'); return; }
+
+  const items = getFaqItems();
+  const entry = { q, a };
+
+  if (_faqEditId === null) {
+    items.push(entry);
+    logActivity('faq_add', `Added FAQ: ${q.slice(0,60)}`);
+  } else {
+    items[_faqEditId] = entry;
+    logActivity('faq_edit', `Edited FAQ: ${q.slice(0,60)}`);
+  }
+  saveFaqItems(items);
+  renderFaqTable();
+  closeFaqModal();
+  toast(_faqEditId === null ? 'FAQ item added!' : 'FAQ item updated!');
+}
+
+function deleteFaqItem(idx) {
+  if (!confirm('Delete this FAQ item?')) return;
+  const items = getFaqItems();
+  const q = items[idx]?.q || 'item';
+  items.splice(idx, 1);
+  saveFaqItems(items);
+  renderFaqTable();
+  logActivity('faq_delete', `Deleted FAQ: ${q.slice(0,60)}`);
+  toast('FAQ item deleted.');
+}
+
+/* ═══════════════════════════════
+   SUBSCRIBERS
+═══════════════════════════════ */
+function getSubscribers() {
+  try { return JSON.parse(localStorage.getItem('rbs_subscribers') || '[]'); } catch (_) { return []; }
+}
+
+function renderSubscriberTable(filter) {
+  const subs   = getSubscribers();
+  const tbody  = document.getElementById('sub-tbody');
+  const emptyEl = document.getElementById('sub-empty');
+  if (!tbody) return;
+
+  // Update stats
+  const today = new Date().toDateString();
+  const weekAgo = Date.now() - 7 * 86400000;
+  const todayCount = subs.filter(s => new Date(s.date).toDateString() === today).length;
+  const weekCount  = subs.filter(s => new Date(s.date).getTime() >= weekAgo).length;
+  const totalEl = document.getElementById('sub-total');
+  const todayEl = document.getElementById('sub-today');
+  const weekEl  = document.getElementById('sub-week');
+  if (totalEl) totalEl.textContent = subs.length;
+  if (todayEl) todayEl.textContent = todayCount;
+  if (weekEl)  weekEl.textContent  = weekCount;
+
+  const q = (filter || '').toLowerCase().trim();
+  const filtered = q ? subs.filter(s =>
+    (s.email||'').toLowerCase().includes(q) || (s.name||'').toLowerCase().includes(q)
+  ) : subs;
+
+  if (!filtered.length) {
+    tbody.innerHTML = '';
+    if (emptyEl) emptyEl.style.display = 'block';
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = 'none';
+
+  tbody.innerHTML = filtered.map((s, i) => `
+    <tr>
+      <td>${i + 1}</td>
+      <td>${escHtml(s.name || '—')}</td>
+      <td>${escHtml(s.email || '—')}</td>
+      <td>${s.date ? new Date(s.date).toLocaleDateString() : '—'}</td>
+      <td><button class="btn btn-danger btn-sm" onclick="removeSubscriber('${escHtml(s.email)}')">Remove</button></td>
+    </tr>
+  `).join('');
+}
+
+function removeSubscriber(email) {
+  if (!confirm(`Remove ${email} from subscribers?`)) return;
+  let subs = getSubscribers().filter(s => s.email !== email);
+  localStorage.setItem('rbs_subscribers', JSON.stringify(subs));
+  renderSubscriberTable(document.getElementById('sub-search')?.value);
+  toast('Subscriber removed.');
+}
+
+function exportSubscribers(format) {
+  const subs = getSubscribers();
+  if (!subs.length) { toast('No subscribers to export.', 'error'); return; }
+
+  let content, filename, type;
+  if (format === 'csv') {
+    const rows = ['Name,Email,Date', ...subs.map(s => `"${(s.name||'').replace(/"/g,'""')}","${(s.email||'').replace(/"/g,'""')}","${s.date ? new Date(s.date).toLocaleDateString() : ''}"`)];
+    content  = rows.join('\n');
+    filename = 'rbs-subscribers.csv';
+    type     = 'text/csv';
+  } else {
+    content  = JSON.stringify(subs, null, 2);
+    filename = 'rbs-subscribers.json';
+    type     = 'application/json';
+  }
+
+  const blob = new Blob([content], { type });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
+  toast(`Exported ${subs.length} subscribers as ${format.toUpperCase()}.`);
+}
+
+function clearSubscribers() {
+  if (!confirm('Delete ALL subscribers? This cannot be undone.')) return;
+  localStorage.removeItem('rbs_subscribers');
+  renderSubscriberTable();
+  toast('All subscribers cleared.');
+  logActivity('subscribers_clear', 'Cleared all newsletter subscribers');
+}
+
+/* ═══════════════════════════════
+   REVIEWS MANAGER
+═══════════════════════════════ */
+const LS_RATINGS_KEY = 'rbs_ratings';
+
+function adminGetReviews() {
+  try { return JSON.parse(localStorage.getItem(LS_RATINGS_KEY) || '[]'); }
+  catch(_) { return []; }
+}
+function adminSaveReviews(arr) {
+  localStorage.setItem(LS_RATINGS_KEY, JSON.stringify(arr));
+}
+
+function adminStarText(n) {
+  return '★'.repeat(n) + '☆'.repeat(5-n);
+}
+
+let _rvReplyTarget = null; // review id being replied to
+
+function adminRefreshReviews() {
+  const reviews = adminGetReviews();
+
+  /* Stats */
+  const grid = document.getElementById('review-stats-grid');
+  if (grid) {
+    const total    = reviews.length;
+    const pending  = reviews.filter(r => !r.approved).length;
+    const approved = reviews.filter(r => r.approved).length;
+    const avgRaw   = total ? reviews.reduce((s,r) => s+(r.rating||0), 0)/total : 0;
+    const avg      = Math.round(avgRaw * 10) / 10;
+    grid.innerHTML = [
+      ['⭐ Total Reviews', total],
+      ['⏳ Pending',       pending],
+      ['✅ Approved',      approved],
+      ['📊 Avg Rating',    avg ? avg + ' / 5' : '—'],
+    ].map(([lbl,val]) =>
+      `<div class="stat-card"><div class="stat-val">${val}</div><div class="stat-lbl">${lbl}</div></div>`
+    ).join('');
+  }
+
+  /* Populate software filter */
+  const swSel = document.getElementById('rv-filter-software');
+  if (swSel && swSel.options.length < 2) {
+    const ids = [...new Set(reviews.map(r => r.softwareId).filter(Boolean))];
+    ids.forEach(id => {
+      const opt = document.createElement('option');
+      opt.value = id; opt.textContent = id;
+      swSel.appendChild(opt);
+    });
+  }
+
+  adminRenderReviews();
+}
+
+function adminRenderReviews() {
+  let reviews = adminGetReviews();
+  const status  = document.getElementById('rv-filter-status')?.value  || 'all';
+  const swId    = document.getElementById('rv-filter-software')?.value || 'all';
+  const rating  = document.getElementById('rv-filter-rating')?.value  || 'all';
+  const search  = (document.getElementById('rv-search')?.value || '').toLowerCase();
+
+  if (status === 'pending')  reviews = reviews.filter(r => !r.approved);
+  if (status === 'approved') reviews = reviews.filter(r =>  r.approved);
+  if (swId !== 'all')        reviews = reviews.filter(r => r.softwareId === swId);
+  if (rating !== 'all')      reviews = reviews.filter(r => r.rating === +rating);
+  if (search) reviews = reviews.filter(r =>
+    (r.name||'').toLowerCase().includes(search) ||
+    (r.review||'').toLowerCase().includes(search) ||
+    (r.softwareId||'').toLowerCase().includes(search)
+  );
+
+  // Sort newest first
+  reviews = reviews.slice().sort((a,b) => new Date(b.date) - new Date(a.date));
+
+  const tbody = document.getElementById('reviews-tbody');
+  if (!tbody) return;
+
+  if (!reviews.length) {
+    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--text3);">No reviews found</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = reviews.map(r => {
+    const statusBadge = r.approved
+      ? '<span class="badge badge-green">Approved</span>'
+      : '<span class="badge badge-gray">Pending</span>';
+    const reviewText = (r.review || '').length > 80
+      ? (r.review).slice(0,80) + '…' : (r.review || '<em style="opacity:.5">No text</em>');
+    const verifiedBadge = r.verifiedDownload
+      ? '<span class="badge badge-blue" style="font-size:.65rem;">✓ Verified</span>' : '';
+    const replyBadge = r.reply
+      ? '<span class="badge badge-green" style="font-size:.65rem;">Replied</span>' : '';
+    return `<tr>
+      <td><span style="font-size:.82rem;">${escHtml(r.softwareId||'—')}</span></td>
+      <td>
+        <div style="font-weight:600;font-size:.88rem;">${escHtml(r.name||'Anonymous')}</div>
+        <div style="display:flex;gap:4px;margin-top:3px;">${verifiedBadge}${replyBadge}</div>
+      </td>
+      <td style="color:#f0b429;font-size:.88rem;white-space:nowrap;">${adminStarText(r.rating||0)}</td>
+      <td style="max-width:220px;font-size:.82rem;color:var(--text2);">${escHtml(reviewText)}</td>
+      <td style="font-size:.8rem;white-space:nowrap;">${escHtml(r.date||'')}</td>
+      <td>${statusBadge}</td>
+      <td>
+        <div class="table-actions">
+          ${!r.approved
+            ? `<button class="btn btn-success btn-sm" onclick="adminApproveReview('${escHtml(r.id)}')">✓</button>`
+            : `<button class="btn btn-secondary btn-sm" onclick="adminUnapproveReview('${escHtml(r.id)}')">✗</button>`
+          }
+          <button class="btn btn-secondary btn-sm" onclick="adminOpenReply('${escHtml(r.id)}')">💬</button>
+          <button class="btn btn-danger btn-sm" onclick="adminDeleteReview('${escHtml(r.id)}')">🗑</button>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function adminApproveReview(id) {
+  const reviews = adminGetReviews();
+  const r = reviews.find(r => r.id === id);
+  if (r) { r.approved = true; adminSaveReviews(reviews); adminRefreshReviews(); toast('Review approved.'); logActivity('review_approve', 'Approved review ' + id); }
+}
+function adminUnapproveReview(id) {
+  const reviews = adminGetReviews();
+  const r = reviews.find(r => r.id === id);
+  if (r) { r.approved = false; adminSaveReviews(reviews); adminRefreshReviews(); toast('Review set to pending.'); }
+}
+function adminDeleteReview(id) {
+  if (!confirm('Delete this review permanently?')) return;
+  const reviews = adminGetReviews().filter(r => r.id !== id);
+  adminSaveReviews(reviews);
+  adminRefreshReviews();
+  toast('Review deleted.', 'error');
+  logActivity('review_delete', 'Deleted review ' + id);
+}
+function adminOpenReply(id) {
+  const reviews = adminGetReviews();
+  const r = reviews.find(rv => rv.id === id);
+  if (!r) return;
+  _rvReplyTarget = id;
+  const preview = document.getElementById('rv-reply-preview');
+  if (preview) preview.innerHTML = `<strong>${escHtml(r.name||'Anonymous')}</strong> · ${'★'.repeat(r.rating||0)} · <em>${escHtml((r.review||'No text').slice(0,100))}</em>`;
+  const ta = document.getElementById('rv-reply-text');
+  if (ta) ta.value = r.reply || '';
+  document.getElementById('rv-reply-modal')?.classList.add('open');
+}
+function adminSubmitReply() {
+  if (!_rvReplyTarget) return;
+  const text = (document.getElementById('rv-reply-text')?.value || '').trim();
+  const reviews = adminGetReviews();
+  const r = reviews.find(rv => rv.id === _rvReplyTarget);
+  if (r) { r.reply = text || null; adminSaveReviews(reviews); adminRefreshReviews(); toast('Reply saved.'); logActivity('review_reply', 'Replied to review ' + _rvReplyTarget); }
+  document.getElementById('rv-reply-modal')?.classList.remove('open');
+  _rvReplyTarget = null;
+}
+
+function adminExportReviewsCSV() {
+  const reviews = adminGetReviews();
+  const header = ['ID','SoftwareID','Name','Rating','Review','Date','Approved','Verified','Reply'];
+  const rows = reviews.map(r => [
+    r.id, r.softwareId, r.name||'Anonymous', r.rating, (r.review||'').replace(/"/g,'""'),
+    r.date, r.approved?'Yes':'No', r.verifiedDownload?'Yes':'No', (r.reply||'').replace(/"/g,'""')
+  ]);
+  const csv = [header, ...rows].map(row => row.map(v => `"${v}"`).join(',')).join('\n');
+  const blob = new Blob([csv], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  Object.assign(document.createElement('a'), {href: url, download: 'reviews.csv'}).click();
+  URL.revokeObjectURL(url);
+  toast('Reviews exported as CSV.');
+}
+
+/* Wire up filter changes */
+['rv-filter-status','rv-filter-software','rv-filter-rating'].forEach(id => {
+  document.getElementById(id)?.addEventListener('change', adminRenderReviews);
+});
+
+/* ═══════════════════════════════
+   ANALYTICS
+═══════════════════════════════ */
+function refreshAnalytics() {
+  const software    = store.get('software') || [];
+  const subs        = getSubscribers();
+  const blog        = getBlogArticles();
+  const dlTotal     = parseInt(localStorage.getItem('rbs_dl_count') || '0', 10);
+
+  // Top stats
+  const anDl  = document.getElementById('an-downloads');
+  const anSub = document.getElementById('an-subscribers');
+  const anSw  = document.getElementById('an-software');
+  const anBlog = document.getElementById('an-blog');
+  if (anDl)   anDl.textContent  = dlTotal.toLocaleString();
+  if (anSub)  anSub.textContent = subs.length;
+  if (anSw)   anSw.textContent  = software.length;
+  if (anBlog) anBlog.textContent = blog.length + 2; // +2 static articles
+
+  // Downloads per software table
+  const swTbody = document.getElementById('an-sw-tbody');
+  if (swTbody) {
+    if (!software.length) {
+      swTbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:20px;">No software listed yet.</td></tr>';
+    } else {
+      const sorted = [...software].sort((a, b) => (b.downloads || 0) - (a.downloads || 0));
+      swTbody.innerHTML = sorted.map(sw => `
+        <tr>
+          <td>${escHtml(sw.name || '—')}</td>
+          <td><span class="badge">${escHtml(sw.version || '—')}</span></td>
+          <td><strong>${(sw.downloads || 0).toLocaleString()}</strong></td>
+          <td><span class="badge badge-${sw.status === 'active' ? 'teal' : 'gray'}">${escHtml(sw.status || 'active')}</span></td>
+        </tr>
+      `).join('');
+    }
+  }
+
+  // Recent subscribers table
+  const subTbody  = document.getElementById('an-sub-tbody');
+  const subEmpty  = document.getElementById('an-sub-empty');
+  if (subTbody) {
+    const recent = [...subs].reverse().slice(0, 10);
+    if (!recent.length) {
+      subTbody.innerHTML = '';
+      if (subEmpty) subEmpty.style.display = 'block';
+    } else {
+      if (subEmpty) subEmpty.style.display = 'none';
+      subTbody.innerHTML = recent.map(s => `
+        <tr>
+          <td>${escHtml(s.email || '—')}</td>
+          <td>${s.date ? new Date(s.date).toLocaleDateString() : '—'}</td>
+        </tr>
+      `).join('');
+    }
+  }
+
+  // Activity — dl total display
+  const dlTotalEl = document.getElementById('an-dl-total');
+  if (dlTotalEl) dlTotalEl.textContent = dlTotal.toLocaleString();
+
+  toast('Analytics refreshed!');
+}
+
+/* ═══════════════════════════════
+   ACTIVITY LOG HELPER
+═══════════════════════════════ */
+function logActivity(type, message) {
+  try {
+    const log = JSON.parse(localStorage.getItem('rbs_activity_log') || '[]');
+    log.unshift({ type, message, ts: new Date().toISOString() });
+    if (log.length > 200) log.length = 200; // keep last 200
+    localStorage.setItem('rbs_activity_log', JSON.stringify(log));
+  } catch (_) {}
+}
+
+/* ═══════════════════════════════
+   HTML ESCAPE HELPER
+═══════════════════════════════ */
+function escHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ═══════════════════════════════
+   POPUP MANAGER
+═══════════════════════════════ */
+function getPopupSettings() {
+  try {
+    const s = JSON.parse(localStorage.getItem('rbs_popup_settings') || 'null');
+    if (s) return s;
+  } catch (_) {}
+  return {
+    enabled: true,
+    title: 'Download Started!',
+    subtitle: 'RBS Software is 100% free — no strings attached.\nIf this tool helped you, consider supporting development ❤',
+    showDonation: true,
+    showNewsletter: true,
+    newsletterTitle: '📬 Stay Updated',
+    newsletterSubtitle: 'Get notified about new RBS software releases. No spam.',
+    hiddenMethods: []
+  };
+}
+
+function renderPopupManager() {
+  const s = getPopupSettings();
+  const el = id => document.getElementById(id);
+
+  el('popup-enabled').checked         = s.enabled !== false;
+  el('popup-title').value             = s.title || 'Download Started!';
+  el('popup-subtitle').value          = s.subtitle || '';
+  el('popup-show-donation').checked   = s.showDonation !== false;
+  el('popup-show-newsletter').checked = s.showNewsletter !== false;
+  el('popup-nl-title').value          = s.newsletterTitle || '📬 Stay Updated';
+  el('popup-nl-subtitle').value       = s.newsletterSubtitle || 'Get notified about new RBS software releases. No spam.';
+
+  /* Build checkboxes for each donation method */
+  const d = getDonationData();
+  const hidden = s.hiddenMethods || [];
+  const container = el('popup-donation-checkboxes');
+  if (!container) return;
+  const allMethods = [
+    ...(d.buttons || []).map(b => ({ id: b.id, label: `${b.icon||'❤'} ${b.label}`, type: 'button' })),
+    ...(d.crypto  || []).map(c => ({ id: c.id, label: `₿ ${c.coin}`, type: 'crypto' }))
+  ];
+  if (!allMethods.length) {
+    container.innerHTML = '<p style="color:var(--text3);font-size:.85rem;">No donation methods configured yet. Add them in Donations panel first.</p>';
+    return;
+  }
+  container.innerHTML = allMethods.map(m => `
+    <label style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:8px;border-radius:8px;background:var(--bg);border:1px solid var(--border);">
+      <input type="checkbox" data-method-id="${escHtml(m.id)}" ${hidden.includes(m.id) ? '' : 'checked'}
+             style="width:16px;height:16px;cursor:pointer;" />
+      <span>${escHtml(m.label)}</span>
+      <span style="font-size:.75rem;color:var(--text3);margin-left:auto;">${m.type}</span>
+    </label>`).join('');
+}
+
+function savePopupSettings() {
+  const el = id => document.getElementById(id);
+  const hiddenMethods = [];
+  document.querySelectorAll('#popup-donation-checkboxes input[type=checkbox][data-method-id]').forEach(cb => {
+    if (!cb.checked) hiddenMethods.push(cb.dataset.methodId);
+  });
+  const s = {
+    enabled:            el('popup-enabled').checked,
+    title:              el('popup-title').value.trim() || 'Download Started!',
+    subtitle:           el('popup-subtitle').value.trim(),
+    showDonation:       el('popup-show-donation').checked,
+    showNewsletter:     el('popup-show-newsletter').checked,
+    newsletterTitle:    el('popup-nl-title').value.trim() || '📬 Stay Updated',
+    newsletterSubtitle: el('popup-nl-subtitle').value.trim(),
+    hiddenMethods
+  };
+  localStorage.setItem('rbs_popup_settings', JSON.stringify(s));
+  toast('Popup settings saved!');
+  logActivity('popup', 'Updated download popup settings');
+}
+
+function previewPopup() {
+  /* Build a live preview inside an overlay using the current form values (not saved) */
+  const el = id => document.getElementById(id);
+  const title    = el('popup-title').value.trim() || 'Download Started!';
+  const subtitle = (el('popup-subtitle').value.trim()).split('\n').join('<br>');
+  const showDon  = el('popup-show-donation').checked;
+  const showNl   = el('popup-show-newsletter').checked;
+  const nlTitle  = el('popup-nl-title').value.trim() || '📬 Stay Updated';
+  const nlSub    = el('popup-nl-subtitle').value.trim();
+  const d        = getDonationData();
+  const hiddenMethods = [];
+  document.querySelectorAll('#popup-donation-checkboxes input[type=checkbox][data-method-id]').forEach(cb => {
+    if (!cb.checked) hiddenMethods.push(cb.dataset.methodId);
+  });
+
+  let donHtml = '';
+  if (showDon) {
+    const btns   = (d.buttons || []).filter(b => b.visible !== false && !hiddenMethods.includes(b.id));
+    const crypto = (d.crypto  || []).filter(c => c.visible !== false && !hiddenMethods.includes(c.id));
+    if (btns.length || crypto.length) {
+      donHtml = '<p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#6b7a99;text-align:center;margin-bottom:16px;">Choose how to support</p>';
+      if (btns.length) {
+        donHtml += '<div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:16px;">';
+        donHtml += btns.map(b => `<a href="${escHtml(b.url)}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:10px;font-size:.9rem;font-weight:700;color:#fff;text-decoration:none;background:${escHtml(b.color||'#00c896')};">${escHtml(b.icon||'❤')} ${escHtml(b.label)}</a>`).join('');
+        donHtml += '</div>';
+      }
+      if (crypto.length) {
+        donHtml += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;">';
+        donHtml += crypto.map(c => `<div style="background:#0f3460;border:1px solid rgba(0,102,255,.2);border-radius:14px;padding:16px;text-align:center;"><div style="font-size:1.5rem;margin-bottom:6px;">${c.coin.includes('Bitcoin')?'₿':c.coin.includes('Ethereum')?'Ξ':'🪙'}</div><div style="font-size:.8rem;font-weight:700;color:#fff;">${escHtml(c.coin)}</div><div style="font-size:.6rem;color:#6b7a99;word-break:break-all;background:rgba(0,0,0,.3);border-radius:6px;padding:4px 6px;margin-top:6px;">${escHtml(c.address)}</div></div>`).join('');
+        donHtml += '</div>';
+      }
+    }
+  }
+
+  let nlHtml = '';
+  if (showNl) {
+    nlHtml = `<div style="padding:20px 36px 24px;background:rgba(0,102,255,.04);border-top:1px solid rgba(0,102,255,.1);">
+      <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#6b7a99;text-align:center;margin-bottom:6px;">${escHtml(nlTitle)}</p>
+      <p style="font-size:.85rem;color:#b0b8c8;text-align:center;margin-bottom:14px;">${escHtml(nlSub)}</p>
+      <div style="display:flex;flex-direction:column;gap:8px;max-width:380px;margin:0 auto;">
+        <input type="text" placeholder="Your name (optional)" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:10px 14px;font-size:.88rem;color:#fff;">
+        <input type="email" placeholder="Email address *" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:10px 14px;font-size:.88rem;color:#fff;">
+        <button style="background:linear-gradient(135deg,#0066ff,#4d94ff);color:#fff;border:none;border-radius:9px;padding:11px 20px;font-size:.9rem;font-weight:700;cursor:pointer;">Subscribe →</button>
+      </div>
+      <p style="text-align:center;margin-top:10px;color:#6b7a99;font-size:.8rem;">Skip for now</p>
+    </div>`;
+  }
+
+  const overlay = document.createElement('div');
+  overlay.className = 'popup-preview-overlay';
+  overlay.innerHTML = `
+    <button class="popup-preview-close" onclick="this.closest('.popup-preview-overlay').remove()">✕ Close Preview</button>
+    <div style="background:#16213e;border:1px solid rgba(0,102,255,.25);border-radius:20px;width:100%;max-width:620px;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.65);">
+      <div style="padding:36px 36px 24px;background:linear-gradient(180deg,rgba(0,102,255,.1),transparent);text-align:center;border-bottom:1px solid rgba(0,102,255,.15);">
+        <div style="width:64px;height:64px;background:linear-gradient(135deg,#00d084,#00a866);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 16px;">✓</div>
+        <h2 style="font-size:1.25rem;font-weight:800;color:#fff;margin-bottom:6px;">${title}</h2>
+        <p style="font-size:.9rem;color:#b0b8c8;">${subtitle}</p>
+      </div>
+      <div style="padding:24px 36px 0;">${donHtml}</div>
+      ${nlHtml}
+      <div style="padding:16px 36px 24px;text-align:center;">
+        <button style="background:rgba(255,255,255,.06);color:#b0b8c8;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 20px;font-size:.88rem;font-weight:600;cursor:pointer;">Close</button>
+      </div>
+    </div>`;
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+}
+
+</script>
+</body>
+</html>

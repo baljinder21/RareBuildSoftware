@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+Disallow: /downloads/
+
+Sitemap: https://rbssoftware.com/sitemap.xml

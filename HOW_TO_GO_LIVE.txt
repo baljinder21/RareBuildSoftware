@@ -1,0 +1,140 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║          RBS SOFTWARE — HOW TO PUBLISH YOUR WEBSITE ONLINE          ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+Complete step-by-step guide to get your RBS Software website live.
+Estimated total time: 30–60 minutes.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BEFORE YOU START — COPY YOUR .EXE FILES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ⚠️ Do this FIRST before deploying to Netlify!
+
+  1. Copy C:\RBSOptimizerPro\Release\RBSOptimizerPro_Setup.exe
+     → Paste into D:\RBSWebsite\downloads\
+     → Rename to: RBSOptimizerPro_v1.0.0.exe
+
+  2. Copy D:\RBSVoiceCloner\Release\RBSVoiceCloner_Setup.exe
+     → Paste into D:\RBSWebsite\downloads\
+     → Rename to: RBSVoiceCloner_v1.0.0.exe
+
+  Both .exe files must be in downloads/ before deploying!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1 — BUY A DOMAIN NAME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  RECOMMENDED: Namecheap (~$10-15/year)
+    → Go to: https://www.namecheap.com
+    → Search for: rbssoftware.com
+    → Add to Cart → Checkout → Create account → Pay
+
+  TIP: Buy for 2 years for a slight discount.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2 — DEPLOY TO NETLIFY (FREE HOSTING)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Go to: https://www.netlify.com → Sign up free
+  2. Click "Add new site" → "Deploy manually"
+  3. Open File Explorer → go to D:\RBSWebsite\
+  4. Select ALL files (Ctrl+A) → DRAG AND DROP onto Netlify
+  5. Wait ~60 seconds
+
+  ✅ Site is live at something like: https://amazing-name-123.netlify.app
+     Downloads will work immediately from this URL!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3 — CONNECT YOUR CUSTOM DOMAIN (rbssoftware.com)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. In Netlify → your site → Site configuration → Domain management
+  2. Click "Add a domain" → type rbssoftware.com → Verify
+  3. Netlify will show DNS records — add them in Namecheap → Advanced DNS
+  4. Back in Netlify → click "Verify DNS configuration"
+  5. Wait 10 min to 24 hours
+
+  ✅ Site works at https://rbssoftware.com
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4 — ENABLE FREE HTTPS / SSL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Netlify → Site configuration → Domain management → scroll to HTTPS
+  2. Click "Provision certificate" → installs automatically in 1-5 mins
+
+  ✅ Site is secure at https://rbssoftware.com
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5 — SET UP CONTACT FORM (FORMSPREE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Go to: https://formspree.io → Sign up free
+  2. New Form → set your email → copy endpoint URL
+  3. Open Admin Panel → rbssoftware.com/admin/
+  4. Content Editor → Contact tab → paste endpoint → Save
+
+  ✅ Contact form sends emails to 88baljinder@gmail.com
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 6 — SUBMIT TO GOOGLE SEARCH CONSOLE (SEO)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Go to: https://search.google.com/search-console
+  2. Add property → https://rbssoftware.com
+  3. Verify ownership → Sitemaps → enter sitemap.xml → Submit
+
+  ✅ Google starts indexing your site within a few days.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HOW TO UPDATE WEBSITE AFTER CHANGES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Every time you add new software or make changes:
+  1. netlify.com → your site → Deploys tab
+  2. Drag and drop D:\RBSWebsite\ folder again
+  3. Wait ~60 seconds — live instantly!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ADMIN PANEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Local:  D:\RBSWebsite\admin\index.html
+  Live:   https://rbssoftware.com/admin/
+  Login:  rbsadmin / rbs@2024
+
+  ⚠️  Change your password immediately after going live!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ FINAL LAUNCH CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [ ] Copy both .exe files into D:\RBSWebsite\downloads\
+  [ ] Buy rbssoftware.com on Namecheap
+  [ ] Sign up on Netlify & deploy D:\RBSWebsite\
+  [ ] Connect rbssoftware.com in Netlify
+  [ ] Enable HTTPS / SSL in Netlify
+  [ ] Test download buttons for both software
+  [ ] Set up Formspree contact form in Admin Panel
+  [ ] Change admin password in Admin Panel → Security
+  [ ] Submit sitemap.xml to Google Search Console
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DOWNLOAD URLS (after going live)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  RBS Optimizer Pro:  https://rbssoftware.com/downloads/RBSOptimizerPro_v1.0.0.exe
+  RBS Voice Cloner:   https://rbssoftware.com/downloads/RBSVoiceCloner_v1.0.0.exe
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

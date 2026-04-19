@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Page not found — RBS" />
+  <meta name="robots" content="noindex" />
+  <meta property="og:title" content="404 – Page Not Found | RBS" />
+  <title>404 – Page Not Found | RBS</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .notfound-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(0,102,255,0.15), transparent 70%), var(--bg-primary);
+    }
+    .notfound-inner { max-width: 520px; }
+    .notfound-code {
+      font-size: 7rem;
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, #0066ff, #4d94ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+      letter-spacing: -4px;
+    }
+    .notfound-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 12px; }
+    .notfound-desc  { color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 32px; }
+    .notfound-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">RBS</div>
+        RBS
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme">☀️</button></li>
+        <li><a href="software.html" class="nav-cta">⬇ Download Free</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="software.html">Software</a>
+    <a href="blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="software.html" class="nav-cta">⬇ Download Free</a>
+  </div>
+
+  <main id="main-content" class="notfound-wrap">
+    <div class="notfound-inner">
+      <div class="notfound-code">404</div>
+      <h1 class="notfound-title">Page Not Found</h1>
+      <p class="notfound-desc">
+        The page you're looking for doesn't exist or may have been moved.
+        Check the URL, or head back home.
+      </p>
+      <div class="notfound-links">
+        <a href="index.html" class="btn btn-primary">← Go Home</a>
+        <a href="software.html" class="btn btn-secondary">View Software</a>
+        <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="cookie-banner">
+    <p class="cookie-text">🍪 We use cookies to improve your experience. <a href="privacy.html">Privacy Policy</a></p>
+    <div class="cookie-btns">
+      <button class="btn-cookie-accept" id="cookie-accept">Accept</button>
+      <button class="btn-cookie-decline" id="cookie-decline">Decline</button>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

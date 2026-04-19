@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Support RBS development. All our Windows tools are free forever — donations help keep it that way." />
+  <meta name="keywords" content="donate RBS, support free Windows software, Ko-fi RBS, fund free PC optimizer" />
+  <title>Support RBS — Keep Free PC Tools Free</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="RBS" />
+  <meta property="og:title"       content="Support RBS — Keep Free PC Tools Free" />
+  <meta property="og:description" content="Support RBS development. All our Windows tools are free forever — donations help keep it that way." />
+  <meta property="og:url"         content="https://rarebuildsoftware.com/donate.html" />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/donate.svg" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:title"      content="Support RBS — Keep Free PC Tools Free" />
+  <meta name="twitter:description" content="Support RBS development. All our Windows tools are free forever." />
+  <meta name="twitter:image"      content="https://rarebuildsoftware.com/assets/images/og/donate.svg" />
+  <link rel="canonical"           href="https://rarebuildsoftware.com/donate.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rarebuildsoftware.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Donate", "item": "https://rarebuildsoftware.com/donate.html" }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="assets/css/style.css" as="style" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .donate-top {
+      text-align: center;
+      padding: 80px 0 56px;
+      background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0,200,150,0.15), transparent 70%);
+      border-bottom: 1px solid var(--border);
+    }
+    .qr-fallback {
+      width: 160px; height: 160px;
+      background: rgba(255,255,255,0.04); border: 2px dashed var(--border);
+      border-radius: var(--radius-sm); display: flex; align-items: center;
+      justify-content: center; flex-direction: column; gap: 8px;
+      color: var(--text-muted); font-size: .75rem; text-align: center; padding: 12px;
+    }
+    .qr-fallback-icon { font-size: 2rem; opacity: .45; }
+    .tip-note {
+      background: rgba(0,200,150,0.08); border: 1px solid rgba(0,200,150,0.2);
+      border-radius: var(--radius); padding: 14px 18px; display: flex;
+      gap: 10px; align-items: flex-start; text-align: left;
+      font-size: .85rem; color: var(--text-secondary); line-height: 1.55; margin-top: 14px;
+    }
+    .tip-note-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+    .crypto-address-box {
+      display: flex; gap: 8px; align-items: center; margin: 12px 0;
+      background: var(--bg-primary); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 10px 14px; flex-wrap: wrap;
+    }
+    .crypto-address-text {
+      font-family: var(--font-mono); font-size: .75rem; color: var(--text-secondary);
+      word-break: break-all; flex: 1;
+    }
+    .copy-btn {
+      background: var(--accent); color: #fff; border: none; padding: 5px 12px;
+      border-radius: 6px; font-size: .78rem; font-weight: 700; cursor: pointer;
+      transition: all var(--transition); flex-shrink: 0;
+    }
+    .copy-btn:hover { background: var(--accent-hover, #00b085); }
+    .copy-btn.copied { background: var(--success, #00d084); }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="page-loader"><div class="loader-ring"></div></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">RBS</div>
+        RBS
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme">☀️</button></li>
+        <li><a href="software.html" class="nav-cta">⬇ Download Free</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="software.html">Software</a>
+    <a href="blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html" class="active">Donate</a>
+    <a href="software.html" class="nav-cta">⬇ Download Free</a>
+  </div>
+
+  <div id="rbs-announcement" style="display:none;"></div>
+
+  <main id="main-content">
+
+    <div class="donate-top">
+      <div class="container">
+        <div class="section-tag">Support RBS</div>
+        <h1 class="page-hero-title" style="margin-top:16px;">
+          Thank you for your <span class="accent">support</span>
+        </h1>
+        <p class="page-hero-subtitle">
+          Every piece of software RBS makes is completely free. If you've found our
+          tools useful and want to help keep development going, any contribution
+          is deeply appreciated — even just spreading the word.
+        </p>
+      </div>
+    </div>
+
+    <!-- ══ Payment Buttons ══ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-tag">Ways to Help</div>
+          <h2 class="section-title">Choose a <span class="accent">donation method</span></h2>
+          <p class="section-subtitle">All donations go directly towards software development, hosting, and tools.</p>
+        </div>
+
+        <!-- Dynamically filled by site-data.js from donation data -->
+        <div id="rbs-donate-buttons"></div>
+
+      </div>
+    </section>
+
+    <!-- ══ Cryptocurrency ══ -->
+    <section class="section" style="background:var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-tag">Crypto</div>
+          <h2 class="section-title">Cryptocurrency <span class="accent">Donations</span></h2>
+          <p class="section-subtitle">Send crypto to any of the addresses below. Managed in the Admin Panel.</p>
+        </div>
+
+        <!-- Dynamically filled by site-data.js from donation data -->
+        <div id="rbs-donate-crypto"></div>
+
+      </div>
+    </section>
+
+    <!-- ══ Spread the word ══ -->
+    <section class="section">
+      <div class="container">
+        <div class="coming-soon-card animate-on-scroll">
+          <div class="coming-soon-icon">📣</div>
+          <h3>Can't donate? Spread the word!</h3>
+          <p>
+            Telling a friend about RBS is just as valuable as a donation.
+            Share our tools with anyone who might find them useful.
+          </p>
+          <div style="margin-top:24px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+            <a href="software.html" class="btn btn-primary btn-sm">⬇ Get the Software</a>
+            <a href="contact.html"  class="btn btn-secondary btn-sm">💬 Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
+          <p class="footer-tagline">Building free, powerful tools for everyone.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+                    <p class="footer-heading">Software</p>
+          <ul class="footer-links">
+            <li><a href="software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
+            <li><a href="software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
+            <li><a href="software/detail.html?id=life-dashboard">Life Dashboard</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Support Us</p>
+          <ul class="footer-links">
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Legal</p>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025–2026 RBS (Rare Build Software). All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="donate.html">Donate</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner">
+    <p class="cookie-text">🍪 We use cookies to improve your experience. <a href="privacy.html">Privacy Policy</a></p>
+    <div class="cookie-btns">
+      <button class="btn-cookie-accept" id="cookie-accept">Accept</button>
+      <button class="btn-cookie-decline" id="cookie-decline">Decline</button>
+    </div>
+  </div>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site-data.js"></script>
+</body>
+</html>

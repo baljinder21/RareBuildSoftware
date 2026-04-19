@@ -1,0 +1,54 @@
+[
+  {
+    "id": "r_seed_001",
+    "softwareId": "rbs-optimizer-pro",
+    "name": "Michael T.",
+    "rating": 5,
+    "review": "Absolutely brilliant tool. My PC boots at least 30 seconds faster since I disabled all the bloatware from startup. The real-time performance monitor is super useful too.",
+    "date": "2025-03-12",
+    "approved": true,
+    "helpful": 18,
+    "helpfulBy": [],
+    "reply": null,
+    "verifiedDownload": true
+  },
+  {
+    "id": "r_seed_002",
+    "softwareId": "rbs-optimizer-pro",
+    "name": "Sarah K.",
+    "rating": 5,
+    "review": "Finally a free optimizer that doesn't bundle adware or try to upsell you every 5 minutes. Does exactly what it says and the UI looks great.",
+    "date": "2025-03-28",
+    "approved": true,
+    "helpful": 12,
+    "helpfulBy": [],
+    "reply": "Thank you for the kind words, Sarah! We will never bundle anything — free forever.",
+    "verifiedDownload": true
+  },
+  {
+    "id": "r_seed_003",
+    "softwareId": "rbs-optimizer-pro",
+    "name": "Dave R.",
+    "rating": 4,
+    "review": "Works great overall. Would love to see a scheduled clean option added in a future version. The junk cleaner alone freed up 4GB on my drive.",
+    "date": "2025-04-01",
+    "approved": true,
+    "helpful": 7,
+    "helpfulBy": [],
+    "reply": "Scheduled cleaning is on our roadmap — thanks for the suggestion, Dave!",
+    "verifiedDownload": false
+  },
+  {
+    "id": "r_seed_004",
+    "softwareId": "rbs-optimizer-pro",
+    "name": "Anonymous",
+    "rating": 4,
+    "review": "Solid software. Clean interface and no nonsense. Exactly what I was looking for.",
+    "date": "2025-04-05",
+    "approved": true,
+    "helpful": 4,
+    "helpfulBy": [],
+    "reply": null,
+    "verifiedDownload": false
+  }
+]

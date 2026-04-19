@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Software details — RBS" />
+  <title>Software — RBS</title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="RBS" />
+  <meta property="og:title"       content="Software — RBS" />
+  <meta property="og:description" content="Free Windows software by RBS." />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og-image.png" />
+  <link rel="canonical"           href="https://rarebuildsoftware.com/software/" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .detail-layout { display: grid; grid-template-columns: 1fr 320px; gap: 48px; }
+    @media (max-width: 960px) { .detail-layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div id="page-loader"><div class="loader-ring"></div></div>
+
+  <!-- ══ Navigation ══ -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">RBS</div>
+        RBS
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../software.html" class="active">Software</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme">☀️</button></li>
+        <li><a href="../software.html" class="nav-cta">⬇ Download Free</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../software.html" class="active">Software</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../faq.html">FAQ</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../software.html" class="nav-cta">⬇ Download Free</a>
+  </div>
+
+  <div id="rbs-announcement" style="display:none;"></div>
+
+  <main id="main-content">
+    <!-- ══ Content injected by site-data.js applyDetailPage() ══ -->
+    <div id="rbs-detail-root">
+      <div style="min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;">
+        <div>
+          <div style="font-size:2.5rem;margin-bottom:16px;">⚡</div>
+          <p style="color:var(--text-muted);">Loading software details…</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ══ Newsletter ══ -->
+  <section class="section" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="newsletter-section animate-on-scroll">
+        <div class="newsletter-icon">📬</div>
+        <h2 class="newsletter-title">Stay <span class="accent">Updated</span></h2>
+        <p class="newsletter-subtitle">Get notified when we release updates or new software. No spam.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" class="newsletter-input" placeholder="Your email address…" autocomplete="email" />
+          <button type="submit" class="btn btn-primary">Subscribe →</button>
+        </form>
+        <div class="newsletter-success">✅ You're subscribed!</div>
+        <p class="newsletter-privacy">No spam. <a href="../privacy.html">Privacy Policy</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Footer ══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
+          <p class="footer-tagline">Building free, powerful tools for everyone.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Legal</p>
+          <ul class="footer-links">
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Support</p>
+          <ul class="footer-links">
+            <li><a href="../donate.html">Donate</a></li>
+            <li><a href="https://ko-fi.com/rbsshop/tip" target="_blank" rel="noopener">Ko-fi ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025–2026 RBS (Rare Build Software). All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../privacy.html">Privacy</a>
+          <a href="../terms.html">Terms</a>
+          <a href="../about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner">
+    <p class="cookie-text">🍪 We use cookies. <a href="../privacy.html">Privacy Policy</a></p>
+    <div class="cookie-btns">
+      <button class="btn-cookie-accept" id="cookie-accept">Accept</button>
+      <button class="btn-cookie-decline" id="cookie-decline">Decline</button>
+    </div>
+  </div>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/site-data.js"></script>
+  <script src="../assets/js/download.js"></script>
+  <script src="../assets/js/ratings.js"></script>
+</body>
+</html>
