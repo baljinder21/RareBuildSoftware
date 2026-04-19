@@ -1832,7 +1832,7 @@ ul { list-style: none; }
   .about-grid             { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid           { grid-template-columns: 1fr; }
   .footer-grid            { grid-template-columns: 1fr 1fr; }
-  .detail-layout          { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .detail-layout          { grid-template-columns: minmax(0, 1fr); gap: 32px; }
 }
 
 @media (max-width: 900px) {
@@ -2535,6 +2535,14 @@ body.light-mode .font-size-btn.active { background: var(--accent); border-color:
   font-size: 3rem;
   flex-shrink: 0;
 }
+
+/* Software detail page layout — desktop */
+.detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 48px;
+}
+.detail-layout > * { min-width: 0; }
 .changelog-item {
   padding: 20px 0;
   border-bottom: 1px solid var(--border);
@@ -2561,6 +2569,11 @@ body.light-mode .font-size-btn.active { background: var(--accent); border-color:
 .loader-ring { border-top-color: var(--accent) !important; }
 
 /* ── Responsive new components ── */
+@media (max-width: 1024px) {
+  /* Detail page layout — stack single column */
+  .detail-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+}
+
 @media (max-width: 768px) {
   .sw-list-item { flex-wrap: wrap; }
   .sw-list-actions { width: 100%; justify-content: flex-end; }
@@ -2574,18 +2587,35 @@ body.light-mode .font-size-btn.active { background: var(--accent); border-color:
   .software-detail-header { gap: 16px; }
 
   /* Key features — prevent any internal overflow */
-  .features-big { width: 100%; }
-  .feature-big-item { min-width: 0; }
+  .features-big { width: 100%; min-width: 0; }
+  .feature-big-item { min-width: 0; max-width: 100%; }
   .feature-big-text { min-width: 0; flex: 1; word-wrap: break-word; overflow-wrap: break-word; }
+  .feature-big-text h4, .feature-big-text p { overflow-wrap: break-word; word-break: break-word; }
 
-  /* Screenshot preview — force internal mockup to stay within bounds */
-  .screenshot-area { min-width: 0; }
-  .screenshot-area > div { max-width: 100%; }
+  /* Screenshot preview — clip the fixed-width mockup inside */
+  .screenshot-area { min-width: 0; max-width: 100%; }
+  .screenshot-area > div { max-width: 100%; overflow: hidden; }
+  .screenshot-area > div > div { max-width: 100%; }
+
+  /* Download sidebar + boxes — stay within viewport */
+  .download-sidebar { min-width: 0; max-width: 100%; }
+  .download-box { max-width: 100%; min-width: 0; padding: 20px; }
+  .download-btn-wrap .btn { max-width: 100%; word-break: break-word; font-size: .95rem; padding: 14px; }
+  .file-info-row { gap: 12px; }
+  .file-info-row span:last-child { text-align: right; word-break: break-word; min-width: 0; }
+
+  /* System requirements items — wrap long lines */
+  .sys-req-item { min-width: 0; }
+  .sys-req-item span:last-child { min-width: 0; word-break: break-word; }
+
+  /* Changelog — wrap */
+  .changelog-list li { word-break: break-word; }
 }
 @media (max-width: 480px) {
   .newsletter-form { flex-direction: column; }
   .newsletter-input { width: 100%; }
   .software-detail-hero { padding: 72px 0 28px; }
+  .download-box { padding: 16px; }
 }
 
 /* ══════════════════════════════════════════

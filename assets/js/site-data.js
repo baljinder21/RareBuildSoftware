@@ -839,7 +839,7 @@
       <!-- Content -->
       <div class="section">
         <div class="container">
-          <div style="display:grid;grid-template-columns:1fr 320px;gap:48px;" class="detail-layout">
+          <div class="detail-layout">
 
             <!-- Left -->
             <div>
