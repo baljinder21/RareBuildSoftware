@@ -34,7 +34,13 @@
       { "@type": "Question", "name": "How does RBS Optimizer Pro speed up Windows 11?",
         "acceptedAnswer": { "@type": "Answer", "text": "RBS Optimizer Pro speeds up Windows 11 by cleaning junk files and temporary data, managing startup programs that slow boot time, optimizing RAM usage, and providing real-time performance monitoring — all with a single click." }},
       { "@type": "Question", "name": "Does RBS Optimizer Pro collect my data?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. RBS Optimizer Pro does not collect any personal data, usage statistics, or telemetry. It works entirely offline and does not phone home." }}
+        "acceptedAnswer": { "@type": "Answer", "text": "No. RBS Optimizer Pro does not collect any personal data, usage statistics, or telemetry. It works entirely offline and does not phone home." }},
+      { "@type": "Question", "name": "Does RBS PC Cleaner scan or modify the Windows registry?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. RBS PC Cleaner never scans or modifies the registry. There is no registry-cleaner feature — modern Windows does not benefit from registry cleaning, and most reported registry errors are harmless orphan keys." }},
+      { "@type": "Question", "name": "Is everything RBS PC Cleaner does reversible?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Startup entries are parked in a Run-Disabled key (one click to re-enable), Gaming Mode suspends rather than kills apps, theme apply snapshots your original state so Restore Original reverts exactly, and junk/app-cache files go to the Recycle Bin by default." }},
+      { "@type": "Question", "name": "Will RBS PC Cleaner's Duplicate Finder delete important files?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Duplicate Finder is hash-based, always keeps the oldest file, and auto-skips Windows, Program Files, ProgramData, drive roots, WinSxS, DriverStore, and CatRoot. Every deletion requires confirmation and files go to the Recycle Bin by default." }}
     ]
   }
   </script>
@@ -121,6 +127,7 @@
         <button class="filter-chip" onclick="filterFaq('optimizer',this)">Optimizer Pro</button>
         <button class="filter-chip" onclick="filterFaq('voicecloner',this)">Voice Cloner</button>
         <button class="filter-chip" onclick="filterFaq('dashboard',this)">Life Dashboard</button>
+        <button class="filter-chip" onclick="filterFaq('pccleaner',this)">PC Cleaner</button>
       </div>
 
       <!-- FAQ list — also populated dynamically by site-data.js for admin-added FAQs -->
@@ -235,6 +242,57 @@
           <div class="faq-a">Yes. You can drag widgets to rearrange them, resize them from the bottom-right corner, and show or hide any widget using the Widgets menu. Build your own layout that suits your workflow.</div>
         </div>
 
+        <!-- ── PC Cleaner ── -->
+        <div class="faq-item" data-cat="pccleaner">
+          <div class="faq-q"><span>Does RBS PC Cleaner scan or modify the Windows registry?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">No. RBS PC Cleaner never scans or modifies the registry — there is no registry-cleaner feature, and we will not add one. Modern Windows does not benefit from registry cleaning, and almost every "registry error" reported by other cleaners is a harmless orphan key used to pressure you into a Pro upgrade.</div>
+        </div>
+
+        <div class="faq-item" data-cat="pccleaner">
+          <div class="faq-q"><span>Is everything RBS PC Cleaner does reversible?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">Nearly all of it. Startup entries are parked in a sibling <code>Run-Disabled</code> registry key (one click to re-enable). Gaming Mode suspends background apps rather than killing them — the Resume button wakes them up exactly where they were. Theme apply snapshots your original wallpaper, accent and icons so Restore Original reverts exactly. Files deleted by the junk and app-cache cleaners go to the Recycle Bin by default (hard delete is opt-in).</div>
+        </div>
+
+        <div class="faq-item" data-cat="pccleaner">
+          <div class="faq-q"><span>What does "Safe / Caution / Risky" mean in the Junk Cleaner?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">Every clean target is rated so you know what you're clicking. <strong>Safe</strong> = temp files, recycle bin, browser cache, thumbnails — zero impact if removed. <strong>Caution</strong> = Windows Update cache, prefetch — safe to remove but may cause small re-fetch or slower first-launch after. <strong>Risky</strong> = items that could affect app behaviour; only shown if you explicitly enable them in Settings.</div>
+        </div>
+
+        <div class="faq-item" data-cat="pccleaner">
+          <div class="faq-q"><span>Will Duplicate Finder delete anything important?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">No. Duplicate Finder is hash-based (byte-for-byte comparison), always keeps the oldest file and marks newer copies for deletion, and auto-skips Windows, Program Files, ProgramData, drive roots, WinSxS, DriverStore, and CatRoot. It moves files to the Recycle Bin by default, and every action requires confirmation.</div>
+        </div>
+
+        <div class="faq-item" data-cat="pccleaner">
+          <div class="faq-q"><span>Do the 9 theme packs patch any Windows system files?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">No. The theme engine only changes wallpaper, accent colour, dark/light mode, folder/drive/file-type icon registry pointers, and copies icons into <code>%APPDATA%</code>. It does not patch <code>explorer.exe</code>, system DLLs, or any signed Microsoft component. That means Windows Update will never undo the theme and won't flag it as integrity corruption. Elements Windows does not allow third-party tools to change (Start button glyph, system-tray icons, Microsoft Store app icons) are left alone by design.</div>
+        </div>
+
+        <div class="faq-item" data-cat="pccleaner">
+          <div class="faq-q"><span>What happens to my saved passwords when the Browser Cleaner runs?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">Nothing — saved passwords are detected and reported so you know they exist, but never deleted. Browser Cleaner only removes cache, cookies (optional), and history (optional). Bookmarks, autofill form data, and extensions are not touched.</div>
+        </div>
+
+        <div class="faq-item" data-cat="pccleaner">
+          <div class="faq-q"><span>Do I need admin rights to use RBS PC Cleaner?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">No, for most actions. Admin is only requested when you do something system-wide: overriding drive icons, toggling HKLM (machine-scope) startup entries, cleaning <code>C:\Windows\Temp</code>, uninstalling programs that themselves need elevation, or creating system-wide scheduled clean tasks. The app prompts "Relaunch as admin" at the right moment — it does not force elevation up front.</div>
+        </div>
+
+        <div class="faq-item" data-cat="pccleaner">
+          <div class="faq-q"><span>Can I run RBS PC Cleaner from a USB stick?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">Yes. Use the portable ZIP (not the installer), extract the <code>RBS PC Cleaner</code> folder anywhere you like, and run <code>RBS PC Cleaner.exe</code>. Turn on Portable Mode in Settings to store config and theme backups beside the exe instead of in <code>%APPDATA%</code>. Keep the <code>_internal</code> folder next to the exe — do not move just the exe.</div>
+        </div>
+
+        <div class="faq-item" data-cat="pccleaner">
+          <div class="faq-q"><span>SmartScreen warns "unrecognised app". Is it safe?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">Yes. The build is unsigned (code-signing certificates are expensive for a free-forever project) so Windows SmartScreen shows its standard warning on first launch. Click <em>More info → Run anyway</em>. You can verify the build by scanning on VirusTotal.com — the app contains no malware, adware, or telemetry.</div>
+        </div>
+
+        <div class="faq-item" data-cat="pccleaner">
+          <div class="faq-q"><span>What Windows versions does RBS PC Cleaner support?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">Windows 10 and Windows 11, 64-bit only. It does not require Python, .NET, or any runtime installed — everything is bundled inside the app. 32-bit Windows and older versions (7, 8, 8.1) are not supported.</div>
+        </div>
+
       </div>
 
       <!-- Still have questions? -->
@@ -274,6 +332,7 @@
         <div class="footer-brand">
           <a href="index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
           <p class="footer-tagline">Building free, powerful tools for everyone.</p>
+          <p style="margin-top:12px;font-size:.88rem;">📷 <a href="https://instagram.com/rarebuildsoftware" target="_blank" rel="noopener" style="color:var(--accent-light);">@rarebuildsoftware</a> on Instagram</p>
         </div>
         <div>
           <p class="footer-heading">Navigation</p>
@@ -292,6 +351,7 @@
             <li><a href="software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
             <li><a href="software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
             <li><a href="software/detail.html?id=life-dashboard">Life Dashboard</a></li>
+            <li><a href="software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

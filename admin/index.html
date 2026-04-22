@@ -709,9 +709,15 @@
               <input type="url" id="contact-twitter" placeholder="https://twitter.com/..." />
             </div>
           </div>
-          <div class="fg">
-            <label>YouTube URL</label>
-            <input type="url" id="contact-youtube" placeholder="https://youtube.com/..." />
+          <div class="fg-row">
+            <div class="fg">
+              <label>YouTube URL</label>
+              <input type="url" id="contact-youtube" placeholder="https://youtube.com/..." />
+            </div>
+            <div class="fg">
+              <label>Instagram URL</label>
+              <input type="url" id="contact-instagram" placeholder="https://instagram.com/rarebuildsoftware" />
+            </div>
           </div>
           <div class="fg">
             <label>Contact Form Endpoint (Formspree URL)</label>
@@ -1619,9 +1625,9 @@ function generateBackupCodes() {
 
 /* ── Default data ── */
 const defaultContent = {
-  hero: { tag: '3 Free Windows Apps — No Subscriptions, Ever', titleLine1: 'Free Windows Software', titleLine2: 'for Everyone', description: 'RBS builds free, powerful tools designed for everyone. No subscriptions, no paywalls — just high-quality software that gets the job done.' },
+  hero: { tag: '4 Free Windows Apps — No Subscriptions, Ever', titleLine1: 'Free Windows Software', titleLine2: 'for Everyone', description: 'RBS builds free, powerful tools designed for everyone. No subscriptions, no paywalls — just high-quality software that gets the job done.' },
   about: { intro: 'RBS was founded on a simple frustration: too much software that should be free is locked behind subscriptions, trials, and paywalls. We decided to do something about it.', body: 'We build practical Windows utilities — optimizers, cleaners, and productivity tools — that are completely free to download and use. No accounts, no activation codes, no "pro upgrades". Just software that works.', mission: 'Building free, powerful tools for everyone.' },
-  contact: { email: 'support@rarebuildsoftware.com', github: '#', twitter: '#', youtube: '#' },
+  contact: { email: 'support@rarebuildsoftware.com', github: '#', twitter: '#', youtube: '#', instagram: 'https://instagram.com/rarebuildsoftware' },
   downloadCounter: 1247,
   announcement: { enabled: false, text: '🎉 Welcome to RBS Software! Download our 3 free apps today.', type: 'info', link: '', linkText: 'Download Now' },
   donation: { kofiUrl: 'https://ko-fi.com/rbsshop/tip', ethAddress: '0x3C8D5bf5c5c78B73814B17d61d9b2b39D722132c', btcAddress: '36boft8xKukMQeTZpWNjJfVxGS2kA3uzjY', btcQR: null, ethQR: null }
@@ -1895,6 +1901,7 @@ function initApp() {
   setVal('contact-github',        c.github === '#' ? '' : c.github);
   setVal('contact-twitter',       c.twitter === '#' ? '' : c.twitter);
   setVal('contact-youtube',       c.youtube === '#' ? '' : c.youtube);
+  setVal('contact-instagram',     c.instagram && c.instagram !== '#' ? c.instagram : 'https://instagram.com/rarebuildsoftware');
   setVal('contact-form-endpoint', c.formEndpoint || '');
 
   /* Show both actual click count and admin-set value */
@@ -2237,6 +2244,7 @@ function saveContent(section) {
       github:       getVal('contact-github')        || '#',
       twitter:      getVal('contact-twitter')       || '#',
       youtube:      getVal('contact-youtube')       || '#',
+      instagram:    getVal('contact-instagram')     || 'https://instagram.com/rarebuildsoftware',
       formEndpoint: getVal('contact-form-endpoint') || ''
     };
   } else if (section === 'counter') {

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Find and safely delete duplicate files on Windows 10 and 11 for free. Hash-based duplicate finder that keeps the oldest file and skips system folders automatically." />
+  <meta name="keywords" content="find duplicate files Windows free, duplicate file finder Windows 11, delete duplicate photos Windows, hash duplicate finder, free duplicate remover Windows" />
+  <title>Find Duplicate Files on Windows — Free Safe Duplicate Finder | RBS</title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="RBS" />
+  <meta property="og:title"       content="Find Duplicate Files on Windows — Free Safe Duplicate Finder" />
+  <meta property="og:description" content="Hash-based duplicate finder for Windows 10/11. Keeps the oldest file, skips Windows and Program Files. 100% free." />
+  <meta property="og:url"         content="https://rarebuildsoftware.com/blog/find-duplicate-files-windows-free.html" />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog.svg" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <link rel="canonical"           href="https://rarebuildsoftware.com/blog/find-duplicate-files-windows-free.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Find Duplicate Files on Windows — Free Safe Duplicate Finder",
+    "datePublished": "2026-04-19",
+    "dateModified": "2026-04-19",
+    "author": { "@type": "Organization", "name": "RBS Team" },
+    "publisher": { "@type": "Organization", "name": "RBS", "logo": { "@type": "ImageObject", "url": "https://rarebuildsoftware.com/assets/images/favicon.svg" }, "url": "https://rarebuildsoftware.com" },
+    "description": "Free hash-based duplicate file finder for Windows 10 and 11.",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rarebuildsoftware.com/blog/find-duplicate-files-windows-free.html" }
+  }
+  </script>
+
+  <link rel="preload" href="../assets/css/style.css" as="style" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="page-loader"><div class="loader-ring"></div></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo"><div class="logo-icon">RBS</div>RBS</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../blog.html" class="active">Blog</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme">☀️</button></li>
+        <li><a href="../software.html" class="nav-cta">⬇ Download Free</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../software.html">Software</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../faq.html">FAQ</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../software.html" class="nav-cta">⬇ Download Free</a>
+  </div>
+
+  <div id="rbs-announcement" style="display:none;"></div>
+
+  <main id="main-content">
+
+  <article class="blog-post-layout">
+    <div class="container" style="max-width:800px;">
+
+      <div style="margin-bottom:16px;">
+        <a href="../blog.html" style="color:var(--text-muted);font-size:0.9rem;">← Back to Blog</a>
+      </div>
+
+      <div class="blog-card-tag" style="display:inline-block;margin-bottom:16px;">Guide</div>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:16px;">
+        How to Find and Delete Duplicate Files on Windows (Free, Safe)
+      </h1>
+      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 6 min read · By RBS Team</p>
+
+      <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+
+        <p>Duplicate files are the easiest storage win on a Windows PC. You probably have three copies of that holiday photo album, the installer for every app you've ever downloaded, and a dozen "Untitled (1)", "Untitled (2)" screenshots in Downloads. This guide shows you how to find them and safely delete the extras — for free, without risking system files.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why filename matching isn't enough</h2>
+        <p>Plenty of free tools match by filename only. That's almost useless — <code>IMG_2034.jpg</code> might be two totally different photos if your camera resets counters, and two copies of the same song may have wildly different filenames.</p>
+        <p>The reliable approach is <strong>hash-based comparison</strong>: the file's contents are hashed (usually SHA-256 or xxHash) and two files are duplicates only if their hashes match. That way you find true byte-for-byte duplicates, not similarly-named files.</p>
+
+        <div style="background:rgba(0,200,150,0.06);border:1px solid rgba(0,200,150,0.3);border-radius:12px;padding:20px;margin:28px 0;">
+          <strong style="color:var(--accent-light);">Speed tip:</strong> smart scanners hash only files that match sizes first — hashing every file is slow, but hashing only same-size groups is fast.
+        </div>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What to scan</h2>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li><strong>Downloads folder</strong> — jackpot. Installers, ZIP files, PDFs.</li>
+          <li><strong>Pictures / Photos library</strong> — backups of backups of backups.</li>
+          <li><strong>Videos</strong> — can reclaim tens of GB.</li>
+          <li><strong>Music</strong> — especially if you've moved collections between apps.</li>
+          <li><strong>Documents</strong> — report drafts, invoice copies, version chaos.</li>
+        </ul>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What NOT to scan</h2>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li><strong><code>C:\Windows</code></strong> — Windows hard-links a lot of files intentionally.</li>
+          <li><strong><code>Program Files</code> / <code>Program Files (x86)</code></strong> — app DLLs and assets, same story.</li>
+          <li><strong><code>ProgramData</code></strong> — shared application data.</li>
+          <li><strong>Drive roots (<code>C:\</code>)</strong> — you'll pull in everything above by accident.</li>
+          <li><strong>WinSxS, DriverStore, CatRoot</strong> — deleting duplicates here breaks Windows Update.</li>
+        </ul>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The built-in option (PowerShell, advanced)</h2>
+        <p>If you prefer command-line: <code>Get-ChildItem -Recurse | Get-FileHash | Group-Object Hash | Where-Object Count -gt 1</code>. It works but you then have to review each group manually and delete by hand. Fine for ten files — exhausting for ten thousand.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The fast, safe way: RBS PC Cleaner Duplicate Finder</h2>
+        <p><a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> has a dedicated <strong>Duplicate Finder</strong> page:</p>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li>Hash-based (true byte-for-byte), with optional same-extension or same-filename filters.</li>
+          <li><strong>Always keeps the oldest file</strong> and marks newer copies for deletion — so your original stays, newer re-copies go.</li>
+          <li><strong>Auto-skips</strong> Windows, Program Files, ProgramData, drive roots, WinSxS, DriverStore, CatRoot.</li>
+          <li>Confirms before any delete.</li>
+          <li>Shows you groups with previews so you can spot-check before committing.</li>
+          <li>Moves files to Recycle Bin by default (undo possible) — hard delete is opt-in.</li>
+        </ul>
+        <p>Free. No subscription. No account.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Reclaim expectations</h2>
+        <p>A typical 500GB-used drive scanned by Duplicate Finder reclaims anywhere from 2GB to 40GB depending on how much you've downloaded. Photo libraries migrated across phones are often the single biggest source.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li><a href="free-disk-space-analyzer-windows.html" style="color:var(--accent-light);">Free Disk Space Analyzer for Windows</a> — find the folders with the most duplicates first.</li>
+          <li><a href="how-to-clean-windows-11-without-breaking-it.html" style="color:var(--accent-light);">How to Clean Windows 11 Without Breaking It</a> — safe cleanup across the whole system.</li>
+          <li><a href="bulk-uninstall-programs-windows.html" style="color:var(--accent-light);">Uninstall Multiple Programs at Once on Windows</a> — another big way to reclaim disk space.</li>
+          <li><a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner v1.0.0 Launch</a> — all features in one place.</li>
+        </ul>
+
+        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">🔍</div>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Free Hash-Based Duplicate Finder</h3>
+          <p style="color:var(--text-muted);margin-bottom:20px;">Part of RBS PC Cleaner · Windows 10/11</p>
+          <a href="../software/detail.html?id=rbs-pc-cleaner" class="btn btn-primary">⬇ Download Free</a>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
+          <p class="footer-tagline">Building free, powerful tools for everyone.</p>
+          <p style="margin-top:12px;font-size:.88rem;">📷 <a href="https://instagram.com/rarebuildsoftware" target="_blank" rel="noopener" style="color:var(--accent-light);">@rarebuildsoftware</a> on Instagram</p>
+        </div>
+        <div>
+          <p class="footer-heading">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Software</p>
+          <ul class="footer-links">
+            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
+            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
+            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
+            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Legal</p>
+          <ul class="footer-links">
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025–2026 RBS (Rare Build Software). All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../privacy.html">Privacy</a>
+          <a href="../terms.html">Terms</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </main>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/site-data.js"></script>
+</body>
+</html>

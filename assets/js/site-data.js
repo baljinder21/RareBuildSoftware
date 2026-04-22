@@ -123,12 +123,54 @@
       changelog: [
         { version: '1.0.0', date: '2026-04-14', notes: ['Initial release', '16 widgets including tasks, habits, finance, weather, sleep, diet', 'Drag and resize widgets', 'All data saved locally'] }
       ]
+    },
+    {
+      id: 'rbs-pc-cleaner',
+      name: 'RBS PC Cleaner',
+      icon: '🧹',
+      version: '1.0.0',
+      category: 'Optimization',
+      categories: ['Optimization', 'System Tools', 'Utilities'],
+      description: 'Honest Windows maintenance utility with real numbers, reversible changes, and no fake scores. Clean junk safely, manage startup, find duplicates, uninstall in bulk, apply 9 theme packs — and never touch the registry.',
+      fileSize: '~61 MB',
+      downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip',
+      downloadType: 'external',
+      screenshot: null,
+      screenshotPath: '',
+      visible: true,
+      released: '2026-04-19',
+      downloads: 0,
+      features: [
+        { icon: '🧽', title: 'Safe Junk Cleaner',    desc: 'Temp, recycle bin, Windows Update cache, prefetch, logs — each rated Safe / Caution / Risky, nothing deleted without confirmation.' },
+        { icon: '🌐', title: 'Browser Cleaner',      desc: 'Clears cache, cookies, history for Chrome, Edge, Firefox, Brave, Opera. Saved passwords are reported but never deleted.' },
+        { icon: '📦', title: 'App Cache Cleaner',    desc: 'Wipes Discord, Microsoft Teams, Spotify, VS Code, Slack, Zoom cache in one click.' },
+        { icon: '📊', title: 'Disk Analyzer',        desc: 'Read-only folder tree — see exactly what is using your space and drill down click by click.' },
+        { icon: '🔍', title: 'Duplicate Finder',     desc: 'Hash-based duplicate detection, always keeps the oldest file, auto-skips Windows and Program Files.' },
+        { icon: '🗑️', title: 'Bulk Uninstaller',     desc: 'Tick multiple installed programs and uninstall in sequence — silent mode when supported.' },
+        { icon: '🚀', title: 'Startup Manager',      desc: 'Toggle any startup entry on/off. Disabled entries are parked in a sibling key — fully reversible.' },
+        { icon: '🎮', title: 'Gaming Mode',          desc: 'One click: safe clean + memory trim + High-Performance power plan + suspend background apps. Resume brings everything back.' },
+        { icon: '🎨', title: '9 Theme Packs',        desc: 'Real icon packs + matching 2560×1440 wallpapers + taskbar accent. Reversible with one click — Restore Original.' },
+        { icon: '⏰', title: 'Scheduler',            desc: 'Daily or weekly silent auto-clean via Windows Task Scheduler.' },
+        { icon: '🛡️', title: 'Safety Gate',          desc: 'Blocks deletion inside C:\\Windows, Program Files, ProgramData, drive roots — and never scans the registry.' },
+        { icon: '💼', title: 'Portable Mode',        desc: 'Store settings + backups next to the exe — perfect for USB sticks and IT technicians.' }
+      ],
+      sysReqs: [
+        'Windows 10 or Windows 11 (64-bit)',
+        '150 MB free disk space',
+        '2 GB RAM minimum (4 GB recommended)',
+        'No Python installation required — everything bundled',
+        'Administrator rights needed for drive-icon overrides, HKLM startup entries, and Windows Temp cleanup',
+        'Installer (recommended) or portable ZIP — both supported'
+      ],
+      changelog: [
+        { version: '1.0.0', date: '2026-04-19', notes: ['Initial public release', 'Junk, browser, and app cache cleaners with Safe/Caution/Risky ratings', 'Disk analyzer and hash-based duplicate finder', 'Bulk uninstaller with silent-mode support', 'Startup manager with reversible disable', 'Gaming Mode with Resume button', '9 theme packs (Monochrome, Neon, Minimal, Retro, Cyberpunk, Ocean, Sunset, Forest, Windows Default)', 'Scheduled auto-clean via Task Scheduler', 'Portable mode and installer options', 'Central safety gate — never scans or modifies the registry'] }
+      ]
     }
   ];
 
   const DEFAULT_CONTENT = {
     hero: {
-      tag:         '3 Free Windows Apps — No Subscriptions, Ever',
+      tag:         '4 Free Windows Apps — No Subscriptions, Ever',
       titleLine1:  'Free Windows Software',
       titleLine2:  'for Everyone',
       description: 'RBS builds free, powerful tools designed for everyone. No subscriptions, no paywalls — just high-quality software that gets the job done.'
@@ -140,7 +182,8 @@
     },
     contact: {
       email: 'support@rarebuildsoftware.com',
-      github: '#', twitter: '#', youtube: '#'
+      github: '#', twitter: '#', youtube: '#',
+      instagram: 'https://instagram.com/rarebuildsoftware'
     },
     downloadCounter: 0,
     announcement: { enabled: false, text: '', type: 'info', link: '', linkText: '' },
@@ -365,9 +408,10 @@
     const c = content.contact || DEFAULT_CONTENT.contact;
     const emailEl = document.getElementById('rbs-contact-email-link');
     if (emailEl) { emailEl.href = 'mailto:' + c.email; emailEl.textContent = c.email; }
-    setAttr('rbs-social-github',  'href', c.github  !== '#' ? c.github  : null);
-    setAttr('rbs-social-twitter', 'href', c.twitter !== '#' ? c.twitter : null);
-    setAttr('rbs-social-youtube', 'href', c.youtube !== '#' ? c.youtube : null);
+    setAttr('rbs-social-github',    'href', c.github    !== '#' ? c.github    : null);
+    setAttr('rbs-social-twitter',   'href', c.twitter   !== '#' ? c.twitter   : null);
+    setAttr('rbs-social-youtube',   'href', c.youtube   !== '#' ? c.youtube   : null);
+    setAttr('rbs-social-instagram', 'href', (c.instagram && c.instagram !== '#') ? c.instagram : 'https://instagram.com/rarebuildsoftware');
   }
 
   /* ═══════════════════════════════════════
@@ -934,6 +978,96 @@
 
     // Static sample articles + any admin-added ones
     const staticArticles = [
+      {
+        id: 'rbs-pc-cleaner-launch',
+        title: 'RBS PC Cleaner v1.0.0 — Free Honest Windows Cleaner (No Registry)',
+        excerpt: 'RBS PC Cleaner is out — safe junk cleaner, duplicate finder, bulk uninstaller, startup manager, gaming mode, and 9 theme packs. 100% free, reversible, never scans the registry.',
+        emoji: '🧹',
+        tag: 'News',
+        date: '2026-04-19',
+        url: 'blog/rbs-pc-cleaner-launch.html'
+      },
+      {
+        id: 'how-to-clean-windows-11-without-breaking-it',
+        title: 'How to Clean Windows 11 Without Breaking It — Safe Guide',
+        excerpt: 'Which junk is safe to remove, which to leave alone, and a free tool that rates every cleanup action before you run it. Step-by-step guide for Windows 10/11.',
+        emoji: '🧽',
+        tag: 'Guide',
+        date: '2026-04-19',
+        url: 'blog/how-to-clean-windows-11-without-breaking-it.html'
+      },
+      {
+        id: 'free-browser-cache-cleaner-windows',
+        title: 'Free Browser Cache Cleaner — Chrome, Edge, Firefox, Brave, Opera',
+        excerpt: 'Clear cache, cookies, and history across all five major browsers in one click. Saved passwords are reported but never deleted. Free for Windows 10/11.',
+        emoji: '🌐',
+        tag: 'Tutorial',
+        date: '2026-04-19',
+        url: 'blog/free-browser-cache-cleaner-windows.html'
+      },
+      {
+        id: 'find-duplicate-files-windows-free',
+        title: 'How to Find and Delete Duplicate Files on Windows (Free, Safe)',
+        excerpt: 'Hash-based duplicate file finder that always keeps the oldest file and auto-skips system folders. Reclaim gigabytes from Downloads, Photos, and Videos safely.',
+        emoji: '🔍',
+        tag: 'Guide',
+        date: '2026-04-19',
+        url: 'blog/find-duplicate-files-windows-free.html'
+      },
+      {
+        id: 'best-free-startup-manager-windows-11',
+        title: 'Best Free Startup Manager for Windows 11 (2026)',
+        excerpt: 'Safely disable Windows 11 startup entries and cut boot time by 40–70%. Fully reversible — disabled entries are parked in a sibling key, not deleted.',
+        emoji: '🚀',
+        tag: 'Review',
+        date: '2026-04-19',
+        url: 'blog/best-free-startup-manager-windows-11.html'
+      },
+      {
+        id: 'bulk-uninstall-programs-windows',
+        title: 'Uninstall Multiple Programs at Once on Windows — Free Bulk Uninstaller',
+        excerpt: 'Tick multiple programs and uninstall in sequence. Silent mode auto-detected. Sort by size to find the biggest targets. Free for Windows 10/11.',
+        emoji: '🗑️',
+        tag: 'Tutorial',
+        date: '2026-04-19',
+        url: 'blog/bulk-uninstall-programs-windows.html'
+      },
+      {
+        id: 'customize-windows-11-icons-themes',
+        title: 'Customize Windows 11 Icons &amp; Themes — 9 Free Theme Packs',
+        excerpt: '9 ready-made Windows 11 theme packs with matching icons and 2560×1440 wallpapers. Apply in one click — Restore Original reverts exactly.',
+        emoji: '🎨',
+        tag: 'Tutorial',
+        date: '2026-04-19',
+        url: 'blog/customize-windows-11-icons-themes.html'
+      },
+      {
+        id: 'gaming-mode-windows-boost-fps-free',
+        title: 'Gaming Mode for Windows — Boost FPS Without Shady "Game Boosters"',
+        excerpt: 'One click: safe clean + memory trim + High Performance power plan + suspend background apps. Resume button undoes everything. 100% free.',
+        emoji: '🎮',
+        tag: 'Guide',
+        date: '2026-04-19',
+        url: 'blog/gaming-mode-windows-boost-fps-free.html'
+      },
+      {
+        id: 'clear-discord-teams-spotify-cache-windows',
+        title: 'Clear Discord, Teams, Spotify &amp; VS Code Cache on Windows',
+        excerpt: 'One click to clear cache for Discord, Microsoft Teams, Spotify, VS Code, Slack and Zoom. Reclaim 5–15 GB of Electron app cache safely.',
+        emoji: '📦',
+        tag: 'Tutorial',
+        date: '2026-04-19',
+        url: 'blog/clear-discord-teams-spotify-cache-windows.html'
+      },
+      {
+        id: 'free-disk-space-analyzer-windows',
+        title: 'Free Disk Space Analyzer for Windows — See What\'s Using Your Space',
+        excerpt: 'Read-only folder tree with drill-down. Find the gigabytes Windows Storage settings won\'t show you. No admin required, no cloud upload.',
+        emoji: '📈',
+        tag: 'Guide',
+        date: '2026-04-19',
+        url: 'blog/free-disk-space-analyzer-windows.html'
+      },
       {
         id: 'life-dashboard-launch',
         title: 'Life Dashboard v1.0.0 — Your All-in-One Productivity App',

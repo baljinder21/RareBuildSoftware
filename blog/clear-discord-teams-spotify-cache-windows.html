@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Clear cache for Discord, Microsoft Teams, Spotify, VS Code, Slack and Zoom on Windows. Free tool reclaims several GB of app cache with one click — no manual folder hunting." />
+  <meta name="keywords" content="clear Discord cache Windows, Microsoft Teams cache cleaner, Spotify cache Windows, VS Code cache, Slack cache Windows, free app cache cleaner Windows" />
+  <title>Clear Discord, Teams, Spotify, VS Code Cache on Windows — Free | RBS</title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="RBS" />
+  <meta property="og:title"       content="Clear Discord, Teams, Spotify, VS Code Cache on Windows — Free" />
+  <meta property="og:description" content="One click to clear cache for Discord, Microsoft Teams, Spotify, VS Code, Slack and Zoom. Reclaim GB of disk space." />
+  <meta property="og:url"         content="https://rarebuildsoftware.com/blog/clear-discord-teams-spotify-cache-windows.html" />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog.svg" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <link rel="canonical"           href="https://rarebuildsoftware.com/blog/clear-discord-teams-spotify-cache-windows.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Clear Discord, Teams, Spotify, VS Code Cache on Windows — Free",
+    "datePublished": "2026-04-19",
+    "dateModified": "2026-04-19",
+    "author": { "@type": "Organization", "name": "RBS Team" },
+    "publisher": { "@type": "Organization", "name": "RBS", "logo": { "@type": "ImageObject", "url": "https://rarebuildsoftware.com/assets/images/favicon.svg" }, "url": "https://rarebuildsoftware.com" },
+    "description": "Free app cache cleaner for Discord, Teams, Spotify, VS Code, Slack and Zoom.",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rarebuildsoftware.com/blog/clear-discord-teams-spotify-cache-windows.html" }
+  }
+  </script>
+
+  <link rel="preload" href="../assets/css/style.css" as="style" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="page-loader"><div class="loader-ring"></div></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo"><div class="logo-icon">RBS</div>RBS</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../blog.html" class="active">Blog</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme">☀️</button></li>
+        <li><a href="../software.html" class="nav-cta">⬇ Download Free</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../software.html">Software</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../faq.html">FAQ</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../software.html" class="nav-cta">⬇ Download Free</a>
+  </div>
+
+  <div id="rbs-announcement" style="display:none;"></div>
+
+  <main id="main-content">
+
+  <article class="blog-post-layout">
+    <div class="container" style="max-width:800px;">
+
+      <div style="margin-bottom:16px;">
+        <a href="../blog.html" style="color:var(--text-muted);font-size:0.9rem;">← Back to Blog</a>
+      </div>
+
+      <div class="blog-card-tag" style="display:inline-block;margin-bottom:16px;">Tutorial</div>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:16px;">
+        Clear Discord, Teams, Spotify &amp; VS Code Cache on Windows
+      </h1>
+      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 5 min read · By RBS Team</p>
+
+      <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+
+        <p>Electron apps — Discord, Microsoft Teams, Slack, VS Code — are essentially browsers in disguise, and they cache like browsers do. Spotify runs a Chromium engine for its UI and caches album art. Zoom caches meeting logs and media. On a typical PC, these apps collectively eat 5–15GB of cache, and <strong>none of them expose a "Clear Cache" button in their own settings</strong>.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Where each app's cache lives</h2>
+        <p>If you want to clear them manually, here are the paths:</p>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li><strong>Discord</strong> — <code>%APPDATA%\discord\Cache</code>, <code>Code Cache</code>, <code>GPUCache</code></li>
+          <li><strong>Microsoft Teams</strong> — <code>%APPDATA%\Microsoft\Teams</code> (several sub-folders named <code>Cache</code>, <code>Blob_storage</code>, <code>databases</code>, <code>GPUCache</code>, <code>IndexedDB</code>, <code>Local Storage</code>, <code>tmp</code>)</li>
+          <li><strong>Spotify</strong> — <code>%LOCALAPPDATA%\Spotify\Storage</code> and <code>%LOCALAPPDATA%\Spotify\Data</code></li>
+          <li><strong>VS Code</strong> — <code>%APPDATA%\Code\Cache</code>, <code>CachedData</code>, <code>Code Cache</code>, <code>GPUCache</code>, <code>logs</code></li>
+          <li><strong>Slack</strong> — <code>%APPDATA%\Slack\Cache</code>, <code>Code Cache</code>, <code>GPUCache</code></li>
+          <li><strong>Zoom</strong> — <code>%APPDATA%\Zoom</code> (logs + cache)</li>
+        </ul>
+
+        <div style="background:rgba(0,200,150,0.06);border:1px solid rgba(0,200,150,0.3);border-radius:12px;padding:20px;margin:28px 0;">
+          <strong style="color:var(--accent-light);">Important:</strong> close the app before clearing its cache, or Windows will refuse to delete files in use. <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> skips locked files automatically and offers to close the app first.
+        </div>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What's safe to delete in these apps</h2>
+        <p>Safe for all of them: <code>Cache</code>, <code>Code Cache</code>, <code>GPUCache</code>, <code>tmp</code>, <code>logs</code>. These are regenerated on next launch.</p>
+        <p><strong>Avoid</strong>: <code>Local Storage</code> and <code>IndexedDB</code> — these contain actual app data. In Teams, deleting them signs you out and re-sync takes time. In VS Code, they store extension settings and workspace state.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">One-click way: RBS PC Cleaner</h2>
+        <p><a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner</a>'s <strong>App Cache Cleaner</strong> page:</p>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li>Detects which of the 6 apps you have installed.</li>
+          <li>Shows the exact MB used per app before you clear.</li>
+          <li>Targets only the safe sub-folders (Cache, Code Cache, GPUCache, tmp, logs) — leaves Local Storage and IndexedDB alone.</li>
+          <li>Skips files in use. Offers to close apps that are running.</li>
+          <li>Reports how much was freed per app.</li>
+        </ul>
+        <p>Free forever, open download from GitHub.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Other Electron apps worth checking</h2>
+        <p>The same pattern applies to any Electron-based app — Notion, Figma Desktop, WhatsApp Desktop, Signal, Obsidian, Typora, etc. They all have <code>Cache</code> and <code>GPUCache</code> sub-folders that are safe to clear. The RBS PC Cleaner team is adding more to the detect list in future updates based on user feedback.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Typical space reclaimed</h2>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li>Discord on a heavy-usage account: 2–5 GB</li>
+          <li>Teams on an office laptop: 3–8 GB (worst offender)</li>
+          <li>Spotify: 500 MB – 2 GB</li>
+          <li>VS Code: 200 MB – 1 GB</li>
+          <li>Slack: 500 MB – 2 GB</li>
+          <li>Zoom: 200 MB – 1 GB (mostly logs)</li>
+        </ul>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li><a href="free-browser-cache-cleaner-windows.html" style="color:var(--accent-light);">Free Browser Cache Cleaner — Chrome, Edge, Firefox, Brave, Opera</a> — same one-click approach for browsers.</li>
+          <li><a href="how-to-clean-windows-11-without-breaking-it.html" style="color:var(--accent-light);">How to Clean Windows 11 Without Breaking It</a> — the full safe-cleanup guide.</li>
+          <li><a href="free-disk-space-analyzer-windows.html" style="color:var(--accent-light);">Free Disk Space Analyzer for Windows</a> — find where the rest of your space went.</li>
+          <li><a href="how-to-free-up-ram-windows-11.html" style="color:var(--accent-light);">How to Free Up RAM on Windows 11</a> — Electron apps hog RAM too.</li>
+          <li><a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner v1.0.0 Launch</a> — full feature list.</li>
+        </ul>
+
+        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">📦</div>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Free App Cache Cleaner for Windows</h3>
+          <p style="color:var(--text-muted);margin-bottom:20px;">Discord · Teams · Spotify · VS Code · Slack · Zoom</p>
+          <a href="../software/detail.html?id=rbs-pc-cleaner" class="btn btn-primary">⬇ Download Free</a>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
+          <p class="footer-tagline">Building free, powerful tools for everyone.</p>
+          <p style="margin-top:12px;font-size:.88rem;">📷 <a href="https://instagram.com/rarebuildsoftware" target="_blank" rel="noopener" style="color:var(--accent-light);">@rarebuildsoftware</a> on Instagram</p>
+        </div>
+        <div>
+          <p class="footer-heading">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Software</p>
+          <ul class="footer-links">
+            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
+            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
+            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
+            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Legal</p>
+          <ul class="footer-links">
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025–2026 RBS (Rare Build Software). All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../privacy.html">Privacy</a>
+          <a href="../terms.html">Terms</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </main>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/site-data.js"></script>
+</body>
+</html>
