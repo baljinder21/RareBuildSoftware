@@ -685,7 +685,7 @@
           </div>
           <div class="fg">
             <label>Mission Statement (shown in quote box)</label>
-            <input type="text" id="about-mission" placeholder="e.g. Building free, powerful tools for everyone." />
+            <input type="text" id="about-mission" placeholder="e.g. Building honest, free tools for everyone." />
           </div>
           <button class="btn btn-primary" onclick="saveContent('about')">💾 Save About Content</button>
         </div>
@@ -1626,7 +1626,7 @@ function generateBackupCodes() {
 /* ── Default data ── */
 const defaultContent = {
   hero: { tag: '4 Free Windows Apps — No Subscriptions, Ever', titleLine1: 'Free Windows Software', titleLine2: 'for Everyone', description: 'RBS builds free, powerful tools designed for everyone. No subscriptions, no paywalls — just high-quality software that gets the job done.' },
-  about: { intro: 'RBS was founded on a simple frustration: too much software that should be free is locked behind subscriptions, trials, and paywalls. We decided to do something about it.', body: 'We build practical Windows utilities — optimizers, cleaners, and productivity tools — that are completely free to download and use. No accounts, no activation codes, no "pro upgrades". Just software that works.', mission: 'Building free, powerful tools for everyone.' },
+  about: { intro: 'RBS started from a simple frustration: too much software that should be free is locked behind subscriptions, trials, and paywalls. I\'m Rai, a solo developer based in Singapore, and I decided to do something about it.', body: 'I build practical Windows utilities — optimizers, cleaners, and productivity tools — that are completely free to download and use. No accounts, no activation codes, no "pro upgrades". Just software that works.', mission: 'Building honest, free tools for everyone.' },
   contact: { email: 'support@rarebuildsoftware.com', github: '#', twitter: '#', youtube: '#', instagram: 'https://instagram.com/rarebuildsoftware' },
   downloadCounter: 1247,
   announcement: { enabled: false, text: '🎉 Welcome to RBS Software! Download our 3 free apps today.', type: 'info', link: '', linkText: 'Download Now' },
@@ -1634,8 +1634,8 @@ const defaultContent = {
 };
 
 const defaultSoftware = [
-  { id: 'rbs-optimizer-pro', name: 'RBS Optimizer Pro', version: '1.0.0', icon: '⚡',
-    description: 'The ultimate free Windows optimization suite. Clean junk, boost performance, manage startup programs and monitor your system in real time.',
+  { id: 'rbs-optimizer-pro', name: 'RBS Optimizer Pro', version: '1.0.0', icon: '🔧',
+    description: 'A free Windows optimization suite — junk cleaner, startup manager, and performance monitor.',
     fileSize: '~23 MB', downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip',
     screenshot: null, visible: true,
     features: [
@@ -1648,9 +1648,9 @@ const defaultSoftware = [
     ],
     sysReqs: ['Windows 10 or Windows 11 (64-bit)', '50 MB free disk space', '2 GB RAM (4 GB recommended)', '1 GHz or faster processor', 'No internet required', 'Administrator rights recommended']
   },
-  { id: 'rbs-voice-cloner', name: 'RBS Voice Cloner', version: '1.0.0', icon: '🎙️',
+  { id: 'rbs-voice-cloner', name: 'RBS Voice Cloner', version: '1.0.0', icon: '🎤',
     description: 'Clone any voice from a 5-second sample using XTTS v2 AI. Generate speech in 28+ languages — runs fully offline after first setup.',
-    fileSize: '~1.4 GB', downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSVoiceClonerRelease.zip',
+    fileSize: '~248 MB', downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSVoiceCloner_Setup.zip',
     screenshot: null, visible: true,
     features: [
       {icon:'🎤',title:'Voice Cloning',desc:'Clone any voice from a 5-second audio sample.'},
@@ -1662,9 +1662,9 @@ const defaultSoftware = [
     ],
     sysReqs: ['Windows 10 or Windows 11 (64-bit)', '4 GB RAM minimum (8 GB recommended)', 'NVIDIA GPU with 4GB+ VRAM (optional, for speed)', '5 GB free disk space (for models)', 'Python 3.10+ (bundled)', 'No internet required after setup']
   },
-  { id: 'life-dashboard', name: 'Life Dashboard', version: '1.0.0', icon: '📊',
+  { id: 'life-dashboard', name: 'Life Dashboard', version: '1.0.0', icon: '📅',
     description: 'Your all-in-one personal productivity hub. 16 widgets — habits, tasks, finance, weather, sleep, diet, goals and more in one window.',
-    fileSize: '~101 MB', downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/Life-Dashboard.zip',
+    fileSize: '~104 MB', downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/Life.Dashboard.Setup.1.0.0.zip',
     screenshot: null, visible: true,
     features: [
       {icon:'🧩',title:'16 Widgets',desc:'Clock, weather, tasks, habits, finance, sleep and more.'},
@@ -1675,6 +1675,20 @@ const defaultSoftware = [
       {icon:'🌦️',title:'Live Weather',desc:'Real-time weather widget with location support.'}
     ],
     sysReqs: ['Windows 10 or Windows 11 (64-bit)', '200 MB free disk space', '2 GB RAM', '1 GHz or faster processor', 'Internet required for weather widget only', 'No admin rights required']
+  },
+  { id: 'rbs-pc-cleaner', name: 'RBS PC Cleaner', version: '1.0.0', icon: '🧹',
+    description: 'Honest Windows maintenance utility with real numbers, reversible changes, and no fake scores. Safe junk cleaner, duplicate finder, bulk uninstaller, startup manager, 9 theme packs — never touches the registry.',
+    fileSize: '~61 MB', downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip',
+    screenshot: null, visible: true,
+    features: [
+      {icon:'🧽',title:'Safe Junk Cleaner',desc:'Temp, recycle bin, Windows Update cache — each rated Safe / Caution / Risky.'},
+      {icon:'🌐',title:'Browser Cleaner',desc:'Chrome, Edge, Firefox, Brave, Opera — cache, cookies, history.'},
+      {icon:'🔍',title:'Duplicate Finder',desc:'Hash-based. Keeps the oldest file. Skips Windows and Program Files.'},
+      {icon:'🗑️',title:'Bulk Uninstaller',desc:'Tick multiple programs and uninstall in sequence.'},
+      {icon:'🚀',title:'Startup Manager',desc:'Disable entries reversibly — parked in a Run-Disabled key.'},
+      {icon:'🎨',title:'9 Theme Packs',desc:'Real icon packs + wallpapers + accent. One-click revert.'}
+    ],
+    sysReqs: ['Windows 10 or Windows 11 (64-bit)', '150 MB free disk space', '2 GB RAM minimum (4 GB recommended)', 'No Python required — everything bundled', 'Admin needed for drive icons, HKLM startup, C:\\Windows\\Temp', 'Installer and portable ZIP both supported']
   }
 ];
 
