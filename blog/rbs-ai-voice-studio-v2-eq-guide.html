@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="7-band parametric equaliser tuned for voice — what each band does, when to use which preset (Natural, Warm, Bright, Podcast, Phone, Flat), and how to fix common voice problems with EQ. Free in RBS Voice Cloner V2." />
+  <meta name="keywords" content="parametric EQ for voice, voice equaliser presets, free voice EQ Windows, podcast EQ settings, AI voice cloning EQ, RBS Voice Cloner V2 EQ guide" />
+  <title>7-Band Parametric EQ for Voice — Which Preset to Pick (Free) | RBS</title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="RBS" />
+  <meta property="og:title"       content="7-Band Parametric EQ for Voice — Which Preset to Pick" />
+  <meta property="og:description" content="What each EQ band does, when to use Natural / Warm / Bright / Podcast / Phone / Flat, and how to fix common voice problems with EQ. Free in RBS Voice Cloner V2." />
+  <meta property="og:url"         content="https://rarebuildsoftware.com/blog/rbs-ai-voice-studio-v2-eq-guide.html" />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/software/rbs-voice-cloner-v2-preview.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <link rel="canonical"           href="https://rarebuildsoftware.com/blog/rbs-ai-voice-studio-v2-eq-guide.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "7-Band Parametric EQ for Voice — Which Preset to Pick",
+    "datePublished": "2026-04-26",
+    "dateModified": "2026-04-26",
+    "author": { "@type": "Organization", "name": "RBS Team" },
+    "publisher": { "@type": "Organization", "name": "RBS", "logo": { "@type": "ImageObject", "url": "https://rarebuildsoftware.com/assets/images/favicon.svg" }, "url": "https://rarebuildsoftware.com" },
+    "description": "What each EQ band does and which preset to pick for voice work in RBS Voice Cloner V2.",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rarebuildsoftware.com/blog/rbs-ai-voice-studio-v2-eq-guide.html" }
+  }
+  </script>
+
+  <link rel="preload" href="../assets/css/style.css" as="style" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="page-loader"><div class="loader-ring"></div></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo"><div class="logo-icon">RBS</div>RBS</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../blog.html" class="active">Blog</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme">☀️</button></li>
+        <li><a href="../software.html" class="nav-cta">⬇ Download Free</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../software.html">Software</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../faq.html">FAQ</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../software.html" class="nav-cta">⬇ Download Free</a>
+  </div>
+
+  <div id="rbs-announcement" style="display:none;"></div>
+
+  <main id="main-content">
+
+  <article class="blog-post-layout">
+    <div class="container" style="max-width:800px;">
+
+      <div style="margin-bottom:16px;">
+        <a href="../blog.html" style="color:var(--text-muted);font-size:0.9rem;">← Back to Blog</a>
+      </div>
+
+      <div class="blog-card-tag" style="display:inline-block;margin-bottom:16px;">Tutorial</div>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:16px;">
+        7-Band Parametric EQ for Voice — Which Preset to Pick
+      </h1>
+      <p style="color:var(--text-muted);margin-bottom:32px;">📅 April 26, 2026 · 6 min read · By Rai (RBS)</p>
+
+      <img src="../assets/images/software/rbs-voice-cloner-v2-preview.png"
+           alt="The 7-band parametric equaliser in RBS Voice Cloner V2"
+           style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--border);margin-bottom:32px;" />
+
+      <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+
+        <p>The 7-band parametric equaliser in <a href="../software/detail.html?id=rbs-voice-cloner-v2" style="color:var(--accent-light);">RBS Voice Cloner V2</a> isn't a generic music EQ — the bands are placed where voice problems actually live. This guide walks through what each band does, when to use which preset, and how to fix common cloning artefacts with a couple of slider moves.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The 7 bands and what they do</h2>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li><strong>Sub — 60 Hz.</strong> Below voice. Cut this to remove HVAC rumble, traffic noise, mic-stand bumps. Boosting adds nothing useful for voice.</li>
+          <li><strong>Bass — 200 Hz.</strong> Body / chest. Boost for warmth and a "fuller" voice. Cut if the voice sounds boomy or muddy.</li>
+          <li><strong>Low Mid — 500 Hz.</strong> Where "muddy" lives. Cut a couple of dB if the voice sounds boxy or congested.</li>
+          <li><strong>Mid — 1.5 kHz.</strong> Intelligibility. Boost slightly for vocals that need to cut through a mix. Don't go crazy — too much makes it harsh.</li>
+          <li><strong>Hi Mid — 3.5 kHz.</strong> Presence. Boost for clarity and "in your face" sound. The sweet spot for podcast voices.</li>
+          <li><strong>Presence — 8 kHz.</strong> Air and breathiness. Boost lightly for sparkle. Boost too much and you'll get sibilance ("sss" sounds spike).</li>
+          <li><strong>Air — 12 kHz.</strong> Top-end shimmer. A small lift here makes everything sound more "produced". Useful in tiny amounts.</li>
+        </ul>
+
+        <div style="background:rgba(0,200,150,0.06);border:1px solid rgba(0,200,150,0.3);border-radius:12px;padding:20px;margin:28px 0;">
+          <strong style="color:var(--accent-light);">Rule of thumb:</strong> cuts sound natural, boosts sound obvious. If a frequency is annoying, cut around it rather than boosting everything else.
+        </div>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The 6 presets — when to use each</h2>
+
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Voice — Natural</h3>
+        <p>Light cleanup with a slight presence + air boost. Use this as your default. Light cut at Sub (rumble removal) and a small lift at Hi Mid + Air for clarity. 80% of the time this is the right starting point.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Voice — Warm</h3>
+        <p>Bass + Low Mid boost. Use for narration, audiobook reading, intimate-sounding voiceovers. Especially good for thinner-sounding cloned voices. Avoid if the source already sounds boomy.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Voice — Bright</h3>
+        <p>Hi Mid + Presence + Air boost. Use when a voice sounds dull, distant, or "behind a curtain". Pulls the vocal forward in the perceived mix. Don't combine with Warm — they fight each other.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Podcast</h3>
+        <p>Standard podcast EQ curve: cut sub-bass, lift presence, gentle air boost. Use for any spoken-word content destined for headphone or earbud listeners. This is the preset most podcast hosts pay $$ for in commercial plugins.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Phone</h3>
+        <p>Narrow-band telephony filter — cuts everything below 300 Hz and above 3.4 kHz. Use for stylised effects (voicemail, phone-call simulation, retro radio sound). Don't use for general listening.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Flat</h3>
+        <p>Zero everything. Useful as a starting point for manual tweaking, or when you want to undo a previous preset. Click <strong>Reset</strong> instead if you want to revert the audio AND zero the sliders.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Common voice problems and how to fix them with EQ</h2>
+
+        <p><strong>"Sounds muddy / boomy"</strong> — Cut Low Mid (500 Hz) by 2–4 dB. If still boomy, cut Bass (200 Hz) by 1–2 dB.</p>
+        <p><strong>"Sounds thin or distant"</strong> — Apply Voice — Warm preset. Or boost Bass (200 Hz) and Low Mid (500 Hz) by 2 dB each.</p>
+        <p><strong>"Sounds dull or muffled"</strong> — Boost Hi Mid (3.5 kHz) by 2–3 dB. Add a small Presence (8 kHz) lift if needed.</p>
+        <p><strong>"S sounds are harsh / sibilant"</strong> — Cut Presence (8 kHz) by 1–2 dB. Don't cut more than 3 dB or the voice goes lispy.</p>
+        <p><strong>"There's background hum / rumble"</strong> — Cut Sub (60 Hz) all the way down. Combine with the <em>Remove Noise</em> Quick effect on the Audio Editor.</p>
+        <p><strong>"Cloned voice sounds robotic"</strong> — Apply Voice — Natural, then boost Air (12 kHz) by 1 dB. Slight breath in the top end masks XTTS v2 artefacts.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Workflow tips</h2>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li><strong>EQ last.</strong> Trim → noise reduction → volume normalise → THEN EQ. EQ on noisy or unbalanced source is harder.</li>
+          <li><strong>Apply, listen, undo if needed.</strong> The Reset button reverts the audio to its pre-EQ state, not just the sliders.</li>
+          <li><strong>A/B with Bypass.</strong> Click Apply EQ, listen, then Reset and listen again. The change should be obvious or you've over-EQed.</li>
+          <li><strong>Different output medium = different EQ.</strong> Phone speaker = lift Mid. Studio headphones = subtle Air. Podcast → tucked in a car = use Podcast preset.</li>
+        </ul>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What about the Audio Editor's other effects?</h2>
+        <p>EQ is just one tab in the redesigned editor. The Quick tab has Normalise (matches loudness), Remove Noise (broadband noise reduction), Reverse (gimmicky but fun), and Auto-Trim (cut silence from start/end). The Adjust tab has Volume / Speed / Pitch sliders + Echo. Trim &amp; Fade does what you'd expect. Read the full overview in the <a href="rbs-ai-voice-studio-v2-launch.html" style="color:var(--accent-light);">V2 launch post</a>.</p>
+
+        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">🎚️</div>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Free 7-Band Voice EQ</h3>
+          <p style="color:var(--text-muted);margin-bottom:20px;">Part of RBS Voice Cloner V2 · Windows 10/11</p>
+          <a href="../software/detail.html?id=rbs-voice-cloner-v2" class="btn btn-primary">⬇ Download Free</a>
+        </div>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li><a href="rbs-ai-voice-studio-v2-launch.html" style="color:var(--accent-light);">RBS Voice Cloner V2 — Launch announcement</a></li>
+          <li><a href="rbs-voice-cloner-v1-vs-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V1 vs V2 — which should you download?</a></li>
+          <li><a href="clear-discord-teams-spotify-cache-windows.html" style="color:var(--accent-light);">Clear Discord, Teams, Spotify cache (free up disk space for the 2 GB V2 download)</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
+          <p class="footer-tagline">Building free, useful tools for everyone.</p>
+          <p style="margin-top:12px;font-size:.88rem;">📷 <a href="https://instagram.com/rarebuildsoftware" target="_blank" rel="noopener" style="color:var(--accent-light);">@rarebuildsoftware</a> on Instagram</p>
+        </div>
+        <div>
+          <p class="footer-heading">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Software</p>
+          <ul class="footer-links">
+            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
+            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
+            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
+            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Legal</p>
+          <ul class="footer-links">
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025–2026 RBS (Rare Build Software). All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../privacy.html">Privacy</a>
+          <a href="../terms.html">Terms</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </main>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/site-data.js"></script>
+</body>
+</html>

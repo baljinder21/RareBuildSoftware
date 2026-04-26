@@ -94,6 +94,58 @@
       ]
     },
     {
+      id: 'rbs-voice-cloner-v2',
+      name: 'RBS Voice Cloner V2',
+      icon: '🎙️',
+      version: '2.0.0',
+      category: 'AI Tools',
+      categories: ['AI Tools', 'Audio'],
+      description: 'Major V2 release of the free AI voice cloner. 16 built-in voices plus unlimited custom clones from a 30-second sample, 17 languages with auto-translate, 7-band parametric equaliser with voice presets, and a redesigned audio editor (cut · fade · merge · normalise · live waveform cursor). 100% offline after the one-time model download.',
+      fileSize: '~2.0 GB',
+      downloadUrl: 'https://github.com/baljinder21/RBS-RareBuildSoftware-V2/releases/download/VoiceCloner/RBSVoiceCloner_Setup.V2.zip',
+      downloadType: 'external',
+      sha256: 'D5C6C6033DF435C49F4F3268D96E5FE26F1202245961FA64B21FEE92186D31C3',
+      virustotal: 'https://www.virustotal.com/gui/file/d5c6c6033df435c49f4f3268d96e5fe26f1202245961fa64b21fee92186d31c3',
+      iconImage: '/assets/images/software/rbs-voice-cloner-v2-icon.png',
+      screenshot: null,
+      screenshotPath: '/assets/images/software/rbs-voice-cloner-v2-preview.png',
+      visible: true,
+      released: '2026-04-26',
+      downloads: 0,
+      features: [
+        { icon: '🎤', title: '16 Built-in Voices + Unlimited Clones', desc: '6 male, 6 female, 2 boy, 2 girl ready to go. Plus clone any voice from a 30-second sample and save unlimited custom voice profiles.' },
+        { icon: '🌐', title: '17 Languages + Auto-Translate',         desc: 'Native XTTS v2 generation in English, Spanish, French, German, Italian, Portuguese, Polish, Turkish, Russian, Dutch, Czech, Arabic, Chinese, Japanese, Hungarian, Korean, Hindi. Translator built into the TTS page.' },
+        { icon: '🎚️', title: '7-Band Parametric Equaliser',           desc: 'Voice-tuned EQ (Sub 60 Hz / Bass 200 Hz / Low Mid 500 Hz / Mid 1.5 kHz / Hi Mid 3.5 kHz / Presence 8 kHz / Air 12 kHz) with 6 presets — Natural, Warm, Bright, Podcast, Phone, Flat.' },
+        { icon: '✂️', title: 'Redesigned Audio Editor',                desc: 'Hero waveform with live playback cursor, drag-to-select with right-click Cut / Delete / Crop / Copy, tabbed effects (Quick · Adjust · Trim & Fade · Equaliser), and full keyboard shortcuts.' },
+        { icon: '⚡', title: 'GPU Accelerated (CUDA 12.x / 13.x)',     desc: 'Ships PyTorch with CUDA 12.8 runtime — 5–10× faster than CPU. Falls back to CPU automatically if no CUDA GPU is present. Diagnose page (Ctrl+D) shows GPU vs CPU mode.' },
+        { icon: '🔒', title: 'Fully Offline After Setup',              desc: 'XTTS v2 model loads locally, no telemetry, no cloud. Internet only needed for the one-time ~2 GB model download and the optional translator.' }
+      ],
+      sysReqs: [
+        'Windows 10 or Windows 11 (64-bit)',
+        '8 GB RAM minimum (16 GB recommended)',
+        '10 GB free disk space (for models + generated audio)',
+        'NVIDIA GPU with CUDA recommended (RTX 3060 or better) — CPU fallback supported',
+        'Internet connection on first launch (downloads XTTS v2 model ~2 GB)',
+        'Administrator rights for installation'
+      ],
+      changelog: [
+        { version: '2.0.0', date: '2026-04-26', notes: [
+          '16 built-in voices — 6 Male, 6 Female, 2 Boy, 2 Girl',
+          '7-band parametric equaliser tuned for voice + 6 presets (Natural, Warm, Bright, Podcast, Phone, Flat)',
+          'Translator on the Text-to-Speech page across all 17 supported languages',
+          'Redesigned Audio Editor with tabbed effects and hero waveform',
+          'Live playback cursor + time readout while playing',
+          'Drag-to-select + right-click Cut / Delete / Crop / Copy on the waveform',
+          'Keyboard shortcuts: Ctrl+X cut, Ctrl+C copy, Del delete, Ctrl+Shift+X crop, Esc clear, Ctrl+Z/Y undo·redo',
+          'Diagnose page (Ctrl+D) with GPU detection + per-package check',
+          'Accent colour picker in Settings (Green / Blue / Purple / Orange / Pink) with one-click "Restart App Now"',
+          'New equaliser-bar logo + matching app icon — RBS Voice Cloner V2 brand',
+          'Sentence-level rendering for noticeably more natural prosody',
+          'Ships with PyTorch + CUDA 12.8 runtime (works with any CUDA 12.x or 13.x driver)'
+        ] }
+      ]
+    },
+    {
       id: 'life-dashboard',
       name: 'Life Dashboard',
       icon: '📅',
@@ -178,7 +230,7 @@
 
   const DEFAULT_CONTENT = {
     hero: {
-      tag:         '4 Free Windows Apps — No Subscriptions, Ever',
+      tag:         '5 Free Windows Apps — No Subscriptions, Ever',
       titleLine1:  'Free Windows Software',
       titleLine2:  'for Everyone',
       description: 'RBS builds free, useful tools for everyone. No subscriptions, no paywalls — just high-quality software that gets the job done.'
@@ -217,6 +269,7 @@
     if (!def) return sw;
     return Object.assign({}, sw, {
       icon: def.icon,
+      iconImage: sw.iconImage || def.iconImage || '',
       sha256: sw.sha256 || def.sha256 || '',
       virustotal: sw.virustotal || def.virustotal || ''
     });
@@ -237,6 +290,7 @@
           if (!def) return sw;
           return Object.assign({}, sw, {
             icon: def.icon,
+            iconImage: sw.iconImage || def.iconImage || '',
             sha256: sw.sha256 || def.sha256 || '',
             virustotal: sw.virustotal || def.virustotal || ''
           });
@@ -276,6 +330,14 @@
     if (!str) return '';
     try { return new Date(str).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' }); }
     catch (_) { return str; }
+  }
+  /* Render the software icon: real <img> when sw.iconImage is set, otherwise the emoji.
+     Image fills the square container, keeps aspect ratio, inherits the rounded corners. */
+  function renderIcon(sw) {
+    if (sw && sw.iconImage) {
+      return `<img src="${esc(sw.iconImage)}" alt="${esc(sw.name || '')} icon" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:inherit;" />`;
+    }
+    return (sw && sw.icon) || '⚡';
   }
 
   /* ═══════════════════════════════════════
@@ -377,7 +439,7 @@
 
       return `
       <div class="sw-list-item" data-id="${esc(sw.id)}">
-        <div class="sw-list-icon">${sw.icon || '⚡'}</div>
+        <div class="sw-list-icon">${renderIcon(sw)}</div>
         <div class="sw-list-info">
           <div class="sw-list-name">${esc(sw.name)}</div>
           <div class="sw-list-meta">
@@ -614,7 +676,7 @@
            data-desc="${esc((sw.description||'').toLowerCase())}">
 
         <div class="software-card-header">
-          <div class="app-icon" style="background:linear-gradient(135deg,rgba(0,200,150,0.2),rgba(0,200,150,0.05));border:2px solid rgba(0,200,150,0.3);box-shadow:0 4px 24px rgba(0,200,150,0.2);">${sw.icon || '⚡'}</div>
+          <div class="app-icon" style="background:linear-gradient(135deg,rgba(0,200,150,0.2),rgba(0,200,150,0.05));border:2px solid rgba(0,200,150,0.3);box-shadow:0 4px 24px rgba(0,200,150,0.2);">${renderIcon(sw)}</div>
           <div class="app-header-info">
             <h2 class="app-name">${esc(sw.name)}</h2>
             <p style="color:var(--text-secondary);font-size:.95rem;line-height:1.6;max-width:600px;">${esc(sw.description)}</p>
@@ -879,7 +941,7 @@
             <a href="../software.html" style="color:var(--accent-light);">Software</a> › ${esc(sw.name)}
           </div>
           <div class="software-detail-header">
-            <div class="software-detail-icon">${sw.icon || '⚡'}</div>
+            <div class="software-detail-icon">${renderIcon(sw)}</div>
             <div style="flex:1;">
               <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px;">
                 <span class="badge badge-teal">v${esc(sw.version)}</span>
@@ -1009,6 +1071,33 @@
 
     // Static sample articles + any admin-added ones
     const staticArticles = [
+      {
+        id: 'rbs-ai-voice-studio-v2-launch',
+        title: 'RBS Voice Cloner V2 — Major Update with 16 Voices & 7-Band EQ',
+        excerpt: 'The biggest Voice Cloner update yet. 16 built-in voices, 7-band parametric EQ tuned for voice, in-app translator across 17 languages, redesigned audio editor, and CUDA 12.8 runtime. New EQ-bar logo. Free.',
+        emoji: '🎙️',
+        tag: 'News',
+        date: '2026-04-26',
+        url: 'blog/rbs-ai-voice-studio-v2-launch.html'
+      },
+      {
+        id: 'rbs-voice-cloner-v1-vs-v2',
+        title: 'RBS Voice Cloner V1 vs V2 — Which Should You Download?',
+        excerpt: 'Side-by-side comparison: V1 (~248 MB, lighter) vs V2 (~2 GB, much better). Pick the right version for your PC and use case.',
+        emoji: '⚖️',
+        tag: 'Guide',
+        date: '2026-04-26',
+        url: 'blog/rbs-voice-cloner-v1-vs-v2.html'
+      },
+      {
+        id: 'rbs-ai-voice-studio-v2-eq-guide',
+        title: '7-Band Parametric EQ for Voice — Which Preset to Pick',
+        excerpt: 'What each EQ band does (60 Hz Sub through 12 kHz Air), when to use Natural / Warm / Bright / Podcast / Phone / Flat presets, and how to fix common voice problems with EQ.',
+        emoji: '🎚️',
+        tag: 'Tutorial',
+        date: '2026-04-26',
+        url: 'blog/rbs-ai-voice-studio-v2-eq-guide.html'
+      },
       {
         id: 'rbs-pc-cleaner-launch',
         title: 'RBS PC Cleaner v1.0.0 — Free Honest Windows Cleaner (No Registry)',
@@ -1196,7 +1285,7 @@
     if (!container) return;
 
     // Only prepend admin-added FAQs — never overwrite the static HTML entries
-    // (the static HTML has full categorised FAQs for all 3 apps with data-cat attributes)
+    // (the static HTML has full categorised FAQs for all apps with data-cat attributes)
     let adminFaqs = [];
     try { adminFaqs = JSON.parse(localStorage.getItem('rbs_faq') || '[]'); } catch (_) {}
 

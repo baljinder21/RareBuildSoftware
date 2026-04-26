@@ -40,7 +40,13 @@
       { "@type": "Question", "name": "Is everything RBS PC Cleaner does reversible?",
         "acceptedAnswer": { "@type": "Answer", "text": "Yes. Startup entries are parked in a Run-Disabled key (one click to re-enable), Gaming Mode suspends rather than kills apps, theme apply snapshots your original state so Restore Original reverts exactly, and junk/app-cache files go to the Recycle Bin by default." }},
       { "@type": "Question", "name": "Will RBS PC Cleaner's Duplicate Finder delete important files?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. Duplicate Finder is hash-based, always keeps the oldest file, and auto-skips Windows, Program Files, ProgramData, drive roots, WinSxS, DriverStore, and CatRoot. Every deletion requires confirmation and files go to the Recycle Bin by default." }}
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Duplicate Finder is hash-based, always keeps the oldest file, and auto-skips Windows, Program Files, ProgramData, drive roots, WinSxS, DriverStore, and CatRoot. Every deletion requires confirmation and files go to the Recycle Bin by default." }},
+      { "@type": "Question", "name": "What's new in RBS Voice Cloner V2 compared to V1?",
+        "acceptedAnswer": { "@type": "Answer", "text": "V2 adds 16 built-in voices (V1 had 8), a 7-band parametric equaliser tuned for voice with 6 presets, a built-in auto-translator across 17 languages, a redesigned Audio Editor with hero waveform and live playback cursor, and ships with PyTorch + CUDA 12.8 runtime so it works with any modern NVIDIA driver. New EQ-bar logo too." }},
+      { "@type": "Question", "name": "Do I need an NVIDIA GPU for RBS Voice Cloner V2?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No, but it's much faster with one. With an NVIDIA GPU (RTX 3060 or better) and CUDA 12.x/13.x driver, generation is 5–10× faster than CPU. Without a GPU, the app falls back to CPU automatically — generation still works but takes 10–30× longer." }},
+      { "@type": "Question", "name": "What languages does RBS Voice Cloner V2 support?",
+        "acceptedAnswer": { "@type": "Answer", "text": "17 languages, all native to the XTTS v2 engine: English, Spanish, French, German, Italian, Portuguese, Polish, Turkish, Russian, Dutch, Czech, Arabic, Chinese (Simplified), Japanese, Hungarian, Korean, Hindi. A built-in translator can auto-convert text to the target language before generating speech." }}
     ]
   }
   </script>
@@ -126,6 +132,7 @@
         <button class="filter-chip" onclick="filterFaq('technical',this)">Technical</button>
         <button class="filter-chip" onclick="filterFaq('optimizer',this)">Optimizer Pro</button>
         <button class="filter-chip" onclick="filterFaq('voicecloner',this)">Voice Cloner</button>
+        <button class="filter-chip" onclick="filterFaq('voicestudio',this)">Voice Cloner V2</button>
         <button class="filter-chip" onclick="filterFaq('dashboard',this)">Life Dashboard</button>
         <button class="filter-chip" onclick="filterFaq('pccleaner',this)">PC Cleaner</button>
       </div>
@@ -219,6 +226,42 @@
         <div class="faq-item" data-cat="voicecloner">
           <div class="faq-q"><span>Is it legal to clone someone's voice?</span><span class="faq-arrow">▾</span></div>
           <div class="faq-a">You should only clone voices you have permission to use — your own voice, or voices where you have explicit consent. Never use voice cloning to impersonate someone or create misleading content. Responsible use is your responsibility.</div>
+        </div>
+
+        <!-- ── RBS Voice Cloner V2 ── -->
+        <div class="faq-item" data-cat="voicestudio">
+          <div class="faq-q"><span>What's new in RBS Voice Cloner V2 compared to V1?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">V2 is a major upgrade. The biggest changes: 16 built-in voices (V1 had 8) so you can start generating speech without recording a sample; a 7-band parametric equaliser tuned for voice with 6 presets (Natural, Warm, Bright, Podcast, Phone, Flat); a built-in translator on the Text-to-Speech page that auto-translates text into any of the 17 supported languages; a redesigned Audio Editor with hero waveform, live playback cursor, drag-to-select and right-click cut/crop/copy; and a new EQ-bar logo. V2 also ships with PyTorch + CUDA 12.8 runtime so it works with any modern NVIDIA driver.</div>
+        </div>
+
+        <div class="faq-item" data-cat="voicestudio">
+          <div class="faq-q"><span>Why is RBS Voice Cloner V2 ~2 GB to download?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">V2 ships with the PyTorch deep-learning runtime + CUDA 12.8 libraries pre-bundled, so you don't need to install Python, PyTorch, or CUDA separately. That's where the bulk of the download goes. The app itself is small — the runtime is the price of being a "double-click and run" GPU app. After install, the XTTS v2 voice model (~2 GB) is downloaded once on first launch.</div>
+        </div>
+
+        <div class="faq-item" data-cat="voicestudio">
+          <div class="faq-q"><span>Do I need an NVIDIA GPU to use Voice Cloner V2?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">No, but it's much faster with one. With an NVIDIA GPU (RTX 3060 or better) and CUDA 12.x/13.x driver, generation is 5–10× faster than CPU. Without a GPU, the app falls back to CPU automatically — generation still works, it just takes 10–30× longer per sentence. The Diagnose page (Ctrl+D) shows you which mode you're running in and any package issues.</div>
+        </div>
+
+        <div class="faq-item" data-cat="voicestudio">
+          <div class="faq-q"><span>Can I keep using V1 alongside V2?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">Yes. V1 and V2 install to separate folders and both are still available for download from the website. V1 is smaller (~248 MB) and a good choice if you don't have an NVIDIA GPU and only need basic cloning. V2 is the recommended version for everyone else — bigger download but a much better app.</div>
+        </div>
+
+        <div class="faq-item" data-cat="voicestudio">
+          <div class="faq-q"><span>What languages does V2 support?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">17 languages, all native to the XTTS v2 engine: English, Spanish, French, German, Italian, Portuguese, Polish, Turkish, Russian, Dutch, Czech, Arabic, Chinese (Simplified), Japanese, Hungarian, Korean, Hindi. The built-in translator (which uses Google Translate, no API key needed but requires internet on first translate) lets you type in any of these and auto-convert to the target language before generating speech.</div>
+        </div>
+
+        <div class="faq-item" data-cat="voicestudio">
+          <div class="faq-q"><span>How do the 6 EQ presets differ?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a"><strong>Natural</strong> — light cleanup, slight presence + air boost (good default). <strong>Warm</strong> — bass + low-mid boost for a fuller voice. <strong>Bright</strong> — high-mid + presence + air boost for clarity. <strong>Podcast</strong> — broadcast EQ curve (cut sub, lift presence) for spoken-word content. <strong>Phone</strong> — narrow-band telephony effect for stylised use. <strong>Flat</strong> — zero everything. Pick a preset to fill the sliders, then click Apply EQ. Reset reverts the audio to its pre-EQ state.</div>
+        </div>
+
+        <div class="faq-item" data-cat="voicestudio">
+          <div class="faq-q"><span>Where are voice profiles and generated audio saved?</span><span class="faq-arrow">▾</span></div>
+          <div class="faq-a">Generated audio: <code>%APPDATA%\RBS Software\RBS Voice Cloner\output\</code> by default (configurable in Settings → Storage). Voice profiles (built-in and your own clones): <code>%APPDATA%\RBS Software\RBS Voice Cloner\profiles\</code>. You can export any profile as a single <code>.rbsvoice</code> file from Voice Profiles → Export to share or back up.</div>
         </div>
 
         <!-- ── Life Dashboard ── -->
@@ -350,6 +393,7 @@
           <ul class="footer-links">
             <li><a href="software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
             <li><a href="software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
+            <li><a href="software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
             <li><a href="software/detail.html?id=life-dashboard">Life Dashboard</a></li>
             <li><a href="software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
           </ul>

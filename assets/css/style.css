@@ -563,7 +563,7 @@ ul { list-style: none; }
 .hero-graphic {
   position: relative;
   width: 100%;
-  height: 560px;
+  height: 700px;
   pointer-events: none;
   z-index: 1;
   flex-shrink: 0;
@@ -603,22 +603,28 @@ ul { list-style: none; }
   box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 24px rgba(0,200,150,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 .hac-2 {
-  top: 128px; left: 0;
+  top: 124px; left: 0;
   animation: floatY 6s ease-in-out infinite 1.2s;
   border-color: rgba(0, 102, 255, 0.3);
   box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 24px rgba(0,102,255,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 .hac-3 {
-  top: 262px; left: 70px;
+  top: 252px; left: 70px;
   animation: floatY3 4.8s ease-in-out infinite 2.4s;
   border-color: rgba(168, 85, 247, 0.3);
   box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 24px rgba(168,85,247,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 .hac-4 {
-  top: 398px; left: 10px;
+  top: 384px; left: 10px;
   animation: floatY2 5.2s ease-in-out infinite 3.6s;
   border-color: rgba(0, 200, 150, 0.3);
   box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 24px rgba(0,200,150,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.hac-5 {
+  top: 522px; left: 60px;
+  animation: floatY 5.6s ease-in-out infinite 4.8s;
+  border-color: rgba(0, 102, 255, 0.3);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 24px rgba(0,102,255,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .hac-header {
@@ -2581,41 +2587,64 @@ body.light-mode .font-size-btn.active { background: var(--accent); border-color:
 }
 
 @media (max-width: 768px) {
-  .sw-list-item { flex-wrap: wrap; }
-  .sw-list-actions { width: 100%; justify-content: flex-end; }
+  .sw-list-item { flex-wrap: wrap; min-width: 0; max-width: 100%; }
+  .sw-list-info { min-width: 0; max-width: 100%; }
+  .sw-list-name, .sw-list-desc { word-break: break-word; overflow-wrap: break-word; }
+  .sw-list-meta { flex-wrap: wrap; }
+  .sw-list-actions { width: 100%; justify-content: flex-end; flex-wrap: wrap; }
   .newsletter-section { padding: 40px 24px; }
-  .filter-bar { gap: 8px; }
+  .filter-bar { gap: 8px; flex-wrap: wrap; }
   .nav-search { display: none; }
 
   /* Detail page hero — shrink on mobile */
   .software-detail-hero { padding: 88px 0 36px; }
   .software-detail-icon { width: 72px; height: 72px; font-size: 2.2rem; border-radius: 18px; }
-  .software-detail-header { gap: 16px; }
+  .software-detail-header { gap: 16px; min-width: 0; max-width: 100%; }
+
+  /* Software listing card (.software-card-big) — bulletproof mobile constraint */
+  .software-card-big { max-width: 100%; min-width: 0; overflow: hidden; }
+  .software-card-header { max-width: 100%; min-width: 0; padding: 24px; }
+  .software-card-header > * { min-width: 0; max-width: 100%; }
+  .app-icon { flex-shrink: 0; }
+  .app-header-info { min-width: 0; max-width: 100%; flex: 1 1 100%; }
+  .app-name { word-break: break-word; overflow-wrap: break-word; }
+  .app-meta { max-width: 100%; flex-wrap: wrap; }
+  .meta-item { word-break: break-word; min-width: 0; }
+  .software-card-body { max-width: 100%; min-width: 0; padding: 24px; }
+  .software-card-body > * { min-width: 0; max-width: 100%; }
 
   /* Key features — prevent any internal overflow */
-  .features-big { width: 100%; min-width: 0; }
+  .features-big { width: 100%; min-width: 0; max-width: 100%; }
   .feature-big-item { min-width: 0; max-width: 100%; }
   .feature-big-text { min-width: 0; flex: 1; word-wrap: break-word; overflow-wrap: break-word; }
   .feature-big-text h4, .feature-big-text p { overflow-wrap: break-word; word-break: break-word; }
 
   /* Screenshot preview — clip the fixed-width mockup inside */
-  .screenshot-area { min-width: 0; max-width: 100%; }
-  .screenshot-area > div { max-width: 100%; overflow: hidden; }
-  .screenshot-area > div > div { max-width: 100%; }
+  .screenshot-area { min-width: 0; max-width: 100%; width: 100%; }
+  .screenshot-area > div { max-width: 100%; min-width: 0; overflow: hidden; }
+  .screenshot-area > div > div { max-width: 100%; min-width: 0; }
+  /* Mockups with hardcoded pixel widths — force shrink on tiny screens */
+  .screenshot-area img { max-width: 100%; height: auto; display: block; }
 
   /* Download sidebar + boxes — stay within viewport */
-  .download-sidebar { min-width: 0; max-width: 100%; }
+  .download-sidebar { min-width: 0; max-width: 100%; width: 100%; }
   .download-box { max-width: 100%; min-width: 0; padding: 20px; }
-  .download-btn-wrap .btn { max-width: 100%; word-break: break-word; font-size: .95rem; padding: 14px; }
-  .file-info-row { gap: 12px; }
-  .file-info-row span:last-child { text-align: right; word-break: break-word; min-width: 0; }
+  .download-btn-wrap .btn { max-width: 100%; word-break: break-word; font-size: .95rem; padding: 14px; white-space: normal; }
+  .file-info-row { gap: 12px; min-width: 0; flex-wrap: wrap; }
+  .file-info-row span:last-child { text-align: right; word-break: break-word; min-width: 0; max-width: 60%; }
+
+  /* SHA-256 / VirusTotal trust block — never escape on mobile */
+  .download-box code { word-break: break-all; overflow-wrap: anywhere; max-width: 100%; display: inline-block; }
 
   /* System requirements items — wrap long lines */
-  .sys-req-item { min-width: 0; }
+  .sys-req-item { min-width: 0; max-width: 100%; }
   .sys-req-item span:last-child { min-width: 0; word-break: break-word; }
 
   /* Changelog — wrap */
-  .changelog-list li { word-break: break-word; }
+  .changelog-list li { word-break: break-word; overflow-wrap: break-word; }
+
+  /* Generic safety: any badge row should wrap on mobile */
+  .badge { white-space: normal; }
 }
 @media (max-width: 480px) {
   .newsletter-form { flex-direction: column; }
