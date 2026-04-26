@@ -3663,7 +3663,7 @@ body.light-mode { --rating-star-empty: rgba(0,0,0,0.15); }
   box-shadow: 0 0 20px rgba(0,200,150,0.15);
 }
 .app-tab-pane { display: none; }
-.app-tab-pane.active { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.app-tab-pane.active { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
 @media (max-width: 900px) {
   .app-tab-pane.active { grid-template-columns: 1fr; }
 }

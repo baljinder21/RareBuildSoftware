@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Uninstall multiple programs at once on Windows 10 and 11 for free. Bulk uninstaller with silent mode, sorted by size and publisher. No leftover registry junk." />
-  <meta name="keywords" content="bulk uninstaller Windows free, uninstall multiple programs Windows 11, silent uninstall Windows, batch uninstall Windows, free bulk program remover" />
-  <title>Uninstall Multiple Programs at Once on Windows — Free Bulk Uninstaller | RBS</title>
+  <meta name="description" content="Uninstall multiple programs at once on Windows 10/11 — free bulk uninstaller with silent mode, sort by size, plus winget command-line alternatives." />
+  <meta name="keywords" content="bulk uninstaller windows free, uninstall multiple programs windows 11, silent uninstall windows, batch uninstall windows, free bulk program remover, winget uninstall, iobit alternative, revo uninstaller alternative, free uninstaller, uninstall multiple apps once, windows 11 remove bloatware bulk" />
+  <title>Bulk Uninstaller for Windows — Free, Silent Mode | RBS</title>
 
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
 
   <meta property="og:type"        content="article" />
   <meta property="og:site_name"   content="RBS" />
-  <meta property="og:title"       content="Uninstall Multiple Programs at Once on Windows — Free Bulk Uninstaller" />
-  <meta property="og:description" content="Tick multiple programs and uninstall in sequence. Silent mode when supported. Free for Windows 10/11." />
+  <meta property="og:title"       content="Bulk Uninstaller for Windows — Free, Silent Mode" />
+  <meta property="og:description" content="Uninstall multiple programs at once on Windows 10/11 — free bulk uninstaller with silent mode, sort by size, plus winget command-line alternatives." />
   <meta property="og:url"         content="https://rarebuildsoftware.com/blog/bulk-uninstall-programs-windows.html" />
-  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog.svg" />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog/bulk-uninstall-programs-windows.svg" />
   <meta name="twitter:card"       content="summary_large_image" />
   <link rel="canonical"           href="https://rarebuildsoftware.com/blog/bulk-uninstall-programs-windows.html" />
 
@@ -22,13 +22,25 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Uninstall Multiple Programs at Once on Windows — Free Bulk Uninstaller",
+    "headline": "Bulk Uninstaller for Windows — Free, Silent Mode",
     "datePublished": "2026-04-19",
     "dateModified": "2026-04-19",
-    "author": { "@type": "Organization", "name": "RBS Team" },
+    "author": { "@type": "Person", "name": "Rai", "url": "https://rarebuildsoftware.com/about.html" },
     "publisher": { "@type": "Organization", "name": "RBS", "logo": { "@type": "ImageObject", "url": "https://rarebuildsoftware.com/assets/images/favicon.svg" }, "url": "https://rarebuildsoftware.com" },
     "description": "Free bulk uninstaller for Windows 10 and 11.",
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rarebuildsoftware.com/blog/bulk-uninstall-programs-windows.html" }
+  }
+  </script>
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rarebuildsoftware.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://rarebuildsoftware.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Uninstall Multiple Programs at Once on Windows — Free Bulk Uninstaller", "item": "https://rarebuildsoftware.com/blog/bulk-uninstall-programs-windows.html" }
+    ]
   }
   </script>
 
@@ -82,13 +94,15 @@
       <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:16px;">
         Uninstall Multiple Programs at Once on Windows — Free Bulk Uninstaller
       </h1>
-      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 5 min read · By RBS Team</p>
+      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
 
         <p>Windows 11's built-in <em>Apps → Installed apps</em> page can only uninstall one program at a time. Each uninstall opens its own wizard, you click Next, Yes, Remove, you wait, you close, and then you repeat — for every single app. Uninstalling 20 old programs this way takes an hour.</p>
 
-        <p>A <strong>bulk uninstaller</strong> lets you tick as many programs as you like and uninstall them in sequence, optionally in <em>silent mode</em> so you don't have to click through each wizard. Here's how to do it for free.</p>
+        <p>A <strong>bulk uninstaller</strong> lets you tick as many programs as you like and uninstall them in sequence, optionally in <em>silent mode</em> so you don't have to click through each wizard. Here's how to do it for free — both with a GUI and from the command line if you prefer that.</p>
+
+        <p>Quick warning: most "free bulk uninstaller" Google results are bundled installers that try to install browser toolbars or change your default search. Stick with tools you can actually trust the source of.</p>
 
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What "silent uninstall" means</h2>
         <p>Most installers support command-line flags like <code>/S</code>, <code>/SILENT</code>, or <code>/qn</code> (MSI) that run the uninstall without showing any dialog. A bulk uninstaller detects the installer type and uses the right flag automatically.</p>
@@ -123,6 +137,23 @@
         </ul>
         <p><strong>Don't uninstall:</strong> Windows Defender, Microsoft Store itself, .NET runtimes, Visual C++ redistributables (apps depend on these).</p>
 
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Command-line alternatives if you don't want a GUI</h2>
+        <p>If you're already comfortable with PowerShell, Windows ships with two ways to bulk-uninstall:</p>
+        <p><strong>winget</strong> — the modern Windows package manager, comes built-in on Windows 11. List installed:</p>
+        <p><code>winget list</code></p>
+        <p>Uninstall a single app:</p>
+        <p><code>winget uninstall &lt;app-id&gt;</code></p>
+        <p>For bulk: pipe the list, filter to what you want, loop. Example: uninstall every Microsoft Store game:</p>
+        <p><code>winget list --source msstore | Select-String "Game" | ForEach-Object { winget uninstall ($_ -split '\s+')[0] }</code></p>
+        <p>This is fragile (the parsing depends on column alignment) but it works for one-offs. Test on one app first.</p>
+        <p><strong>Get-AppxPackage</strong> — works specifically for Microsoft Store / UWP apps:</p>
+        <p><code>Get-AppxPackage *candycrush* | Remove-AppxPackage</code></p>
+        <p>Replace the asterisked name. Useful for stripping pre-installed Store apps after a fresh Windows install. Don't run this on system Appx packages or you'll break parts of Windows.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why Microsoft Store apps are different</h2>
+        <p>Microsoft Store apps (UWP / Appx) install differently from traditional desktop apps. They live in <code>C:\Program Files\WindowsApps\</code> and are managed by the Store, not by individual installers. That means a generic bulk uninstaller has to handle them separately. Tools that don't will silently fail on Store apps and leave you wondering why Candy Crush is still there.</p>
+        <p>RBS PC Cleaner detects both types and uses the right uninstall mechanism per app. winget also handles both, which is why it's a reasonable command-line option.</p>
+
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Leftover files after uninstall</h2>
         <p>Some uninstallers leave data behind in <code>%APPDATA%</code> or <code>%LOCALAPPDATA%</code> — e.g. old config files, caches, saves. That's deliberate: if you reinstall the app, your settings come back. If you really want a clean slate, delete those folders manually <em>after</em> the uninstall finishes. A <a href="find-duplicate-files-windows-free.html" style="color:var(--accent-light);">duplicate file scan</a> or <a href="free-disk-space-analyzer-windows.html" style="color:var(--accent-light);">disk analyzer pass</a> over <code>%APPDATA%</code> afterwards will surface any leftovers worth cleaning.</p>
 
@@ -150,7 +181,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
-          <p class="footer-tagline">Building free, powerful tools for everyone.</p>
+          <p class="footer-tagline">Building free, useful tools for everyone.</p>
           <p style="margin-top:12px;font-size:.88rem;">📷 <a href="https://instagram.com/rarebuildsoftware" target="_blank" rel="noopener" style="color:var(--accent-light);">@rarebuildsoftware</a> on Instagram</p>
         </div>
         <div>

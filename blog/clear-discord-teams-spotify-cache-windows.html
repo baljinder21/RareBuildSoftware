@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Clear cache for Discord, Microsoft Teams, Spotify, VS Code, Slack and Zoom on Windows. Free tool reclaims several GB of app cache with one click — no manual folder hunting." />
-  <meta name="keywords" content="clear Discord cache Windows, Microsoft Teams cache cleaner, Spotify cache Windows, VS Code cache, Slack cache Windows, free app cache cleaner Windows" />
+  <meta name="description" content="Clear cache for Discord, Teams, Spotify, VS Code, Slack, Zoom on Windows. Free one-click tool plus manual paths. Reclaim 5–15 GB safely." />
+  <meta name="keywords" content="clear discord cache windows, microsoft teams cache cleaner, spotify cache windows, vs code cache, slack cache windows, free app cache cleaner windows, electron app cache, discord cache too big, teams cache size, clear chromium cache, free up disk space windows, app cache cleaner free" />
   <title>Clear Discord, Teams, Spotify, VS Code Cache on Windows — Free | RBS</title>
 
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
@@ -12,9 +12,9 @@
   <meta property="og:type"        content="article" />
   <meta property="og:site_name"   content="RBS" />
   <meta property="og:title"       content="Clear Discord, Teams, Spotify, VS Code Cache on Windows — Free" />
-  <meta property="og:description" content="One click to clear cache for Discord, Microsoft Teams, Spotify, VS Code, Slack and Zoom. Reclaim GB of disk space." />
+  <meta property="og:description" content="Clear cache for Discord, Teams, Spotify, VS Code, Slack, Zoom on Windows. Free one-click tool plus manual paths. Reclaim 5–15 GB safely." />
   <meta property="og:url"         content="https://rarebuildsoftware.com/blog/clear-discord-teams-spotify-cache-windows.html" />
-  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog.svg" />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog/clear-discord-teams-spotify-cache-windows.svg" />
   <meta name="twitter:card"       content="summary_large_image" />
   <link rel="canonical"           href="https://rarebuildsoftware.com/blog/clear-discord-teams-spotify-cache-windows.html" />
 
@@ -25,10 +25,22 @@
     "headline": "Clear Discord, Teams, Spotify, VS Code Cache on Windows — Free",
     "datePublished": "2026-04-19",
     "dateModified": "2026-04-19",
-    "author": { "@type": "Organization", "name": "RBS Team" },
+    "author": { "@type": "Person", "name": "Rai", "url": "https://rarebuildsoftware.com/about.html" },
     "publisher": { "@type": "Organization", "name": "RBS", "logo": { "@type": "ImageObject", "url": "https://rarebuildsoftware.com/assets/images/favicon.svg" }, "url": "https://rarebuildsoftware.com" },
     "description": "Free app cache cleaner for Discord, Teams, Spotify, VS Code, Slack and Zoom.",
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rarebuildsoftware.com/blog/clear-discord-teams-spotify-cache-windows.html" }
+  }
+  </script>
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rarebuildsoftware.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://rarebuildsoftware.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Clear Discord, Teams, Spotify, VS Code Cache on Windows — Free", "item": "https://rarebuildsoftware.com/blog/clear-discord-teams-spotify-cache-windows.html" }
+    ]
   }
   </script>
 
@@ -82,11 +94,26 @@
       <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:16px;">
         Clear Discord, Teams, Spotify &amp; VS Code Cache on Windows
       </h1>
-      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 5 min read · By RBS Team</p>
+      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
 
-        <p>Electron apps — Discord, Microsoft Teams, Slack, VS Code — are essentially browsers in disguise, and they cache like browsers do. Spotify runs a Chromium engine for its UI and caches album art. Zoom caches meeting logs and media. On a typical PC, these apps collectively eat 5–15GB of cache, and <strong>none of them expose a "Clear Cache" button in their own settings</strong>.</p>
+        <p>Electron apps — Discord, Microsoft Teams, Slack, VS Code — are essentially Chromium browsers in disguise, and they cache like browsers do. Spotify runs a Chromium engine for its UI and caches album art. Zoom caches meeting logs and media. On a typical PC, these apps collectively eat 5–15 GB of cache, and <strong>none of them expose a "Clear Cache" button in their own settings</strong>.</p>
+
+        <p>This post is the cheat-sheet for getting that space back — both the manual way (Win+R, paste a path, delete) and the one-click way using the free <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a>.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why Electron apps cache so much</h2>
+        <p>Electron is the framework underneath most modern desktop chat apps. It bundles a full Chromium browser inside the app so the developers can write the UI in HTML and JavaScript. That decision saves them work but it means the app inherits all of Chromium's caching behaviour — disk cache for assets, GPU cache for rendered frames, IndexedDB for offline data, and so on.</p>
+        <p>Discord, for example, caches every emoji, sticker, custom server icon, and recent attachment you've ever seen. Teams caches every avatar, every chat thread's media, every shared file you opened. Multiply by months of usage and the totals add up fast.</p>
+        <p>None of this is harmful. Cache is supposed to be expendable. The problem is just that the apps don't garbage-collect aggressively, so the disk fills up while the app keeps running fine.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Signs your app cache is the problem</h2>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li>Discord/Teams/Slack feels sluggish to open and you have months of message history.</li>
+          <li>Your C: drive is mysteriously full and Windows Storage settings shows "Apps &amp; features" or "Other" larger than expected.</li>
+          <li>You haven't reinstalled or cleared cache in 6+ months.</li>
+          <li>VS Code is taking 30+ seconds to start (cached extension data builds up).</li>
+        </ul>
 
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Where each app's cache lives</h2>
         <p>If you want to clear them manually, here are the paths:</p>
@@ -121,15 +148,33 @@
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Other Electron apps worth checking</h2>
         <p>The same pattern applies to any Electron-based app — Notion, Figma Desktop, WhatsApp Desktop, Signal, Obsidian, Typora, etc. They all have <code>Cache</code> and <code>GPUCache</code> sub-folders that are safe to clear. The RBS PC Cleaner team is adding more to the detect list in future updates based on user feedback.</p>
 
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Manual step-by-step (any of the apps)</h2>
+        <ol style="padding-left:24px;margin:16px 0;">
+          <li><strong>Quit the app fully.</strong> "X" in the corner often just hides it to the system tray. Right-click the tray icon and choose Quit, or open Task Manager and end the process tree.</li>
+          <li><strong>Press Win + R</strong> to open the Run dialog.</li>
+          <li><strong>Paste the path</strong> for the app from the list above (e.g. <code>%APPDATA%\discord\Cache</code>) and press Enter.</li>
+          <li><strong>Select all (Ctrl+A) and delete (Shift+Del)</strong> to skip Recycle Bin. If Windows says some files are in use, you didn't fully quit the app — go back to step 1.</li>
+          <li><strong>Reopen the app.</strong> First launch will rebuild some cache, which is normal. The app will be a tiny bit slower for the first 30 seconds and then back to normal.</li>
+        </ol>
+
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Typical space reclaimed</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Discord on a heavy-usage account: 2–5 GB</li>
-          <li>Teams on an office laptop: 3–8 GB (worst offender)</li>
+          <li>Teams on an office laptop: 3–8 GB (worst offender, by a lot)</li>
           <li>Spotify: 500 MB – 2 GB</li>
           <li>VS Code: 200 MB – 1 GB</li>
           <li>Slack: 500 MB – 2 GB</li>
-          <li>Zoom: 200 MB – 1 GB (mostly logs)</li>
+          <li>Zoom: 200 MB – 1 GB (mostly logs from past meetings)</li>
         </ul>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">How often should you clear?</h2>
+        <p>Honest answer: you don't <em>need</em> to clear cache regularly. Cache exists for a reason — it makes things faster. The right time to clear is when one of these is true:</p>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li>Your disk is filling up and you need the space back today.</li>
+          <li>The app is misbehaving (Discord won't load, Teams won't connect) and a cache clear is a standard troubleshooting step.</li>
+          <li>You're about to back up your PC or transfer to a new machine and want to skip transferring cache files.</li>
+        </ul>
+        <p>"Once a quarter" is a reasonable schedule for heavy users. Daily or weekly is overkill and will just make your apps slower without saving meaningful space.</p>
 
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
@@ -156,7 +201,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
-          <p class="footer-tagline">Building free, powerful tools for everyone.</p>
+          <p class="footer-tagline">Building free, useful tools for everyone.</p>
           <p style="margin-top:12px;font-size:.88rem;">📷 <a href="https://instagram.com/rarebuildsoftware" target="_blank" rel="noopener" style="color:var(--accent-light);">@rarebuildsoftware</a> on Instagram</p>
         </div>
         <div>

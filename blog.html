@@ -94,19 +94,75 @@
   <section class="section">
     <div class="container">
 
-      <!-- Category filter -->
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;">
-        <button class="filter-chip active" onclick="filterBlog('all',this)">All</button>
-        <button class="filter-chip" onclick="filterBlog('Guide',this)">Guides</button>
-        <button class="filter-chip" onclick="filterBlog('Review',this)">Reviews</button>
-        <button class="filter-chip" onclick="filterBlog('News',this)">News</button>
-        <button class="filter-chip" onclick="filterBlog('Tips',this)">Tips</button>
+      <!-- Search this blog — live keyword filter -->
+      <div style="margin-bottom:28px;">
+        <label for="blog-search" style="display:block;color:var(--text-muted);font-size:.92rem;margin-bottom:10px;">Search articles:</label>
+        <div style="position:relative;max-width:560px;">
+          <span style="position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-muted);pointer-events:none;font-size:1rem;">🔍</span>
+          <input type="search" id="blog-search" placeholder="Try ‘ram’, ‘voice cloner’, ‘bloatware’, ‘ccleaner’..." autocomplete="off" spellcheck="false" style="width:100%;padding:13px 44px 13px 46px;border:1px solid var(--border);border-radius:10px;background:var(--bg-secondary);color:var(--text-primary);font-size:.95rem;outline:none;transition:border-color .15s;" onfocus="this.style.borderColor='var(--accent-light)'" onblur="this.style.borderColor='var(--border)'" />
+          <button type="button" id="blog-search-clear" aria-label="Clear search" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-muted);font-size:1rem;cursor:pointer;display:none;padding:6px 12px;border-radius:6px;">✕</button>
+        </div>
+        <p id="blog-search-status" role="status" aria-live="polite" style="color:var(--text-muted);font-size:.85rem;margin-top:10px;display:none;"></p>
+      </div>
+
+      <!-- Browse by category — links to dedicated landing pages (SEO + discoverability) -->
+      <div style="margin-bottom:32px;">
+        <p style="color:var(--text-muted);font-size:.92rem;margin-bottom:14px;">Browse by category:</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="blog.html"                       class="filter-chip active">📚 All articles</a>
+          <a href="blog/tag/ai.html"                class="filter-chip">🤖 AI</a>
+          <a href="blog/tag/ai-news.html"           class="filter-chip">📰 AI News</a>
+          <a href="blog/tag/comparison.html"        class="filter-chip">⚖️ Comparison</a>
+          <a href="blog/tag/optimization.html"      class="filter-chip">⚡ Optimization</a>
+          <a href="blog/tag/productivity.html"      class="filter-chip">📅 Productivity</a>
+          <a href="blog/tag/guide.html"             class="filter-chip">📖 Guide</a>
+          <a href="blog/tag/tutorial.html"          class="filter-chip">🎓 Tutorial</a>
+        </div>
       </div>
 
       <!-- Static articles + any admin-added ones rendered by site-data.js -->
       <div class="blog-grid" id="rbs-blog-list">
 
-        <div class="blog-card animate-on-scroll" data-delay="0" data-tag="News">
+        <div class="blog-card animate-on-scroll" data-delay="0" data-tag="Comparison">
+          <div class="blog-card-thumb">⚡</div>
+          <div class="blog-card-body">
+            <div class="blog-card-tag">Comparison</div>
+            <a href="blog/free-elevenlabs-alternative-2026.html" class="blog-card-title">Free ElevenLabs Alternative — 4 Free Voice Cloning Tools (2026)</a>
+            <p class="blog-card-excerpt">Tested 4 free, offline AI voice cloning tools for Windows in 2026. Unlimited generation, no monthly cap, no cloud — proper alternatives to ElevenLabs' paid plans.</p>
+            <div class="blog-card-footer">
+              <span>📅 Apr 26, 2026 · 8 min read</span>
+              <a href="blog/free-elevenlabs-alternative-2026.html" class="blog-read-more">Read →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card animate-on-scroll" data-delay="30" data-tag="Tutorial">
+          <div class="blog-card-thumb">🎙️</div>
+          <div class="blog-card-body">
+            <div class="blog-card-tag">Tutorial</div>
+            <a href="blog/how-to-clone-your-voice-tutorial.html" class="blog-card-title">How to Clone Your Voice in 5 Minutes — Free, Offline, Windows</a>
+            <p class="blog-card-excerpt">Step-by-step beginner walkthrough: install, record a 30-second sample, save the profile, generate any text in your own voice. No Python, no subscription, all offline.</p>
+            <div class="blog-card-footer">
+              <span>📅 Apr 26, 2026 · 6 min read</span>
+              <a href="blog/how-to-clone-your-voice-tutorial.html" class="blog-read-more">Read →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card animate-on-scroll" data-delay="60" data-tag="Guide">
+          <div class="blog-card-thumb">📅</div>
+          <div class="blog-card-body">
+            <div class="blog-card-tag">Guide</div>
+            <a href="blog/free-habit-tracker-windows-desktop.html" class="blog-card-title">Best Free Habit Tracker for Windows Desktop (Offline, No Subscription) — 2026</a>
+            <p class="blog-card-excerpt">Most habit trackers are phone apps or cloud-bound web tools. Here's a free Windows desktop habit tracker that works fully offline — plus 15 more widgets in one window.</p>
+            <div class="blog-card-footer">
+              <span>📅 Apr 26, 2026 · 7 min read</span>
+              <a href="blog/free-habit-tracker-windows-desktop.html" class="blog-read-more">Read →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card animate-on-scroll" data-delay="100" data-tag="News">
           <div class="blog-card-thumb">🎙️</div>
           <div class="blog-card-body">
             <div class="blog-card-tag">News</div>
@@ -369,6 +425,13 @@
         <!-- Admin-added articles appear here via site-data.js applyBlog() -->
 
       </div>
+
+      <!-- Empty state when search has no matches -->
+      <div id="blog-search-empty" style="display:none;text-align:center;padding:48px 24px;color:var(--text-muted);">
+        <div style="font-size:2.4rem;margin-bottom:12px;">🔍</div>
+        <p style="font-size:1rem;margin-bottom:8px;color:var(--text-secondary);">No articles match your search.</p>
+        <p style="font-size:.88rem;">Try a broader keyword, or <a href="#" id="blog-search-reset" style="color:var(--accent-light);">clear the search</a> to see all articles.</p>
+      </div>
     </div>
   </section>
 
@@ -459,14 +522,121 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/site-data.js"></script>
+
+  <!-- Live blog search — filters .blog-card elements by title + excerpt + tag + full post body -->
   <script>
-    function filterBlog(tag, el) {
-      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-      el.classList.add('active');
-      document.querySelectorAll('.blog-card').forEach(card => {
-        card.style.display = (tag === 'all' || card.dataset.tag === tag) ? '' : 'none';
+  (function () {
+    const input  = document.getElementById('blog-search');
+    const clear  = document.getElementById('blog-search-clear');
+    const status = document.getElementById('blog-search-status');
+    const grid   = document.getElementById('rbs-blog-list');
+    const empty  = document.getElementById('blog-search-empty');
+    const reset  = document.getElementById('blog-search-reset');
+    if (!input || !grid) return;
+
+    /* Full-text index of every blog post body, lazy-loaded on first interaction.
+       Map: { slug → lowercased body text }. Generated by scripts/build-search-index.js
+       and stored at /data/blog-search-index.json (~266 KB for 38 posts). */
+    let bodyIndex = null;
+    let indexLoading = false;
+
+    function loadIndex() {
+      if (bodyIndex || indexLoading) return;
+      indexLoading = true;
+      fetch('data/blog-search-index.json')
+        .then(r => r.ok ? r.json() : [])
+        .then(arr => {
+          bodyIndex = {};
+          arr.forEach(item => { bodyIndex[item.slug] = item.body; });
+          // Re-run filter once the index lands so in-progress queries get full-text matches.
+          if (input.value.trim()) filter();
+        })
+        .catch(() => { bodyIndex = {}; });
+    }
+
+    function slugFromCard(card) {
+      const a = card.querySelector('a.blog-card-title') || card.querySelector('a[href*="blog/"]');
+      if (!a) return '';
+      const m = (a.getAttribute('href') || '').match(/([^/]+)\.html(?:[?#]|$)/);
+      return m ? m[1] : '';
+    }
+
+    function filter() {
+      const raw = input.value.trim();
+      const q = raw.toLowerCase();
+      const tokens = q.split(/\s+/).filter(Boolean);
+      const cards = grid.querySelectorAll('.blog-card');
+      let visible = 0;
+
+      cards.forEach(card => {
+        if (tokens.length === 0) {
+          card.style.display = '';
+          visible++;
+          return;
+        }
+        const title   = (card.querySelector('.blog-card-title')   || {}).textContent || '';
+        const excerpt = (card.querySelector('.blog-card-excerpt') || {}).textContent || '';
+        const tag     = (card.querySelector('.blog-card-tag')     || {}).textContent || '';
+        const body    = bodyIndex ? (bodyIndex[slugFromCard(card)] || '') : '';
+        const hay = (title + ' ' + excerpt + ' ' + tag + ' ' + body).toLowerCase();
+        const match = tokens.every(t => hay.includes(t));
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+
+      clear.style.display = raw ? 'block' : 'none';
+
+      if (raw) {
+        const scope = bodyIndex ? 'titles & full article text' : 'titles & summaries';
+        status.style.display = 'block';
+        status.textContent = visible === 0
+          ? 'No articles match "' + raw + '" (' + scope + ').'
+          : visible + ' article' + (visible === 1 ? '' : 's') + ' matching "' + raw + '" (' + scope + ').';
+        empty.style.display = visible === 0 ? 'block' : 'none';
+        grid.style.display  = visible === 0 ? 'none'  : '';
+      } else {
+        status.style.display = 'none';
+        empty.style.display  = 'none';
+        grid.style.display   = '';
+      }
+    }
+
+    let debounce;
+    input.addEventListener('input', () => {
+      loadIndex();
+      clearTimeout(debounce);
+      debounce = setTimeout(filter, 60);
+    });
+    input.addEventListener('focus', loadIndex);
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && input.value) {
+        input.value = '';
+        filter();
+      }
+    });
+    clear.addEventListener('click', () => {
+      input.value = '';
+      filter();
+      input.focus();
+    });
+    if (reset) {
+      reset.addEventListener('click', e => {
+        e.preventDefault();
+        input.value = '';
+        filter();
+        input.focus();
       });
     }
+
+    // Shareable search via ?q= URL param (e.g. /blog.html?q=ram)
+    const urlQ = new URLSearchParams(location.search).get('q');
+    if (urlQ) {
+      input.value = urlQ;
+      loadIndex();
+      // Defer so admin-added cards from site-data.js are in the DOM before first filter.
+      setTimeout(filter, 50);
+    }
+  })();
   </script>
 </body>
 </html>

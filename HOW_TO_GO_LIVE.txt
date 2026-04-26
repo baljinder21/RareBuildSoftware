@@ -105,6 +105,23 @@ HOW TO UPDATE WEBSITE AFTER CHANGES
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHEN YOU ADD A NEW BLOG POST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  After dropping a new .html into D:\RBSWebsite\blog\, regenerate the
+  full-text search index that powers the search box on /blog.html so
+  the new post becomes searchable by its body text:
+
+      cd D:\RBSWebsite
+      node scripts/build-search-index.js
+
+  This rewrites data/blog-search-index.json (~7 KB per post). Then
+  redeploy as in the section above. Skipping this step is non-fatal —
+  the new post still shows up by title/excerpt/tag — but its full body
+  won't be searchable until the index is rebuilt.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ADMIN PANEL
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

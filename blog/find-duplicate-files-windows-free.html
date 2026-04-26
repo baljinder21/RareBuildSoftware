@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Find and safely delete duplicate files on Windows 10 and 11 for free. Hash-based duplicate finder that keeps the oldest file and skips system folders automatically." />
-  <meta name="keywords" content="find duplicate files Windows free, duplicate file finder Windows 11, delete duplicate photos Windows, hash duplicate finder, free duplicate remover Windows" />
+  <meta name="description" content="Find and safely delete duplicate files on Windows 10/11 — free hash-based finder. Keeps the oldest file, skips system folders, moves to Recycle Bin." />
+  <meta name="keywords" content="find duplicate files windows free, duplicate file finder windows 11, delete duplicate photos windows, hash duplicate finder, free duplicate remover windows, duplicate photo finder windows, ccleaner duplicate finder alternative, dupeguru alternative, free disk cleanup, find duplicate music windows, free duplicate cleaner" />
   <title>Find Duplicate Files on Windows — Free Safe Duplicate Finder | RBS</title>
 
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
@@ -12,9 +12,9 @@
   <meta property="og:type"        content="article" />
   <meta property="og:site_name"   content="RBS" />
   <meta property="og:title"       content="Find Duplicate Files on Windows — Free Safe Duplicate Finder" />
-  <meta property="og:description" content="Hash-based duplicate finder for Windows 10/11. Keeps the oldest file, skips Windows and Program Files. 100% free." />
+  <meta property="og:description" content="Find and safely delete duplicate files on Windows 10/11 — free hash-based finder. Keeps the oldest file, skips system folders, moves to Recycle Bin." />
   <meta property="og:url"         content="https://rarebuildsoftware.com/blog/find-duplicate-files-windows-free.html" />
-  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog.svg" />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog/find-duplicate-files-windows-free.svg" />
   <meta name="twitter:card"       content="summary_large_image" />
   <link rel="canonical"           href="https://rarebuildsoftware.com/blog/find-duplicate-files-windows-free.html" />
 
@@ -25,10 +25,22 @@
     "headline": "Find Duplicate Files on Windows — Free Safe Duplicate Finder",
     "datePublished": "2026-04-19",
     "dateModified": "2026-04-19",
-    "author": { "@type": "Organization", "name": "RBS Team" },
+    "author": { "@type": "Person", "name": "Rai", "url": "https://rarebuildsoftware.com/about.html" },
     "publisher": { "@type": "Organization", "name": "RBS", "logo": { "@type": "ImageObject", "url": "https://rarebuildsoftware.com/assets/images/favicon.svg" }, "url": "https://rarebuildsoftware.com" },
     "description": "Free hash-based duplicate file finder for Windows 10 and 11.",
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rarebuildsoftware.com/blog/find-duplicate-files-windows-free.html" }
+  }
+  </script>
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rarebuildsoftware.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://rarebuildsoftware.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Find Duplicate Files on Windows — Free Safe Duplicate Finder", "item": "https://rarebuildsoftware.com/blog/find-duplicate-files-windows-free.html" }
+    ]
   }
   </script>
 
@@ -82,11 +94,13 @@
       <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:16px;">
         How to Find and Delete Duplicate Files on Windows (Free, Safe)
       </h1>
-      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 6 min read · By RBS Team</p>
+      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
 
         <p>Duplicate files are the easiest storage win on a Windows PC. You probably have three copies of that holiday photo album, the installer for every app you've ever downloaded, and a dozen "Untitled (1)", "Untitled (2)" screenshots in Downloads. This guide shows you how to find them and safely delete the extras — for free, without risking system files.</p>
+
+        <p>Quick warning before we start. "Duplicate finder" is exactly the kind of utility that goes wrong if it's too aggressive — Windows uses hard links and shared system files in ways that look like duplicates but aren't. The safe approach is to scan the folders <em>you</em> own (Pictures, Downloads, Documents, etc.) and stay out of the system folders.</p>
 
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why filename matching isn't enough</h2>
         <p>Plenty of free tools match by filename only. That's almost useless — <code>IMG_2034.jpg</code> might be two totally different photos if your camera resets counters, and two copies of the same song may have wildly different filenames.</p>
@@ -130,7 +144,21 @@
         <p>Free. No subscription. No account.</p>
 
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Reclaim expectations</h2>
-        <p>A typical 500GB-used drive scanned by Duplicate Finder reclaims anywhere from 2GB to 40GB depending on how much you've downloaded. Photo libraries migrated across phones are often the single biggest source.</p>
+        <p>A typical 500 GB-used drive scanned by Duplicate Finder reclaims anywhere from 2 GB to 40 GB depending on how much you've downloaded. Photo libraries migrated across phones are often the single biggest source — every time you change phones, the new device wants to "back up" your old photos and you end up with two or three copies of every shot.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Photo libraries — what to watch out for</h2>
+        <p>Photos are where most people see the biggest gains, but also where it's easiest to delete something you wanted. A few specific things:</p>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li><strong>EXIF-stripped copies are NOT duplicates of the original.</strong> If you shared a photo via WhatsApp or Instagram and saved the result, the file size and pixel data look identical but the metadata (camera info, GPS) is gone. Hash-based comparison correctly identifies these as different files. Some "smart" duplicate tools incorrectly flag them as the same — be careful which one you use.</li>
+          <li><strong>Edited copies look different to a hash, even if visually similar.</strong> A cropped or filtered photo will have a completely different hash from the original. Hash-based tools won't see them as duplicates. That's the right behaviour but it means hash dedup won't catch "the same photo, slightly different edits".</li>
+          <li><strong>Live Photos and HEIC have multiple components.</strong> An iPhone Live Photo is a HEIC + a small MOV. If you copy the album twice, both files duplicate. The video components are easy to miss because they don't show in Photos preview.</li>
+        </ul>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">"What about visually similar but not identical photos?"</h2>
+        <p>That's a different problem called <strong>perceptual hashing</strong> — finding photos that look the same to a human even if the pixels differ slightly. It's useful for cleaning up bursts ("I took 8 nearly-identical photos of the same sunset, keep the best") but it's also dangerous, because deciding what counts as "similar enough" is subjective. RBS PC Cleaner deliberately doesn't do perceptual hashing — for that I'd recommend a dedicated photo manager like digiKam, which has it built in and a careful UI for reviewing matches before deleting.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">"Could two different files have the same hash?"</h2>
+        <p>The technical answer: yes, in theory. SHA-256 has 2^256 possible outputs, which is more than the number of atoms in the observable universe. The probability of two random files producing the same hash is about 1 in 10^77. To put that in context, you're more likely to win the lottery while being struck by lightning during a meteor strike. Don't worry about it.</p>
 
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
@@ -156,7 +184,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
-          <p class="footer-tagline">Building free, powerful tools for everyone.</p>
+          <p class="footer-tagline">Building free, useful tools for everyone.</p>
           <p style="margin-top:12px;font-size:.88rem;">📷 <a href="https://instagram.com/rarebuildsoftware" target="_blank" rel="noopener" style="color:var(--accent-light);">@rarebuildsoftware</a> on Instagram</p>
         </div>
         <div>

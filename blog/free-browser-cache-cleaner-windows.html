@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Free browser cache cleaner for Chrome, Edge, Firefox, Brave and Opera on Windows. Clear cache, cookies and history in one click without losing saved passwords." />
-  <meta name="keywords" content="free browser cache cleaner, clear Chrome cache Windows, clear Edge cache, Firefox cache cleaner, browser cleaner Windows 11, Brave cache, Opera cache" />
+  <meta name="description" content="Free browser cache cleaner for Chrome, Edge, Firefox, Brave, Opera on Windows 10/11. Clear cache and history in one click; saved passwords stay safe." />
+  <meta name="keywords" content="free browser cache cleaner, clear chrome cache windows, clear edge cache, firefox cache cleaner, browser cleaner windows 11, brave cache, opera cache, chrome cache location windows, free browser cleaner all in one, ccleaner alternative free, browser cookie cleaner" />
   <title>Free Browser Cache Cleaner — Chrome, Edge, Firefox, Brave, Opera | RBS</title>
 
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
@@ -12,9 +12,9 @@
   <meta property="og:type"        content="article" />
   <meta property="og:site_name"   content="RBS" />
   <meta property="og:title"       content="Free Browser Cache Cleaner — Chrome, Edge, Firefox, Brave, Opera" />
-  <meta property="og:description" content="Clear cache, cookies and history across all five major browsers in one click. Free, safe, keeps saved passwords." />
+  <meta property="og:description" content="Free browser cache cleaner for Chrome, Edge, Firefox, Brave, Opera on Windows 10/11. Clear cache and history in one click; saved passwords stay safe." />
   <meta property="og:url"         content="https://rarebuildsoftware.com/blog/free-browser-cache-cleaner-windows.html" />
-  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog.svg" />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog/free-browser-cache-cleaner-windows.svg" />
   <meta name="twitter:card"       content="summary_large_image" />
   <link rel="canonical"           href="https://rarebuildsoftware.com/blog/free-browser-cache-cleaner-windows.html" />
 
@@ -25,10 +25,22 @@
     "headline": "Free Browser Cache Cleaner for Chrome, Edge, Firefox, Brave and Opera",
     "datePublished": "2026-04-19",
     "dateModified": "2026-04-19",
-    "author": { "@type": "Organization", "name": "RBS Team", "url": "https://rarebuildsoftware.com/about.html" },
+    "author": { "@type": "Person", "name": "Rai", "url": "https://rarebuildsoftware.com/about.html" },
     "publisher": { "@type": "Organization", "name": "RBS", "logo": { "@type": "ImageObject", "url": "https://rarebuildsoftware.com/assets/images/favicon.svg" }, "url": "https://rarebuildsoftware.com" },
     "description": "Free cross-browser cache cleaner for Windows 10 and 11.",
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rarebuildsoftware.com/blog/free-browser-cache-cleaner-windows.html" }
+  }
+  </script>
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rarebuildsoftware.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://rarebuildsoftware.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Free Browser Cache Cleaner — Chrome, Edge, Firefox, Brave, Opera", "item": "https://rarebuildsoftware.com/blog/free-browser-cache-cleaner-windows.html" }
+    ]
   }
   </script>
 
@@ -82,11 +94,13 @@
       <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:16px;">
         Free Browser Cache Cleaner for Windows — Chrome, Edge, Firefox, Brave, Opera
       </h1>
-      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 5 min read · By RBS Team</p>
+      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
 
-        <p>If you have all five major browsers installed — or even just two — clearing cache the manual way means opening five Settings screens and clicking "Clear browsing data" over and over. This post shows you a free, one-click way to clean all of them at once while <strong>keeping your saved passwords safe</strong>.</p>
+        <p>If you have all five major browsers installed — or even just two — clearing cache the manual way means opening five Settings screens and clicking "Clear browsing data" over and over. This post shows you a free, one-click way to clean all of them at once while <strong>keeping your saved passwords safe</strong>. It also covers exactly which folder each browser uses, in case you'd rather do it yourself with File Explorer.</p>
+
+        <p>Most "free PC cleaner" tools either bundle adware, charge for the actual cleaning step, or are too aggressive and break things. The bar I set for the cache cleaner I built is the inverse: free, no upsell, never deletes anything you can't get back, and never touches saved passwords.</p>
 
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why clear browser cache?</h2>
         <ul style="padding-left:24px;margin:16px 0;">
@@ -127,8 +141,31 @@
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What about Internet Explorer or older Edge (EdgeHTML)?</h2>
         <p>Internet Explorer is retired on Windows 11. The legacy Edge (EdgeHTML) was replaced by Chromium Edge in 2020. RBS PC Cleaner supports the current Chromium-based Edge. If you still have IE shortcuts kicking around, the launcher just redirects to Edge anyway.</p>
 
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Where each browser stores its cache (manual paths)</h2>
+        <p>If you'd rather do it without any extra software, here are the exact paths. Close the browser fully first (right-click the system-tray icon and quit, not just close the window).</p>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li><strong>Chrome</strong> — <code>%LOCALAPPDATA%\Google\Chrome\User Data\Default\Cache</code></li>
+          <li><strong>Edge</strong> — <code>%LOCALAPPDATA%\Microsoft\Edge\User Data\Default\Cache</code></li>
+          <li><strong>Brave</strong> — <code>%LOCALAPPDATA%\BraveSoftware\Brave-Browser\User Data\Default\Cache</code></li>
+          <li><strong>Opera</strong> — <code>%LOCALAPPDATA%\Opera Software\Opera Stable\Cache</code></li>
+          <li><strong>Firefox</strong> — <code>%LOCALAPPDATA%\Mozilla\Firefox\Profiles\&lt;random-string&gt;.default-release\cache2</code></li>
+        </ul>
+        <p>Press Win+R, paste the path, hit Enter, then Ctrl+A and Shift+Del to delete contents. The browser will rebuild what it needs on next launch.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">"I cleared cache but still see the old page"</h2>
+        <p>Three common causes:</p>
+        <ul style="padding-left:24px;margin:16px 0;">
+          <li><strong>Service Worker caching.</strong> Modern web apps (Gmail, Discord web, Twitter) install a "Service Worker" that caches pages outside the normal browser cache. Hard-refresh with Ctrl+Shift+R, or open DevTools (F12) &gt; Application tab &gt; Service Workers &gt; Unregister.</li>
+          <li><strong>DNS cache.</strong> If a domain just changed servers, your computer or router might still be returning the old IP. Open Command Prompt and run <code>ipconfig /flushdns</code>.</li>
+          <li><strong>CDN cache.</strong> The website's own CDN might still be serving an old version to everyone. Nothing you can do about that one — wait it out.</li>
+        </ul>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What about browser sync? Does clearing cache delete synced data?</h2>
+        <p>No. Sync (Chrome Sync, Edge Sync, Firefox Sync) lives in your account on the browser vendor's servers. Local cache is just a copy that gets re-fetched. Clearing cache locally doesn't touch your bookmarks, history, passwords or extensions if they're synced. The next time you open the browser online, sync re-pulls anything it needs.</p>
+        <p>Important caveat: if you clear <em>cookies</em> as well, you'll be signed out of your sync account and most websites. You'll need to log back in. Cache-only clears don't have this side effect.</p>
+
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">How often should you clear cache?</h2>
-        <p>Once a month is plenty for most people. If you're low on disk space or a site is misbehaving, do it now. There's no benefit to clearing cache daily — browsers re-fill it immediately, and you lose the loading-speed boost cache gives you.</p>
+        <p>Once a month is plenty for most people. If you're low on disk space or a site is misbehaving, do it now. There's no benefit to clearing cache daily — browsers re-fill it immediately and you lose the loading-speed boost cache gives you. The only exception is if you're a web developer testing changes to a site you control, in which case you probably already know about hard-refresh and DevTools' "Disable cache" toggle.</p>
 
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
@@ -154,7 +191,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
-          <p class="footer-tagline">Building free, powerful tools for everyone.</p>
+          <p class="footer-tagline">Building free, useful tools for everyone.</p>
           <p style="margin-top:12px;font-size:.88rem;">📷 <a href="https://instagram.com/rarebuildsoftware" target="_blank" rel="noopener" style="color:var(--accent-light);">@rarebuildsoftware</a> on Instagram</p>
         </div>
         <div>

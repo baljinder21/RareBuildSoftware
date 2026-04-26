@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Free disk space analyzer for Windows 10 and 11. See what folder is using your space with a read-only tree view you can drill into. No admin needed." />
-  <meta name="keywords" content="free disk space analyzer Windows, what is using my disk space Windows, folder size Windows 11, disk usage tool Windows, WizTree alternative, WinDirStat alternative" />
+  <meta name="description" content="Free disk space analyzer for Windows 10/11 — read-only folder tree you can drill into. No admin required, no cloud upload. Step-by-step cleanup workflow." />
+  <meta name="keywords" content="free disk space analyzer windows, what is using my disk space windows, folder size windows 11, disk usage tool windows, wiztree alternative, windirstat alternative, disk space full windows 11, c drive full, free disk usage analyzer, find large files windows, free folder size scanner" />
   <title>Free Disk Space Analyzer for Windows — See What's Using Your Space | RBS</title>
 
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
@@ -12,9 +12,9 @@
   <meta property="og:type"        content="article" />
   <meta property="og:site_name"   content="RBS" />
   <meta property="og:title"       content="Free Disk Space Analyzer for Windows — See What's Using Your Space" />
-  <meta property="og:description" content="Read-only disk analyzer for Windows 10/11. Drill into folders, see exact sizes, find the culprits. 100% free, no admin required." />
+  <meta property="og:description" content="Free disk space analyzer for Windows 10/11 — read-only folder tree you can drill into. No admin required, no cloud upload. Step-by-step cleanup workflow." />
   <meta property="og:url"         content="https://rarebuildsoftware.com/blog/free-disk-space-analyzer-windows.html" />
-  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog.svg" />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/blog/free-disk-space-analyzer-windows.svg" />
   <meta name="twitter:card"       content="summary_large_image" />
   <link rel="canonical"           href="https://rarebuildsoftware.com/blog/free-disk-space-analyzer-windows.html" />
 
@@ -25,10 +25,22 @@
     "headline": "Free Disk Space Analyzer for Windows",
     "datePublished": "2026-04-19",
     "dateModified": "2026-04-19",
-    "author": { "@type": "Organization", "name": "RBS Team" },
+    "author": { "@type": "Person", "name": "Rai", "url": "https://rarebuildsoftware.com/about.html" },
     "publisher": { "@type": "Organization", "name": "RBS", "logo": { "@type": "ImageObject", "url": "https://rarebuildsoftware.com/assets/images/favicon.svg" }, "url": "https://rarebuildsoftware.com" },
     "description": "Free disk space analyzer for Windows 10 and 11 — read-only folder tree with drill-down.",
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rarebuildsoftware.com/blog/free-disk-space-analyzer-windows.html" }
+  }
+  </script>
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rarebuildsoftware.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://rarebuildsoftware.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Free Disk Space Analyzer for Windows — See What's Using Your Space", "item": "https://rarebuildsoftware.com/blog/free-disk-space-analyzer-windows.html" }
+    ]
   }
   </script>
 
@@ -82,13 +94,18 @@
       <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:16px;">
         Free Disk Space Analyzer for Windows — See Exactly What's Using Your Space
       </h1>
-      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 5 min read · By RBS Team</p>
+      <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
 
-        <p>Your C: drive says "400 GB used of 500 GB" and Windows 11's built-in Storage settings only gives you vague categories like "Apps and features" and "Other". You need to <em>see</em> which folders are hogging gigabytes. That's what a disk space analyzer does.</p>
+        <p>Your C: drive says "400 GB used of 500 GB" and Windows 11's built-in Storage settings only gives you vague categories like "Apps &amp; features" and "Other". You need to <em>see</em> which folders are hogging gigabytes. That's what a disk space analyzer does.</p>
 
-        <p>This guide compares your options and shows how to use the built-in analyzer in RBS PC Cleaner.</p>
+        <p>This guide compares your options, explains why the built-in Storage page is so unhelpful, and walks through a 30-minute end-to-end disk cleanup workflow using the read-only analyzer in <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a>.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why Windows 11's Storage settings is misleading</h2>
+        <p>Settings &gt; System &gt; Storage looks like it answers the question "what's using my disk space", but it doesn't really. It groups files into broad categories — Apps &amp; features, System &amp; reserved, Documents, Pictures, Music, Videos, Mail, OneDrive, Desktop, Maps, Other Users, Temporary files, Other. That last bucket — "Other" — is often the biggest, and Windows tells you nothing about what's in it.</p>
+        <p>The categorisation is also misleading. A 30 GB Steam game shows up under "Apps &amp; features" but the actual game files are inside <code>C:\Program Files (x86)\Steam\steamapps\common\</code> — Settings doesn't tell you that. A 5 GB Discord cache shows up under "Other" because Discord's data is in <code>%APPDATA%</code>.</p>
+        <p>You need a real folder-by-folder view, not a category summary. That's where a disk analyzer comes in.</p>
 
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What a disk analyzer should do</h2>
         <ul style="padding-left:24px;margin:16px 0;">
@@ -129,6 +146,18 @@
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Alternative tools</h2>
         <p>WizTree and WinDirStat are both excellent standalone disk analyzers and free. <a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner</a>'s analyzer isn't trying to replace them — it's there so you have a <em>built-in</em> way to see where your space went without installing a second tool. If you want deep reporting, professional MFT-level speed, or treemap visualizations, use WizTree. For everyday "where did my 100 GB go?", the built-in analyzer is plenty.</p>
 
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">A 30-minute disk cleanup workflow</h2>
+        <p>Here's the order I'd actually do this in if my drive was full and I had half an hour:</p>
+        <ol style="padding-left:24px;margin:16px 0;">
+          <li><strong>Run the analyzer on C:\.</strong> Five minutes scan time on a 500 GB drive. Note the top 5 biggest folders.</li>
+          <li><strong>Browse games and big apps first.</strong> If you have a game you haven't played in a year, uninstalling it is often a quick 50-150 GB win. Use the <a href="bulk-uninstall-programs-windows.html" style="color:var(--accent-light);">Bulk Uninstaller</a> if multiple programs are candidates.</li>
+          <li><strong>Clean Electron-app caches.</strong> Discord, Teams, Slack, VS Code — easily 5-15 GB combined. <a href="clear-discord-teams-spotify-cache-windows.html" style="color:var(--accent-light);">Step-by-step here.</a></li>
+          <li><strong>Clear browser caches.</strong> Another 2-8 GB. <a href="free-browser-cache-cleaner-windows.html" style="color:var(--accent-light);">One-click guide.</a></li>
+          <li><strong>Run Duplicate Finder on Downloads, Pictures, Documents.</strong> Hash-based, keeps the oldest, ignores system folders. Often another 5-20 GB. <a href="find-duplicate-files-windows-free.html" style="color:var(--accent-light);">How it works.</a></li>
+          <li><strong>Empty Recycle Bin.</strong> Don't forget this — Windows doesn't reclaim the space until you do.</li>
+        </ol>
+        <p>On a typical "full" laptop, this workflow reclaims 30-80 GB and takes about half an hour with most of it being scan time you can ignore.</p>
+
         <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Tip: combine with Duplicate Finder</h2>
         <p>Once the analyzer shows you that Downloads is 25 GB, run <a href="find-duplicate-files-windows-free.html" style="color:var(--accent-light);">Duplicate Finder</a> on that folder. Often 30–60% of that 25 GB is duplicates you don't need.</p>
 
@@ -157,7 +186,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
-          <p class="footer-tagline">Building free, powerful tools for everyone.</p>
+          <p class="footer-tagline">Building free, useful tools for everyone.</p>
           <p style="margin-top:12px;font-size:.88rem;">📷 <a href="https://instagram.com/rarebuildsoftware" target="_blank" rel="noopener" style="color:var(--accent-light);">@rarebuildsoftware</a> on Instagram</p>
         </div>
         <div>

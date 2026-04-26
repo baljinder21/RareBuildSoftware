@@ -635,7 +635,7 @@
 
     const APP_PREVIEWS = {
       'rbs-optimizer-pro': `<div style="width:100%;height:100%;background:#0e1520;overflow:hidden;font-family:-apple-system,sans-serif;display:flex;flex-direction:column;"><div style="background:#080e18;padding:5px 10px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #18273a;flex-shrink:0;"><div style="display:flex;gap:4px;"><div style="width:9px;height:9px;border-radius:50%;background:#ff5f57;"></div><div style="width:9px;height:9px;border-radius:50%;background:#ffbd2e;"></div><div style="width:9px;height:9px;border-radius:50%;background:#28c840;"></div></div><span style="color:#aabbcc;font-size:10px;margin-left:4px;">RBS Optimizer Pro</span></div><div style="display:flex;flex:1;overflow:hidden;"><div style="width:130px;background:#080e18;border-right:1px solid #18273a;padding:8px 5px;flex-shrink:0;"><div style="color:#fff;font-size:9px;padding:4px 6px;background:#0d3040;border-radius:3px;margin-bottom:1px;">📊 Dashboard</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">💾 RAM Manager</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">⚙ Services</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">🗑 Temp Cleaner</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">🚀 Startup</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">⚡ Power &amp; GPU</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;">💿 Disk Manager</div></div><div style="flex:1;padding:10px;display:flex;flex-direction:column;gap:7px;overflow:hidden;"><div style="color:#fff;font-size:11px;font-weight:700;">System Overview</div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:5px;"><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:6px;text-align:center;"><div style="color:#4daaee;font-size:13px;font-weight:700;">45%</div><div style="color:#556677;font-size:7px;margin-top:2px;">RAM</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:6px;text-align:center;"><div style="color:#4daaee;font-size:13px;font-weight:700;">6%</div><div style="color:#556677;font-size:7px;margin-top:2px;">CPU</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:6px;text-align:center;"><div style="color:#4daaee;font-size:13px;font-weight:700;">44%</div><div style="color:#556677;font-size:7px;margin-top:2px;">Disk</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:6px;text-align:center;"><div style="color:#4daaee;font-size:13px;font-weight:700;">100%</div><div style="color:#556677;font-size:7px;margin-top:2px;">Battery</div></div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:7px;"><div style="color:#ccd;font-size:9px;font-weight:600;margin-bottom:3px;">Temperature Monitor</div><div style="display:flex;justify-content:space-between;"><span style="color:#556677;font-size:9px;">CPU Temp: N/A</span><span style="color:#00d4a0;font-size:9px;">GPU Temp: 53°C</span></div></div><div style="background:#28a745;border-radius:4px;padding:7px;text-align:center;"><span style="color:#fff;font-weight:700;font-size:10px;">🔧 OPTIMIZE NOW</span></div></div></div><div style="background:#080e18;padding:2px 10px;border-top:1px solid #18273a;flex-shrink:0;"><span style="color:#445566;font-size:7px;">v1.0.0 • Windows 10/11</span></div></div>`,
-      'rbs-voice-cloner': `<div style="width:100%;height:100%;background:#0e1520;overflow:hidden;font-family:-apple-system,sans-serif;display:flex;flex-direction:column;"><div style="background:#080e18;padding:5px 10px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #18273a;flex-shrink:0;"><div style="display:flex;gap:4px;"><div style="width:9px;height:9px;border-radius:50%;background:#ff5f57;"></div><div style="width:9px;height:9px;border-radius:50%;background:#ffbd2e;"></div><div style="width:9px;height:9px;border-radius:50%;background:#28c840;"></div></div><span style="color:#aabbcc;font-size:10px;margin-left:4px;">RBS Voice Cloner</span></div><div style="display:flex;flex:1;overflow:hidden;"><div style="width:130px;background:#080e18;border-right:1px solid #18273a;padding:10px 7px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;"><div style="color:#00d4a0;font-size:18px;font-weight:900;line-height:1;">RBS</div><div style="color:#8899aa;font-size:9px;margin-bottom:10px;">Voice Cloner</div><div style="width:100%;"><div style="color:#fff;font-size:9px;padding:5px 7px;background:#0d2a2a;border-radius:3px;margin-bottom:2px;border-left:2px solid #00d4a0;">🎙 Clone Voice</div><div style="color:#7a8899;font-size:9px;padding:5px 7px;margin-bottom:2px;">📝 Text to Speech</div><div style="color:#7a8899;font-size:9px;padding:5px 7px;margin-bottom:2px;">👤 Voice Profiles</div><div style="color:#7a8899;font-size:9px;padding:5px 7px;margin-bottom:2px;">⚡ Batch Process</div><div style="color:#7a8899;font-size:9px;padding:5px 7px;margin-bottom:2px;">✂ Audio Editor</div><div style="color:#7a8899;font-size:9px;padding:5px 7px;">📋 History</div></div></div><div style="flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;overflow:hidden;"><div style="color:#fff;font-size:11px;font-weight:700;">Clone Voice</div><div style="color:#556677;font-size:8px;">Upload or record an audio sample to clone.</div><div style="color:#aabbcc;font-size:9px;font-weight:600;">Audio Sample</div><div style="display:flex;gap:6px;"><div style="background:#00d4a0;border-radius:3px;padding:5px 12px;color:#0a1a1a;font-size:9px;font-weight:700;">Upload File</div><div style="border:1px solid #2a4a4a;border-radius:3px;padding:5px 12px;color:#aabbcc;font-size:9px;">Record Mic</div></div><div style="background:#111d2c;border:1px solid #1a2d3a;border-radius:4px;padding:8px;flex:1;display:flex;align-items:center;justify-content:center;"><span style="color:#445566;font-size:9px;">No sample loaded</span></div></div><div style="width:170px;padding:12px;display:flex;flex-direction:column;gap:8px;border-left:1px solid #18273a;overflow:hidden;"><div style="color:#aabbcc;font-size:10px;font-weight:700;">Profile Details</div><div><div style="color:#7a8899;font-size:8px;margin-bottom:2px;">Profile Name</div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:3px;padding:5px 8px;color:#445566;font-size:8px;">e.g. My Voice</div></div><div><div style="color:#7a8899;font-size:8px;margin-bottom:2px;">Language</div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:3px;padding:5px 8px;color:#aabbcc;font-size:8px;">English (en) ▼</div></div><div style="margin-top:auto;background:#00d4a0;border-radius:4px;padding:7px;text-align:center;"><span style="color:#0a1a1a;font-weight:700;font-size:9px;">Save Voice Profile</span></div></div></div><div style="background:#080e18;padding:2px 10px;border-top:1px solid #18273a;flex-shrink:0;"><span style="color:#00d4a0;font-size:7px;">Model loaded — ready</span></div></div>`,
+      'rbs-voice-cloner': `<div style="width:100%;height:100%;min-width:0;max-width:100%;background:linear-gradient(135deg,#0e1520 0%,#1a3a6b 100%);overflow:hidden;font-family:-apple-system,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(12px,4vw,28px);gap:clamp(6px,1.5vw,12px);box-sizing:border-box;"><div style="font-size:clamp(2rem,7vw,3.4rem);line-height:1;">🎤</div><div style="color:#fff;font-size:clamp(1rem,3.2vw,1.5rem);font-weight:800;letter-spacing:-0.3px;line-height:1.15;">RBS Voice Cloner</div><div style="color:#00d4a0;font-size:clamp(.65rem,1.8vw,.92rem);font-weight:600;line-height:1.3;">XTTS v2 · 28+ Languages · 100% Offline</div><div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:100%;"><span style="background:rgba(0,212,160,.15);border:1px solid rgba(0,212,160,.4);color:#00d4a0;font-size:clamp(.55rem,1.4vw,.7rem);padding:3px 9px;border-radius:12px;white-space:nowrap;">Voice Cloning</span><span style="background:rgba(0,212,160,.15);border:1px solid rgba(0,212,160,.4);color:#00d4a0;font-size:clamp(.55rem,1.4vw,.7rem);padding:3px 9px;border-radius:12px;white-space:nowrap;">Text-to-Speech</span><span style="background:rgba(0,212,160,.15);border:1px solid rgba(0,212,160,.4);color:#00d4a0;font-size:clamp(.55rem,1.4vw,.7rem);padding:3px 9px;border-radius:12px;white-space:nowrap;">GPU Accelerated</span></div></div>`,
       'life-dashboard': `<div style="width:100%;height:100%;background:#0e1520;overflow:hidden;font-family:-apple-system,sans-serif;display:flex;flex-direction:column;"><div style="background:#080e18;padding:5px 10px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #18273a;flex-shrink:0;"><div style="display:flex;gap:4px;"><div style="width:9px;height:9px;border-radius:50%;background:#ff5f57;"></div><div style="width:9px;height:9px;border-radius:50%;background:#ffbd2e;"></div><div style="width:9px;height:9px;border-radius:50%;background:#28c840;"></div></div><span style="color:#fff;font-size:10px;font-weight:700;margin-left:4px;">Life Dashboard</span><span style="background:#00d4a0;color:#0a1a0a;font-size:7px;font-weight:800;padding:1px 4px;border-radius:2px;">RBS</span></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:5px;padding:6px;flex:1;overflow:hidden;"><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:7px;"><div style="color:#00d4a0;font-size:7px;font-weight:700;margin-bottom:3px;">🕐 CLOCK</div><div style="color:#00d4a0;font-size:16px;font-weight:700;text-align:center;line-height:1;">19:56:37</div><div style="color:#7a8899;font-size:6px;text-align:center;">Wed, April 15 2026</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:7px;"><div style="color:#00d4a0;font-size:7px;font-weight:700;margin-bottom:3px;">🌤 WEATHER</div><div style="display:flex;align-items:center;gap:4px;"><span style="font-size:14px;">☀️</span><div><div style="color:#fff;font-size:13px;font-weight:700;line-height:1;">9°C</div><div style="color:#7a8899;font-size:7px;">Sunny</div></div></div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:7px;"><div style="color:#00d4a0;font-size:7px;font-weight:700;margin-bottom:3px;">📅 CALENDAR</div><div style="color:#fff;font-size:8px;font-weight:600;text-align:center;margin-bottom:2px;">April 2026</div><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:1px;text-align:center;font-size:6px;color:#556677;">Su Mo Tu We Th Fr Sa</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:7px;"><div style="color:#00d4a0;font-size:7px;font-weight:700;margin-bottom:3px;">✅ TASKS</div><div style="color:#445566;font-size:8px;text-align:center;padding:4px 0;">No tasks yet</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:7px;"><div style="color:#00d4a0;font-size:7px;font-weight:700;margin-bottom:3px;">🎯 HABITS</div><div style="display:flex;gap:3px;flex-wrap:wrap;"><div style="width:12px;height:12px;border-radius:50%;background:#6c5ce7;"></div><div style="width:12px;height:12px;border-radius:50%;background:#00d4a0;"></div><div style="width:12px;height:12px;border-radius:50%;background:#e17055;"></div><div style="width:12px;height:12px;border-radius:50%;background:#fdcb6e;"></div></div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:7px;overflow:hidden;"><div style="color:#00d4a0;font-size:7px;font-weight:700;margin-bottom:3px;">📰 NEWS</div><div style="color:#aabbcc;font-size:7px;line-height:1.3;">BBC: Legal advisers help migrants pose as gay to get asylum</div></div></div><div style="background:#080e18;padding:2px 10px;border-top:1px solid #18273a;flex-shrink:0;"><span style="color:#00d4a0;font-size:7px;font-weight:700;">RBS</span></div></div>`,
       'rbs-pc-cleaner': `<div style="width:100%;height:100%;background:#0e1520;overflow:hidden;font-family:-apple-system,sans-serif;display:flex;flex-direction:column;"><div style="background:#080e18;padding:5px 10px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #18273a;flex-shrink:0;"><div style="display:flex;gap:4px;"><div style="width:9px;height:9px;border-radius:50%;background:#ff5f57;"></div><div style="width:9px;height:9px;border-radius:50%;background:#ffbd2e;"></div><div style="width:9px;height:9px;border-radius:50%;background:#28c840;"></div></div><span style="color:#aabbcc;font-size:10px;margin-left:4px;">RBS PC Cleaner</span><span style="margin-left:auto;background:#0a1e0a;color:#3dba3d;font-size:8px;padding:1px 5px;border-radius:2px;border:1px solid #1a3a1a;">No Registry</span></div><div style="display:flex;flex:1;overflow:hidden;"><div style="width:128px;background:#080e18;border-right:1px solid #18273a;padding:8px 5px;flex-shrink:0;"><div style="color:#fff;font-size:9px;padding:4px 6px;background:#0d3040;border-radius:3px;margin-bottom:1px;">🧽 Junk Cleaner</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">🌐 Browser</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">📦 App Cache</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">📊 Disk Analyzer</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">🔍 Duplicates</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">🗑 Uninstaller</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">🚀 Startup</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;margin-bottom:1px;">🎮 Gaming Mode</div><div style="color:#7a8899;font-size:9px;padding:4px 6px;">🎨 Themes</div></div><div style="flex:1;padding:10px;display:flex;flex-direction:column;gap:6px;overflow:hidden;"><div style="display:flex;justify-content:space-between;align-items:center;"><span style="color:#fff;font-size:11px;font-weight:700;">Junk Scan Results</span><span style="color:#00d4a0;font-size:9px;font-weight:700;">3.2 GB found</span></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:6px 8px;display:flex;justify-content:space-between;align-items:center;"><span style="color:#aabbcc;font-size:9px;">🟢 Temp files</span><span style="color:#3dba3d;font-size:8px;font-weight:700;">Safe · 1.4 GB</span></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:6px 8px;display:flex;justify-content:space-between;align-items:center;"><span style="color:#aabbcc;font-size:9px;">🟢 Browser cache</span><span style="color:#3dba3d;font-size:8px;font-weight:700;">Safe · 920 MB</span></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:6px 8px;display:flex;justify-content:space-between;align-items:center;"><span style="color:#aabbcc;font-size:9px;">🟡 Win Update cache</span><span style="color:#ffb800;font-size:8px;font-weight:700;">Caution · 620 MB</span></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:5px;padding:6px 8px;display:flex;justify-content:space-between;align-items:center;"><span style="color:#aabbcc;font-size:9px;">🟢 Recycle Bin</span><span style="color:#3dba3d;font-size:8px;font-weight:700;">Safe · 260 MB</span></div><div style="background:#28a745;border-radius:4px;padding:7px;text-align:center;margin-top:auto;"><span style="color:#fff;font-weight:700;font-size:10px;">🧹 Clean Selected — 3.2 GB</span></div></div></div><div style="background:#080e18;padding:2px 10px;border-top:1px solid #18273a;flex-shrink:0;display:flex;justify-content:space-between;"><span style="color:#445566;font-size:7px;">v1.0.0 • Windows 10/11</span><span style="color:#3dba3d;font-size:7px;">✓ Never scans registry</span></div></div>`
     };
@@ -881,6 +881,66 @@
   /* ═══════════════════════════════════════
      SOFTWARE DETAIL PAGE
   ═══════════════════════════════════════ */
+  /* Build SoftwareApplication JSON-LD schema for a software object.
+     Triggers Google rich results: stars, version, price, OS, downloads visible in SERP. */
+  function buildSoftwareSchema(sw) {
+    const baseUrl = 'https://rarebuildsoftware.com';
+    const detailUrl = `${baseUrl}/software/detail.html?id=${sw.id}`;
+    const categoryMap = {
+      'Optimization': 'UtilitiesApplication',
+      'AI Tools':     'MultimediaApplication',
+      'Productivity': 'BusinessApplication'
+    };
+    const appCategory = categoryMap[sw.category] || 'UtilitiesApplication';
+    const imageUrl = sw.iconImage
+      ? `${baseUrl}${sw.iconImage}`
+      : `${baseUrl}/assets/images/favicon.svg`;
+
+    const schema = {
+      '@context':       'https://schema.org',
+      '@type':          'SoftwareApplication',
+      'name':           sw.name,
+      'operatingSystem':'Windows 10, Windows 11',
+      'applicationCategory': appCategory,
+      'softwareVersion': sw.version,
+      'fileSize':        sw.fileSize || '',
+      'description':     sw.description,
+      'url':             detailUrl,
+      'image':           imageUrl,
+      'datePublished':   sw.released || '',
+      'downloadUrl':     sw.downloadUrl || '',
+      'offers': {
+        '@type':         'Offer',
+        'price':         '0',
+        'priceCurrency': 'USD',
+        'availability':  'https://schema.org/InStock'
+      },
+      'author': {
+        '@type': 'Person',
+        'name':  'Rai',
+        'url':   `${baseUrl}/about.html`
+      },
+      'publisher': {
+        '@type': 'Organization',
+        'name':  'Rare Build Software',
+        'url':   baseUrl
+      }
+    };
+    return schema;
+  }
+
+  /* Inject (or replace) a JSON-LD <script> tag with a given id. Idempotent. */
+  function injectJsonLd(id, schema) {
+    let tag = document.getElementById(id);
+    if (!tag) {
+      tag = document.createElement('script');
+      tag.type = 'application/ld+json';
+      tag.id = id;
+      document.head.appendChild(tag);
+    }
+    tag.textContent = JSON.stringify(schema, null, 2);
+  }
+
   function applyDetailPage() {
     const container = document.getElementById('rbs-detail-root');
     if (!container) return;
@@ -890,7 +950,32 @@
     const sw = software.find(s => s.id === id) || software[0];
     if (!sw) { container.innerHTML = '<p>Software not found.</p>'; return; }
 
-    document.title = `${sw.name} — RBS`;
+    document.title = `${sw.name} — RBS Software for Windows`;
+
+    /* SEO: dynamically update meta tags + inject SoftwareApplication schema */
+    const setMeta = (selector, attr, value) => {
+      const el = document.querySelector(selector);
+      if (el && value) el.setAttribute(attr, value);
+    };
+    const desc = `${sw.description} Free download for Windows 10/11. Version ${sw.version}, ${sw.fileSize || ''}.`.replace(/\s+/g, ' ').trim();
+    const detailUrl = `https://rarebuildsoftware.com/software/detail.html?id=${sw.id}`;
+    setMeta('meta[name="description"]',     'content', desc);
+    setMeta('meta[property="og:title"]',    'content', `${sw.name} — Free for Windows`);
+    setMeta('meta[property="og:description"]','content', desc);
+    setMeta('link[rel="canonical"]',        'href',    detailUrl);
+
+    injectJsonLd('rbs-software-schema', buildSoftwareSchema(sw));
+
+    /* BreadcrumbList schema for the detail page */
+    injectJsonLd('rbs-breadcrumb-schema', {
+      '@context': 'https://schema.org',
+      '@type':    'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Home',     'item': 'https://rarebuildsoftware.com/' },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Software', 'item': 'https://rarebuildsoftware.com/software.html' },
+        { '@type': 'ListItem', 'position': 3, 'name': sw.name,    'item': detailUrl }
+      ]
+    });
 
     const url = resolveUrl(sw);
     const isReady = url && url !== '#';
@@ -925,7 +1010,7 @@
     } else {
       const appPreviews = {
         'rbs-optimizer-pro': `<div style="width:100%;aspect-ratio:16/10;background:#0e1520;border-radius:var(--radius);border:1px solid #1a2535;overflow:hidden;font-family:-apple-system,sans-serif;display:flex;flex-direction:column;"><div style="background:#080e18;padding:7px 10px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #18273a;"><span style="color:#00d4a0;font-size:12px;font-weight:800;">⚡</span><span style="color:#aabbcc;font-size:11px;">RBS Optimizer Pro</span><div style="margin-left:auto;display:flex;gap:5px;"><span style="background:#0a1e0a;color:#3dba3d;font-size:9px;padding:2px 7px;border-radius:3px;border:1px solid #1a3a1a;">RAM 45%</span><span style="background:#0a1e0a;color:#3dba3d;font-size:9px;padding:2px 7px;border-radius:3px;border:1px solid #1a3a1a;">CPU 16%</span></div></div><div style="display:flex;flex:1;overflow:hidden;"><div style="width:150px;background:#080e18;border-right:1px solid #18273a;padding:10px 6px;flex-shrink:0;"><div style="display:flex;align-items:center;gap:5px;padding:4px 6px;margin-bottom:2px;"><span style="color:#00d4a0;font-size:14px;font-weight:800;">⚡</span><div><div style="color:#fff;font-size:9px;font-weight:700;line-height:1.2;">RBS Optimizer Pro</div><div style="color:#556677;font-size:8px;">RAM: 45% CPU: 16%</div></div></div><div style="height:1px;background:#18273a;margin:6px 0;"></div><div style="color:#fff;font-size:10px;padding:5px 7px;background:#0d3040;border-radius:4px;margin-bottom:1px;">📊 Dashboard</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">💾 RAM Manager</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">⚙ Services</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">🗑 Temp Cleaner</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">🚀 Startup</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">⚡ Power &amp; GPU</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;">💿 Disk Manager</div></div><div style="flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;"><div style="color:#fff;font-size:12px;font-weight:700;">System Overview</div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;"><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:6px;padding:8px;text-align:center;"><div style="color:#4daaee;font-size:15px;font-weight:700;line-height:1;">45%</div><div style="color:#556677;font-size:8px;margin-top:3px;">RAM Used</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:6px;padding:8px;text-align:center;"><div style="color:#4daaee;font-size:15px;font-weight:700;line-height:1;">6%</div><div style="color:#556677;font-size:8px;margin-top:3px;">CPU Load</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:6px;padding:8px;text-align:center;"><div style="color:#4daaee;font-size:15px;font-weight:700;line-height:1;">44%</div><div style="color:#556677;font-size:8px;margin-top:3px;">Disk C:</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:6px;padding:8px;text-align:center;"><div style="color:#4daaee;font-size:15px;font-weight:700;line-height:1;">100%</div><div style="color:#556677;font-size:8px;margin-top:3px;">Battery</div></div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:6px;padding:9px;"><div style="color:#ccd;font-size:10px;font-weight:600;margin-bottom:5px;">Temperature Monitor</div><div style="display:flex;justify-content:space-between;"><span style="color:#556677;font-size:10px;">CPU Temp: N/A</span><span style="color:#00d4a0;font-size:10px;">GPU Temp: 53°C</span></div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:6px;padding:9px;"><div style="color:#ccd;font-size:10px;font-weight:600;margin-bottom:7px;">⚡ One-Click Full Optimization</div><div style="background:#28a745;border-radius:5px;padding:8px;text-align:center;"><span style="color:#fff;font-weight:700;font-size:11px;">🔧 OPTIMIZE NOW</span></div><div style="color:#556677;font-size:9px;margin-top:4px;">Ready to optimize.</div></div></div></div><div style="background:#080e18;padding:3px 12px;border-top:1px solid #18273a;"><span style="color:#445566;font-size:8px;">v1.0.0 • Windows 10/11</span></div></div>`,
-        'rbs-voice-cloner': `<div style="width:100%;aspect-ratio:16/10;background:#0e1520;border-radius:var(--radius);border:1px solid #1a2535;overflow:hidden;font-family:-apple-system,sans-serif;display:flex;flex-direction:column;"><div style="background:#080e18;padding:7px 10px;border-bottom:1px solid #18273a;"><span style="color:#aabbcc;font-size:11px;">RBS Voice Cloner</span></div><div style="display:flex;flex:1;overflow:hidden;"><div style="width:145px;background:#080e18;border-right:1px solid #18273a;padding:12px 8px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;"><div style="color:#00d4a0;font-size:22px;font-weight:900;line-height:1;">RBS</div><div style="color:#8899aa;font-size:10px;margin-bottom:2px;">Voice Cloner</div><div style="color:#445566;font-size:9px;margin-bottom:12px;">v1.0.0</div><div style="width:100%;"><div style="color:#fff;font-size:10px;padding:6px 8px;background:#0d2a2a;border-radius:4px;margin-bottom:2px;border-left:2px solid #00d4a0;">🎙 Clone Voice</div><div style="color:#7a8899;font-size:10px;padding:6px 8px;margin-bottom:2px;">📝 Text to Speech</div><div style="color:#7a8899;font-size:10px;padding:6px 8px;margin-bottom:2px;">👤 Voice Profiles</div><div style="color:#7a8899;font-size:10px;padding:6px 8px;margin-bottom:2px;">⚡ Batch Process</div><div style="color:#7a8899;font-size:10px;padding:6px 8px;margin-bottom:2px;">✂ Audio Editor</div><div style="color:#7a8899;font-size:10px;padding:6px 8px;">📋 History</div></div></div><div style="flex:1;display:flex;gap:0;"><div style="flex:1;padding:14px;display:flex;flex-direction:column;gap:10px;border-right:1px solid #18273a;"><div style="color:#fff;font-size:13px;font-weight:700;">Clone Voice</div><div style="color:#556677;font-size:9px;margin-top:-6px;">Upload or record an audio sample to create a voice profile.</div><div style="color:#aabbcc;font-size:10px;font-weight:600;">Audio Sample</div><div style="display:flex;gap:7px;"><div style="background:#00d4a0;border-radius:4px;padding:7px 14px;color:#0a1a1a;font-size:10px;font-weight:700;">Upload File</div><div style="border:1px solid #2a4a4a;border-radius:4px;padding:7px 14px;color:#aabbcc;font-size:10px;">Record Mic</div></div><div style="color:#445566;font-size:8px;">Supported: WAV, MP3, M4A | Min 5s, recommend 10-30s</div><div style="display:flex;align-items:center;gap:5px;"><div style="width:12px;height:12px;border:1px solid #2a4040;border-radius:2px;"></div><span style="color:#7a8899;font-size:9px;">Apply noise reduction to sample</span></div><div style="background:#111d2c;border:1px solid #1a2d3a;border-radius:5px;padding:10px;flex:1;display:flex;align-items:flex-end;justify-content:space-between;"><span style="color:#445566;font-size:9px;">No sample loaded</span><div style="border:1px solid #2a4040;border-radius:4px;padding:5px 10px;color:#aabbcc;font-size:9px;">► Play Sample</div></div></div><div style="width:200px;padding:14px;display:flex;flex-direction:column;gap:9px;"><div style="color:#aabbcc;font-size:11px;font-weight:700;">Profile Details</div><div><div style="color:#7a8899;font-size:9px;margin-bottom:3px;">Profile Name</div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:4px;padding:6px 9px;color:#445566;font-size:9px;">e.g. My Voice</div></div><div><div style="color:#7a8899;font-size:9px;margin-bottom:3px;">Primary Language</div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:4px;padding:6px 9px;color:#aabbcc;font-size:9px;display:flex;justify-content:space-between;"><span>English (en)</span><span style="color:#00d4a0;">▼</span></div></div><div><div style="color:#7a8899;font-size:9px;margin-bottom:5px;">Clone Quality</div><div style="background:#1e2d40;border-radius:3px;height:4px;position:relative;"><div style="background:#00d4a0;width:30%;height:100%;border-radius:3px;"></div><div style="width:10px;height:10px;background:#00d4a0;border-radius:50%;position:absolute;top:-3px;left:28%;"></div></div></div><div style="background:#00d4a0;border-radius:5px;padding:9px;text-align:center;margin-top:auto;"><span style="color:#0a1a1a;font-weight:700;font-size:10px;">Save Voice Profile</span></div></div></div></div><div style="background:#080e18;padding:3px 10px;border-top:1px solid #18273a;display:flex;justify-content:space-between;"><span style="color:#2a6a5a;font-size:8px;">GPU: NVIDIA GeForce RTX 3060 | CUDA 12.1 | VRAM: 6.0GB | Model: loaded</span><span style="color:#00d4a0;font-size:8px;">Model loaded — ready</span></div></div>`,
+        'rbs-voice-cloner': `<div style="width:100%;aspect-ratio:16/10;min-width:0;max-width:100%;background:linear-gradient(135deg,#0e1520 0%,#1a3a6b 100%);border-radius:var(--radius);border:1px solid #1a2535;overflow:hidden;font-family:-apple-system,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(16px,4vw,32px);gap:clamp(8px,1.6vw,14px);box-sizing:border-box;"><div style="font-size:clamp(2.4rem,8vw,4rem);line-height:1;">🎤</div><div style="color:#fff;font-size:clamp(1.1rem,3.4vw,1.7rem);font-weight:800;letter-spacing:-0.3px;line-height:1.15;">RBS Voice Cloner</div><div style="color:#00d4a0;font-size:clamp(.7rem,2vw,1rem);font-weight:600;line-height:1.3;">XTTS v2 · 28+ Languages · 100% Offline</div><div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:100%;"><span style="background:rgba(0,212,160,.15);border:1px solid rgba(0,212,160,.4);color:#00d4a0;font-size:clamp(.6rem,1.5vw,.8rem);padding:4px 10px;border-radius:14px;white-space:nowrap;">Voice Cloning</span><span style="background:rgba(0,212,160,.15);border:1px solid rgba(0,212,160,.4);color:#00d4a0;font-size:clamp(.6rem,1.5vw,.8rem);padding:4px 10px;border-radius:14px;white-space:nowrap;">Text-to-Speech</span><span style="background:rgba(0,212,160,.15);border:1px solid rgba(0,212,160,.4);color:#00d4a0;font-size:clamp(.6rem,1.5vw,.8rem);padding:4px 10px;border-radius:14px;white-space:nowrap;">GPU Accelerated</span></div></div>`,
         'life-dashboard': `<div style="width:100%;aspect-ratio:16/10;background:#0e1520;border-radius:var(--radius);border:1px solid #1a2535;overflow:hidden;font-family:-apple-system,sans-serif;display:flex;flex-direction:column;"><div style="background:#080e18;padding:7px 12px;border-bottom:1px solid #18273a;display:flex;align-items:center;gap:8px;"><span style="color:#fff;font-size:11px;font-weight:700;">Life Dashboard</span><span style="background:#00d4a0;color:#0a1a0a;font-size:8px;font-weight:800;padding:1px 5px;border-radius:3px;">RBS</span><div style="display:flex;gap:6px;margin-left:4px;"><span style="color:#fff;font-size:10px;padding:3px 10px;background:#1a2a3a;border-radius:12px;border:1px solid #2a3a4a;">Widgets</span><span style="color:#7a8899;font-size:10px;padding:3px 10px;">Reminders</span></div><div style="margin-left:auto;background:#00d4a0;border-radius:12px;padding:4px 10px;display:flex;align-items:center;gap:4px;"><span style="color:#0a1a0a;font-size:9px;font-weight:700;">♥ Donate</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:7px;padding:8px;flex:1;"><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:7px;padding:10px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="color:#00d4a0;font-size:9px;font-weight:700;">🕐 CLOCK</span></div><div style="color:#00d4a0;font-size:22px;font-weight:700;letter-spacing:1px;text-align:center;line-height:1.1;">19:56:37</div><div style="color:#7a8899;font-size:8px;text-align:center;margin-bottom:6px;">Wednesday, April 15th 2026</div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;"><div style="text-align:center;"><div style="color:#445566;font-size:7px;">NYC</div><div style="color:#aabbcc;font-size:9px;font-weight:600;">07:56</div></div><div style="text-align:center;"><div style="color:#445566;font-size:7px;">LON</div><div style="color:#aabbcc;font-size:9px;font-weight:600;">12:56</div></div><div style="text-align:center;"><div style="color:#445566;font-size:7px;">TOK</div><div style="color:#aabbcc;font-size:9px;font-weight:600;">20:56</div></div><div style="text-align:center;"><div style="color:#445566;font-size:7px;">SYD</div><div style="color:#aabbcc;font-size:9px;font-weight:600;">21:56</div></div></div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:7px;padding:10px;"><div style="color:#00d4a0;font-size:9px;font-weight:700;margin-bottom:6px;">🌤 WEATHER</div><div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><span style="font-size:20px;">☀️</span><div><div style="color:#fff;font-size:16px;font-weight:700;line-height:1;">9°C</div><div style="color:#7a8899;font-size:8px;">Sunny</div></div></div><div style="display:flex;gap:8px;color:#556677;font-size:8px;margin-bottom:6px;"><span>Feels 7°</span><span>💧 50%</span><span>💨 21 km/h</span></div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px;"><div style="text-align:center;background:#0a1520;border-radius:3px;padding:3px;"><div style="color:#445566;font-size:7px;">WED</div><div style="color:#aabbcc;font-size:8px;">0°/10°</div></div><div style="text-align:center;background:#0a1520;border-radius:3px;padding:3px;"><div style="color:#445566;font-size:7px;">THU</div><div style="color:#aabbcc;font-size:8px;">1°/11°</div></div><div style="text-align:center;background:#0a1520;border-radius:3px;padding:3px;"><div style="color:#445566;font-size:7px;">FRI</div><div style="color:#aabbcc;font-size:8px;">3°/13°</div></div></div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:7px;padding:10px;"><div style="color:#00d4a0;font-size:9px;font-weight:700;margin-bottom:5px;">📅 CALENDAR</div><div style="color:#fff;font-size:9px;font-weight:600;text-align:center;margin-bottom:4px;">April 2026</div><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:1px;text-align:center;"><div style="color:#445566;font-size:7px;">Su</div><div style="color:#445566;font-size:7px;">Mo</div><div style="color:#445566;font-size:7px;">Tu</div><div style="color:#445566;font-size:7px;">We</div><div style="color:#445566;font-size:7px;">Th</div><div style="color:#445566;font-size:7px;">Fr</div><div style="color:#445566;font-size:7px;">Sa</div><div style="color:#445566;font-size:8px;"></div><div style="color:#445566;font-size:8px;"></div><div style="color:#445566;font-size:8px;"></div><div style="color:#aabbcc;font-size:8px;">1</div><div style="color:#aabbcc;font-size:8px;">2</div><div style="color:#aabbcc;font-size:8px;">3</div><div style="color:#aabbcc;font-size:8px;">4</div><div style="color:#aabbcc;font-size:8px;">5</div><div style="color:#aabbcc;font-size:8px;">6</div><div style="color:#aabbcc;font-size:8px;">7</div><div style="color:#aabbcc;font-size:8px;">8</div><div style="color:#aabbcc;font-size:8px;">9</div><div style="color:#aabbcc;font-size:8px;">10</div><div style="color:#aabbcc;font-size:8px;">11</div><div style="color:#aabbcc;font-size:8px;">12</div><div style="color:#aabbcc;font-size:8px;">13</div><div style="color:#aabbcc;font-size:8px;">14</div><div style="background:#00d4a0;border-radius:50%;color:#0a1a0a;font-size:8px;font-weight:700;width:14px;height:14px;display:flex;align-items:center;justify-content:center;margin:0 auto;">15</div><div style="color:#aabbcc;font-size:8px;">16</div><div style="color:#aabbcc;font-size:8px;">17</div><div style="color:#aabbcc;font-size:8px;">18</div><div style="color:#aabbcc;font-size:8px;">19</div><div style="color:#aabbcc;font-size:8px;">20</div><div style="color:#aabbcc;font-size:8px;">21</div><div style="color:#aabbcc;font-size:8px;">22</div><div style="color:#aabbcc;font-size:8px;">23</div><div style="color:#aabbcc;font-size:8px;">24</div><div style="color:#aabbcc;font-size:8px;">25</div></div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:7px;padding:10px;"><div style="color:#00d4a0;font-size:9px;font-weight:700;margin-bottom:6px;">✅ TASKS</div><div style="background:#0a1520;border:1px solid #1e2d40;border-radius:4px;padding:5px 8px;color:#445566;font-size:9px;margin-bottom:5px;">Add a task...</div><div style="display:flex;gap:4px;margin-bottom:5px;"><div style="background:#0a1520;border:1px solid #1e2d40;border-radius:4px;padding:3px 7px;color:#7a8899;font-size:8px;">medium ▾</div><div style="background:#0a1520;border:1px solid #1e2d40;border-radius:4px;padding:3px 7px;color:#7a8899;font-size:8px;">General ▾</div><div style="background:#00d4a0;border-radius:4px;padding:3px 8px;color:#0a1a0a;font-size:9px;font-weight:700;">+</div></div><div style="color:#445566;font-size:9px;text-align:center;padding:4px;">No tasks yet. Add one above!</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:7px;padding:10px;"><div style="color:#00d4a0;font-size:9px;font-weight:700;margin-bottom:6px;">🎯 HABITS</div><div style="background:#0a1520;border:1px solid #1e2d40;border-radius:4px;padding:5px 8px;color:#445566;font-size:9px;margin-bottom:5px;">New habit...</div><div style="display:flex;gap:4px;margin-bottom:4px;"><div style="width:16px;height:16px;border-radius:50%;background:#6c5ce7;"></div><div style="width:16px;height:16px;border-radius:50%;background:#00d4a0;"></div><div style="width:16px;height:16px;border-radius:50%;background:#e17055;"></div><div style="width:16px;height:16px;border-radius:50%;background:#fdcb6e;"></div><div style="width:16px;height:16px;border-radius:50%;background:#74b9ff;"></div><div style="width:16px;height:16px;border-radius:50%;background:#a29bfe;"></div><div style="width:16px;height:16px;border-radius:50%;background:#00d4a0;border:1px solid #2a4a3a;display:flex;align-items:center;justify-content:center;color:#0a1a0a;font-size:9px;font-weight:700;">+</div></div><div style="color:#445566;font-size:9px;text-align:center;padding:4px;">No habits yet. Start tracking!</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:7px;padding:10px;overflow:hidden;"><div style="color:#00d4a0;font-size:9px;font-weight:700;margin-bottom:6px;">📰 NEWS</div><div style="margin-bottom:5px;padding-bottom:5px;border-bottom:1px solid #1e2d40;"><div style="color:#aabbcc;font-size:9px;line-height:1.3;margin-bottom:2px;">Legal advisers help migrants pose as gay to get asylum, BBC finds</div><div style="display:flex;gap:4px;align-items:center;"><span style="background:#1e2d40;color:#00d4a0;font-size:7px;padding:1px 5px;border-radius:2px;">BBC News</span><span style="color:#445566;font-size:7px;">2h ago</span></div></div><div><div style="color:#aabbcc;font-size:9px;line-height:1.3;margin-bottom:2px;">AA and BSM ordered to refund learner drivers for hidden fees</div><div style="display:flex;gap:4px;align-items:center;"><span style="background:#1e2d40;color:#00d4a0;font-size:7px;padding:1px 5px;border-radius:2px;">BBC News</span><span style="color:#445566;font-size:7px;">2h ago</span></div></div></div></div><div style="background:#080e18;padding:3px 12px;border-top:1px solid #18273a;"><span style="color:#2a5a4a;font-size:8px;">Powered by </span><span style="color:#00d4a0;font-size:8px;font-weight:700;">RBS</span></div></div>`
       };
       appPreviews['rbs-pc-cleaner'] = `<div style="width:100%;aspect-ratio:16/10;background:#0e1520;border-radius:var(--radius);border:1px solid #1a2535;overflow:hidden;font-family:-apple-system,sans-serif;display:flex;flex-direction:column;"><div style="background:#080e18;padding:7px 10px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #18273a;"><span style="color:#00d4a0;font-size:12px;font-weight:800;">🧹</span><span style="color:#aabbcc;font-size:11px;">RBS PC Cleaner</span><div style="margin-left:auto;display:flex;gap:5px;"><span style="background:#0a1e0a;color:#3dba3d;font-size:9px;padding:2px 7px;border-radius:3px;border:1px solid #1a3a1a;">🚫 No Registry</span><span style="background:#0a1e0a;color:#3dba3d;font-size:9px;padding:2px 7px;border-radius:3px;border:1px solid #1a3a1a;">↩ Reversible</span></div></div><div style="display:flex;flex:1;overflow:hidden;"><div style="width:156px;background:#080e18;border-right:1px solid #18273a;padding:10px 6px;flex-shrink:0;"><div style="display:flex;align-items:center;gap:5px;padding:4px 6px;margin-bottom:4px;"><span style="font-size:14px;">🧹</span><div><div style="color:#fff;font-size:9px;font-weight:700;line-height:1.2;">RBS PC Cleaner</div><div style="color:#556677;font-size:8px;">Honest · Reversible</div></div></div><div style="height:1px;background:#18273a;margin:6px 0;"></div><div style="color:#fff;font-size:10px;padding:5px 7px;background:#0d3040;border-radius:4px;margin-bottom:1px;">🧽 Junk Cleaner</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">🌐 Browser Cleaner</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">📦 App Cache</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">📊 Disk Analyzer</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">🔍 Duplicate Finder</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">🗑 Bulk Uninstaller</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">🚀 Startup Manager</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;margin-bottom:1px;">🎮 Gaming Mode</div><div style="color:#7a8899;font-size:10px;padding:5px 7px;">🎨 Themes</div></div><div style="flex:1;padding:12px;display:flex;flex-direction:column;gap:8px;overflow:hidden;"><div style="display:flex;justify-content:space-between;align-items:flex-end;"><div><div style="color:#fff;font-size:12px;font-weight:700;">Junk Scan Results</div><div style="color:#556677;font-size:9px;">Every item rated Safe · Caution · Risky</div></div><div style="color:#00d4a0;font-size:13px;font-weight:700;">3.2 GB</div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:6px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center;"><span style="color:#aabbcc;font-size:10px;">🟢 Temp files (%TEMP%)</span><div style="display:flex;gap:8px;align-items:center;"><span style="color:#3dba3d;font-size:9px;font-weight:700;">Safe · 1.4 GB</span><div style="width:14px;height:14px;border:1px solid #3dba3d;border-radius:3px;background:#0d3040;display:flex;align-items:center;justify-content:center;color:#3dba3d;font-size:9px;">✓</div></div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:6px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center;"><span style="color:#aabbcc;font-size:10px;">🟢 Browser cache (5 browsers)</span><div style="display:flex;gap:8px;align-items:center;"><span style="color:#3dba3d;font-size:9px;font-weight:700;">Safe · 920 MB</span><div style="width:14px;height:14px;border:1px solid #3dba3d;border-radius:3px;background:#0d3040;display:flex;align-items:center;justify-content:center;color:#3dba3d;font-size:9px;">✓</div></div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:6px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center;"><span style="color:#aabbcc;font-size:10px;">🟡 Windows Update cache</span><div style="display:flex;gap:8px;align-items:center;"><span style="color:#ffb800;font-size:9px;font-weight:700;">Caution · 620 MB</span><div style="width:14px;height:14px;border:1px solid #2a3a4a;border-radius:3px;background:#0a1520;"></div></div></div><div style="background:#111d2c;border:1px solid #1e2d40;border-radius:6px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center;"><span style="color:#aabbcc;font-size:10px;">🟢 Recycle Bin</span><div style="display:flex;gap:8px;align-items:center;"><span style="color:#3dba3d;font-size:9px;font-weight:700;">Safe · 260 MB</span><div style="width:14px;height:14px;border:1px solid #3dba3d;border-radius:3px;background:#0d3040;display:flex;align-items:center;justify-content:center;color:#3dba3d;font-size:9px;">✓</div></div></div><div style="background:#28a745;border-radius:5px;padding:8px;text-align:center;"><span style="color:#fff;font-weight:700;font-size:11px;">🧹 Clean Selected — 2.58 GB</span></div></div></div><div style="background:#080e18;padding:3px 12px;border-top:1px solid #18273a;display:flex;justify-content:space-between;"><span style="color:#445566;font-size:8px;">v1.0.0 • Windows 10/11 • ~61 MB</span><span style="color:#3dba3d;font-size:8px;font-weight:700;">✓ Never scans the registry</span></div></div>`;
@@ -1000,6 +1085,23 @@
                   <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(location.href).then(()=>{this.textContent='✓ Copied!'})">🔗 Copy Link</button>
                 </div>
               </div>
+
+              <!-- More from RBS — cross-link to other free apps -->
+              <div class="animate-on-scroll" style="margin-top:48px;">
+                <h2 class="section-title" style="font-size:1.5rem;margin-bottom:8px;">More free apps from RBS</h2>
+                <p style="color:var(--text-muted);font-size:.92rem;margin-bottom:24px;">Other tools by Rai — all free, all offline, no subscriptions.</p>
+                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;">
+                  ${software.filter(o => o.id !== sw.id && o.visible !== false).map(o => `
+                    <a href="detail.html?id=${esc(o.id)}" style="display:block;padding:16px;background:var(--bg-card,#111d2c);border:1px solid var(--border,#1e2d40);border-radius:10px;text-decoration:none;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='var(--accent-light)'" onmouseout="this.style.transform='';this.style.borderColor='var(--border, #1e2d40)'">
+                      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                        <span style="font-size:1.6rem;line-height:1;">${esc(o.icon || '📦')}</span>
+                        <span style="color:var(--text-primary,#fff);font-weight:700;font-size:.98rem;line-height:1.2;">${esc(o.name)}</span>
+                      </div>
+                      <p style="color:var(--text-muted);font-size:.82rem;line-height:1.5;margin:0 0 10px;">${esc((o.description || '').slice(0, 110))}${(o.description||'').length > 110 ? '…' : ''}</p>
+                      <span style="color:var(--accent-light);font-size:.82rem;font-weight:600;">View details →</span>
+                    </a>`).join('')}
+                </div>
+              </div>
             </div>
 
             <!-- Right sidebar -->
@@ -1065,18 +1167,178 @@
   /* ═══════════════════════════════════════
      BLOG PAGE
   ═══════════════════════════════════════ */
-  function applyBlog() {
-    const container = document.getElementById('rbs-blog-list');
-    if (!container) return;
-
-    // Static sample articles + any admin-added ones
-    const staticArticles = [
+  // Static sample articles + any admin-added ones — declared at module scope so
+  // applyCategoryPage() can also read them. Exposed via window._rbsAllBlogArticles
+  // for the category-page render path.
+  const STATIC_BLOG_ARTICLES = [
+      {
+        id: 'free-bleachbit-alternative-windows-11',
+        title: 'Free BleachBit Alternative for Windows 11 (2026)',
+        excerpt: 'BleachBit is powerful but intimidating. Here is a friendlier free alternative that keeps the privacy-first / no-telemetry stance.',
+        emoji: '🛡️',
+        tag: 'Comparison',
+        date: '2026-04-24',
+        url: 'blog/free-bleachbit-alternative-windows-11.html'
+      },
+      {
+        id: 'remove-msi-bloatware-windows-11',
+        title: 'How to Remove MSI Bloatware from Windows 11 (2026 Guide)',
+        excerpt: 'MSI Center vs Dragon Center, Mystic Light, MSI App Player — what to keep, what to nuke. Specifics for Stealth, Vector, Raider, Cyborg.',
+        emoji: '🐉',
+        tag: 'Optimization',
+        date: '2026-04-23',
+        url: 'blog/remove-msi-bloatware-windows-11.html'
+      },
+      {
+        id: 'rbs-voice-cloner-vs-murf-vs-speechify-2026',
+        title: 'RBS Voice Cloner vs Murf AI vs Speechify (2026)',
+        excerpt: 'Free local voice cloner against two of the biggest paid TTS services. Honest pricing, quality and use-case comparison for 2026.',
+        emoji: '🎤',
+        tag: 'Comparison',
+        date: '2026-04-22',
+        url: 'blog/rbs-voice-cloner-vs-murf-vs-speechify-2026.html'
+      },
+      {
+        id: 'life-dashboard-vs-notion-vs-obsidian-2026',
+        title: 'Life Dashboard vs Notion vs Obsidian (2026) — Honest Comparison',
+        excerpt: 'Three very different tools for personal productivity. What each is genuinely good at, what each is bad at, and which to pick.',
+        emoji: '📊',
+        tag: 'Comparison',
+        date: '2026-04-17',
+        url: 'blog/life-dashboard-vs-notion-vs-obsidian-2026.html'
+      },
+      {
+        id: 'remove-lenovo-bloatware-windows-11',
+        title: 'How to Remove Lenovo Bloatware from Windows 11 (2026 Guide)',
+        excerpt: 'Vantage, Now, Welcome, McAfee — what to keep, what to nuke. Specifics for ThinkPad, IdeaPad, Yoga, Legion, ThinkBook.',
+        emoji: '🖥️',
+        tag: 'Optimization',
+        date: '2026-04-16',
+        url: 'blog/remove-lenovo-bloatware-windows-11.html'
+      },
+      {
+        id: 'remove-acer-bloatware-windows-11',
+        title: 'How to Remove Acer Bloatware from Windows 11 (2026 Guide)',
+        excerpt: 'Acer Care Center, NitroSense, Quick Access, Norton trial — what to keep, what to remove. Specifics for Aspire, Swift, Nitro, Predator.',
+        emoji: '💻',
+        tag: 'Optimization',
+        date: '2026-04-11',
+        url: 'blog/remove-acer-bloatware-windows-11.html'
+      },
+      {
+        id: 'remove-asus-bloatware-windows-11',
+        title: 'How to Remove Asus Bloatware from Windows 11 (2026 Guide)',
+        excerpt: 'Armoury Crate, MyAsus, GameFirst — what to keep, what to nuke. Specifics for ROG, TUF, ZenBook, VivoBook, ProArt.',
+        emoji: '🎮',
+        tag: 'Optimization',
+        date: '2026-04-09',
+        url: 'blog/remove-asus-bloatware-windows-11.html'
+      },
+      {
+        id: 'free-stardock-iconpackager-alternative-windows-11',
+        title: 'Free Stardock IconPackager Alternative for Windows 11 (2026)',
+        excerpt: 'Stardock IconPackager is $30. Here is how to get most of the same look on Windows 11 for free, without patching system files.',
+        emoji: '🎨',
+        tag: 'Comparison',
+        date: '2026-04-08',
+        url: 'blog/free-stardock-iconpackager-alternative-windows-11.html'
+      },
+      {
+        id: 'rbs-pc-cleaner-vs-ccleaner-2026',
+        title: 'RBS PC Cleaner vs CCleaner (2026) — Honest Comparison',
+        excerpt: 'Side-by-side: free tier features, ads, telemetry, registry cleaner, and which one to pick. Written by the developer of one of them.',
+        emoji: '⚖️',
+        tag: 'Comparison',
+        date: '2026-04-05',
+        url: 'blog/rbs-pc-cleaner-vs-ccleaner-2026.html'
+      },
+      {
+        id: 'remove-hp-bloatware-windows-11',
+        title: 'How to Remove HP Bloatware from Windows 11 (2026 Guide)',
+        excerpt: 'What HP preinstalls on every Pavilion / Envy / Omen, what is safe to uninstall, what to keep, and the fastest way to debloat.',
+        emoji: '🧹',
+        tag: 'Optimization',
+        date: '2026-04-02',
+        url: 'blog/remove-hp-bloatware-windows-11.html'
+      },
+      {
+        id: 'claude-47-vs-gpt-54-vs-gemini-31-2026',
+        title: 'Claude Opus 4.7 vs GPT-5.4 vs Gemini 3.1 — The April 2026 AI Model Showdown',
+        excerpt: 'Three flagship AI models in eight weeks. Who actually wins which task, plus the open-weights models you can run on your own Windows PC for free.',
+        emoji: '🧠',
+        tag: 'AI News',
+        date: '2026-04-26',
+        url: 'blog/claude-47-vs-gpt-54-vs-gemini-31-2026.html'
+      },
+      {
+        id: 'microsoft-removing-copilot-windows-11-local-ai-alternatives',
+        title: 'Microsoft Is Pulling Copilot From Windows Apps — 7 Free Local AI Tools to Use Instead',
+        excerpt: 'Microsoft is rolling Copilot out of Photos, Notepad, Snipping Tool and Widgets in 2026. Here are 7 free local AI tools that run on your PC without sending data anywhere.',
+        emoji: '🖥️',
+        tag: 'AI News',
+        date: '2026-04-26',
+        url: 'blog/microsoft-removing-copilot-windows-11-local-ai-alternatives.html'
+      },
+      {
+        id: 'best-open-source-voice-cloning-2026',
+        title: 'Best Open-Source Voice Cloning Models in 2026 — 6 Models Tested on Windows',
+        excerpt: 'Hands-on comparison of F5-TTS, IndexTTS-2, Chatterbox, XTTS v2, Fish Speech V1.5 and CosyVoice 2 on a regular RTX 3060. Which model wins for what.',
+        emoji: '🔬',
+        tag: 'AI',
+        date: '2026-04-26',
+        url: 'blog/best-open-source-voice-cloning-2026.html'
+      },
+      {
+        id: 'elevenlabs-pricing-2026-free-alternatives',
+        title: 'ElevenLabs Pricing 2026 ($990/mo Business) — 5 Free Local Voice Cloners That Match the Quality',
+        excerpt: 'Real ElevenLabs pricing in 2026 plus 5 free local alternatives that run on Windows without metering your characters.',
+        emoji: '💰',
+        tag: 'Comparison',
+        date: '2026-04-26',
+        url: 'blog/elevenlabs-pricing-2026-free-alternatives.html'
+      },
+      {
+        id: 'is-ai-voice-cloning-legal-2026-guide',
+        title: 'Is AI Voice Cloning Legal in 2026? A Plain-English Guide for Creators',
+        excerpt: 'Plain-English breakdown of the ELVIS Act, California AB853, the federal Voice Cloning Protection Act, and the EU AI Act. What creators, podcasters and devs actually need to know.',
+        emoji: '⚖️',
+        tag: 'AI &amp; Law',
+        date: '2026-04-26',
+        url: 'blog/is-ai-voice-cloning-legal-2026-guide.html'
+      },
+      {
+        id: 'free-elevenlabs-alternative-2026',
+        title: 'Free ElevenLabs Alternative — 4 Free Voice Cloning Tools (2026)',
+        excerpt: 'Tested 4 free, offline AI voice cloning tools for Windows in 2026. Unlimited generation, no monthly cap, no cloud — proper alternatives to ElevenLabs paid plans.',
+        emoji: '⚡',
+        tag: 'AI',
+        date: '2026-04-26',
+        url: 'blog/free-elevenlabs-alternative-2026.html'
+      },
+      {
+        id: 'how-to-clone-your-voice-tutorial',
+        title: 'How to Clone Your Voice in 5 Minutes — Free, Offline, Windows',
+        excerpt: 'Step-by-step beginner walkthrough: install, record a 30-second sample, save the profile, generate any text in your own voice. No Python, no subscription, all offline.',
+        emoji: '🎙️',
+        tag: 'AI',
+        date: '2026-04-26',
+        url: 'blog/how-to-clone-your-voice-tutorial.html'
+      },
+      {
+        id: 'free-habit-tracker-windows-desktop',
+        title: 'Best Free Habit Tracker for Windows Desktop (Offline, No Subscription) — 2026',
+        excerpt: 'Most habit trackers are phone apps or cloud-bound web tools. Here is a free Windows desktop habit tracker that works fully offline — plus 15 more widgets in one window.',
+        emoji: '📅',
+        tag: 'Productivity',
+        date: '2026-04-26',
+        url: 'blog/free-habit-tracker-windows-desktop.html'
+      },
       {
         id: 'rbs-ai-voice-studio-v2-launch',
         title: 'RBS Voice Cloner V2 — Major Update with 16 Voices & 7-Band EQ',
         excerpt: 'The biggest Voice Cloner update yet. 16 built-in voices, 7-band parametric EQ tuned for voice, in-app translator across 17 languages, redesigned audio editor, and CUDA 12.8 runtime. New EQ-bar logo. Free.',
         emoji: '🎙️',
-        tag: 'News',
+        tag: 'AI',
         date: '2026-04-26',
         url: 'blog/rbs-ai-voice-studio-v2-launch.html'
       },
@@ -1085,7 +1347,7 @@
         title: 'RBS Voice Cloner V1 vs V2 — Which Should You Download?',
         excerpt: 'Side-by-side comparison: V1 (~248 MB, lighter) vs V2 (~2 GB, much better). Pick the right version for your PC and use case.',
         emoji: '⚖️',
-        tag: 'Guide',
+        tag: 'Comparison',
         date: '2026-04-26',
         url: 'blog/rbs-voice-cloner-v1-vs-v2.html'
       },
@@ -1094,7 +1356,7 @@
         title: '7-Band Parametric EQ for Voice — Which Preset to Pick',
         excerpt: 'What each EQ band does (60 Hz Sub through 12 kHz Air), when to use Natural / Warm / Bright / Podcast / Phone / Flat presets, and how to fix common voice problems with EQ.',
         emoji: '🎚️',
-        tag: 'Tutorial',
+        tag: 'AI',
         date: '2026-04-26',
         url: 'blog/rbs-ai-voice-studio-v2-eq-guide.html'
       },
@@ -1103,7 +1365,7 @@
         title: 'RBS PC Cleaner v1.0.0 — Free Honest Windows Cleaner (No Registry)',
         excerpt: 'RBS PC Cleaner is out — safe junk cleaner, duplicate finder, bulk uninstaller, startup manager, gaming mode, and 9 theme packs. 100% free, reversible, never scans the registry.',
         emoji: '🧹',
-        tag: 'News',
+        tag: 'Optimization',
         date: '2026-04-19',
         url: 'blog/rbs-pc-cleaner-launch.html'
       },
@@ -1166,7 +1428,7 @@
         title: 'Gaming Mode for Windows — Boost FPS Without Shady "Game Boosters"',
         excerpt: 'One click: safe clean + memory trim + High Performance power plan + suspend background apps. Resume button undoes everything. 100% free.',
         emoji: '🎮',
-        tag: 'Guide',
+        tag: 'Optimization',
         date: '2026-04-19',
         url: 'blog/gaming-mode-windows-boost-fps-free.html'
       },
@@ -1193,7 +1455,7 @@
         title: 'Life Dashboard v1.0.0 — Your All-in-One Productivity App',
         excerpt: 'Track your habits, finances, sleep, diet, tasks, and goals all in one beautiful dashboard. 16 customisable widgets, drag-and-drop layout, all data stored locally. Free forever.',
         emoji: '📊',
-        tag: 'News',
+        tag: 'Productivity',
         date: '2026-04-14',
         url: 'blog/life-dashboard-launch.html'
       },
@@ -1202,35 +1464,35 @@
         title: 'RBS Voice Cloner v1.0.0 — Free AI Voice Cloning for Windows',
         excerpt: 'Clone any voice in seconds with just a 5-second audio sample. RBS Voice Cloner uses the XTTS v2 AI engine to generate natural speech in 28+ languages — completely free and runs offline.',
         emoji: '🎙️',
-        tag: 'News',
+        tag: 'AI',
         date: '2026-04-12',
         url: 'blog/rbs-voice-cloner-launch.html'
       },
       {
         id: 'speed-windows-11',
-        title: 'How to Speed Up Windows 11 in 2025',
+        title: 'How to Speed Up Windows 11 in 2026',
         excerpt: 'Windows 11 can slow down over time with junk files, startup bloat, and background processes. Here are the most effective steps to restore peak performance.',
         emoji: '🚀',
-        tag: 'Guide',
-        date: '2025-01-10',
+        tag: 'Optimization',
+        date: '2026-04-01',
         url: 'blog/speed-windows-11.html'
       },
       {
         id: 'best-free-tools-2025',
-        title: 'Best Free PC Optimization Tools 2025',
+        title: 'Best Free PC Optimization Tools 2026',
         excerpt: 'We compare the top free Windows optimization tools available today. Find out which ones actually work and which to avoid.',
         emoji: '🛠️',
-        tag: 'Review',
-        date: '2025-01-15',
+        tag: 'Optimization',
+        date: '2026-04-03',
         url: 'blog/best-free-tools-2025.html'
       },
       {
         id: 'how-to-free-up-ram-windows-11',
-        title: 'How to Free Up RAM on Windows 11 — Complete Guide (2025)',
+        title: 'How to Free Up RAM on Windows 11 — Complete Guide (2026)',
         excerpt: 'Is your Windows 11 PC running slow with high RAM usage? 10 proven free methods to free up RAM — from closing background apps to one-click optimization.',
         emoji: '💾',
-        tag: 'Guide',
-        date: '2025-03-01',
+        tag: 'Optimization',
+        date: '2026-04-04',
         url: 'blog/how-to-free-up-ram-windows-11.html'
       },
       {
@@ -1238,8 +1500,8 @@
         title: 'How to Remove Dell Bloatware from Windows 11',
         excerpt: 'Step-by-step guide to uninstalling Dell pre-installed apps on Windows 11 — speed up your Dell laptop and reclaim RAM and storage for free.',
         emoji: '🖥️',
-        tag: 'Guide',
-        date: '2025-03-08',
+        tag: 'Optimization',
+        date: '2026-04-06',
         url: 'blog/remove-dell-bloatware-windows-11.html'
       },
       {
@@ -1247,16 +1509,24 @@
         title: 'Windows 11 Running Slow? 12 Ways to Fix It (Free)',
         excerpt: 'Windows 11 running slow on your PC? 12 step-by-step free fixes — from quick wins to deep optimizations. No reinstall, no paid software needed.',
         emoji: '🐌',
-        tag: 'Guide',
-        date: '2025-03-15',
+        tag: 'Optimization',
+        date: '2026-04-10',
         url: 'blog/windows-11-running-slow-fix.html'
       }
-    ];
+  ];
 
+  // Expose merged article list (admin + static) for the category-page render path.
+  window._rbsAllBlogArticles = function () {
     let adminArticles = [];
     try { adminArticles = JSON.parse(localStorage.getItem('rbs_blog') || '[]'); } catch (_) {}
+    return [...adminArticles, ...STATIC_BLOG_ARTICLES];
+  };
 
-    const allArticles = [...adminArticles, ...staticArticles];
+  function applyBlog() {
+    const container = document.getElementById('rbs-blog-list');
+    if (!container) return;
+
+    const allArticles = window._rbsAllBlogArticles();
 
     container.innerHTML = allArticles.map(a => `
       <div class="blog-card animate-on-scroll" data-tag="${esc(a.tag || 'Article')}">
@@ -1274,6 +1544,123 @@
 
     if (window._rbsObserver) {
       container.querySelectorAll('.animate-on-scroll').forEach(el => window._rbsObserver.observe(el));
+    }
+  }
+
+  /* ═══════════════════════════════════════
+     CATEGORY (TAG) PAGE
+     Filters the same staticArticles by the data-tag attribute on the
+     container (e.g. <div id="rbs-category-list" data-tag="AI">). Used by
+     /blog/tag/ai.html, /blog/tag/optimization.html, etc.
+  ═══════════════════════════════════════ */
+  function applyCategoryPage() {
+    const container = document.getElementById('rbs-category-list');
+    if (!container) return;
+
+    const targetTag = container.getAttribute('data-tag');
+    if (!targetTag) return;
+
+    const allArticles = window._rbsAllBlogArticles
+      ? window._rbsAllBlogArticles()
+      : STATIC_BLOG_ARTICLES;
+
+    const matches = allArticles.filter(a => (a.tag || '').toLowerCase() === targetTag.toLowerCase());
+
+    if (matches.length === 0) {
+      container.innerHTML = `<p style="color:var(--text-muted);padding:32px;text-align:center;">No articles in this category yet.</p>`;
+      return;
+    }
+
+    container.innerHTML = matches.map(a => `
+      <div class="blog-card animate-on-scroll" data-tag="${esc(a.tag || 'Article')}">
+        <div class="blog-card-thumb">${a.emoji || '📝'}</div>
+        <div class="blog-card-body">
+          <div class="blog-card-tag">${esc(a.tag || 'Article')}</div>
+          <a href="../../${esc(a.url || '#')}" class="blog-card-title">${esc(a.title)}</a>
+          <p class="blog-card-excerpt">${esc(a.excerpt || '')}</p>
+          <div class="blog-card-footer">
+            <span>📅 ${formatDate(a.date)}</span>
+            <a href="../../${esc(a.url || '#')}" class="blog-read-more">Read more →</a>
+          </div>
+        </div>
+      </div>`).join('');
+
+    if (window._rbsObserver) {
+      container.querySelectorAll('.animate-on-scroll').forEach(el => window._rbsObserver.observe(el));
+    }
+  }
+
+  /* ═══════════════════════════════════════
+     BLOG POST PAGE — auto TOC + prev/next nav
+     Runs on every individual blog post page. Detects via .blog-post-content.
+  ═══════════════════════════════════════ */
+  function applyBlogPostPage() {
+    const article = document.querySelector('article.blog-post-layout');
+    const content = article && article.querySelector('.blog-post-content');
+    if (!article || !content) return;
+
+    const allArticles = window._rbsAllBlogArticles
+      ? window._rbsAllBlogArticles()
+      : STATIC_BLOG_ARTICLES;
+
+    const path = (location.pathname || '').replace(/^\/+/, '');
+    const idx = allArticles.findIndex(a => a.url && (path === a.url || path.endsWith('/' + a.url)));
+
+    /* ── Auto TOC: only render if 3+ h2 headings ── */
+    const h2Count = content.querySelectorAll('h2').length;
+    if (h2Count >= 3 && !content.querySelector('.blog-toc')) {
+      const slugify = s => (s||'').toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .trim()
+        .replace(/\s+/g, '-')
+        .slice(0, 60);
+      const usedIds = new Set();
+      const headings = content.querySelectorAll('h2, h3');
+      const items = [];
+      headings.forEach(h => {
+        if (!h.id) {
+          let base = slugify(h.textContent) || 'section';
+          let id = base, n = 2;
+          while (usedIds.has(id) || document.getElementById(id)) { id = base + '-' + n++; }
+          h.id = id;
+        }
+        usedIds.add(h.id);
+        items.push({ tag: h.tagName, id: h.id, text: h.textContent });
+      });
+      const tocHTML =
+        '<nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">' +
+          '<div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>' +
+          '<ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;">' +
+            items.map(i =>
+              '<li style="' + (i.tag === 'H3' ? 'padding-left:18px;font-size:.9em;' : '') + '">' +
+                '<a href="#' + esc(i.id) + '" style="color:var(--accent-light);text-decoration:none;">' + esc(i.text) + '</a>' +
+              '</li>'
+            ).join('') +
+          '</ul>' +
+        '</nav>';
+      content.insertAdjacentHTML('afterbegin', tocHTML);
+    }
+
+    /* ── Prev/Next nav: chronological neighbours ── */
+    if (idx >= 0 && !article.querySelector('.blog-post-nav')) {
+      const newer = idx > 0 ? allArticles[idx - 1] : null;
+      const older = idx < allArticles.length - 1 ? allArticles[idx + 1] : null;
+      if (newer || older) {
+        const sibUrl = a => esc((a.url || '').replace(/^blog\//, ''));
+        const card = (a, label, align) => a
+          ? '<a href="' + sibUrl(a) + '" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:' + align + ';transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor=\'var(--accent-light)\';this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.borderColor=\'var(--border)\';this.style.transform=\'\'">' +
+              '<div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">' + label + '</div>' +
+              '<div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">' + esc(a.title) + '</div>' +
+            '</a>'
+          : '<div style="flex:1;min-width:240px;"></div>';
+        const navHTML =
+          '<nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">' +
+            card(newer, '← Newer Post', 'left') +
+            card(older, 'Older Post →', 'right') +
+          '</nav>';
+        const inner = article.querySelector(':scope > div') || article;
+        inner.insertAdjacentHTML('beforeend', navHTML);
+      }
     }
   }
 
@@ -1407,6 +1794,8 @@
     applySoftware();
     applyDetailPage();
     applyBlog();
+    applyCategoryPage();
+    applyBlogPostPage();
     applyFaq();
     applyFilters();
     updateCounterDisplay();
