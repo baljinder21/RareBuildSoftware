@@ -1172,6 +1172,15 @@
   // for the category-page render path.
   const STATIC_BLOG_ARTICLES = [
       {
+        id: 'windows-11-kb5083769-update-issues-explained',
+        title: 'Windows 11 KB5083769 Update — What\'s Really Broken, What\'s Not',
+        excerpt: 'Confirmed VSS backup and BitLocker bugs, the boot-loop rumour that traces back to five forum posts, and the 30-second check to see if you are actually affected.',
+        emoji: '🛠️',
+        tag: 'Guide',
+        date: '2026-05-02',
+        url: 'blog/windows-11-kb5083769-update-issues-explained.html'
+      },
+      {
         id: 'free-bleachbit-alternative-windows-11',
         title: 'Free BleachBit Alternative for Windows 11 (2026)',
         excerpt: 'BleachBit is powerful but intimidating. Here is a friendlier free alternative that keeps the privacy-first / no-telemetry stance.',
@@ -1641,6 +1650,95 @@
       content.insertAdjacentHTML('afterbegin', tocHTML);
     }
 
+    /* ── App recommendation card: pick the RBS app that best matches this post ── */
+    if (!article.querySelector('.blog-app-reco')) {
+      const APP_RECOS = {
+        'rbs-optimizer-pro': {
+          icon: '🔧',
+          name: 'RBS Optimizer Pro',
+          pitch: 'If you want a one-click way to do most of what this post covers — junk cleaner, startup manager, RAM trim, real-time CPU/GPU monitoring — Optimizer Pro is the free Windows tool I built for it.',
+          detail: '../software/detail.html?id=rbs-optimizer-pro',
+          download: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip',
+          size: '~23 MB'
+        },
+        'rbs-pc-cleaner': {
+          icon: '🧹',
+          name: 'RBS PC Cleaner',
+          pitch: 'If you want to actually run the cleanup steps in this post safely — every action is reversible, rated Safe / Caution / Risky before you click, and the registry is never touched.',
+          detail: '../software/detail.html?id=rbs-pc-cleaner',
+          download: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip',
+          size: '~61 MB'
+        },
+        'rbs-voice-cloner-v2': {
+          icon: '🎙️',
+          iconImg: '../assets/images/software/rbs-voice-cloner-v2-icon.png',
+          name: 'RBS Voice Cloner V2',
+          pitch: '16 built-in voices plus unlimited custom clones from a 30-second sample, 17 languages with auto-translate, 7-band EQ tuned for voice. Runs locally, no monthly cap, no cloud.',
+          detail: '../software/detail.html?id=rbs-voice-cloner-v2',
+          download: 'https://github.com/baljinder21/RBS-RareBuildSoftware-V2/releases/download/VoiceCloner/RBSVoiceCloner_Setup.V2.zip',
+          size: '~2.0 GB'
+        },
+        'life-dashboard': {
+          icon: '📅',
+          name: 'Life Dashboard',
+          pitch: 'One window for habits, tasks, finance, weather, sleep, news and 11 more widgets. Drag-and-drop layout, all data stays on your PC, free forever.',
+          detail: '../software/detail.html?id=life-dashboard',
+          download: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/Life.Dashboard.Setup.1.0.0.zip',
+          size: '~104 MB'
+        }
+      };
+
+      const slugFromPath = p => {
+        const m = (p || '').match(/([^/]+)\.html(?:[?#]|$)/);
+        return m ? m[1].toLowerCase() : '';
+      };
+      const slug = slugFromPath(path);
+      const tag = (idx >= 0 ? (allArticles[idx].tag || '') : '').toLowerCase();
+
+      const pickReco = () => {
+        // 1. Voice / AI cloning posts → V2
+        if (/voice|cloner|tts|elevenlabs|murf|speechify|xtts|cloning|eq-guide/.test(slug)) return 'rbs-voice-cloner-v2';
+        if (tag === 'ai' || tag === 'ai news') return 'rbs-voice-cloner-v2';
+        // 2. Productivity / dashboard / habit tracking → Life Dashboard
+        if (/habit|dashboard|notion|obsidian/.test(slug)) return 'life-dashboard';
+        if (tag === 'productivity') return 'life-dashboard';
+        // 3. Cleanup / cache / cleaner / themes → PC Cleaner
+        if (/cleaner|ccleaner|bleachbit|cache|duplicate|discord|spotify|teams|uninstall|disk-space|stardock|themes|how-to-clean/.test(slug)) return 'rbs-pc-cleaner';
+        // 4. Default — Optimizer Pro covers RAM, startup, slow PC, bloatware, gaming, KB updates
+        return 'rbs-optimizer-pro';
+      };
+
+      const reco = APP_RECOS[pickReco()];
+      if (reco) {
+        const iconHTML = reco.iconImg
+          ? '<div style="width:64px;height:64px;border-radius:14px;overflow:hidden;flex-shrink:0;background:#0a1628;">' +
+              '<img src="' + esc(reco.iconImg) + '" alt="' + esc(reco.name) + ' logo" style="width:100%;height:100%;object-fit:contain;display:block;" />' +
+            '</div>'
+          : '<div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">' + reco.icon + '</div>';
+
+        const recoHTML =
+          '<aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">' +
+            '<div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">' +
+              iconHTML +
+              '<div style="flex:1;min-width:220px;">' +
+                '<div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>' +
+                '<h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try ' + esc(reco.name) + ' — Free</h3>' +
+                '<p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">' + esc(reco.pitch) + '</p>' +
+              '</div>' +
+            '</div>' +
+            '<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">' +
+              '<a href="' + esc(reco.download) + '" class="btn btn-primary btn-sm">⬇ Download Free</a>' +
+              '<a href="' + esc(reco.detail) + '" class="btn btn-secondary btn-sm">App details →</a>' +
+              '<span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ' + esc(reco.size) + '</span>' +
+            '</div>' +
+            '<p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>' +
+          '</aside>';
+
+        const inner = article.querySelector(':scope > div') || article;
+        inner.insertAdjacentHTML('beforeend', recoHTML);
+      }
+    }
+
     /* ── Prev/Next nav: chronological neighbours ── */
     if (idx >= 0 && !article.querySelector('.blog-post-nav')) {
       const newer = idx > 0 ? allArticles[idx - 1] : null;
@@ -1719,18 +1817,26 @@
      in the background after page load.
   ═══════════════════════════════════════ */
   function fetchGitHubDownloads() {
-    const REPO = 'baljinder21/RBSsoftware';
-    const CACHE_KEY = 'rbs_gh_counts';
+    // V1 apps live in RBSsoftware; V2 lives in its own repo. Aggregate both.
+    const REPOS = [
+      'baljinder21/RBSsoftware',
+      'baljinder21/RBS-RareBuildSoftware-V2'
+    ];
+    const CACHE_KEY = 'rbs_gh_counts_v2'; // bumped to invalidate V1-only cached counts
     const CACHE_TTL = 60 * 60 * 1000; // 1 hour
 
-    // Map GitHub asset filename patterns → software id
-    const ASSET_MAP = {
-      'RBSOptimizerPro':    'rbs-optimizer-pro',
-      'RBSVoiceCloner':     'rbs-voice-cloner',
-      'Life-Dashboard':     'life-dashboard',
-      'Life.Dashboard':     'life-dashboard',
-      'RBS.PC.Cleaner':     'rbs-pc-cleaner'
-    };
+    /* Asset filename → software id, checked in order, FIRST MATCH WINS.
+       More specific patterns must come first. The V2 zip is named
+       `RBSVoiceCloner_Setup.V2.zip` — the substring `RBSVoiceCloner` would
+       otherwise wrongly bucket it as V1, so we test for `_Setup.V2` first. */
+    const ASSET_PATTERNS = [
+      { pattern: '_Setup.V2',       id: 'rbs-voice-cloner-v2' },
+      { pattern: 'RBSOptimizerPro', id: 'rbs-optimizer-pro' },
+      { pattern: 'RBSVoiceCloner',  id: 'rbs-voice-cloner' },
+      { pattern: 'Life-Dashboard',  id: 'life-dashboard' },
+      { pattern: 'Life.Dashboard',  id: 'life-dashboard' },
+      { pattern: 'RBS.PC.Cleaner',  id: 'rbs-pc-cleaner' }
+    ];
 
     // Try cache first
     try {
@@ -1741,25 +1847,30 @@
       }
     } catch (_) {}
 
-    fetch(`https://api.github.com/repos/${REPO}/releases`)
-      .then(r => r.ok ? r.json() : null)
-      .then(releases => {
+    Promise.all(
+      REPOS.map(repo =>
+        fetch(`https://api.github.com/repos/${repo}/releases`)
+          .then(r => r.ok ? r.json() : [])
+          .catch(() => [])
+      )
+    ).then(perRepo => {
+      const counts = {};
+      perRepo.forEach(releases => {
         if (!Array.isArray(releases)) return;
-        const counts = {};
         releases.forEach(release => {
           (release.assets || []).forEach(asset => {
-            for (const [pattern, id] of Object.entries(ASSET_MAP)) {
+            for (const { pattern, id } of ASSET_PATTERNS) {
               if (asset.name.includes(pattern)) {
                 counts[id] = (counts[id] || 0) + (asset.download_count || 0);
+                break; // first match wins — don't double-count
               }
             }
           });
         });
-        // Cache result
-        try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), counts })); } catch (_) {}
-        applyGitHubCounts(counts);
-      })
-      .catch(() => {}); // Silently fail — works fine offline
+      });
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), counts })); } catch (_) {}
+      applyGitHubCounts(counts);
+    });
   }
 
   function applyGitHubCounts(counts) {

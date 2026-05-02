@@ -318,6 +318,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://rarebuildsoftware.com/blog/windows-11-kb5083769-update-issues-explained.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
 
   <!-- Category landing pages (each ranks for the category term and aggregates internal link equity) -->
   <url>
