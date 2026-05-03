@@ -97,17 +97,23 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#why-electron-apps-cache-so-much" style="color:var(--accent-light);text-decoration:none;">Why Electron apps cache so much</a></li><li style=""><a href="#signs-your-app-cache-is-the-problem" style="color:var(--accent-light);text-decoration:none;">Signs your app cache is the problem</a></li><li style=""><a href="#where-each-apps-cache-lives" style="color:var(--accent-light);text-decoration:none;">Where each app's cache lives</a></li><li style=""><a href="#whats-safe-to-delete-in-these-apps" style="color:var(--accent-light);text-decoration:none;">What's safe to delete in these apps</a></li><li style=""><a href="#one-click-way-rbs-pc-cleaner" style="color:var(--accent-light);text-decoration:none;">One-click way: RBS PC Cleaner</a></li><li style=""><a href="#other-electron-apps-worth-checking" style="color:var(--accent-light);text-decoration:none;">Other Electron apps worth checking</a></li><li style=""><a href="#manual-step-by-step-any-of-the-apps" style="color:var(--accent-light);text-decoration:none;">Manual step-by-step (any of the apps)</a></li><li style=""><a href="#typical-space-reclaimed" style="color:var(--accent-light);text-decoration:none;">Typical space reclaimed</a></li><li style=""><a href="#how-often-should-you-clear" style="color:var(--accent-light);text-decoration:none;">How often should you clear?</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#free-app-cache-cleaner-for-windows" style="color:var(--accent-light);text-decoration:none;">Free App Cache Cleaner for Windows</a></li></ul>
+        </nav>
+
+
 
         <p>Electron apps — Discord, Microsoft Teams, Slack, VS Code — are essentially Chromium browsers in disguise, and they cache like browsers do. Spotify runs a Chromium engine for its UI and caches album art. Zoom caches meeting logs and media. On a typical PC, these apps collectively eat 5–15 GB of cache, and <strong>none of them expose a "Clear Cache" button in their own settings</strong>.</p>
 
-        <p>This post is the cheat-sheet for getting that space back — both the manual way (Win+R, paste a path, delete) and the one-click way using the free <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a>.</p>
+        <p>This post is the cheat-sheet for getting that space back — both the manual way (Win+R, paste a path, delete) and the one-click way using the free <a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a>.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why Electron apps cache so much</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="why-electron-apps-cache-so-much">Why Electron apps cache so much</h2>
         <p>Electron is the framework underneath most modern desktop chat apps. It bundles a full Chromium browser inside the app so the developers can write the UI in HTML and JavaScript. That decision saves them work but it means the app inherits all of Chromium's caching behaviour — disk cache for assets, GPU cache for rendered frames, IndexedDB for offline data, and so on.</p>
         <p>Discord, for example, caches every emoji, sticker, custom server icon, and recent attachment you've ever seen. Teams caches every avatar, every chat thread's media, every shared file you opened. Multiply by months of usage and the totals add up fast.</p>
         <p>None of this is harmful. Cache is supposed to be expendable. The problem is just that the apps don't garbage-collect aggressively, so the disk fills up while the app keeps running fine.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Signs your app cache is the problem</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="signs-your-app-cache-is-the-problem">Signs your app cache is the problem</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Discord/Teams/Slack feels sluggish to open and you have months of message history.</li>
           <li>Your C: drive is mysteriously full and Windows Storage settings shows "Apps &amp; features" or "Other" larger than expected.</li>
@@ -115,7 +121,7 @@
           <li>VS Code is taking 30+ seconds to start (cached extension data builds up).</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Where each app's cache lives</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="where-each-apps-cache-lives">Where each app's cache lives</h2>
         <p>If you want to clear them manually, here are the paths:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Discord</strong> — <code>%APPDATA%\discord\Cache</code>, <code>Code Cache</code>, <code>GPUCache</code></li>
@@ -127,14 +133,14 @@
         </ul>
 
         <div style="background:rgba(0,200,150,0.06);border:1px solid rgba(0,200,150,0.3);border-radius:12px;padding:20px;margin:28px 0;">
-          <strong style="color:var(--accent-light);">Important:</strong> close the app before clearing its cache, or Windows will refuse to delete files in use. <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> skips locked files automatically and offers to close the app first.
+          <strong style="color:var(--accent-light);">Important:</strong> close the app before clearing its cache, or Windows will refuse to delete files in use. <a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a> skips locked files automatically and offers to close the app first.
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What's safe to delete in these apps</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="whats-safe-to-delete-in-these-apps">What's safe to delete in these apps</h2>
         <p>Safe for all of them: <code>Cache</code>, <code>Code Cache</code>, <code>GPUCache</code>, <code>tmp</code>, <code>logs</code>. These are regenerated on next launch.</p>
         <p><strong>Avoid</strong>: <code>Local Storage</code> and <code>IndexedDB</code> — these contain actual app data. In Teams, deleting them signs you out and re-sync takes time. In VS Code, they store extension settings and workspace state.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">One-click way: RBS PC Cleaner</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="one-click-way-rbs-pc-cleaner">One-click way: RBS PC Cleaner</h2>
         <p><a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner</a>'s <strong>App Cache Cleaner</strong> page:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Detects which of the 6 apps you have installed.</li>
@@ -145,10 +151,10 @@
         </ul>
         <p>Free forever, open download from GitHub.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Other Electron apps worth checking</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="other-electron-apps-worth-checking">Other Electron apps worth checking</h2>
         <p>The same pattern applies to any Electron-based app — Notion, Figma Desktop, WhatsApp Desktop, Signal, Obsidian, Typora, etc. They all have <code>Cache</code> and <code>GPUCache</code> sub-folders that are safe to clear. The RBS PC Cleaner team is adding more to the detect list in future updates based on user feedback.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Manual step-by-step (any of the apps)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="manual-step-by-step-any-of-the-apps">Manual step-by-step (any of the apps)</h2>
         <ol style="padding-left:24px;margin:16px 0;">
           <li><strong>Quit the app fully.</strong> "X" in the corner often just hides it to the system tray. Right-click the tray icon and choose Quit, or open Task Manager and end the process tree.</li>
           <li><strong>Press Win + R</strong> to open the Run dialog.</li>
@@ -157,7 +163,7 @@
           <li><strong>Reopen the app.</strong> First launch will rebuild some cache, which is normal. The app will be a tiny bit slower for the first 30 seconds and then back to normal.</li>
         </ol>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Typical space reclaimed</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="typical-space-reclaimed">Typical space reclaimed</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Discord on a heavy-usage account: 2–5 GB</li>
           <li>Teams on an office laptop: 3–8 GB (worst offender, by a lot)</li>
@@ -167,7 +173,7 @@
           <li>Zoom: 200 MB – 1 GB (mostly logs from past meetings)</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">How often should you clear?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="how-often-should-you-clear">How often should you clear?</h2>
         <p>Honest answer: you don't <em>need</em> to clear cache regularly. Cache exists for a reason — it makes things faster. The right time to clear is when one of these is true:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Your disk is filling up and you need the space back today.</li>
@@ -176,7 +182,7 @@
         </ul>
         <p>"Once a quarter" is a reasonable schedule for heavy users. Daily or weekly is overkill and will just make your apps slower without saving meaningful space.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="free-browser-cache-cleaner-windows.html" style="color:var(--accent-light);">Free Browser Cache Cleaner — Chrome, Edge, Firefox, Brave, Opera</a> — same one-click approach for browsers.</li>
           <li><a href="how-to-clean-windows-11-without-breaking-it.html" style="color:var(--accent-light);">How to Clean Windows 11 Without Breaking It</a> — the full safe-cleanup guide.</li>
@@ -187,12 +193,34 @@
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">📦</div>
-          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Free App Cache Cleaner for Windows</h3>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="free-app-cache-cleaner-for-windows">Free App Cache Cleaner for Windows</h3>
           <p style="color:var(--text-muted);margin-bottom:20px;">Discord · Teams · Spotify · VS Code · Slack · Zoom</p>
-          <a href="../software/detail.html?id=rbs-pc-cleaner" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🧹</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS PC Cleaner &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want to actually run the cleanup steps in this post safely — every action is reversible, rated Safe / Caution / Risky before you click, and the registry is never touched.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~61 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="gaming-mode-windows-boost-fps-free.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Gaming Mode for Windows — Boost FPS Without Shady "Game Boosters"</div></a>
+        <a href="free-disk-space-analyzer-windows.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Free Disk Space Analyzer for Windows — See What's Using Your Space</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -218,11 +246,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

@@ -97,6 +97,12 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#what-silent-uninstall-means" style="color:var(--accent-light);text-decoration:none;">What "silent uninstall" means</a></li><li style=""><a href="#sort-by-size-to-find-the-biggest-targets" style="color:var(--accent-light);text-decoration:none;">Sort by size to find the biggest targets</a></li><li style=""><a href="#rbs-pc-cleaner-bulk-uninstaller" style="color:var(--accent-light);text-decoration:none;">RBS PC Cleaner Bulk Uninstaller</a></li><li style=""><a href="#what-to-uninstall-on-a-fresh-windows-11" style="color:var(--accent-light);text-decoration:none;">What to uninstall on a fresh Windows 11</a></li><li style=""><a href="#command-line-alternatives-if-you-dont-want-a-gui" style="color:var(--accent-light);text-decoration:none;">Command-line alternatives if you don't want a GUI</a></li><li style=""><a href="#why-microsoft-store-apps-are-different" style="color:var(--accent-light);text-decoration:none;">Why Microsoft Store apps are different</a></li><li style=""><a href="#leftover-files-after-uninstall" style="color:var(--accent-light);text-decoration:none;">Leftover files after uninstall</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#free-bulk-uninstaller-for-windows" style="color:var(--accent-light);text-decoration:none;">Free Bulk Uninstaller for Windows</a></li></ul>
+        </nav>
+
+
 
         <p>Windows 11's built-in <em>Apps → Installed apps</em> page can only uninstall one program at a time. Each uninstall opens its own wizard, you click Next, Yes, Remove, you wait, you close, and then you repeat — for every single app. Uninstalling 20 old programs this way takes an hour.</p>
 
@@ -104,7 +110,7 @@
 
         <p>Quick warning: most "free bulk uninstaller" Google results are bundled installers that try to install browser toolbars or change your default search. Stick with tools you can actually trust the source of.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What "silent uninstall" means</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-silent-uninstall-means">What "silent uninstall" means</h2>
         <p>Most installers support command-line flags like <code>/S</code>, <code>/SILENT</code>, or <code>/qn</code> (MSI) that run the uninstall without showing any dialog. A bulk uninstaller detects the installer type and uses the right flag automatically.</p>
         <p>Not every program supports silent mode — old or custom uninstallers still pop up wizards. A good bulk uninstaller tells you which ones it can do silently and which will still need a click.</p>
 
@@ -112,11 +118,11 @@
           <strong style="color:var(--accent-light);">Admin note:</strong> uninstallers sometimes need admin rights to finish — especially Microsoft Store apps or anything in Program Files. A bulk uninstaller should request elevation once and keep rolling.
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Sort by size to find the biggest targets</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="sort-by-size-to-find-the-biggest-targets">Sort by size to find the biggest targets</h2>
         <p>The fastest way to reclaim disk space is to sort installed programs by <strong>size</strong> (not name). Often you'll find 2–3 programs hogging 5GB+ each that you haven't opened in months — old games, leftover IDEs, trial versions. Uninstalling the top 5 by size typically frees 20–40GB.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">RBS PC Cleaner Bulk Uninstaller</h2>
-        <p><a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a>'s Bulk Uninstaller:</p>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="rbs-pc-cleaner-bulk-uninstaller">RBS PC Cleaner Bulk Uninstaller</h2>
+        <p><a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a>'s Bulk Uninstaller:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Lists every installed program with <strong>publisher, version, install date, and disk size</strong>.</li>
           <li>Sort by any column — size descending is usually what you want.</li>
@@ -126,7 +132,7 @@
           <li>Integrates with the safety gate — never touches Microsoft-signed system components.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What to uninstall on a fresh Windows 11</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-to-uninstall-on-a-fresh-windows-11">What to uninstall on a fresh Windows 11</h2>
         <p>Typical bloatware you can safely remove on many new PCs:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>OEM "experience" apps (Dell SupportAssist, HP JumpStart, Lenovo Vantage) — unless you want hardware warranties checked.</li>
@@ -137,7 +143,7 @@
         </ul>
         <p><strong>Don't uninstall:</strong> Windows Defender, Microsoft Store itself, .NET runtimes, Visual C++ redistributables (apps depend on these).</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Command-line alternatives if you don't want a GUI</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="command-line-alternatives-if-you-dont-want-a-gui">Command-line alternatives if you don't want a GUI</h2>
         <p>If you're already comfortable with PowerShell, Windows ships with two ways to bulk-uninstall:</p>
         <p><strong>winget</strong> — the modern Windows package manager, comes built-in on Windows 11. List installed:</p>
         <p><code>winget list</code></p>
@@ -150,14 +156,14 @@
         <p><code>Get-AppxPackage *candycrush* | Remove-AppxPackage</code></p>
         <p>Replace the asterisked name. Useful for stripping pre-installed Store apps after a fresh Windows install. Don't run this on system Appx packages or you'll break parts of Windows.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why Microsoft Store apps are different</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="why-microsoft-store-apps-are-different">Why Microsoft Store apps are different</h2>
         <p>Microsoft Store apps (UWP / Appx) install differently from traditional desktop apps. They live in <code>C:\Program Files\WindowsApps\</code> and are managed by the Store, not by individual installers. That means a generic bulk uninstaller has to handle them separately. Tools that don't will silently fail on Store apps and leave you wondering why Candy Crush is still there.</p>
         <p>RBS PC Cleaner detects both types and uses the right uninstall mechanism per app. winget also handles both, which is why it's a reasonable command-line option.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Leftover files after uninstall</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="leftover-files-after-uninstall">Leftover files after uninstall</h2>
         <p>Some uninstallers leave data behind in <code>%APPDATA%</code> or <code>%LOCALAPPDATA%</code> — e.g. old config files, caches, saves. That's deliberate: if you reinstall the app, your settings come back. If you really want a clean slate, delete those folders manually <em>after</em> the uninstall finishes. A <a href="find-duplicate-files-windows-free.html" style="color:var(--accent-light);">duplicate file scan</a> or <a href="free-disk-space-analyzer-windows.html" style="color:var(--accent-light);">disk analyzer pass</a> over <code>%APPDATA%</code> afterwards will surface any leftovers worth cleaning.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="free-disk-space-analyzer-windows.html" style="color:var(--accent-light);">Free Disk Space Analyzer for Windows</a> — find the biggest apps before uninstalling.</li>
           <li><a href="best-free-startup-manager-windows-11.html" style="color:var(--accent-light);">Best Free Startup Manager for Windows 11</a> — uninstalling removes startup entries too.</li>
@@ -167,12 +173,34 @@
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">🗑️</div>
-          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Free Bulk Uninstaller for Windows</h3>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="free-bulk-uninstaller-for-windows">Free Bulk Uninstaller for Windows</h3>
           <p style="color:var(--text-muted);margin-bottom:20px;">Part of RBS PC Cleaner · Silent mode · Sort by size</p>
-          <a href="../software/detail.html?id=rbs-pc-cleaner" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🧹</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS PC Cleaner &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want to actually run the cleanup steps in this post safely — every action is reversible, rated Safe / Caution / Risky before you click, and the registry is never touched.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~61 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="best-free-startup-manager-windows-11.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Best Free Startup Manager for Windows 11 (2026)</div></a>
+        <a href="customize-windows-11-icons-themes.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Customize Windows 11 Icons &amp; Themes — 9 Free Theme Packs</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -198,11 +226,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

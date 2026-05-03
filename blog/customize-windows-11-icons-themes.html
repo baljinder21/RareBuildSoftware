@@ -97,13 +97,19 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#9-ready-made-theme-packs-all-free" style="color:var(--accent-light);text-decoration:none;">9 ready-made theme packs (all free)</a></li><li style=""><a href="#what-the-theme-engine-changes" style="color:var(--accent-light);text-decoration:none;">What the theme engine changes</a></li><li style=""><a href="#what-windows-wont-let-any-tool-change" style="color:var(--accent-light);text-decoration:none;">What Windows won't let any tool change</a></li><li style=""><a href="#how-applying-a-theme-works-under-the-hood" style="color:var(--accent-light);text-decoration:none;">How applying a theme works under the hood</a></li><li style=""><a href="#custom-wallpapers" style="color:var(--accent-light);text-decoration:none;">Custom wallpapers</a></li><li style=""><a href="#will-it-survive-a-windows-update" style="color:var(--accent-light);text-decoration:none;">Will it survive a Windows Update?</a></li><li style=""><a href="#compared-to-stardock-and-friends" style="color:var(--accent-light);text-decoration:none;">Compared to Stardock and friends</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#9-free-theme-packs-for-windows-11" style="color:var(--accent-light);text-decoration:none;">9 Free Theme Packs for Windows 11</a></li></ul>
+        </nav>
+
+
 
         <p>Windows 11's built-in personalisation is limited. You can change the accent color, dark/light mode, and wallpaper — but icons? You're stuck with Microsoft's default folders, drives, and file-type glyphs. If you want a cohesive desktop aesthetic without paying for Stardock or patching system files by hand, here's a free way to do it with a <strong>one-click revert</strong> safety net.</p>
 
-        <p>I built this because the existing options were either expensive (Stardock IconPackager is $30, WindowBlinds bundle is $50), risky (tools that patch <code>imageres.dll</code> directly will break on the next Windows Update and may flag in System File Checker), or both. The 9 theme packs in <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> work the same way Microsoft expects icon overrides to work — registry pointers, not file patching — so they survive updates and they're trivial to reverse.</p>
+        <p>I built this because the existing options were either expensive (Stardock IconPackager is $30, WindowBlinds bundle is $50), risky (tools that patch <code>imageres.dll</code> directly will break on the next Windows Update and may flag in System File Checker), or both. The 9 theme packs in <a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a> work the same way Microsoft expects icon overrides to work — registry pointers, not file patching — so they survive updates and they're trivial to reverse.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">9 ready-made theme packs (all free)</h2>
-        <p><a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> ships with 9 full theme packs. Each pack bundles matching icons, a 2560×1440 wallpaper, an accent color, and the right dark/light mode:</p>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="9-ready-made-theme-packs-all-free">9 ready-made theme packs (all free)</h2>
+        <p><a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a> ships with 9 full theme packs. Each pack bundles matching icons, a 2560×1440 wallpaper, an accent color, and the right dark/light mode:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Windows Default</strong> — one-click revert to everything stock.</li>
           <li><strong>Monochrome</strong> — black-and-white icons, dark slate hex-pattern wallpaper, dark mode.</li>
@@ -116,7 +122,7 @@
           <li><strong>Forest</strong> — earthy green + gold icons, misty pine-silhouette wallpaper, dark mode.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What the theme engine changes</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-the-theme-engine-changes">What the theme engine changes</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Wallpaper (supports custom wallpaper per theme).</li>
           <li>Windows dark / light mode.</li>
@@ -131,7 +137,7 @@
           <strong style="color:var(--accent-light);">Safety-first:</strong> before the first theme is applied, your original wallpaper, accent and icon settings are snapshotted to a backup file. <em>Restore Original</em> reverts to exactly that state — even if you've applied five themes in a row.
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What Windows won't let any tool change</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-windows-wont-let-any-tool-change">What Windows won't let any tool change</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Start button glyph</strong> — baked into explorer.exe. Patching breaks Windows integrity checks.</li>
           <li><strong>System-tray icons</strong> (clock, Wi-Fi, battery) — baked into signed system DLLs.</li>
@@ -140,7 +146,7 @@
         </ul>
         <p>Any tool that <em>claims</em> to change these is patching system files — which Windows Update will reverse and may flag as corruption. <a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner</a> refuses to touch those, by design.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">How applying a theme works under the hood</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="how-applying-a-theme-works-under-the-hood">How applying a theme works under the hood</h2>
         <ol style="padding-left:24px;margin:16px 0;">
           <li>Icons are copied into <code>%APPDATA%\RBS Software\RBS PC Cleaner\installed_themes\&lt;theme&gt;\</code>.</li>
           <li>Registry pointers for folder/drive/file-type icons are updated to reference those icons.</li>
@@ -150,18 +156,18 @@
         </ol>
         <p>No system files are replaced. No drivers are touched. If Windows Update runs, nothing gets reversed.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Custom wallpapers</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="custom-wallpapers">Custom wallpapers</h2>
         <p>You can swap the bundled wallpaper for your own on any theme. Per-theme custom wallpapers are stored so you can switch between themes and each keeps its custom look.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Will it survive a Windows Update?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="will-it-survive-a-windows-update">Will it survive a Windows Update?</h2>
         <p>Yes. Because the icon changes are registry-pointer overrides rather than file patches, Windows Update doesn't notice them. After a feature update (24H2 → 25H2 → 26H2 etc.) your custom icons stay applied. The only thing that resets reliably is the accent colour — Microsoft sometimes changes the default for major releases — but a single click on the same theme reapplies it.</p>
         <p>Compare to direct-patching tools (the older method some Reddit guides still recommend) which modify <code>%SystemRoot%\System32\imageres.dll</code>. Windows Update treats those as system corruption and replaces the patched DLL on every cumulative update. You either patch repeatedly or accept that the customisations randomly disappear.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Compared to Stardock and friends</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="compared-to-stardock-and-friends">Compared to Stardock and friends</h2>
         <p>Stardock IconPackager and WindowBlinds are mature, well-supported, and worth the money if you want deep customisation (window borders, taskbar styling, animated backgrounds). They cost what they cost because they support hundreds of community theme packs and patch some things Windows doesn't officially expose.</p>
         <p>The free 9-pack approach in RBS PC Cleaner intentionally stays in the "officially supported" customisation lane. You get less variety, you can't tweak window borders or taskbar shape, but everything is reversible and nothing fights Windows Update. For most people this is the right trade-off.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner v1.0.0 Launch</a> — everything that ships with the app.</li>
           <li><a href="how-to-clean-windows-11-without-breaking-it.html" style="color:var(--accent-light);">How to Clean Windows 11 Without Breaking It</a> — a cleaner desktop needs a clean system.</li>
@@ -171,12 +177,34 @@
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">🎨</div>
-          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">9 Free Theme Packs for Windows 11</h3>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="9-free-theme-packs-for-windows-11">9 Free Theme Packs for Windows 11</h3>
           <p style="color:var(--text-muted);margin-bottom:20px;">Icons + wallpapers + accent · Reversible · Part of RBS PC Cleaner</p>
-          <a href="../software/detail.html?id=rbs-pc-cleaner" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🧹</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS PC Cleaner &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want to actually run the cleanup steps in this post safely — every action is reversible, rated Safe / Caution / Risky before you click, and the registry is never touched.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~61 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="bulk-uninstall-programs-windows.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Uninstall Multiple Programs at Once on Windows — Free Bulk Uninstaller</div></a>
+        <a href="gaming-mode-windows-boost-fps-free.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Gaming Mode for Windows — Boost FPS Without Shady "Game Boosters"</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -202,11 +230,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

@@ -97,12 +97,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#what-actually-improves-fps" style="color:var(--accent-light);text-decoration:none;">What actually improves FPS</a></li><li style=""><a href="#why-suspending-is-better-than-killing" style="color:var(--accent-light);text-decoration:none;">Why suspending is better than killing</a></li><li style=""><a href="#rbs-pc-cleaner-gaming-mode" style="color:var(--accent-light);text-decoration:none;">RBS PC Cleaner Gaming Mode</a></li><li style=""><a href="#what-fps-gain-to-expect" style="color:var(--accent-light);text-decoration:none;">What FPS gain to expect</a></li><li style=""><a href="#why-most-game-boosters-are-scams" style="color:var(--accent-light);text-decoration:none;">Why most "game boosters" are scams</a></li><li style=""><a href="#what-about-nvidia-amds-own-software" style="color:var(--accent-light);text-decoration:none;">What about NVIDIA / AMD's own software?</a></li><li style=""><a href="#built-in-windows-game-mode-vs-this" style="color:var(--accent-light);text-decoration:none;">Built-in Windows Game Mode vs. this</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#free-gaming-mode-for-windows" style="color:var(--accent-light);text-decoration:none;">Free Gaming Mode for Windows</a></li></ul>
+        </nav>
+
+
 
         <p>"Game boosters" have a bad reputation because most of them don't actually boost anything — they just show a splash screen, run a placebo animation, and then pop up an ad. The <em>real</em> things that affect FPS on Windows 11 are well understood, and you can do them yourself in under 10 seconds without installing a single piece of questionable software.</p>
 
-        <p>This post explains what genuinely helps, what's marketing fluff, and what the free Gaming Mode in <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> actually does in the background when you click the button.</p>
+        <p>This post explains what genuinely helps, what's marketing fluff, and what the free Gaming Mode in <a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a> actually does in the background when you click the button.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What actually improves FPS</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-actually-improves-fps">What actually improves FPS</h2>
         <ol style="padding-left:24px;margin:16px 0;">
           <li><strong>Suspend background apps.</strong> Chrome with 40 tabs, Discord, Slack, OneDrive indexing — all cost CPU and RAM. Suspending them (not killing them) frees resources.</li>
           <li><strong>Switch to High Performance power plan.</strong> Windows 11's "Balanced" plan throttles CPU clocks to save battery. High Performance locks them high.</li>
@@ -112,15 +118,15 @@
 
         <p>That's it. Disabling SysMain or "optimising" the registry has no measurable FPS effect in 2026.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why suspending is better than killing</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="why-suspending-is-better-than-killing">Why suspending is better than killing</h2>
         <p>If you <em>kill</em> Discord before a game, you lose voice chat. If you kill Spotify, your music stops. If you kill OneDrive, your cloud sync breaks. If you <em>suspend</em> them instead, they're frozen: zero CPU, zero network, zero disk. When you hit <em>Resume</em> they pick up exactly where they were.</p>
 
         <div style="background:rgba(0,200,150,0.06);border:1px solid rgba(0,200,150,0.3);border-radius:12px;padding:20px;margin:28px 0;">
           <strong style="color:var(--accent-light);">The difference:</strong> suspend = freeze. Kill = destroy. Games only need resources freed, not apps destroyed.
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">RBS PC Cleaner Gaming Mode</h2>
-        <p>Gaming Mode in <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> does all four things above with a single click:</p>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="rbs-pc-cleaner-gaming-mode">RBS PC Cleaner Gaming Mode</h2>
+        <p>Gaming Mode in <a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a> does all four things above with a single click:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Runs a <em>safe</em> junk clean (temp + recycle bin + browser cache).</li>
           <li>Trims standby memory to release cached RAM back to active use.</li>
@@ -129,11 +135,11 @@
         </ul>
         <p>When you're done playing, hit <strong>Resume</strong> and everything comes back: power plan returns to your previous setting, suspended apps wake up, nothing is left in a weird state.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What FPS gain to expect</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-fps-gain-to-expect">What FPS gain to expect</h2>
         <p>Honest answer: it depends. On a mid-range PC running AAA games at max settings, expect 5–15% higher minimum frame rates (fewer stutters). On a low-end laptop with 8GB RAM, expect bigger wins — often 20–30% — because freeing RAM matters more when there's less of it.</p>
         <p>Gaming Mode won't turn a 30 FPS experience into 144 FPS. No free software can. What it <em>does</em> do is stop background junk from stealing cycles while you're trying to play.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why most "game boosters" are scams</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="why-most-game-boosters-are-scams">Why most "game boosters" are scams</h2>
         <p>The bigger paid game boosters (Razer Cortex, IObit Game Booster, Wise Game Booster, Smart Game Booster) usually do three things:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Show you a fake-looking dashboard with green numbers going up.</strong> Most of those numbers aren't measuring anything real.</li>
@@ -142,14 +148,14 @@
         </ul>
         <p>The free ones often bundle adware or browser hijackers. The paid ones charge you for placebo animation. The two genuinely helpful things they could do — suspending background apps and switching the power plan — are exactly what RBS PC Cleaner's Gaming Mode does for free, without the bundled junk.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What about NVIDIA / AMD's own software?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-about-nvidia-amds-own-software">What about NVIDIA / AMD's own software?</h2>
         <p>NVIDIA's GeForce Experience and AMD's Adrenalin software both have "game optimisation" features. These are different — they're tweaking <em>graphics settings</em> (resolution, shadow quality, anti-aliasing) inside the game, which genuinely affects FPS. Useful, complementary to system-side optimisation. Use both: the GPU vendor software for in-game settings, Gaming Mode for system-side resource freeing.</p>
         <p>One small thing: GeForce Experience and Adrenalin both have always-running background services that themselves use a non-trivial amount of RAM and a few percent of CPU. If you don't use the recording / overlay features, you can disable the background service in their Settings without affecting your driver.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Built-in Windows Game Mode vs. this</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="built-in-windows-game-mode-vs-this">Built-in Windows Game Mode vs. this</h2>
         <p>Windows 11's built-in Game Mode is mostly about deprioritizing system maintenance (Windows Update, background tasks) while a game has focus. It's fine and you should leave it on. <a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner</a>'s Gaming Mode is complementary — it frees RAM, cleans junk, and suspends user-space apps, which Microsoft's Game Mode doesn't touch.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="best-free-startup-manager-windows-11.html" style="color:var(--accent-light);">Best Free Startup Manager for Windows 11</a> — disable apps you don't want loading before gaming.</li>
           <li><a href="how-to-free-up-ram-windows-11.html" style="color:var(--accent-light);">How to Free Up RAM on Windows 11</a> — more RAM = more FPS headroom.</li>
@@ -160,12 +166,34 @@
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">🎮</div>
-          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Free Gaming Mode for Windows</h3>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="free-gaming-mode-for-windows">Free Gaming Mode for Windows</h3>
           <p style="color:var(--text-muted);margin-bottom:20px;">One click · Fully reversible · No shady "boosters"</p>
-          <a href="../software/detail.html?id=rbs-pc-cleaner" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🔧</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Optimizer Pro &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want a one-click way to do most of what this post covers — junk cleaner, startup manager, RAM trim, real-time CPU/GPU monitoring — Optimizer Pro is the free Windows tool I built for it.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-optimizer-pro.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~23 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="customize-windows-11-icons-themes.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Customize Windows 11 Icons &amp; Themes — 9 Free Theme Packs</div></a>
+        <a href="clear-discord-teams-spotify-cache-windows.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Clear Discord, Teams, Spotify &amp; VS Code Cache on Windows</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -191,11 +219,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

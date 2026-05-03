@@ -97,6 +97,12 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 26, 2026 · 9 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#whats-actually-being-removed" style="color:var(--accent-light);text-decoration:none;">What's actually being removed</a></li><li style=""><a href="#why-local-ai-is-having-a-moment" style="color:var(--accent-light);text-decoration:none;">Why local AI is having a moment</a></li><li style=""><a href="#1-lm-studio-easiest-way-into-local-llms" style="color:var(--accent-light);text-decoration:none;">1. LM Studio — easiest way into local LLMs</a></li><li style=""><a href="#2-ollama-same-thing-more-developer-friendly" style="color:var(--accent-light);text-decoration:none;">2. Ollama — same thing, more developer-friendly</a></li><li style=""><a href="#3-rbs-voice-cloner-v2-local-voice-ai" style="color:var(--accent-light);text-decoration:none;">3. RBS Voice Cloner V2 — local voice AI</a></li><li style=""><a href="#4-stable-diffusion-comfyui-local-image-generation" style="color:var(--accent-light);text-decoration:none;">4. Stable Diffusion + ComfyUI — local image generation</a></li><li style=""><a href="#5-whispercpp-local-transcription" style="color:var(--accent-light);text-decoration:none;">5. Whisper.cpp — local transcription</a></li><li style=""><a href="#6-anythingllm-local-chat-with-your-documents" style="color:var(--accent-light);text-decoration:none;">6. AnythingLLM — local chat with your documents</a></li><li style=""><a href="#7-imageglass-free-local-upscalers-real-esrgan" style="color:var(--accent-light);text-decoration:none;">7. ImageGlass + free local upscalers (Real-ESRGAN)</a></li><li style=""><a href="#how-to-actually-disable-copilot-in-the-apps-its-still-in" style="color:var(--accent-light);text-decoration:none;">How to actually disable Copilot in the apps it's still in</a></li><li style=""><a href="#a-practical-local-ai-stack-for-2026" style="color:var(--accent-light);text-decoration:none;">A practical local AI stack for 2026</a></li><li style=""><a href="#worth-saying-out-loud" style="color:var(--accent-light);text-decoration:none;">Worth saying out loud</a></li><li style=""><a href="#related-reading" style="color:var(--accent-light);text-decoration:none;">Related reading</a></li></ul>
+        </nav>
+
+
 
         <p>In March 2026 Microsoft quietly announced it was rolling Copilot <em>out</em> of several Windows 11 apps — Photos, Notepad, Snipping Tool and the Widgets panel are all losing their AI bolt-ons. The official line is that the company wants to refocus on "meaningful" AI integration. The unofficial reading is that nobody was using these features and a lot of people were complaining about them.</p>
 
@@ -104,7 +110,7 @@
 
         <p>I'm Rai — I build free Windows software from Singapore. Most of what I build is offline by design. So this list is opinionated. Every tool here runs locally, and most of them don't even need an internet connection after install.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What's actually being removed</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="whats-actually-being-removed">What's actually being removed</h2>
 
         <p>The TechCrunch report from March 2026 confirms Copilot is being pulled from:</p>
 
@@ -117,7 +123,7 @@
 
         <p>Microsoft <em>is</em> doubling down in two specific places: File Explorer (Copilot in the right-click menu) and Edge (full Copilot UI redesign rolling out June 2026). So they're not killing Copilot — they're concentrating it. Which means if you don't want Copilot in Edge, this is a good time to switch browsers anyway.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why local AI is having a moment</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="why-local-ai-is-having-a-moment">Why local AI is having a moment</h2>
 
         <p>Two things changed in 2025–2026 that made local AI viable for normal users instead of just researchers:</p>
 
@@ -128,41 +134,41 @@
 
         <p>The trade-off is honest: cloud AI is faster, has no hardware requirements, and currently still wins on the absolute frontier of model quality. Local AI keeps your data on your machine, costs nothing per query, and works offline. For a lot of people that's a better deal.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">1. LM Studio — easiest way into local LLMs</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="1-lm-studio-easiest-way-into-local-llms">1. LM Studio — easiest way into local LLMs</h2>
 
         <p>If you've never run a model locally before, start here. LM Studio is a free Windows app that gives you a model browser (browse Hugging Face from inside the app, click download), a chat interface that looks like ChatGPT, and a local OpenAI-compatible API server you can point other apps at. Works on CPU and any modern GPU.</p>
 
         <p>Realistic spec needed: 16 GB RAM and a recent NVIDIA card with 8 GB+ VRAM gets you running 7-8B parameter models at usable speed. 12 GB+ VRAM unlocks the 12-14B class models that feel close to GPT-4-mini quality.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">2. Ollama — same thing, more developer-friendly</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="2-ollama-same-thing-more-developer-friendly">2. Ollama — same thing, more developer-friendly</h2>
 
         <p>If you're comfortable with a terminal, Ollama is what you want. <code>ollama run llama3.3</code> downloads the model and drops you into a chat. It exposes a local API on port 11434 that any app can talk to, and there's a growing ecosystem of front-ends that connect to it (Open WebUI is the popular one for browser-based chat).</p>
 
         <p>Same hardware needs as LM Studio. The choice between them is mostly aesthetic — LM Studio if you like clicking, Ollama if you like typing.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">3. RBS Voice Cloner V2 — local voice AI</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="3-rbs-voice-cloner-v2-local-voice-ai">3. RBS Voice Cloner V2 — local voice AI</h2>
 
-        <p>Disclosure: I make this one. <a href="../software/detail.html?id=rbs-voice-cloner-v2" style="color:var(--accent-light);">RBS Voice Cloner V2</a> is built on the open-source XTTS v2 engine. Bundles PyTorch and CUDA 12.8 inside the installer so you don't have to set anything up. After the first model download (~2 GB), everything runs locally. 16 built-in voices, unlimited custom clones from a 30-second sample, 17 languages, 7-band parametric EQ.</p>
+        <p>Disclosure: I make this one. <a href="../software/rbs-voice-cloner-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V2</a> is built on the open-source XTTS v2 engine. Bundles PyTorch and CUDA 12.8 inside the installer so you don't have to set anything up. After the first model download (~2 GB), everything runs locally. 16 built-in voices, unlimited custom clones from a 30-second sample, 17 languages, 7-band parametric EQ.</p>
 
         <p>Use case: voiceovers, audiobook drafts, language practice, accessibility (turning long articles into audio you can listen to on the train). If you're paying ElevenLabs and feeling the pinch, this fills most of the gap.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">4. Stable Diffusion + ComfyUI — local image generation</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="4-stable-diffusion-comfyui-local-image-generation">4. Stable Diffusion + ComfyUI — local image generation</h2>
 
         <p>Stable Diffusion has been around for years now and the open-weights ecosystem is far bigger than Midjourney's curated catalogue. ComfyUI is the front-end most people land on in 2026 — it's a node-based interface that looks intimidating for five minutes and then makes total sense. Free. Runs on any 8 GB+ VRAM card. SDXL Turbo gives you Midjourney-class results in 2-3 seconds per image.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">5. Whisper.cpp — local transcription</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="5-whispercpp-local-transcription">5. Whisper.cpp — local transcription</h2>
 
         <p>OpenAI's Whisper model, repackaged in C++ for speed and small enough to run anywhere. Drag a meeting recording onto it, get a full transcript in a fraction of real-time. The "large-v3" model is more accurate than most paid transcription services. Faster-Whisper is a similar fork that runs on CTranslate2 and is even faster on GPUs.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">6. AnythingLLM — local chat with your documents</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="6-anythingllm-local-chat-with-your-documents">6. AnythingLLM — local chat with your documents</h2>
 
         <p>What Notion AI does, but on your machine. Drop PDFs, Word docs, and webpages into a workspace, let it index them, then ask questions. The model and the index both stay local — no document ever leaves your PC. Pairs naturally with LM Studio or Ollama for the underlying chat model.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">7. ImageGlass + free local upscalers (Real-ESRGAN)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="7-imageglass-free-local-upscalers-real-esrgan">7. ImageGlass + free local upscalers (Real-ESRGAN)</h2>
 
         <p>If you used Photos' Copilot mainly to upscale or clean up images, the open-source replacements are noticeably better. Real-ESRGAN runs locally and produces 4x upscales that hold up on a phone screen. Several free GUIs wrap it (Upscayl is the popular one). Pair with ImageGlass as your photo viewer and you've replaced the bits of Photos that Copilot was bolted onto.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">How to actually disable Copilot in the apps it's still in</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="how-to-actually-disable-copilot-in-the-apps-its-still-in">How to actually disable Copilot in the apps it's still in</h2>
 
         <p>Microsoft is removing Copilot from those four apps over the course of 2026, but the timeline is staggered and there's no "off" switch in the UI. If you want it gone today:</p>
 
@@ -172,7 +178,7 @@
           <li><strong>Edge:</strong> Settings &gt; Sidebar &gt; turn off Copilot. Or switch to Firefox / Brave / Vivaldi if you don't trust the redesign coming in June.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">A practical local AI stack for 2026</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="a-practical-local-ai-stack-for-2026">A practical local AI stack for 2026</h2>
 
         <p>If you're starting from zero and want to set up a sensible privacy-respecting AI workflow on Windows, here's what I'd actually pick:</p>
 
@@ -186,13 +192,13 @@
 
         <p>Total cost: zero. Total telemetry: zero. Privacy: as good as your OS allows.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Worth saying out loud</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="worth-saying-out-loud">Worth saying out loud</h2>
 
         <p>Local AI is not always better than cloud AI. If you genuinely use Copilot in Edge for research and it's saving you time, keep using it. The point of this post isn't "Microsoft bad, local good". It's that the AI features being removed weren't doing much, and the people who actually want AI on their PC have better, freer, more private options now than they did a year ago.</p>
 
         <p>If you try any of these and run into trouble, send me an email through the <a href="../contact.html" style="color:var(--accent-light);">contact page</a>. I read every message myself.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related reading</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-reading">Related reading</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="free-elevenlabs-alternative-2026.html" style="color:var(--accent-light);">Free ElevenLabs alternative — 4 free voice cloning tools (2026)</a></li>
           <li><a href="how-to-clone-your-voice-tutorial.html" style="color:var(--accent-light);">How to clone your voice in 5 minutes — free, offline, Windows</a></li>
@@ -201,6 +207,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;overflow:hidden;flex-shrink:0;background:#0a1628;"><img src="../assets/images/software/rbs-voice-cloner-v2-icon.png" alt="RBS Voice Cloner V2 logo" style="width:100%;height:100%;object-fit:contain;display:block;" /></div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Voice Cloner V2 &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">16 built-in voices plus unlimited custom clones from a 30-second sample, 17 languages with auto-translate, 7-band EQ tuned for voice. Runs locally, no monthly cap, no cloud.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBS-RareBuildSoftware-V2/releases/download/VoiceCloner/RBSVoiceCloner_Setup.V2.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-voice-cloner-v2.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~2.0 GB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="claude-47-vs-gpt-54-vs-gemini-31-2026.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Claude Opus 4.7 vs GPT-5.4 vs Gemini 3.1 — The April 2026 AI Model Showdown</div></a>
+        <a href="best-open-source-voice-cloning-2026.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Best Open-Source Voice Cloning Models in 2026 — 6 Models Tested on Windows</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -226,11 +254,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

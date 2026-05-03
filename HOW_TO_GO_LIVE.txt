@@ -108,17 +108,55 @@ HOW TO UPDATE WEBSITE AFTER CHANGES
 WHEN YOU ADD A NEW BLOG POST
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  After dropping a new .html into D:\RBSWebsite\blog\, regenerate the
-  full-text search index that powers the search box on /blog.html so
-  the new post becomes searchable by its body text:
+  After dropping a new .html into D:\RBSWebsite\blog\:
+
+  1. Add an entry to STATIC_BLOG_ARTICLES at the top of
+     assets\js\site-data.js (id, title, excerpt, emoji, tag, date, url).
+
+  2. Run all four build scripts from the repo root:
 
       cd D:\RBSWebsite
-      node scripts/build-search-index.js
+      node scripts/build-search-index.js        ; full-text index
+      node scripts/build-category-pages.js      ; pre-render /blog/tag/*
+      node scripts/build-blog-enhancements.js   ; TOC + prev/next + reco card
+      node scripts/build-software-pages.js      ; only if you also edited DEFAULT_SOFTWARE
 
-  This rewrites data/blog-search-index.json (~7 KB per post). Then
-  redeploy as in the section above. Skipping this step is non-fatal —
-  the new post still shows up by title/excerpt/tag — but its full body
-  won't be searchable until the index is rebuilt.
+     Each is idempotent and prints a summary. Then redeploy as above.
+
+  Skipping any of them is non-fatal but reduces SEO:
+    - search index missing → new post body not searchable on /blog.html
+    - category pages stale → tag landing pages don't show the new post
+    - blog enhancements stale → no TOC, no prev/next, no recommendation card
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHEN YOU EDIT A SOFTWARE PRODUCT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  After editing DEFAULT_SOFTWARE in assets\js\site-data.js (e.g. new
+  version, new SHA-256, changelog entry, fileSize change), regenerate
+  the static product pages:
+
+      cd D:\RBSWebsite
+      node scripts/build-software-pages.js
+
+  This rewrites the 5 files under software\ (rbs-optimizer-pro.html,
+  rbs-voice-cloner.html, rbs-voice-cloner-v2.html, life-dashboard.html,
+  rbs-pc-cleaner.html) with the new data baked into static HTML.
+
+  The legacy software\detail.html?id=<slug> URLs still work — Netlify
+  301-redirects them to the new static pages.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ONE-COMMAND REBUILD (after a batch of edits)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  cd D:\RBSWebsite
+  node scripts\build-search-index.js && ^
+  node scripts\build-category-pages.js && ^
+  node scripts\build-blog-enhancements.js && ^
+  node scripts\build-software-pages.js
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

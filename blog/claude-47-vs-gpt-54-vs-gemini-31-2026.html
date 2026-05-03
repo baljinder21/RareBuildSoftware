@@ -97,12 +97,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 26, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#gpt-54-the-computer-use-specialist" style="color:var(--accent-light);text-decoration:none;">GPT-5.4 — the computer-use specialist</a></li><li style=""><a href="#gemini-31-pro-the-science-model" style="color:var(--accent-light);text-decoration:none;">Gemini 3.1 Pro — the science model</a></li><li style=""><a href="#claude-opus-47-the-long-running-agent" style="color:var(--accent-light);text-decoration:none;">Claude Opus 4.7 — the long-running agent</a></li><li style=""><a href="#quick-rule-of-thumb" style="color:var(--accent-light);text-decoration:none;">Quick rule of thumb</a></li><li style=""><a href="#the-open-weights-story-which-is-surprising" style="color:var(--accent-light);text-decoration:none;">The open-weights story (which is surprising)</a></li><li style=""><a href="#how-to-run-these-locally-on-windows" style="color:var(--accent-light);text-decoration:none;">How to run these locally on Windows</a></li><li style=""><a href="#a-note-on-cost-over-a-year" style="color:var(--accent-light);text-decoration:none;">A note on cost over a year</a></li><li style=""><a href="#what-about-voice-and-image" style="color:var(--accent-light);text-decoration:none;">What about voice and image?</a></li><li style=""><a href="#related" style="color:var(--accent-light);text-decoration:none;">Related</a></li></ul>
+        </nav>
+
+
 
         <p>Three flagship AI models in eight weeks. GPT-5.4 on March 5, Gemini 3.1 Pro on April 8, Claude Opus 4.7 on April 16. The frontier moved twice in less than two months and most people are reasonably wondering which one to actually pay for.</p>
 
         <p>This isn't a benchmark-only post. Benchmarks are useful but they don't tell you what to pick when you're sitting in front of an empty chat box. So below: what's genuinely new in each release, what each one is actually best at right now, and the free open-weights models that are surprisingly close to the paid frontier if you don't want to subscribe to anything.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">GPT-5.4 — the computer-use specialist</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="gpt-54-the-computer-use-specialist">GPT-5.4 — the computer-use specialist</h2>
 
         <p>GPT-5.4 is OpenAI's first release where browser-and-OS agent work is the headline feature, not a side project. The model set new state-of-the-art numbers on OSWorld (computer-use benchmark) and WebArena (web-task benchmark), with reported success rates roughly 12-15 percentage points above the previous best.</p>
 
@@ -110,7 +116,7 @@
 
         <p>Pricing held steady — $5/$15 per million tokens (input/output) for the base model, with the Computer Use API at a premium. Free tier on ChatGPT now includes limited GPT-5.4 access with Plus tier ($20/month) getting unrestricted use.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Gemini 3.1 Pro — the science model</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="gemini-31-pro-the-science-model">Gemini 3.1 Pro — the science model</h2>
 
         <p>Google's headline number for Gemini 3.1 Pro was 94.3% on GPQA Diamond, which is a graduate-level science benchmark and a meaningful jump over the previous frontier. Translation: if you're working in chemistry, physics, biology, or anything quantitative-research-adjacent, Gemini 3.1 is currently the strongest pick.</p>
 
@@ -118,7 +124,7 @@
 
         <p>Pricing: $2.50/$10 per million tokens, the cheapest of the three flagships by a meaningful margin. Free tier on AI Studio remains generous if you're a developer.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Claude Opus 4.7 — the long-running agent</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="claude-opus-47-the-long-running-agent">Claude Opus 4.7 — the long-running agent</h2>
 
         <p>Anthropic positioned Opus 4.7 around extended autonomous work — agents that run for hours rather than minutes. The technical change underneath is a substantial improvement to the model's ability to retain context and stay coherent across very long task chains. Opus 4.7 has been demonstrated keeping a coherent thread across 8+ hours of agent work, which is roughly double what 4.5 could reliably do.</p>
 
@@ -126,7 +132,7 @@
 
         <p>Pricing: $15/$75 per million tokens, by far the most expensive. The 1-million-context tier costs more again. Claude Pro at $20/month is the sensible entry point unless you're building APIs.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Quick rule of thumb</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="quick-rule-of-thumb">Quick rule of thumb</h2>
 
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Coding, writing, long-running agents:</strong> Claude Opus 4.7</li>
@@ -136,7 +142,7 @@
           <li><strong>Casual chat, open-ended creative work:</strong> Personal preference; all three are excellent</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The open-weights story (which is surprising)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-open-weights-story-which-is-surprising">The open-weights story (which is surprising)</h2>
 
         <p>The story underneath the flagship news is that the open-weights models had an unusually strong April too. Two releases stood out:</p>
 
@@ -146,7 +152,7 @@
 
         <p>The gap between the open-weights frontier and the closed-weights frontier is now small enough that for many tasks — code completion, document summarisation, structured data extraction — running an open model locally is genuinely competitive with paying for a flagship.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">How to run these locally on Windows</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="how-to-run-these-locally-on-windows">How to run these locally on Windows</h2>
 
         <p>You don't need to set up a Python environment or write any code. Two options that just work:</p>
 
@@ -156,19 +162,19 @@
 
         <p>Neither tool sends anything to the cloud. Once the model is downloaded, you can pull the network cable and everything still works.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">A note on cost over a year</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="a-note-on-cost-over-a-year">A note on cost over a year</h2>
 
         <p>Quick mental math, because this stuff adds up. ChatGPT Plus + Claude Pro + Gemini Advanced is $60/month if you keep all three, which is $720/year. A serviceable used RTX 3090 with 24 GB VRAM is around $700-800 right now and runs the open-weights frontier comfortably. The break-even is shorter than it used to be.</p>
 
         <p>That doesn't mean you should always run locally. Frontier models will keep moving and the closed labs will keep being slightly ahead on the absolute peak. But "always pay for the frontier" stopped being the obvious answer in 2026.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What about voice and image?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-about-voice-and-image">What about voice and image?</h2>
 
         <p>Speech and image generation are sister markets that have moved in parallel to the text-LLM frontier. For voice, open-source XTTS v2 / F5-TTS / IndexTTS-2 are now genuinely competitive with ElevenLabs for most everyday use. For images, Stable Diffusion XL and Flux Schnell run locally and produce results that are hard to distinguish from Midjourney for most prompts.</p>
 
         <p>If you're interested in the voice side, I write more about that on this blog — covered in the <a href="best-open-source-voice-cloning-2026.html" style="color:var(--accent-light);">open-source voice cloning roundup</a> and the <a href="elevenlabs-pricing-2026-free-alternatives.html" style="color:var(--accent-light);">ElevenLabs pricing comparison</a>.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related">Related</h2>
 
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="microsoft-removing-copilot-windows-11-local-ai-alternatives.html" style="color:var(--accent-light);">Microsoft is pulling Copilot from Windows apps — 7 free local AI tools to use instead</a></li>
@@ -178,6 +184,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;overflow:hidden;flex-shrink:0;background:#0a1628;"><img src="../assets/images/software/rbs-voice-cloner-v2-icon.png" alt="RBS Voice Cloner V2 logo" style="width:100%;height:100%;object-fit:contain;display:block;" /></div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Voice Cloner V2 &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">16 built-in voices plus unlimited custom clones from a 30-second sample, 17 languages with auto-translate, 7-band EQ tuned for voice. Runs locally, no monthly cap, no cloud.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBS-RareBuildSoftware-V2/releases/download/VoiceCloner/RBSVoiceCloner_Setup.V2.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-voice-cloner-v2.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~2.0 GB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="windows-11-kb5083769-update-issues-explained.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Windows 11 KB5083769 Update — What's Really Broken, What's Not</div></a>
+        <a href="microsoft-removing-copilot-windows-11-local-ai-alternatives.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Microsoft Is Pulling Copilot From Windows Apps — 7 Free Local AI Tools to Use Instead</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -203,11 +231,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

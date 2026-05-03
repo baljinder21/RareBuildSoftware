@@ -102,14 +102,20 @@
            style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--border);margin-bottom:32px;" />
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#16-built-in-voices-start-without-a-sample" style="color:var(--accent-light);text-decoration:none;">16 built-in voices — start without a sample</a></li><li style=""><a href="#7-band-parametric-equaliser-finally-tuned-for-voice" style="color:var(--accent-light);text-decoration:none;">7-band parametric equaliser — finally tuned for voice</a></li><li style=""><a href="#built-in-translator-17-languages-no-api-key" style="color:var(--accent-light);text-decoration:none;">Built-in translator — 17 languages, no API key</a></li><li style=""><a href="#redesigned-audio-editor" style="color:var(--accent-light);text-decoration:none;">Redesigned Audio Editor</a></li><li style=""><a href="#cuda-128-runtime-works-with-any-modern-nvidia-driver" style="color:var(--accent-light);text-decoration:none;">CUDA 12.8 runtime — works with any modern NVIDIA driver</a></li><li style=""><a href="#new-brand-rbs-voice-cloner-v2" style="color:var(--accent-light);text-decoration:none;">New brand: RBS Voice Cloner V2</a></li><li style=""><a href="#v1-is-still-available" style="color:var(--accent-light);text-decoration:none;">V1 is still available</a></li><li style=""><a href="#system-requirements" style="color:var(--accent-light);text-decoration:none;">System requirements</a></li><li style=""><a href="#verify-your-download" style="color:var(--accent-light);text-decoration:none;">Verify your download</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#download-rbs-voice-cloner-v2-free" style="color:var(--accent-light);text-decoration:none;">Download RBS Voice Cloner V2 — Free</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li></ul>
+        </nav>
 
-        <p>Today I'm shipping <strong><a href="../software/detail.html?id=rbs-voice-cloner-v2" style="color:var(--accent-light);">RBS Voice Cloner V2</a></strong> — the biggest update to the free AI voice cloner since v1.0. New name, new EQ-bar logo, and a redesigned app underneath. Still 100% free, still runs locally on your PC after the one-time model download.</p>
+
+
+        <p>Today I'm shipping <strong><a href="../software/rbs-voice-cloner-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V2</a></strong> — the biggest update to the free AI voice cloner since v1.0. New name, new EQ-bar logo, and a redesigned app underneath. Still 100% free, still runs locally on your PC after the one-time model download.</p>
 
         <div style="background:rgba(0,200,150,0.06);border:1px solid rgba(0,200,150,0.3);border-radius:12px;padding:20px;margin:28px 0;">
           <strong style="color:var(--accent-light);">In short:</strong> 16 built-in voices (V1 had 8), 7-band parametric EQ tuned for voice, built-in auto-translator across 17 languages, redesigned Audio Editor with hero waveform + live cursor, ships with PyTorch + CUDA 12.8 runtime so any modern NVIDIA driver works out of the box.
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">16 built-in voices — start without a sample</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="16-built-in-voices-start-without-a-sample">16 built-in voices — start without a sample</h2>
         <p>The most-requested change. V1 needed an audio sample before you could generate anything. V2 ships with 16 ready-to-use voices so you can open the app, pick a voice, type some text, and click Generate — done.</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Male:</strong> Damien, Royston, Filip, Aaron, Craig, Viktor</li>
@@ -119,7 +125,7 @@
         </ul>
         <p>You can still clone any voice from a 30-second sample (the new recommended length — V1 said 5s, but 15–30s gives noticeably better cloning) and save unlimited custom profiles. Export profiles as <code>.rbsvoice</code> files to share or back up.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">7-band parametric equaliser — finally tuned for voice</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="7-band-parametric-equaliser-finally-tuned-for-voice">7-band parametric equaliser — finally tuned for voice</h2>
         <p>Generic music EQs are wrong for voice — bands at the wrong frequencies, no presets that match how speech sits in a mix. V2 has a proper <strong>voice EQ</strong>:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Sub</strong> — 60 Hz (cut to remove rumble)</li>
@@ -133,11 +139,11 @@
         <p>Plus 6 presets — <strong>Voice — Natural</strong> (light cleanup, default), <strong>Warm</strong>, <strong>Bright</strong>, <strong>Podcast</strong>, <strong>Phone</strong>, <strong>Flat</strong>. Pick a preset to fill the sliders, click Apply EQ. Reset reverts both the audio and the sliders.</p>
         <p>The full guide: <a href="rbs-ai-voice-studio-v2-eq-guide.html" style="color:var(--accent-light);">7-band parametric EQ for voice — which preset to pick</a>.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Built-in translator — 17 languages, no API key</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="built-in-translator-17-languages-no-api-key">Built-in translator — 17 languages, no API key</h2>
         <p>Type your text in English (or any of the 17 languages), pick the target language on the TTS page, click <em>Translate →</em>. The text is translated and ready to generate. Uses Google Translate under the hood (no API key needed; needs internet on first translate, then cached).</p>
         <p><strong>Supported languages:</strong> English, Spanish, French, German, Italian, Portuguese, Polish, Turkish, Russian, Dutch, Czech, Arabic, Chinese (Simplified), Japanese, Hungarian, Korean, Hindi.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Redesigned Audio Editor</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="redesigned-audio-editor">Redesigned Audio Editor</h2>
         <p>The editor was a weakness in V1 — basic waveform, manual time entries, no live feedback. V2 is a real editor:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Hero waveform</strong> with time labels along the bottom (0s, 1s, 2s …) and inline transport (Open / Play / Stop / Undo / Redo).</li>
@@ -147,7 +153,7 @@
           <li><strong>Tabbed effects</strong> — Quick (Normalise, Remove Noise, Reverse, Auto-Trim) · Adjust (Volume, Speed, Pitch, Echo) · Trim &amp; Fade · Equaliser.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">CUDA 12.8 runtime — works with any modern NVIDIA driver</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="cuda-128-runtime-works-with-any-modern-nvidia-driver">CUDA 12.8 runtime — works with any modern NVIDIA driver</h2>
         <p>V1 was fragile about CUDA versions — many users had GPU issues. V2 ships with PyTorch built against the CUDA 12.8 runtime, which works with any CUDA 12.x or 13.x driver (581.x and newer tested). The new <strong>Diagnose page (Ctrl+D)</strong> tells you exactly what mode you're in:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>⚡ USING GPU</strong> — generation runs on your CUDA GPU (5–10× faster).</li>
@@ -156,14 +162,14 @@
         </ul>
         <p>The Diagnose page also lists per-package version + working/missing checks. Send a screenshot of this page when reporting issues.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">New brand: RBS Voice Cloner V2</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="new-brand-rbs-voice-cloner-v2">New brand: RBS Voice Cloner V2</h2>
         <p>The new logo is an EQ-bars visual inside a circle — matches what the app actually does (audio + EQ) instead of a generic microphone. The name change to "Voice Cloner V2" reflects that V2 is more than just a cloner — it's a full voice production app with built-in editing, EQ, and translation.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">V1 is still available</h2>
-        <p>If you don't have an NVIDIA GPU and just need basic cloning, <a href="../software/detail.html?id=rbs-voice-cloner" style="color:var(--accent-light);">V1</a> is still on the site (~248 MB, much smaller download). For everyone else, V2 is the recommended version. They install to separate folders so you can run both side-by-side.</p>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="v1-is-still-available">V1 is still available</h2>
+        <p>If you don't have an NVIDIA GPU and just need basic cloning, <a href="../software/rbs-voice-cloner.html" style="color:var(--accent-light);">V1</a> is still on the site (~248 MB, much smaller download). For everyone else, V2 is the recommended version. They install to separate folders so you can run both side-by-side.</p>
         <p>Full comparison: <a href="rbs-voice-cloner-v1-vs-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V1 vs V2 — which should you download?</a></p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">System requirements</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="system-requirements">System requirements</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Windows 10 or Windows 11 (64-bit)</li>
           <li>8 GB RAM minimum (16 GB recommended)</li>
@@ -172,17 +178,17 @@
           <li>Internet connection on first launch (downloads XTTS v2 model ~2 GB)</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Verify your download</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="verify-your-download">Verify your download</h2>
         <p>The Download page shows the SHA-256 hash and a VirusTotal scan link for every release. Compare the SHA-256 of your downloaded ZIP to the one on the site — if it matches, the file is byte-for-byte identical to what was published.</p>
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">🎙️</div>
-          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Download RBS Voice Cloner V2 — Free</h3>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="download-rbs-voice-cloner-v2-free">Download RBS Voice Cloner V2 — Free</h3>
           <p style="color:var(--text-muted);margin-bottom:20px;">Windows 10/11 · ~2.0 GB · 100% free, no subscription</p>
-          <a href="../software/detail.html?id=rbs-voice-cloner-v2" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-voice-cloner-v2.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="rbs-voice-cloner-v1-vs-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V1 vs V2 — which should you download?</a></li>
           <li><a href="rbs-ai-voice-studio-v2-eq-guide.html" style="color:var(--accent-light);">7-Band Parametric EQ for Voice — Which Preset to Pick</a></li>
@@ -190,6 +196,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;overflow:hidden;flex-shrink:0;background:#0a1628;"><img src="../assets/images/software/rbs-voice-cloner-v2-icon.png" alt="RBS Voice Cloner V2 logo" style="width:100%;height:100%;object-fit:contain;display:block;" /></div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Voice Cloner V2 &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">16 built-in voices plus unlimited custom clones from a 30-second sample, 17 languages with auto-translate, 7-band EQ tuned for voice. Runs locally, no monthly cap, no cloud.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBS-RareBuildSoftware-V2/releases/download/VoiceCloner/RBSVoiceCloner_Setup.V2.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-voice-cloner-v2.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~2.0 GB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="free-habit-tracker-windows-desktop.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Best Free Habit Tracker for Windows Desktop (Offline, No Subscription) — 2026</div></a>
+        <a href="rbs-voice-cloner-v1-vs-v2.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">RBS Voice Cloner V1 vs V2 — Which Should You Download?</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -215,11 +243,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

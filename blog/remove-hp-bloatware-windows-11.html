@@ -97,22 +97,28 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 2, 2026 · 8 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#first-a-backup-safety-step" style="color:var(--accent-light);text-decoration:none;">First: a backup safety step</a></li><li style=""><a href="#what-hp-preinstalls-the-full-list" style="color:var(--accent-light);text-decoration:none;">What HP preinstalls (the full list)</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#safe-to-uninstall-most-users" style="color:var(--accent-light);text-decoration:none;">Safe to uninstall (most users)</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#think-twice-before-removing" style="color:var(--accent-light);text-decoration:none;">Think twice before removing</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#leave-alone" style="color:var(--accent-light);text-decoration:none;">Leave alone</a></li><li style=""><a href="#the-fastest-way-bulk-uninstall" style="color:var(--accent-light);text-decoration:none;">The fastest way: bulk uninstall</a></li><li style=""><a href="#after-uninstall-disable-the-auto-reinstaller" style="color:var(--accent-light);text-decoration:none;">After uninstall — disable the auto-reinstaller</a></li><li style=""><a href="#then-trim-startup-entries" style="color:var(--accent-light);text-decoration:none;">Then: trim startup entries</a></li><li style=""><a href="#a-few-hp-specific-gotchas" style="color:var(--accent-light);text-decoration:none;">A few HP-specific gotchas</a></li><li style=""><a href="#what-about-a-clean-windows-reinstall" style="color:var(--accent-light);text-decoration:none;">What about a clean Windows reinstall?</a></li><li style=""><a href="#after-the-cleanup" style="color:var(--accent-light);text-decoration:none;">After the cleanup</a></li><li style=""><a href="#related-guides" style="color:var(--accent-light);text-decoration:none;">Related guides</a></li></ul>
+        </nav>
+
+
 
         <p>A new HP laptop arrives with somewhere between 25 and 40 preinstalled apps you didn't ask for. HP calls this their "experience". Most users would call it "the reason my new Pavilion feels slow on day one." This guide tells you exactly what to remove, what to keep, and the fastest way to debloat — usually about 10 minutes from start to finish.</p>
 
         <p>I get this question a lot in my inbox: <em>"I just bought an HP Envy and it's already laggy — what do I uninstall?"</em> So here's the canonical answer for Pavilion, Envy, Omen, EliteBook, and ProBook in 2026.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">First: a backup safety step</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="first-a-backup-safety-step">First: a backup safety step</h2>
 
         <p>Before you start, create a Windows restore point. Settings → System → About → System protection → Create. Takes 30 seconds. If anything you remove turns out to matter, this is your one-click undo.</p>
 
         <p>Also: <strong>do not run a "registry cleaner"</strong> as part of this. Most blog posts about HP bloatware will tell you to. They're wrong. Modern Windows doesn't benefit from registry cleaners and they cause more problems than they solve.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What HP preinstalls (the full list)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-hp-preinstalls-the-full-list">What HP preinstalls (the full list)</h2>
 
         <p>Here's what you'll typically find on a fresh 2025-2026 HP laptop. I've grouped by what to do with each.</p>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">Safe to uninstall (most users)</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="safe-to-uninstall-most-users">Safe to uninstall (most users)</h3>
 
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>HP JumpStart</strong> — onboarding wizard. Useful for the first hour, useless after. Removes itself eventually but you can speed that up.</li>
@@ -127,7 +133,7 @@
           <li><strong>HP Privacy Settings</strong> — landing page. You can configure all of this in Windows Settings.</li>
         </ul>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">Think twice before removing</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="think-twice-before-removing">Think twice before removing</h3>
 
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>HP Wolf Security</strong> — endpoint security suite. On home Pavilion / Envy laptops it's overkill and slows boot noticeably. On business EliteBook / ProBook it may be company-managed; check with IT before removing. Wolf has a habit of reinstalling itself via HP Image Assistant if you don't also disable that.</li>
@@ -136,7 +142,7 @@
           <li><strong>MyHP</strong> — warranty and support hub. Nothing in here you can't get from hp.com when you actually need it.</li>
         </ul>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">Leave alone</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="leave-alone">Leave alone</h3>
 
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Realtek Audio Console / Realtek HD Audio Manager</strong> — audio driver. Don't touch.</li>
@@ -146,7 +152,7 @@
           <li><strong>Anything signed "Microsoft Corporation"</strong> — system components.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The fastest way: bulk uninstall</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-fastest-way-bulk-uninstall">The fastest way: bulk uninstall</h2>
 
         <p>Going through Settings → Apps → Installed apps and clicking Uninstall on each one is painful. Each removal opens its own wizard. For 15-20 HP apps, you're looking at 30-45 minutes of clicking.</p>
 
@@ -159,7 +165,7 @@
 
         <p>Either way, sort by Publisher = "HP Inc." or "Hewlett-Packard" first to see all HP-specific bloat in one view.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">After uninstall — disable the auto-reinstaller</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="after-uninstall-disable-the-auto-reinstaller">After uninstall — disable the auto-reinstaller</h2>
 
         <p>This is the part most "HP debloat" guides miss. HP has a few mechanisms that quietly reinstall things you uninstalled:</p>
 
@@ -169,13 +175,13 @@
           <li><strong>HP Support Assistant scheduled task</strong> — even after uninstalling Support Assistant, Task Scheduler may have leftover entries. Open Task Scheduler → check Task Scheduler Library for "HP*" tasks → disable any survivors.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Then: trim startup entries</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="then-trim-startup-entries">Then: trim startup entries</h2>
 
         <p>Uninstalling apps removes them from Apps &amp; Features but doesn't always remove their Task Scheduler / startup entries. Open Task Manager → Startup apps tab and disable anything HP-branded that survived. The <a href="best-free-startup-manager-windows-11.html" style="color:var(--accent-light);">free startup manager guide</a> covers all five places Windows hides startup entries (Task Manager only sees three of them).</p>
 
         <p>On a typical fresh HP Pavilion, going from "out of box" to "actually fast" usually involves uninstalling 12-18 HP apps and disabling 6-10 startup entries. Login-to-desktop time often drops from 35-50 seconds to under 15.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">A few HP-specific gotchas</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="a-few-hp-specific-gotchas">A few HP-specific gotchas</h2>
 
         <p><strong>HP Pavilion x360 / Envy x360 (2-in-1) — leave Synaptics alone.</strong> The screen rotation and pen detection rely on Synaptics drivers more than on regular Pavilions. If your screen suddenly stops auto-rotating, Synaptics is what you removed.</p>
 
@@ -185,13 +191,13 @@
 
         <p><strong>Don't remove HP Diagnostic UEFI.</strong> This isn't a Windows app — it lives on a separate partition and is what F2-on-boot loads if you have hardware issues. You'll need it eventually.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What about a clean Windows reinstall?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-about-a-clean-windows-reinstall">What about a clean Windows reinstall?</h2>
 
         <p>For people asking "should I just nuke and reinstall?" — it depends. Pros: completely clean install, no manufacturer cruft. Cons: you'll spend an hour reinstalling drivers (HP doesn't always make them easy to find), and on Pavilion / Envy laptops with HP-specific hardware features (fingerprint reader, thermal sensors), some functionality may not work properly without HP's drivers.</p>
 
         <p>Recommendation: bulk-uninstall the bloat first. If the machine is still misbehaving after that, then consider a clean install. 9 times out of 10 the bulk uninstall + startup trim is enough.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">After the cleanup</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="after-the-cleanup">After the cleanup</h2>
 
         <p>Once HP bloatware is gone, the next two things that usually deserve attention on a new laptop:</p>
 
@@ -200,7 +206,7 @@
           <li><a href="best-free-startup-manager-windows-11.html" style="color:var(--accent-light);">Trim the rest of your startup apps</a> — most of the boot-time slowdown isn't HP-specific.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related guides</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-guides">Related guides</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="remove-dell-bloatware-windows-11.html" style="color:var(--accent-light);">How to remove Dell bloatware from Windows 11</a></li>
           <li><a href="bulk-uninstall-programs-windows.html" style="color:var(--accent-light);">Bulk uninstall multiple programs at once</a></li>
@@ -210,6 +216,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🔧</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Optimizer Pro &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want a one-click way to do most of what this post covers — junk cleaner, startup manager, RAM trim, real-time CPU/GPU monitoring — Optimizer Pro is the free Windows tool I built for it.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-optimizer-pro.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~23 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="best-free-tools-2025.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Best Free PC Optimization Tools 2026</div></a>
+        <a href="speed-windows-11.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">How to Speed Up Windows 11 in 2026</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -235,11 +263,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

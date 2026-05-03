@@ -97,12 +97,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#why-clear-browser-cache" style="color:var(--accent-light);text-decoration:none;">Why clear browser cache?</a></li><li style=""><a href="#what-cache-vs-cookies-vs-local-storage-actually-means" style="color:var(--accent-light);text-decoration:none;">What cache vs. cookies vs. local storage actually means</a></li><li style=""><a href="#the-manual-way-per-browser" style="color:var(--accent-light);text-decoration:none;">The manual way (per browser)</a></li><li style=""><a href="#the-one-click-way-with-rbs-pc-cleaner" style="color:var(--accent-light);text-decoration:none;">The one-click way with RBS PC Cleaner</a></li><li style=""><a href="#what-about-internet-explorer-or-older-edge-edgehtml" style="color:var(--accent-light);text-decoration:none;">What about Internet Explorer or older Edge (EdgeHTML)?</a></li><li style=""><a href="#where-each-browser-stores-its-cache-manual-paths" style="color:var(--accent-light);text-decoration:none;">Where each browser stores its cache (manual paths)</a></li><li style=""><a href="#i-cleared-cache-but-still-see-the-old-page" style="color:var(--accent-light);text-decoration:none;">"I cleared cache but still see the old page"</a></li><li style=""><a href="#what-about-browser-sync-does-clearing-cache-delete-synced-da" style="color:var(--accent-light);text-decoration:none;">What about browser sync? Does clearing cache delete synced data?</a></li><li style=""><a href="#how-often-should-you-clear-cache" style="color:var(--accent-light);text-decoration:none;">How often should you clear cache?</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#one-click-browser-cache-cleaner" style="color:var(--accent-light);text-decoration:none;">One-Click Browser Cache Cleaner</a></li></ul>
+        </nav>
+
+
 
         <p>If you have all five major browsers installed — or even just two — clearing cache the manual way means opening five Settings screens and clicking "Clear browsing data" over and over. This post shows you a free, one-click way to clean all of them at once while <strong>keeping your saved passwords safe</strong>. It also covers exactly which folder each browser uses, in case you'd rather do it yourself with File Explorer.</p>
 
         <p>Most "free PC cleaner" tools either bundle adware, charge for the actual cleaning step, or are too aggressive and break things. The bar I set for the cache cleaner I built is the inverse: free, no upsell, never deletes anything you can't get back, and never touches saved passwords.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why clear browser cache?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="why-clear-browser-cache">Why clear browser cache?</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>It reclaims disk space — often several GB per browser.</li>
           <li>It fixes stale-content bugs (pages that won't update, broken logins, CSS glitches).</li>
@@ -110,7 +116,7 @@
           <li>It's the first thing to try when a website behaves weirdly.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What cache vs. cookies vs. local storage actually means</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-cache-vs-cookies-vs-local-storage-actually-means">What cache vs. cookies vs. local storage actually means</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Cache</strong> — copies of images, fonts, and scripts so pages load faster. Always safe to clear.</li>
           <li><strong>Cookies</strong> — log-in tokens and preferences. Clearing signs you out of most sites.</li>
@@ -122,13 +128,13 @@
           <strong style="color:var(--accent-light);">Good rule:</strong> always clear cache. Clear cookies if you don't mind signing back into sites. Leave "local storage" alone unless you know what it holds.
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The manual way (per browser)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-manual-way-per-browser">The manual way (per browser)</h2>
         <p><strong>Chrome / Edge / Brave / Opera:</strong> Ctrl+Shift+Delete → "All time" → tick <em>Cached images and files</em> → Clear.</p>
         <p><strong>Firefox:</strong> Ctrl+Shift+Delete → Time range <em>Everything</em> → tick <em>Cache</em> → Clear.</p>
         <p>That's five Ctrl+Shift+Delete presses plus confirmation dialogs every time. Tedious.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The one-click way with RBS PC Cleaner</h2>
-        <p><strong><a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a></strong> includes a dedicated <em>Browser Cleaner</em> page that:</p>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-one-click-way-with-rbs-pc-cleaner">The one-click way with RBS PC Cleaner</h2>
+        <p><strong><a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a></strong> includes a dedicated <em>Browser Cleaner</em> page that:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Detects Chrome, Edge, Firefox, Brave, and Opera installations automatically.</li>
           <li>Shows you the exact MB used by cache, cookies, and history per browser before cleaning.</li>
@@ -138,10 +144,10 @@
         </ul>
         <p>It's part of the free, open-download <strong><a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner</a></strong> app — no subscription.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What about Internet Explorer or older Edge (EdgeHTML)?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-about-internet-explorer-or-older-edge-edgehtml">What about Internet Explorer or older Edge (EdgeHTML)?</h2>
         <p>Internet Explorer is retired on Windows 11. The legacy Edge (EdgeHTML) was replaced by Chromium Edge in 2020. RBS PC Cleaner supports the current Chromium-based Edge. If you still have IE shortcuts kicking around, the launcher just redirects to Edge anyway.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Where each browser stores its cache (manual paths)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="where-each-browser-stores-its-cache-manual-paths">Where each browser stores its cache (manual paths)</h2>
         <p>If you'd rather do it without any extra software, here are the exact paths. Close the browser fully first (right-click the system-tray icon and quit, not just close the window).</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Chrome</strong> — <code>%LOCALAPPDATA%\Google\Chrome\User Data\Default\Cache</code></li>
@@ -152,7 +158,7 @@
         </ul>
         <p>Press Win+R, paste the path, hit Enter, then Ctrl+A and Shift+Del to delete contents. The browser will rebuild what it needs on next launch.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">"I cleared cache but still see the old page"</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="i-cleared-cache-but-still-see-the-old-page">"I cleared cache but still see the old page"</h2>
         <p>Three common causes:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Service Worker caching.</strong> Modern web apps (Gmail, Discord web, Twitter) install a "Service Worker" that caches pages outside the normal browser cache. Hard-refresh with Ctrl+Shift+R, or open DevTools (F12) &gt; Application tab &gt; Service Workers &gt; Unregister.</li>
@@ -160,14 +166,14 @@
           <li><strong>CDN cache.</strong> The website's own CDN might still be serving an old version to everyone. Nothing you can do about that one — wait it out.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What about browser sync? Does clearing cache delete synced data?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-about-browser-sync-does-clearing-cache-delete-synced-da">What about browser sync? Does clearing cache delete synced data?</h2>
         <p>No. Sync (Chrome Sync, Edge Sync, Firefox Sync) lives in your account on the browser vendor's servers. Local cache is just a copy that gets re-fetched. Clearing cache locally doesn't touch your bookmarks, history, passwords or extensions if they're synced. The next time you open the browser online, sync re-pulls anything it needs.</p>
         <p>Important caveat: if you clear <em>cookies</em> as well, you'll be signed out of your sync account and most websites. You'll need to log back in. Cache-only clears don't have this side effect.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">How often should you clear cache?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="how-often-should-you-clear-cache">How often should you clear cache?</h2>
         <p>Once a month is plenty for most people. If you're low on disk space or a site is misbehaving, do it now. There's no benefit to clearing cache daily — browsers re-fill it immediately and you lose the loading-speed boost cache gives you. The only exception is if you're a web developer testing changes to a site you control, in which case you probably already know about hard-refresh and DevTools' "Disable cache" toggle.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="clear-discord-teams-spotify-cache-windows.html" style="color:var(--accent-light);">Clear Discord, Teams, Spotify &amp; VS Code Cache on Windows</a> — Electron apps cache just like browsers.</li>
           <li><a href="how-to-clean-windows-11-without-breaking-it.html" style="color:var(--accent-light);">How to Clean Windows 11 Without Breaking It</a> — the broader safe-cleanup guide.</li>
@@ -177,12 +183,34 @@
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">🌐</div>
-          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">One-Click Browser Cache Cleaner</h3>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="one-click-browser-cache-cleaner">One-Click Browser Cache Cleaner</h3>
           <p style="color:var(--text-muted);margin-bottom:20px;">Chrome · Edge · Firefox · Brave · Opera — all in RBS PC Cleaner</p>
-          <a href="../software/detail.html?id=rbs-pc-cleaner" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🧹</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS PC Cleaner &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want to actually run the cleanup steps in this post safely — every action is reversible, rated Safe / Caution / Risky before you click, and the registry is never touched.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~61 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="how-to-clean-windows-11-without-breaking-it.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">How to Clean Windows 11 Without Breaking It — Safe Guide</div></a>
+        <a href="find-duplicate-files-windows-free.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">How to Find and Delete Duplicate Files on Windows (Free, Safe)</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -208,11 +236,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

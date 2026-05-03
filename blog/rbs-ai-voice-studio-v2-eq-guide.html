@@ -101,10 +101,16 @@
            style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--border);margin-bottom:32px;" />
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#the-7-bands-and-what-they-do" style="color:var(--accent-light);text-decoration:none;">The 7 bands and what they do</a></li><li style=""><a href="#the-6-presets-when-to-use-each" style="color:var(--accent-light);text-decoration:none;">The 6 presets — when to use each</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#voice-natural" style="color:var(--accent-light);text-decoration:none;">Voice — Natural</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#voice-warm" style="color:var(--accent-light);text-decoration:none;">Voice — Warm</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#voice-bright" style="color:var(--accent-light);text-decoration:none;">Voice — Bright</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#podcast" style="color:var(--accent-light);text-decoration:none;">Podcast</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#phone" style="color:var(--accent-light);text-decoration:none;">Phone</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#flat" style="color:var(--accent-light);text-decoration:none;">Flat</a></li><li style=""><a href="#common-voice-problems-and-how-to-fix-them-with-eq" style="color:var(--accent-light);text-decoration:none;">Common voice problems and how to fix them with EQ</a></li><li style=""><a href="#workflow-tips" style="color:var(--accent-light);text-decoration:none;">Workflow tips</a></li><li style=""><a href="#what-about-the-audio-editors-other-effects" style="color:var(--accent-light);text-decoration:none;">What about the Audio Editor's other effects?</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#free-7-band-voice-eq" style="color:var(--accent-light);text-decoration:none;">Free 7-Band Voice EQ</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li></ul>
+        </nav>
 
-        <p>The 7-band parametric equaliser in <a href="../software/detail.html?id=rbs-voice-cloner-v2" style="color:var(--accent-light);">RBS Voice Cloner V2</a> isn't a generic music EQ — the bands are placed where voice problems actually live. This guide walks through what each band does, when to use which preset, and how to fix common cloning artefacts with a couple of slider moves.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The 7 bands and what they do</h2>
+
+        <p>The 7-band parametric equaliser in <a href="../software/rbs-voice-cloner-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V2</a> isn't a generic music EQ — the bands are placed where voice problems actually live. This guide walks through what each band does, when to use which preset, and how to fix common cloning artefacts with a couple of slider moves.</p>
+
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-7-bands-and-what-they-do">The 7 bands and what they do</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Sub — 60 Hz.</strong> Below voice. Cut this to remove HVAC rumble, traffic noise, mic-stand bumps. Boosting adds nothing useful for voice.</li>
           <li><strong>Bass — 200 Hz.</strong> Body / chest. Boost for warmth and a "fuller" voice. Cut if the voice sounds boomy or muddy.</li>
@@ -119,27 +125,27 @@
           <strong style="color:var(--accent-light);">Rule of thumb:</strong> cuts sound natural, boosts sound obvious. If a frequency is annoying, cut around it rather than boosting everything else.
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The 6 presets — when to use each</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-6-presets-when-to-use-each">The 6 presets — when to use each</h2>
 
-        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Voice — Natural</h3>
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);" id="voice-natural">Voice — Natural</h3>
         <p>Light cleanup with a slight presence + air boost. Use this as your default. Light cut at Sub (rumble removal) and a small lift at Hi Mid + Air for clarity. 80% of the time this is the right starting point.</p>
 
-        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Voice — Warm</h3>
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);" id="voice-warm">Voice — Warm</h3>
         <p>Bass + Low Mid boost. Use for narration, audiobook reading, intimate-sounding voiceovers. Especially good for thinner-sounding cloned voices. Avoid if the source already sounds boomy.</p>
 
-        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Voice — Bright</h3>
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);" id="voice-bright">Voice — Bright</h3>
         <p>Hi Mid + Presence + Air boost. Use when a voice sounds dull, distant, or "behind a curtain". Pulls the vocal forward in the perceived mix. Don't combine with Warm — they fight each other.</p>
 
-        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Podcast</h3>
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);" id="podcast">Podcast</h3>
         <p>Standard podcast EQ curve: cut sub-bass, lift presence, gentle air boost. Use for any spoken-word content destined for headphone or earbud listeners. This is the preset most podcast hosts pay $$ for in commercial plugins.</p>
 
-        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Phone</h3>
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);" id="phone">Phone</h3>
         <p>Narrow-band telephony filter — cuts everything below 300 Hz and above 3.4 kHz. Use for stylised effects (voicemail, phone-call simulation, retro radio sound). Don't use for general listening.</p>
 
-        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);">Flat</h3>
+        <h3 style="font-size:1.1rem;font-weight:700;margin:28px 0 8px;color:var(--text-primary);" id="flat">Flat</h3>
         <p>Zero everything. Useful as a starting point for manual tweaking, or when you want to undo a previous preset. Click <strong>Reset</strong> instead if you want to revert the audio AND zero the sliders.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Common voice problems and how to fix them with EQ</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="common-voice-problems-and-how-to-fix-them-with-eq">Common voice problems and how to fix them with EQ</h2>
 
         <p><strong>"Sounds muddy / boomy"</strong> — Cut Low Mid (500 Hz) by 2–4 dB. If still boomy, cut Bass (200 Hz) by 1–2 dB.</p>
         <p><strong>"Sounds thin or distant"</strong> — Apply Voice — Warm preset. Or boost Bass (200 Hz) and Low Mid (500 Hz) by 2 dB each.</p>
@@ -148,7 +154,7 @@
         <p><strong>"There's background hum / rumble"</strong> — Cut Sub (60 Hz) all the way down. Combine with the <em>Remove Noise</em> Quick effect on the Audio Editor.</p>
         <p><strong>"Cloned voice sounds robotic"</strong> — Apply Voice — Natural, then boost Air (12 kHz) by 1 dB. Slight breath in the top end masks XTTS v2 artefacts.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Workflow tips</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="workflow-tips">Workflow tips</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>EQ last.</strong> Trim → noise reduction → volume normalise → THEN EQ. EQ on noisy or unbalanced source is harder.</li>
           <li><strong>Apply, listen, undo if needed.</strong> The Reset button reverts the audio to its pre-EQ state, not just the sliders.</li>
@@ -156,17 +162,17 @@
           <li><strong>Different output medium = different EQ.</strong> Phone speaker = lift Mid. Studio headphones = subtle Air. Podcast → tucked in a car = use Podcast preset.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What about the Audio Editor's other effects?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-about-the-audio-editors-other-effects">What about the Audio Editor's other effects?</h2>
         <p>EQ is just one tab in the redesigned editor. The Quick tab has Normalise (matches loudness), Remove Noise (broadband noise reduction), Reverse (gimmicky but fun), and Auto-Trim (cut silence from start/end). The Adjust tab has Volume / Speed / Pitch sliders + Echo. Trim &amp; Fade does what you'd expect. Read the full overview in the <a href="rbs-ai-voice-studio-v2-launch.html" style="color:var(--accent-light);">V2 launch post</a>.</p>
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">🎚️</div>
-          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Free 7-Band Voice EQ</h3>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="free-7-band-voice-eq">Free 7-Band Voice EQ</h3>
           <p style="color:var(--text-muted);margin-bottom:20px;">Part of RBS Voice Cloner V2 · Windows 10/11</p>
-          <a href="../software/detail.html?id=rbs-voice-cloner-v2" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-voice-cloner-v2.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="rbs-ai-voice-studio-v2-launch.html" style="color:var(--accent-light);">RBS Voice Cloner V2 — Launch announcement</a></li>
           <li><a href="rbs-voice-cloner-v1-vs-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V1 vs V2 — which should you download?</a></li>
@@ -174,6 +180,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;overflow:hidden;flex-shrink:0;background:#0a1628;"><img src="../assets/images/software/rbs-voice-cloner-v2-icon.png" alt="RBS Voice Cloner V2 logo" style="width:100%;height:100%;object-fit:contain;display:block;" /></div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Voice Cloner V2 &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">16 built-in voices plus unlimited custom clones from a 30-second sample, 17 languages with auto-translate, 7-band EQ tuned for voice. Runs locally, no monthly cap, no cloud.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBS-RareBuildSoftware-V2/releases/download/VoiceCloner/RBSVoiceCloner_Setup.V2.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-voice-cloner-v2.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~2.0 GB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="rbs-voice-cloner-v1-vs-v2.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">RBS Voice Cloner V1 vs V2 — Which Should You Download?</div></a>
+        <a href="free-bleachbit-alternative-windows-11.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Free BleachBit Alternative for Windows 11 (2026)</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -199,11 +227,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

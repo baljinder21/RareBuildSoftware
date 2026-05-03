@@ -102,12 +102,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 14, 2026 · 6 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#the-16-widgets" style="color:var(--accent-light);text-decoration:none;">The 16 widgets</a></li><li style=""><a href="#why-one-app-instead-of-many" style="color:var(--accent-light);text-decoration:none;">Why one app instead of many</a></li><li style=""><a href="#how-people-are-actually-using-it" style="color:var(--accent-light);text-decoration:none;">How people are actually using it</a></li><li style=""><a href="#layout-drag-resize-hide" style="color:var(--accent-light);text-decoration:none;">Layout — drag, resize, hide</a></li><li style=""><a href="#where-your-data-lives" style="color:var(--accent-light);text-decoration:none;">Where your data lives</a></li><li style=""><a href="#system-requirements" style="color:var(--accent-light);text-decoration:none;">System requirements</a></li><li style=""><a href="#common-questions-i-keep-getting" style="color:var(--accent-light);text-decoration:none;">Common questions I keep getting</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#download-life-dashboard-free" style="color:var(--accent-light);text-decoration:none;">Download Life Dashboard — Free</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li></ul>
+        </nav>
+
+
 
         <p>Life Dashboard v1.0.0 is out today. It's a free Windows desktop app that puts 16 of the small productivity tools you'd otherwise have scattered across phone apps, browser tabs and SaaS subscriptions into one window. Habits, tasks, finance, weather, sleep, calendar, Pomodoro, notes — all in one place, all stored locally on your PC, no account needed.</p>
 
         <p>I'm Rai, the developer. I'm a solo dev based in Singapore, and Life Dashboard started as a thing I built for myself after counting that I had eleven separate productivity apps doing roughly the same job badly. Sometime in 2025 I decided to just build the one tool that did all of them, and ship it for free so other people could stop juggling apps too.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The 16 widgets</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-16-widgets">The 16 widgets</h2>
         <p>Each widget is a small focused tool. You turn on the ones you want, hide the ones you don't, drag them around to build the layout that works for you.</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Tasks</strong> — to-do list with priorities and categories. No cloud. No "upgrade for unlimited tasks" prompt.</li>
@@ -128,12 +134,12 @@
           <li><strong>Quotes</strong> — daily motivational quote. Disable if you find motivational quotes annoying — most people do.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why one app instead of many</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="why-one-app-instead-of-many">Why one app instead of many</h2>
         <p>Phone apps have two problems. First, your phone isn't where you do your work — your desktop is. Second, every "free" productivity app eventually nags you to upgrade or starts caching your data in someone else's cloud. Phone apps are designed to be sticky in ways that are not always in your interest.</p>
 
         <p>A desktop dashboard sitting in the corner of a second monitor solves both. You see it, you check things off, you move on. There's nothing to log into. Nothing to upgrade. Nothing being analysed for ad targeting.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">How people are actually using it</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="how-people-are-actually-using-it">How people are actually using it</h2>
         <p>From the early users:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Remote workers</strong> with a second monitor — Pomodoro + Tasks + Habits in one corner, the actual work in the main screen.</li>
@@ -143,18 +149,18 @@
           <li><strong>Students</strong> using Calendar, Tasks, Pomodoro, and Goals to track exam prep.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Layout — drag, resize, hide</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="layout-drag-resize-hide">Layout — drag, resize, hide</h2>
         <p>Drag widgets by their header to rearrange them. Resize by grabbing the bottom-right corner. Show or hide any widget from the Widgets menu in the top bar. Layout state is saved automatically — close the app, open it again, everything is where you left it.</p>
         <p>Dark mode is the default. Light mode toggle is in Settings.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Where your data lives</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="where-your-data-lives">Where your data lives</h2>
         <p>All data is stored locally in <code>%APPDATA%\Life Dashboard\</code> as plain JSON files. You can open them in Notepad if you're curious. You can back them up by copying the folder. You can sync between two PCs by putting the folder inside Dropbox, OneDrive or Syncthing — that's not a built-in feature, but it works because the storage is just files.</p>
 
         <p>Two widgets need internet — Weather (city forecast lookup) and News (fetching RSS feeds). Both can be disabled if you want zero outbound network traffic. Everything else works fully offline.</p>
 
         <p>No telemetry. No analytics SDK. No crash reporter calling home. The app doesn't know who you are because it never asked.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">System requirements</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="system-requirements">System requirements</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Windows 10 or Windows 11 (64-bit). Earlier versions of Windows are not supported.</li>
           <li>100 MB free disk space.</li>
@@ -163,21 +169,21 @@
           <li>Internet for Weather + News widgets only (optional — can be disabled).</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Common questions I keep getting</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="common-questions-i-keep-getting">Common questions I keep getting</h2>
         <p><strong>Can I sync between two PCs?</strong> Not as a built-in feature — there's no cloud account by design. But the data folder is plain JSON, so put <code>%APPDATA%\Life Dashboard\</code> in Dropbox/OneDrive/Syncthing and it'll sync.</p>
         <p><strong>Is the source code open?</strong> Not currently, but the data files are plain JSON — you own everything you put in.</p>
         <p><strong>What's the catch / business model?</strong> No catch. Life Dashboard is free, forever. If you find it useful you can <a href="../donate.html" style="color:var(--accent-light);">donate</a>; that's the only way money changes hands.</p>
-        <p><strong>How do I verify the download is safe?</strong> The <a href="../software/detail.html?id=life-dashboard" style="color:var(--accent-light);">download page</a> shows a SHA-256 hash and a VirusTotal scan link. After downloading, run <code>Get-FileHash &lt;path&gt; -Algorithm SHA256</code> in PowerShell and compare.</p>
+        <p><strong>How do I verify the download is safe?</strong> The <a href="../software/life-dashboard.html" style="color:var(--accent-light);">download page</a> shows a SHA-256 hash and a VirusTotal scan link. After downloading, run <code>Get-FileHash &lt;path&gt; -Algorithm SHA256</code> in PowerShell and compare.</p>
         <p><strong>What if the Weather widget shows wrong forecasts?</strong> Make sure the city is set correctly in widget Settings. The data source is open weather APIs — accuracy depends on your location and the API.</p>
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">📅</div>
-          <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Download Life Dashboard — Free</h3>
+          <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;" id="download-life-dashboard-free">Download Life Dashboard — Free</h3>
           <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:20px;">Windows 10/11 · ~104 MB · 16 widgets · Fully offline · No account.</p>
-          <a href="../software/detail.html?id=life-dashboard" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/life-dashboard.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="free-habit-tracker-windows-desktop.html" style="color:var(--accent-light);">Best free habit tracker for Windows desktop (offline, no subscription)</a></li>
           <li><a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner — clean junk without breaking Windows</a></li>
@@ -186,6 +192,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">📅</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try Life Dashboard &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">One window for habits, tasks, finance, weather, sleep, news and 11 more widgets. Drag-and-drop layout, all data stays on your PC, free forever.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/Life.Dashboard.Setup.1.0.0.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/life-dashboard.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~104 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="remove-lenovo-bloatware-windows-11.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">How to Remove Lenovo Bloatware from Windows 11 (2026 Guide)</div></a>
+        <a href="rbs-voice-cloner-launch.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">RBS Voice Cloner v1.0.0 — Free AI Voice Cloning for Windows</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -211,11 +239,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

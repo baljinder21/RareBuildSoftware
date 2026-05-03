@@ -33,7 +33,7 @@
       screenshot: null,
       screenshotPath: '',
       visible: true,
-      released: '2025-01-01',
+      released: '2026-04-01',
       downloads: 0,
       features: [
         { icon: '🧹', title: 'Deep Junk Cleaner',   desc: 'Remove temporary files, cache, and old logs safely and automatically.' },
@@ -52,7 +52,7 @@
         'Administrator rights for full features'
       ],
       changelog: [
-        { version: '1.0.0', date: '2025-01-01', notes: ['Initial release', 'Junk cleaner, startup manager, performance monitor', 'One-click optimize mode', 'Dark mode UI'] }
+        { version: '1.0.0', date: '2026-04-01', notes: ['Initial release', 'Junk cleaner, startup manager, performance monitor', 'One-click optimize mode', 'Dark mode UI'] }
       ]
     },
     {

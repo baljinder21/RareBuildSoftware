@@ -97,12 +97,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#measure-first-optimise-second" style="color:var(--accent-light);text-decoration:none;">Measure first, optimise second</a></li><li style=""><a href="#where-does-windows-11-store-startup-entries" style="color:var(--accent-light);text-decoration:none;">Where does Windows 11 store startup entries?</a></li><li style=""><a href="#why-disable-is-safer-than-delete" style="color:var(--accent-light);text-decoration:none;">Why "disable" is safer than "delete"</a></li><li style=""><a href="#what-to-disable" style="color:var(--accent-light);text-decoration:none;">What to disable</a></li><li style=""><a href="#rbs-pc-cleaner-startup-manager" style="color:var(--accent-light);text-decoration:none;">RBS PC Cleaner Startup Manager</a></li><li style=""><a href="#real-example-a-typical-bloated-laptop" style="color:var(--accent-light);text-decoration:none;">Real example — a typical bloated laptop</a></li><li style=""><a href="#expect-real-boot-time-improvements" style="color:var(--accent-light);text-decoration:none;">Expect real boot-time improvements</a></li><li style=""><a href="#versus-other-startup-managers-autoruns-msconfig" style="color:var(--accent-light);text-decoration:none;">Versus other startup managers (Autoruns, MSConfig)</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#free-reversible-startup-manager" style="color:var(--accent-light);text-decoration:none;">Free Reversible Startup Manager</a></li></ul>
+        </nav>
+
+
 
         <p>Every new app you install tries to auto-start with Windows. Six months later your PC takes three minutes to boot and you can't remember which of the 28 things in Task Manager's Startup tab you actually wanted there. A good startup manager is the single highest-impact tweak you can make on Windows 11 — boot times commonly drop by 40–70%.</p>
 
         <p>This post covers what to disable, what to leave alone, why Task Manager doesn't see everything, and the free tool I built to handle the bits Windows itself doesn't.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Measure first, optimise second</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="measure-first-optimise-second">Measure first, optimise second</h2>
         <p>Before you start disabling things, measure your current boot time so you know if your changes actually help.</p>
         <p><strong>The two numbers that matter:</strong></p>
         <ul style="padding-left:24px;margin:16px 0;">
@@ -111,7 +117,7 @@
         </ul>
         <p>A healthy Windows 11 PC with an SSD should be at 8-15 seconds login-to-desktop. If you're at 30-60 seconds you've got bloat. If you're past 60 seconds, this article is going to make a noticeable difference.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Where does Windows 11 store startup entries?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="where-does-windows-11-store-startup-entries">Where does Windows 11 store startup entries?</h2>
         <p>There are at least five places — which is why Task Manager's Startup tab doesn't always show everything:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Registry <code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run</code></strong> — per-user apps.</li>
@@ -121,22 +127,22 @@
           <li><strong>Services</strong> — set to Automatic.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why "disable" is safer than "delete"</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="why-disable-is-safer-than-delete">Why "disable" is safer than "delete"</h2>
         <p>Delete a startup entry and you've lost the reference to the launch command. Reinstalling the app is usually the only way to bring it back. <strong>Disabling</strong> should be reversible — a good startup manager keeps the entry data but flags it as off.</p>
-        <p>Task Manager's built-in Startup tab disables by adding a binary flag. <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> goes further: it moves the entry to a sibling registry key called <code>Run-Disabled</code>, so you can re-enable with one click even if Task Manager would have forgotten.</p>
+        <p>Task Manager's built-in Startup tab disables by adding a binary flag. <a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a> goes further: it moves the entry to a sibling registry key called <code>Run-Disabled</code>, so you can re-enable with one click even if Task Manager would have forgotten.</p>
 
         <div style="background:rgba(0,200,150,0.06);border:1px solid rgba(0,200,150,0.3);border-radius:12px;padding:20px;margin:28px 0;">
           <strong style="color:var(--accent-light);">Safe default:</strong> disable, never delete. If something breaks, one click brings it back.
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What to disable</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-to-disable">What to disable</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Disable freely:</strong> Spotify, Discord, Skype, Teams (personal), Steam, Epic Games Launcher, GOG Galaxy, Adobe Creative Cloud, OneDrive (if you don't sync), Dropbox (same), software auto-updaters, printer helpers.</li>
           <li><strong>Think twice:</strong> graphics drivers (NVIDIA Container, AMD Settings) — usually safe but some OSD / gaming features require them.</li>
           <li><strong>Leave enabled:</strong> Windows Security / Defender, Synaptics / Precision Touchpad, Realtek audio, anti-virus, OneDrive if you rely on sync, password managers.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">RBS PC Cleaner Startup Manager</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="rbs-pc-cleaner-startup-manager">RBS PC Cleaner Startup Manager</h2>
         <p>The free <strong>RBS PC Cleaner</strong> app includes a Startup Manager that:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Lists entries from <strong>all five</strong> sources above (HKCU Run, HKLM Run, Startup folder, Task Scheduler, Services).</li>
@@ -146,16 +152,16 @@
           <li>Integrates with <a href="gaming-mode-windows-boost-fps-free.html" style="color:var(--accent-light);">Gaming Mode</a>, which temporarily suspends background apps while you play.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Real example — a typical bloated laptop</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="real-example-a-typical-bloated-laptop">Real example — a typical bloated laptop</h2>
         <p>I helped a friend clean up her work laptop a few weeks ago. Mid-range 2023 Lenovo, Windows 11 Pro, six months since IT handed it to her. Login-to-desktop time was 47 seconds.</p>
         <p>Startup entries we disabled: Spotify, Discord, Steam, Adobe Acrobat updater, Adobe Creative Cloud, Microsoft Edge "preload", an OEM utility from Lenovo, three Office quick-launch shortcuts (Word, Excel, PowerPoint helpers), the Realtek HD Audio Manager (the audio still works fine without it auto-starting), and a stray entry from an uninstalled VPN client.</p>
         <p>New login-to-desktop time: 11 seconds. About 75% faster, no functionality lost. She didn't even notice anything was missing for the first two weeks.</p>
         <p>Most "slow Windows 11" stories follow this pattern. The hardware is fine; there's just a long tail of things wanting to launch at boot that you don't actually need at boot.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Expect real boot-time improvements</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="expect-real-boot-time-improvements">Expect real boot-time improvements</h2>
         <p>On a mid-range Windows 11 laptop, trimming 12–15 unnecessary startup entries typically drops login-to-desktop from around 40 seconds to 10–15 seconds. On a gaming desktop with SSD, you'll often see under 8 seconds. The exception is genuinely old hardware (HDDs, &lt;8 GB RAM, pre-2019 CPUs) where you'll see improvement but not magic.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Versus other startup managers (Autoruns, MSConfig)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="versus-other-startup-managers-autoruns-msconfig">Versus other startup managers (Autoruns, MSConfig)</h2>
         <p>For completeness, the alternatives:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Task Manager Startup tab</strong> — built into Windows 11. Sees most per-user entries, misses Task Scheduler and Services. Disabling is reversible. Good for quick wins.</li>
@@ -164,7 +170,7 @@
           <li><strong>RBS PC Cleaner Startup Manager</strong> — covers all five sources, friendly UI, every change reversible. The middle ground if Task Manager isn't enough but Autoruns is too much.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="speed-windows-11.html" style="color:var(--accent-light);">How to Speed Up Windows 11 in 2026</a> — startup tuning is one of the biggest wins.</li>
           <li><a href="gaming-mode-windows-boost-fps-free.html" style="color:var(--accent-light);">Gaming Mode for Windows — Boost FPS</a> — suspend background apps on demand.</li>
@@ -175,12 +181,34 @@
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">🚀</div>
-          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Free Reversible Startup Manager</h3>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="free-reversible-startup-manager">Free Reversible Startup Manager</h3>
           <p style="color:var(--text-muted);margin-bottom:20px;">Part of RBS PC Cleaner · Windows 10/11</p>
-          <a href="../software/detail.html?id=rbs-pc-cleaner" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🔧</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Optimizer Pro &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want a one-click way to do most of what this post covers — junk cleaner, startup manager, RAM trim, real-time CPU/GPU monitoring — Optimizer Pro is the free Windows tool I built for it.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-optimizer-pro.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~23 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="find-duplicate-files-windows-free.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">How to Find and Delete Duplicate Files on Windows (Free, Safe)</div></a>
+        <a href="bulk-uninstall-programs-windows.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Uninstall Multiple Programs at Once on Windows — Free Bulk Uninstaller</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -206,11 +234,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

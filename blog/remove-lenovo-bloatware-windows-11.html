@@ -97,12 +97,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 16, 2026 · 9 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#first-a-lenovo-specific-safety-note" style="color:var(--accent-light);text-decoration:none;">First — a Lenovo-specific safety note</a></li><li style=""><a href="#the-bloatware-list-organised-by-what-to-do" style="color:var(--accent-light);text-decoration:none;">The bloatware list (organised by what to do)</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#safe-to-uninstall-on-most-models" style="color:var(--accent-light);text-decoration:none;">Safe to uninstall on most models</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#think-carefully-vantage-is-the-big-one" style="color:var(--accent-light);text-decoration:none;">Think carefully — Vantage is the big one</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#legion-specific-gaming-laptops" style="color:var(--accent-light);text-decoration:none;">Legion-specific (gaming laptops)</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#do-not-touch" style="color:var(--accent-light);text-decoration:none;">Do not touch</a></li><li style=""><a href="#the-fastest-cleanup" style="color:var(--accent-light);text-decoration:none;">The fastest cleanup</a></li><li style=""><a href="#after-uninstall-disable-the-auto-reinstaller" style="color:var(--accent-light);text-decoration:none;">After uninstall — disable the auto-reinstaller</a></li><li style=""><a href="#then-trim-startup-entries" style="color:var(--accent-light);text-decoration:none;">Then trim startup entries</a></li><li style=""><a href="#model-specific-notes" style="color:var(--accent-light);text-decoration:none;">Model-specific notes</a></li><li style=""><a href="#a-note-on-the-corporate-vs-consumer-vantage-split" style="color:var(--accent-light);text-decoration:none;">A note on the corporate-vs-consumer Vantage split</a></li><li style=""><a href="#then-what" style="color:var(--accent-light);text-decoration:none;">Then what?</a></li><li style=""><a href="#related-guides" style="color:var(--accent-light);text-decoration:none;">Related guides</a></li></ul>
+        </nav>
+
+
 
         <p>Lenovo's bloatware story is split. ThinkPad and ThinkBook (the business lines) ship surprisingly clean — Lenovo seems to assume corporate IT will deploy whatever they want on top. IdeaPad, Yoga and Legion ship with the full consumer treatment: Vantage, Now, Welcome, McAfee trial, a sprinkle of promotional Microsoft Store apps, and on Legion the gaming-specific Vantage features layered on top.</p>
 
         <p>This guide tells you what to remove, what to keep depending on whether you actually use Lenovo's hardware utilities, and how to make sure Lenovo's auto-updaters don't quietly reinstall everything next week.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">First — a Lenovo-specific safety note</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="first-a-lenovo-specific-safety-note">First — a Lenovo-specific safety note</h2>
 
         <p>Lenovo had a high-profile incident in 2015 (the Superfish adware preinstall) that gave the brand a reputation for distrust. To Lenovo's credit, they cleaned up significantly afterward — modern Lenovo machines don't ship with anything in the same league. But the reputation lingered, which is why "remove Lenovo bloatware" is one of the highest-volume search terms in this category.</p>
 
@@ -110,9 +116,9 @@
 
         <p>Create a Windows restore point before you start: Settings → System → About → System protection → Create. Takes 30 seconds, saves a headache later.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The bloatware list (organised by what to do)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-bloatware-list-organised-by-what-to-do">The bloatware list (organised by what to do)</h2>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">Safe to uninstall on most models</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="safe-to-uninstall-on-most-models">Safe to uninstall on most models</h3>
 
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Lenovo Welcome</strong> — first-launch onboarding wizard. Useless after first use.</li>
@@ -127,7 +133,7 @@
           <li><strong>Lenovo Hotkeys (legacy versions)</strong> — newer ThinkPads use the integrated System Interface Foundation instead. Check if your laptop is using the new or old hotkey driver before removing.</li>
         </ul>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">Think carefully — Vantage is the big one</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="think-carefully-vantage-is-the-big-one">Think carefully — Vantage is the big one</h3>
 
         <p><strong>Lenovo Vantage</strong> is the centerpiece of the consumer Lenovo software experience. It does several things, some genuinely useful, some not:</p>
 
@@ -148,13 +154,13 @@
           <li>Compromise: keep Vantage installed but disable its auto-launch and notifications (Settings → Vantage Settings → turn off promotional content). The features remain available when you open the app, but the ads stop.</li>
         </ul>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">Legion-specific (gaming laptops)</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="legion-specific-gaming-laptops">Legion-specific (gaming laptops)</h3>
 
         <p><strong>Lenovo Vantage / Legion Edition</strong> on Legion 5 / Legion 7 / Legion Pro adds GPU overclocking, fan curve control (Quiet / Balanced / Performance / Custom), Y-Logo / keyboard RGB, and the all-important hybrid-mode toggle (switch between dGPU / iGPU). Legion users almost always want Vantage. Removing locks you out of fan curves and the GPU mode switch from Windows.</p>
 
         <p><strong>Lenovo Now / Lenovo PC Manager</strong> can still go even on Legion — neither does anything Vantage doesn't already cover.</p>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">Do not touch</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="do-not-touch">Do not touch</h3>
 
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Lenovo System Interface Foundation</strong> — driver, not bloatware. ThinkPad function keys (Fn+brightness, audio, etc.) depend on it.</li>
@@ -164,7 +170,7 @@
           <li><strong>NVIDIA / AMD graphics drivers</strong> — graphics.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The fastest cleanup</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-fastest-cleanup">The fastest cleanup</h2>
 
         <p>Settings → Apps → Installed apps. Sort by Publisher = "Lenovo" or "Lenovo Group Limited". You'll see the full Lenovo-specific candidate set in one view.</p>
 
@@ -175,7 +181,7 @@
           <li>The free <a href="bulk-uninstall-programs-windows.html" style="color:var(--accent-light);">RBS PC Cleaner Bulk Uninstaller</a> — tick everything you've decided to remove, hit Uninstall Selected, walk away. Silent mode is auto-detected.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">After uninstall — disable the auto-reinstaller</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="after-uninstall-disable-the-auto-reinstaller">After uninstall — disable the auto-reinstaller</h2>
 
         <p>Lenovo, like HP and Asus, has mechanisms that quietly reinstall things you've uninstalled. The two main ones:</p>
 
@@ -185,13 +191,13 @@
           <li><strong>Microsoft Store auto-updates</strong> — some Lenovo apps came via the Store and may reappear. Disable auto-updates for these specific apps in the Microsoft Store settings, or just leave the Store auto-update off and update manually when needed.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Then trim startup entries</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="then-trim-startup-entries">Then trim startup entries</h2>
 
         <p>Uninstalling apps doesn't always remove their startup / scheduled-task entries. Open Task Manager → Startup apps and disable any "Lenovo*" survivors. Then open Task Scheduler (Start → "Task Scheduler") → Task Scheduler Library → look for any task starting with "Lenovo" → right-click → Disable.</p>
 
         <p>The <a href="best-free-startup-manager-windows-11.html" style="color:var(--accent-light);">free startup manager guide</a> covers all five places Windows hides startup entries, because Task Manager only sees three of them. On a typical IdeaPad 5, going from "out of box" to "actually fast" usually involves uninstalling 12-18 Lenovo apps and disabling 6-10 startup entries. Login-to-desktop time often drops from 35-50 seconds to 12-18.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Model-specific notes</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="model-specific-notes">Model-specific notes</h2>
 
         <p><strong>ThinkPad / ThinkBook (business):</strong> the lightest preinstall load of any Lenovo line. Many ThinkPad units don't have McAfee at all. The Vantage on ThinkPad sometimes gets called "Lenovo Commercial Vantage" and includes IT-management hooks; if your machine is corporate-managed, talk to IT before uninstalling that.</p>
 
@@ -201,13 +207,13 @@
 
         <p><strong>Legion (gaming):</strong> as mentioned above, keep Vantage Legion Edition. Almost everything else is optional.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">A note on the corporate-vs-consumer Vantage split</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="a-note-on-the-corporate-vs-consumer-vantage-split">A note on the corporate-vs-consumer Vantage split</h2>
 
         <p>Lenovo ships two different Vantage builds: "Lenovo Vantage" on consumer laptops, "Lenovo Commercial Vantage" on ThinkPad / ThinkBook. The consumer version has the promotional banners and Lenovo store advertising. The commercial version doesn't — it's a cleaner, IT-friendly build.</p>
 
         <p>If you have a consumer IdeaPad / Yoga / Legion and the promotional content drives you crazy but you want the Vantage features, you can sometimes install Commercial Vantage instead. Lenovo lets you switch between them — search "Lenovo Commercial Vantage" on lenovo.com/support. This is the underrated trick of the Lenovo cleanup space.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Then what?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="then-what">Then what?</h2>
 
         <p>Once Lenovo bloat is gone, the next two things worth doing:</p>
 
@@ -216,7 +222,7 @@
           <li><a href="best-free-startup-manager-windows-11.html" style="color:var(--accent-light);">Trim general startup apps</a> — most boot-time slowdown is universal.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related guides</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-guides">Related guides</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="remove-hp-bloatware-windows-11.html" style="color:var(--accent-light);">How to remove HP bloatware from Windows 11</a></li>
           <li><a href="remove-asus-bloatware-windows-11.html" style="color:var(--accent-light);">How to remove Asus bloatware from Windows 11</a></li>
@@ -227,6 +233,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🔧</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Optimizer Pro &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want a one-click way to do most of what this post covers — junk cleaner, startup manager, RAM trim, real-time CPU/GPU monitoring — Optimizer Pro is the free Windows tool I built for it.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-optimizer-pro.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~23 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="life-dashboard-vs-notion-vs-obsidian-2026.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Life Dashboard vs Notion vs Obsidian (2026) — Honest Comparison</div></a>
+        <a href="life-dashboard-launch.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Life Dashboard v1.0.0 — Your All-in-One Productivity App</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -252,11 +280,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

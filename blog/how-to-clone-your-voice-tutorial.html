@@ -107,12 +107,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 26, 2026 · 6 min read · By Rai (RBS)</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#what-you-need-before-you-start" style="color:var(--accent-light);text-decoration:none;">What you need before you start</a></li><li style=""><a href="#step-1-download-amp-install-1-minute" style="color:var(--accent-light);text-decoration:none;">Step 1 — Download &amp; install (1 minute)</a></li><li style=""><a href="#step-2-first-launch-amp-model-download-2-3-minutes" style="color:var(--accent-light);text-decoration:none;">Step 2 — First launch &amp; model download (2-3 minutes)</a></li><li style=""><a href="#step-3-record-your-voice-sample-1-minute" style="color:var(--accent-light);text-decoration:none;">Step 3 — Record your voice sample (1 minute)</a></li><li style=""><a href="#step-4-save-the-voice-profile-10-seconds" style="color:var(--accent-light);text-decoration:none;">Step 4 — Save the voice profile (10 seconds)</a></li><li style=""><a href="#step-5-generate-speech-30-seconds" style="color:var(--accent-light);text-decoration:none;">Step 5 — Generate speech (30 seconds)</a></li><li style=""><a href="#optional-polish-the-output-with-the-built-in-eq" style="color:var(--accent-light);text-decoration:none;">Optional — Polish the output with the built-in EQ</a></li><li style=""><a href="#troubleshooting" style="color:var(--accent-light);text-decoration:none;">Troubleshooting</a></li><li style=""><a href="#important-only-clone-voices-you-have-permission-to-clone" style="color:var(--accent-light);text-decoration:none;">Important: only clone voices you have permission to clone</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#get-rbs-voice-cloner-v2-free" style="color:var(--accent-light);text-decoration:none;">Get RBS Voice Cloner V2 — Free</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li></ul>
+        </nav>
+
+
 
         <p>Cloning your own voice used to be a research project — install Python, install PyTorch with the right CUDA version, debug "DLL not found" errors, write Python code, hope it works. In 2026 it's a 5-minute install on Windows, fully free, fully offline. This is the simplest possible walkthrough.</p>
 
         <p>You'll end up with a saved <strong>voice profile</strong> of your own voice that can read any text in 17 languages.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What you need before you start</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-you-need-before-you-start">What you need before you start</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Windows 10 or Windows 11 (64-bit).</li>
           <li>~5 GB free disk space (for the app + the XTTS v2 model).</li>
@@ -121,15 +127,15 @@
           <li><em>Optional but recommended:</em> any NVIDIA RTX GPU. Generation runs 5–10× faster on CUDA. CPU-only works fine if you don't have one.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Step 1 — Download &amp; install (1 minute)</h2>
-        <p>Grab <a href="../software/detail.html?id=rbs-voice-cloner-v2" style="color:var(--accent-light);">RBS Voice Cloner V2</a> from the website. It's a ~2 GB ZIP because it bundles PyTorch + CUDA 12.8 runtime so you don't have to install Python. Extract, run the installer, click through.</p>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="step-1-download-amp-install-1-minute">Step 1 — Download &amp; install (1 minute)</h2>
+        <p>Grab <a href="../software/rbs-voice-cloner-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V2</a> from the website. It's a ~2 GB ZIP because it bundles PyTorch + CUDA 12.8 runtime so you don't have to install Python. Extract, run the installer, click through.</p>
         <p><strong>Verify the download is unmodified:</strong> the download page shows a <code>SHA-256</code> hash. After downloading, open PowerShell and run <code>Get-FileHash &lt;path-to-zip&gt; -Algorithm SHA256</code>. The two strings should match. There's also a VirusTotal link on the page so you can see independent malware-scan results.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Step 2 — First launch &amp; model download (2-3 minutes)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="step-2-first-launch-amp-model-download-2-3-minutes">Step 2 — First launch &amp; model download (2-3 minutes)</h2>
         <p>Open the app. The first time you launch it, it downloads the XTTS v2 model (~2 GB) from Hugging Face. This is a one-time download — after this, no internet is required.</p>
         <p>While you wait, press <strong>Ctrl+D</strong> to open the Diagnose page. It shows whether the app sees your GPU and whether CUDA is wired up. If you have an NVIDIA RTX card and it shows "GPU Mode", you're set for fast generation. If it shows "CPU Mode", everything still works, just a bit slower.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Step 3 — Record your voice sample (1 minute)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="step-3-record-your-voice-sample-1-minute">Step 3 — Record your voice sample (1 minute)</h2>
         <p>Go to the <strong>Clone Voice</strong> page in the left sidebar. You have two options:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Record live</strong> — click "Record Mic" and speak naturally for 25–30 seconds. Read a paragraph from a book or news article. Don't whisper. Don't shout. Aim for a normal speaking voice.</li>
@@ -143,14 +149,14 @@
           <li>Vary the sentences a little — questions, statements, a long word or two — so the model captures your range.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Step 4 — Save the voice profile (10 seconds)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="step-4-save-the-voice-profile-10-seconds">Step 4 — Save the voice profile (10 seconds)</h2>
         <p>Give the profile a name (e.g. "My voice"), pick the primary language (e.g. English), and click <strong>Save Voice Profile</strong>. The clone is computed locally on your PC. The profile is now in your "My voices" list and can be reused as many times as you want.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Step 5 — Generate speech (30 seconds)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="step-5-generate-speech-30-seconds">Step 5 — Generate speech (30 seconds)</h2>
         <p>Switch to the <strong>Text to Speech</strong> page in the sidebar. Pick your saved voice from the dropdown. Type or paste any text. Click <strong>Generate</strong>.</p>
         <p>On an RTX 3060 you'll get audio in 2–3 seconds per sentence. On CPU-only, expect 10–20 seconds per sentence. The result appears in the audio player below — you can play it, edit it in the built-in editor, apply EQ, or save it as WAV/MP3.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Optional — Polish the output with the built-in EQ</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="optional-polish-the-output-with-the-built-in-eq">Optional — Polish the output with the built-in EQ</h2>
         <p>Generated voice sometimes sounds slightly "thin" or a bit harsh. Open the <strong>Audio Editor</strong> and switch to the Equaliser tab. Pick a preset:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Natural</strong> — flat, default. Try first.</li>
@@ -161,23 +167,23 @@
         </ul>
         <p>Full breakdown of each band is in the <a href="rbs-ai-voice-studio-v2-eq-guide.html" style="color:var(--accent-light);">7-band EQ guide</a>.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Troubleshooting</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="troubleshooting">Troubleshooting</h2>
         <p><strong>"It says CPU mode but I have an RTX card."</strong> Update your NVIDIA driver to a current version (572.x or newer for CUDA 12.8 / 13.x). Restart the app. If it still shows CPU mode, open the Diagnose page (Ctrl+D) and check the per-package report — it'll tell you exactly what's missing.</p>
         <p><strong>"The cloned voice doesn't sound like me."</strong> Re-record with less background noise and a more varied 25–30 second sample. Whispered or low-volume samples produce muddy clones.</p>
         <p><strong>"Generation is very slow."</strong> Check Diagnose page for GPU mode. If you're on CPU, expect 10–20 seconds per sentence — that's normal. Either upgrade your GPU or use shorter text chunks.</p>
         <p><strong>"The app won't start."</strong> The first launch downloads ~2 GB. If your internet dropped mid-download, the model files will be incomplete. Delete <code>%LOCALAPPDATA%\RBS Voice Cloner V2\models\</code> and relaunch — the app will re-download cleanly.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Important: only clone voices you have permission to clone</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="important-only-clone-voices-you-have-permission-to-clone">Important: only clone voices you have permission to clone</h2>
         <p>Voice cloning is powerful. Free voice cloning is more powerful still. Your own voice is fair game. Public-domain recordings are usually fine. Cloning a real person's voice <em>without their consent</em> for misleading content is illegal in many jurisdictions and unethical everywhere. The app doesn't enforce this for you — you're responsible for what you make.</p>
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">🎙️</div>
-          <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Get RBS Voice Cloner V2 — Free</h3>
+          <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;" id="get-rbs-voice-cloner-v2-free">Get RBS Voice Cloner V2 — Free</h3>
           <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:20px;">~2.0 GB · Windows 10/11 · 100% offline · Unlimited generation, no subscription.</p>
-          <a href="../software/detail.html?id=rbs-voice-cloner-v2" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-voice-cloner-v2.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="free-elevenlabs-alternative-2026.html" style="color:var(--accent-light);">Free ElevenLabs alternative — 4 free voice cloning tools (2026)</a></li>
           <li><a href="rbs-voice-cloner-v1-vs-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V1 vs V2 — which to download</a></li>
@@ -186,6 +192,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;overflow:hidden;flex-shrink:0;background:#0a1628;"><img src="../assets/images/software/rbs-voice-cloner-v2-icon.png" alt="RBS Voice Cloner V2 logo" style="width:100%;height:100%;object-fit:contain;display:block;" /></div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Voice Cloner V2 &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">16 built-in voices plus unlimited custom clones from a 30-second sample, 17 languages with auto-translate, 7-band EQ tuned for voice. Runs locally, no monthly cap, no cloud.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBS-RareBuildSoftware-V2/releases/download/VoiceCloner/RBSVoiceCloner_Setup.V2.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-voice-cloner-v2.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~2.0 GB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="free-elevenlabs-alternative-2026.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Free ElevenLabs Alternative — 4 Free Voice Cloning Tools (2026)</div></a>
+        <a href="free-habit-tracker-windows-desktop.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Best Free Habit Tracker for Windows Desktop (Offline, No Subscription) — 2026</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -211,11 +239,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

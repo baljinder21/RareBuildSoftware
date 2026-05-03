@@ -97,12 +97,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 8, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#why-patch-the-dll-is-a-bad-idea-in-2026" style="color:var(--accent-light);text-decoration:none;">Why "patch the DLL" is a bad idea in 2026</a></li><li style=""><a href="#what-the-right-way-actually-changes" style="color:var(--accent-light);text-decoration:none;">What "the right way" actually changes</a></li><li style=""><a href="#free-options-compared" style="color:var(--accent-light);text-decoration:none;">Free options compared</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#1-manual-registry-edits-ico-files" style="color:var(--accent-light);text-decoration:none;">1. Manual registry edits + .ico files</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#2-customizergod-7tsp-older-deprecated" style="color:var(--accent-light);text-decoration:none;">2. CustomizerGod / 7TSP (older, deprecated)</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#3-rbs-pc-cleaner-9-free-theme-packs" style="color:var(--accent-light);text-decoration:none;">3. RBS PC Cleaner — 9 free theme packs</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#4-wallpaper-engine-steam-399-accent-color-manually" style="color:var(--accent-light);text-decoration:none;">4. Wallpaper Engine (Steam, $3.99) + accent color manually</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#5-stardock-iconpackager-itself-paid-comparison" style="color:var(--accent-light);text-decoration:none;">5. Stardock IconPackager itself (paid, comparison)</a></li><li style=""><a href="#side-by-side" style="color:var(--accent-light);text-decoration:none;">Side-by-side</a></li><li style=""><a href="#what-id-actually-pick" style="color:var(--accent-light);text-decoration:none;">What I'd actually pick</a></li><li style=""><a href="#a-note-on-themes-from-sketchy-sites" style="color:var(--accent-light);text-decoration:none;">A note on themes from sketchy sites</a></li><li style=""><a href="#related" style="color:var(--accent-light);text-decoration:none;">Related</a></li></ul>
+        </nav>
+
+
 
         <p>Stardock IconPackager has been the gold standard for Windows icon customization since approximately forever. It's a real product, made by a real company, with a deep ecosystem of community icon packs. It's also $29.99, and bundled with WindowBlinds in their Object Desktop suite which runs over $50.</p>
 
         <p>If you want to change Windows 11 folder icons, drive icons, file-type glyphs and the Recycle Bin into something more personal, here's how to do it without paying — and without using the older "patch <code>imageres.dll</code> directly" trick that breaks on every Windows Update.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why "patch the DLL" is a bad idea in 2026</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="why-patch-the-dll-is-a-bad-idea-in-2026">Why "patch the DLL" is a bad idea in 2026</h2>
 
         <p>If you've Googled "change Windows 11 icons" you've probably hit Reddit threads recommending tools that modify <code>%SystemRoot%\System32\imageres.dll</code> directly. These tools work for about a week — until Windows Update runs and replaces the patched DLL. Then your icons revert. Then you patch again. Then SFC (System File Checker) flags the patched files as corrupted.</p>
 
@@ -110,7 +116,7 @@
 
         <p>The right way to change icons in 2026 is to use the registry overrides that Windows itself supports. They survive updates because Windows treats them as user customization, not corruption.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What "the right way" actually changes</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-the-right-way-actually-changes">What "the right way" actually changes</h2>
 
         <p>Registry-based overrides can change:</p>
 
@@ -126,19 +132,19 @@
 
         <p>What it can't change (without patching system files): the Start button glyph itself, the system tray clock/Wi-Fi/battery icons, and Microsoft Store app icons (Notepad, Photos, Media Player). Stardock doesn't change those either, despite some marketing implying otherwise. Anything that claims to is either patching DLLs (bad) or showing you a preview that won't actually persist.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Free options compared</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="free-options-compared">Free options compared</h2>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">1. Manual registry edits + .ico files</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="1-manual-registry-edits-ico-files">1. Manual registry edits + .ico files</h3>
 
         <p>The DIY route. Find a .ico file you like, navigate to the right registry key (different for folders vs drives vs file types), set the icon path, refresh Explorer. Works, but doing 30+ icon overrides by hand is not most people's idea of fun. Useful to know about for one or two specific overrides.</p>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">2. CustomizerGod / 7TSP (older, deprecated)</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="2-customizergod-7tsp-older-deprecated">2. CustomizerGod / 7TSP (older, deprecated)</h3>
 
         <p>These were the go-to free icon changers in the Windows 7 / 8 era. Both work by patching system DLLs. Both will cause the problems described above on modern Windows 11. I'm including them so you know to <em>avoid</em> them in 2026 — there are still tutorials out there that recommend these.</p>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">3. RBS PC Cleaner — 9 free theme packs</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="3-rbs-pc-cleaner-9-free-theme-packs">3. RBS PC Cleaner — 9 free theme packs</h3>
 
-        <p>Disclosure: I built this. <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> ships with a Themes page that bundles 9 ready-made theme packs. Each pack includes matching icons, a 2560×1440 wallpaper, the right accent colour, and the right dark/light mode setting:</p>
+        <p>Disclosure: I built this. <a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a> ships with a Themes page that bundles 9 ready-made theme packs. Each pack includes matching icons, a 2560×1440 wallpaper, the right accent colour, and the right dark/light mode setting:</p>
 
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Windows Default — one-click revert</li>
@@ -156,15 +162,15 @@
 
         <p>Limit: you get 9 themes, not the hundreds Stardock has. If you want to download community-made themes from DeviantArt and apply those, RBS PC Cleaner doesn't support that — Stardock does.</p>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">4. Wallpaper Engine (Steam, $3.99) + accent color manually</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="4-wallpaper-engine-steam-399-accent-color-manually">4. Wallpaper Engine (Steam, $3.99) + accent color manually</h3>
 
         <p>Not strictly an icon changer, but if your goal is mainly "make my desktop look cool", Wallpaper Engine is $3.99 once and gives you animated wallpapers + a massive Steam Workshop. Pair with manual accent color from Settings → Personalization → Colors. You won't get custom icons, but you'll get a much more dramatic visual change than icons alone provide.</p>
 
-        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);">5. Stardock IconPackager itself (paid, comparison)</h3>
+        <h3 style="font-size:1.2rem;font-weight:700;margin:24px 0 12px;color:var(--text-primary);" id="5-stardock-iconpackager-itself-paid-comparison">5. Stardock IconPackager itself (paid, comparison)</h3>
 
         <p>For completeness: $29.99 standalone, or $9.99/month as part of Object Desktop. The actual product is well-made. The community icon-pack ecosystem is decades deep. If you want unlimited theme variety and you're willing to pay, this is the one.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Side-by-side</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="side-by-side">Side-by-side</h2>
 
         <div style="overflow-x:auto;margin:20px 0;">
           <table style="width:100%;border-collapse:collapse;font-size:.92rem;">
@@ -187,7 +193,7 @@
           </table>
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What I'd actually pick</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-id-actually-pick">What I'd actually pick</h2>
 
         <p><strong>Casual user, want a fresh look, don't want to spend money:</strong> RBS PC Cleaner's bundled 9 themes are honestly enough for most people. Apply Forest or Ocean and you've got a noticeably different desktop in 30 seconds.</p>
 
@@ -197,13 +203,13 @@
 
         <p><strong>Just want one or two specific icons changed (not a whole theme):</strong> Manual registry edits with custom .ico files. Tedious for many overrides, totally fine for one or two.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">A note on themes from sketchy sites</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="a-note-on-themes-from-sketchy-sites">A note on themes from sketchy sites</h2>
 
         <p>If you go searching DeviantArt, GitHub, or random "Windows themes" sites for icon packs, be cautious about anything that bundles an EXE installer instead of just .ico files. Some "free" themes around the web are actually adware/malware delivery mechanisms hiding behind a custom icon pack. Pure .ico files are safe. EXE installers from random sites are not.</p>
 
         <p>The 9 RBS PC Cleaner themes ship inside the main app installer — same SHA-256 / VirusTotal verification as the app itself. No separate downloads needed.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related">Related</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="customize-windows-11-icons-themes.html" style="color:var(--accent-light);">Customize Windows 11 icons &amp; themes — full guide</a></li>
           <li><a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner — full feature list</a></li>
@@ -211,6 +217,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🧹</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS PC Cleaner &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want to actually run the cleanup steps in this post safely — every action is reversible, rated Safe / Caution / Risky before you click, and the registry is never touched.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~61 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="remove-asus-bloatware-windows-11.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">How to Remove Asus Bloatware from Windows 11 (2026 Guide)</div></a>
+        <a href="remove-dell-bloatware-windows-11.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">How to Remove Dell Bloatware from Windows 11</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -236,11 +264,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

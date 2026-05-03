@@ -97,17 +97,23 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#why-windows-11s-storage-settings-is-misleading" style="color:var(--accent-light);text-decoration:none;">Why Windows 11's Storage settings is misleading</a></li><li style=""><a href="#what-a-disk-analyzer-should-do" style="color:var(--accent-light);text-decoration:none;">What a disk analyzer should do</a></li><li style=""><a href="#rbs-pc-cleaner-disk-analyzer" style="color:var(--accent-light);text-decoration:none;">RBS PC Cleaner Disk Analyzer</a></li><li style=""><a href="#common-space-hogs-youll-find" style="color:var(--accent-light);text-decoration:none;">Common space hogs you'll find</a></li><li style=""><a href="#alternative-tools" style="color:var(--accent-light);text-decoration:none;">Alternative tools</a></li><li style=""><a href="#a-30-minute-disk-cleanup-workflow" style="color:var(--accent-light);text-decoration:none;">A 30-minute disk cleanup workflow</a></li><li style=""><a href="#tip-combine-with-duplicate-finder" style="color:var(--accent-light);text-decoration:none;">Tip: combine with Duplicate Finder</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#free-read-only-disk-analyzer" style="color:var(--accent-light);text-decoration:none;">Free Read-Only Disk Analyzer</a></li></ul>
+        </nav>
+
+
 
         <p>Your C: drive says "400 GB used of 500 GB" and Windows 11's built-in Storage settings only gives you vague categories like "Apps &amp; features" and "Other". You need to <em>see</em> which folders are hogging gigabytes. That's what a disk space analyzer does.</p>
 
-        <p>This guide compares your options, explains why the built-in Storage page is so unhelpful, and walks through a 30-minute end-to-end disk cleanup workflow using the read-only analyzer in <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a>.</p>
+        <p>This guide compares your options, explains why the built-in Storage page is so unhelpful, and walks through a 30-minute end-to-end disk cleanup workflow using the read-only analyzer in <a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a>.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why Windows 11's Storage settings is misleading</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="why-windows-11s-storage-settings-is-misleading">Why Windows 11's Storage settings is misleading</h2>
         <p>Settings &gt; System &gt; Storage looks like it answers the question "what's using my disk space", but it doesn't really. It groups files into broad categories — Apps &amp; features, System &amp; reserved, Documents, Pictures, Music, Videos, Mail, OneDrive, Desktop, Maps, Other Users, Temporary files, Other. That last bucket — "Other" — is often the biggest, and Windows tells you nothing about what's in it.</p>
         <p>The categorisation is also misleading. A 30 GB Steam game shows up under "Apps &amp; features" but the actual game files are inside <code>C:\Program Files (x86)\Steam\steamapps\common\</code> — Settings doesn't tell you that. A 5 GB Discord cache shows up under "Other" because Discord's data is in <code>%APPDATA%</code>.</p>
         <p>You need a real folder-by-folder view, not a category summary. That's where a disk analyzer comes in.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What a disk analyzer should do</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-a-disk-analyzer-should-do">What a disk analyzer should do</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Show folder sizes sorted biggest-first.</li>
           <li>Let you drill down with one click into any folder.</li>
@@ -116,8 +122,8 @@
           <li>Not upload your folder tree to a cloud service (some sketchy tools do).</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">RBS PC Cleaner Disk Analyzer</h2>
-        <p>The Disk Analyzer page in <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a>:</p>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="rbs-pc-cleaner-disk-analyzer">RBS PC Cleaner Disk Analyzer</h2>
+        <p>The Disk Analyzer page in <a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a>:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Pick any folder (or a whole drive) and click Scan.</li>
           <li>Shows folder tree sorted by size, biggest at top.</li>
@@ -131,7 +137,7 @@
           <strong style="color:var(--accent-light);">Design choice:</strong> analyzing and cleaning are separated on purpose. You see what's there, then decide what to do with it. No one-click "Clean 50 GB" button that deletes who-knows-what.
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Common space hogs you'll find</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="common-space-hogs-youll-find">Common space hogs you'll find</h2>
         <p>Across 1000+ scans we've informally run:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>C:\Users\&lt;you&gt;\AppData</strong> — usually 20–60 GB of app data, cache, logs. Look inside for Electron apps (Teams, Discord, Slack).</li>
@@ -143,10 +149,10 @@
           <li><strong>C:\pagefile.sys</strong> — virtual memory. Windows manages this; don't delete.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Alternative tools</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="alternative-tools">Alternative tools</h2>
         <p>WizTree and WinDirStat are both excellent standalone disk analyzers and free. <a href="rbs-pc-cleaner-launch.html" style="color:var(--accent-light);">RBS PC Cleaner</a>'s analyzer isn't trying to replace them — it's there so you have a <em>built-in</em> way to see where your space went without installing a second tool. If you want deep reporting, professional MFT-level speed, or treemap visualizations, use WizTree. For everyday "where did my 100 GB go?", the built-in analyzer is plenty.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">A 30-minute disk cleanup workflow</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="a-30-minute-disk-cleanup-workflow">A 30-minute disk cleanup workflow</h2>
         <p>Here's the order I'd actually do this in if my drive was full and I had half an hour:</p>
         <ol style="padding-left:24px;margin:16px 0;">
           <li><strong>Run the analyzer on C:\.</strong> Five minutes scan time on a 500 GB drive. Note the top 5 biggest folders.</li>
@@ -158,10 +164,10 @@
         </ol>
         <p>On a typical "full" laptop, this workflow reclaims 30-80 GB and takes about half an hour with most of it being scan time you can ignore.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Tip: combine with Duplicate Finder</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="tip-combine-with-duplicate-finder">Tip: combine with Duplicate Finder</h2>
         <p>Once the analyzer shows you that Downloads is 25 GB, run <a href="find-duplicate-files-windows-free.html" style="color:var(--accent-light);">Duplicate Finder</a> on that folder. Often 30–60% of that 25 GB is duplicates you don't need.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="find-duplicate-files-windows-free.html" style="color:var(--accent-light);">How to Find and Delete Duplicate Files on Windows</a> — the fastest way to trim big folders.</li>
           <li><a href="bulk-uninstall-programs-windows.html" style="color:var(--accent-light);">Uninstall Multiple Programs at Once on Windows</a> — big apps are often the bigger wins.</li>
@@ -172,12 +178,34 @@
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">📊</div>
-          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Free Read-Only Disk Analyzer</h3>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="free-read-only-disk-analyzer">Free Read-Only Disk Analyzer</h3>
           <p style="color:var(--text-muted);margin-bottom:20px;">Part of RBS PC Cleaner · No admin · No cloud upload</p>
-          <a href="../software/detail.html?id=rbs-pc-cleaner" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🧹</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS PC Cleaner &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want to actually run the cleanup steps in this post safely — every action is reversible, rated Safe / Caution / Risky before you click, and the registry is never touched.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~61 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="clear-discord-teams-spotify-cache-windows.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Clear Discord, Teams, Spotify &amp; VS Code Cache on Windows</div></a>
+        <a href="life-dashboard-vs-notion-vs-obsidian-2026.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Life Dashboard vs Notion vs Obsidian (2026) — Honest Comparison</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -203,11 +231,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

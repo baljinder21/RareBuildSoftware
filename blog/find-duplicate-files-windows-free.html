@@ -97,12 +97,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 7 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#why-filename-matching-isnt-enough" style="color:var(--accent-light);text-decoration:none;">Why filename matching isn't enough</a></li><li style=""><a href="#what-to-scan" style="color:var(--accent-light);text-decoration:none;">What to scan</a></li><li style=""><a href="#what-not-to-scan" style="color:var(--accent-light);text-decoration:none;">What NOT to scan</a></li><li style=""><a href="#the-built-in-option-powershell-advanced" style="color:var(--accent-light);text-decoration:none;">The built-in option (PowerShell, advanced)</a></li><li style=""><a href="#the-fast-safe-way-rbs-pc-cleaner-duplicate-finder" style="color:var(--accent-light);text-decoration:none;">The fast, safe way: RBS PC Cleaner Duplicate Finder</a></li><li style=""><a href="#reclaim-expectations" style="color:var(--accent-light);text-decoration:none;">Reclaim expectations</a></li><li style=""><a href="#photo-libraries-what-to-watch-out-for" style="color:var(--accent-light);text-decoration:none;">Photo libraries — what to watch out for</a></li><li style=""><a href="#what-about-visually-similar-but-not-identical-photos" style="color:var(--accent-light);text-decoration:none;">"What about visually similar but not identical photos?"</a></li><li style=""><a href="#could-two-different-files-have-the-same-hash" style="color:var(--accent-light);text-decoration:none;">"Could two different files have the same hash?"</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#free-hash-based-duplicate-finder" style="color:var(--accent-light);text-decoration:none;">Free Hash-Based Duplicate Finder</a></li></ul>
+        </nav>
+
+
 
         <p>Duplicate files are the easiest storage win on a Windows PC. You probably have three copies of that holiday photo album, the installer for every app you've ever downloaded, and a dozen "Untitled (1)", "Untitled (2)" screenshots in Downloads. This guide shows you how to find them and safely delete the extras — for free, without risking system files.</p>
 
         <p>Quick warning before we start. "Duplicate finder" is exactly the kind of utility that goes wrong if it's too aggressive — Windows uses hard links and shared system files in ways that look like duplicates but aren't. The safe approach is to scan the folders <em>you</em> own (Pictures, Downloads, Documents, etc.) and stay out of the system folders.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Why filename matching isn't enough</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="why-filename-matching-isnt-enough">Why filename matching isn't enough</h2>
         <p>Plenty of free tools match by filename only. That's almost useless — <code>IMG_2034.jpg</code> might be two totally different photos if your camera resets counters, and two copies of the same song may have wildly different filenames.</p>
         <p>The reliable approach is <strong>hash-based comparison</strong>: the file's contents are hashed (usually SHA-256 or xxHash) and two files are duplicates only if their hashes match. That way you find true byte-for-byte duplicates, not similarly-named files.</p>
 
@@ -110,7 +116,7 @@
           <strong style="color:var(--accent-light);">Speed tip:</strong> smart scanners hash only files that match sizes first — hashing every file is slow, but hashing only same-size groups is fast.
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What to scan</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-to-scan">What to scan</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Downloads folder</strong> — jackpot. Installers, ZIP files, PDFs.</li>
           <li><strong>Pictures / Photos library</strong> — backups of backups of backups.</li>
@@ -119,7 +125,7 @@
           <li><strong>Documents</strong> — report drafts, invoice copies, version chaos.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What NOT to scan</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-not-to-scan">What NOT to scan</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong><code>C:\Windows</code></strong> — Windows hard-links a lot of files intentionally.</li>
           <li><strong><code>Program Files</code> / <code>Program Files (x86)</code></strong> — app DLLs and assets, same story.</li>
@@ -128,11 +134,11 @@
           <li><strong>WinSxS, DriverStore, CatRoot</strong> — deleting duplicates here breaks Windows Update.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The built-in option (PowerShell, advanced)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-built-in-option-powershell-advanced">The built-in option (PowerShell, advanced)</h2>
         <p>If you prefer command-line: <code>Get-ChildItem -Recurse | Get-FileHash | Group-Object Hash | Where-Object Count -gt 1</code>. It works but you then have to review each group manually and delete by hand. Fine for ten files — exhausting for ten thousand.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The fast, safe way: RBS PC Cleaner Duplicate Finder</h2>
-        <p><a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> has a dedicated <strong>Duplicate Finder</strong> page:</p>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-fast-safe-way-rbs-pc-cleaner-duplicate-finder">The fast, safe way: RBS PC Cleaner Duplicate Finder</h2>
+        <p><a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a> has a dedicated <strong>Duplicate Finder</strong> page:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Hash-based (true byte-for-byte), with optional same-extension or same-filename filters.</li>
           <li><strong>Always keeps the oldest file</strong> and marks newer copies for deletion — so your original stays, newer re-copies go.</li>
@@ -143,10 +149,10 @@
         </ul>
         <p>Free. No subscription. No account.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Reclaim expectations</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="reclaim-expectations">Reclaim expectations</h2>
         <p>A typical 500 GB-used drive scanned by Duplicate Finder reclaims anywhere from 2 GB to 40 GB depending on how much you've downloaded. Photo libraries migrated across phones are often the single biggest source — every time you change phones, the new device wants to "back up" your old photos and you end up with two or three copies of every shot.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Photo libraries — what to watch out for</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="photo-libraries-what-to-watch-out-for">Photo libraries — what to watch out for</h2>
         <p>Photos are where most people see the biggest gains, but also where it's easiest to delete something you wanted. A few specific things:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>EXIF-stripped copies are NOT duplicates of the original.</strong> If you shared a photo via WhatsApp or Instagram and saved the result, the file size and pixel data look identical but the metadata (camera info, GPS) is gone. Hash-based comparison correctly identifies these as different files. Some "smart" duplicate tools incorrectly flag them as the same — be careful which one you use.</li>
@@ -154,13 +160,13 @@
           <li><strong>Live Photos and HEIC have multiple components.</strong> An iPhone Live Photo is a HEIC + a small MOV. If you copy the album twice, both files duplicate. The video components are easy to miss because they don't show in Photos preview.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">"What about visually similar but not identical photos?"</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-about-visually-similar-but-not-identical-photos">"What about visually similar but not identical photos?"</h2>
         <p>That's a different problem called <strong>perceptual hashing</strong> — finding photos that look the same to a human even if the pixels differ slightly. It's useful for cleaning up bursts ("I took 8 nearly-identical photos of the same sunset, keep the best") but it's also dangerous, because deciding what counts as "similar enough" is subjective. RBS PC Cleaner deliberately doesn't do perceptual hashing — for that I'd recommend a dedicated photo manager like digiKam, which has it built in and a careful UI for reviewing matches before deleting.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">"Could two different files have the same hash?"</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="could-two-different-files-have-the-same-hash">"Could two different files have the same hash?"</h2>
         <p>The technical answer: yes, in theory. SHA-256 has 2^256 possible outputs, which is more than the number of atoms in the observable universe. The probability of two random files producing the same hash is about 1 in 10^77. To put that in context, you're more likely to win the lottery while being struck by lightning during a meteor strike. Don't worry about it.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="free-disk-space-analyzer-windows.html" style="color:var(--accent-light);">Free Disk Space Analyzer for Windows</a> — find the folders with the most duplicates first.</li>
           <li><a href="how-to-clean-windows-11-without-breaking-it.html" style="color:var(--accent-light);">How to Clean Windows 11 Without Breaking It</a> — safe cleanup across the whole system.</li>
@@ -170,12 +176,34 @@
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">🔍</div>
-          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Free Hash-Based Duplicate Finder</h3>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="free-hash-based-duplicate-finder">Free Hash-Based Duplicate Finder</h3>
           <p style="color:var(--text-muted);margin-bottom:20px;">Part of RBS PC Cleaner · Windows 10/11</p>
-          <a href="../software/detail.html?id=rbs-pc-cleaner" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🧹</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS PC Cleaner &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want to actually run the cleanup steps in this post safely — every action is reversible, rated Safe / Caution / Risky before you click, and the registry is never touched.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~61 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="free-browser-cache-cleaner-windows.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Free Browser Cache Cleaner — Chrome, Edge, Firefox, Brave, Opera</div></a>
+        <a href="best-free-startup-manager-windows-11.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Best Free Startup Manager for Windows 11 (2026)</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -201,11 +229,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

@@ -97,12 +97,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 19, 2026 · 8 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#whats-safe-to-delete-on-windows-11" style="color:var(--accent-light);text-decoration:none;">What's safe to delete on Windows 11</a></li><li style=""><a href="#what-you-should-never-delete" style="color:var(--accent-light);text-decoration:none;">What you should NEVER delete</a></li><li style=""><a href="#the-5-minute-safe-cleanup-built-in-windows-tools" style="color:var(--accent-light);text-decoration:none;">The 5-minute safe cleanup (built-in Windows tools)</a></li><li style=""><a href="#the-faster-way-free-and-reversible" style="color:var(--accent-light);text-decoration:none;">The faster way — free and reversible</a></li><li style=""><a href="#microsofts-own-tools-are-pretty-good-use-them-first" style="color:var(--accent-light);text-decoration:none;">Microsoft's own tools are pretty good — use them first</a></li><li style=""><a href="#what-about-pc-health-scores" style="color:var(--accent-light);text-decoration:none;">What about "PC Health" scores?</a></li><li style=""><a href="#summary-checklist" style="color:var(--accent-light);text-decoration:none;">Summary checklist</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#clean-windows-11-safely-free-tool" style="color:var(--accent-light);text-decoration:none;">Clean Windows 11 Safely — Free Tool</a></li></ul>
+        </nav>
+
+
 
         <p>Your Windows 11 PC is slowing down, your disk is nearly full, and every "free PC cleaner" on Google wants your credit card before it'll actually clean anything. Worse, half of them delete things that matter — startup entries, browser cookies you rely on, or shader caches that games need to re-compile from scratch.</p>
 
-        <p>This guide walks you through <strong>what's safe to clean on Windows 11, what to leave alone, and how to do it reversibly</strong> using built-in tools and a free app — <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> — that rates every action before you run it.</p>
+        <p>This guide walks you through <strong>what's safe to clean on Windows 11, what to leave alone, and how to do it reversibly</strong> using built-in tools and a free app — <a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a> — that rates every action before you run it.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What's safe to delete on Windows 11</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="whats-safe-to-delete-on-windows-11">What's safe to delete on Windows 11</h2>
         <p>These are always safe, and usually reclaim the most space:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Temp files</strong> — <code>%TEMP%</code> and <code>C:\Windows\Temp</code>. Anything in use is locked and skipped automatically.</li>
@@ -113,7 +119,7 @@
           <li><strong><a href="clear-discord-teams-spotify-cache-windows.html" style="color:var(--accent-light);">App caches</a></strong> for Discord, Microsoft Teams, Spotify, VS Code — these are throwaway scratch data.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What you should NEVER delete</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-you-should-never-delete">What you should NEVER delete</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>C:\Windows\WinSxS</strong> — this looks huge but is mostly hardlinks. Deleting breaks Windows updates.</li>
           <li><strong>C:\Windows\System32</strong> — obvious, but registry cleaners occasionally touch sub-folders.</li>
@@ -128,7 +134,7 @@
           <strong style="color:var(--accent-light);">Rule of thumb:</strong> if a cleaner tool says it will "fix N thousand registry errors", close it. That's marketing, not maintenance.
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The 5-minute safe cleanup (built-in Windows tools)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-5-minute-safe-cleanup-built-in-windows-tools">The 5-minute safe cleanup (built-in Windows tools)</h2>
         <ol style="padding-left:24px;margin:16px 0;">
           <li><strong>Storage Sense</strong> — Settings → System → Storage → Storage Sense. Flip it on; Windows will auto-delete temp + old recycle-bin items.</li>
           <li><strong>Disk Cleanup as admin</strong> — Start → type <code>cleanmgr</code>. Click "Clean up system files", tick Windows Update files, delivery optimization files, thumbnails.</li>
@@ -137,7 +143,7 @@
           <li><strong>Restart.</strong> Many locked files only release on boot.</li>
         </ol>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The faster way — free and reversible</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-faster-way-free-and-reversible">The faster way — free and reversible</h2>
         <p>Rather than clicking through five different Settings screens every month, you can use <strong>RBS PC Cleaner</strong>. It does all of the above, plus:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>Rates every cleanup target as <em>Safe</em>, <em>Caution</em>, or <em>Risky</em> so you know what you're clicking.</li>
@@ -149,14 +155,14 @@
         </ul>
         <p>It's 100% free, open-download from GitHub, no account, no subscription.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Microsoft's own tools are pretty good — use them first</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="microsofts-own-tools-are-pretty-good-use-them-first">Microsoft's own tools are pretty good — use them first</h2>
         <p>If you only want one thing to do, this is it: turn on Storage Sense (Settings → System → Storage → Storage Sense → On) and let Windows handle the basic cleanup automatically every week. It deletes what it should and leaves alone what it shouldn't. For most casual users this is enough on its own.</p>
         <p>Add the cleanup tools above (or RBS PC Cleaner) only when Storage Sense isn't keeping up — usually because you've got a lot of Electron-app cache, big duplicate photo libraries, or downloaded installers piling up. Those are the things Storage Sense doesn't touch.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What about "PC Health" scores?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-about-pc-health-scores">What about "PC Health" scores?</h2>
         <p>Most cleaners assign your PC a number out of 100. These scores are almost entirely fictional — they weight "registry issues" heavily to make the score drop so you'll click Clean. A real system-status view should show you actual numbers: CPU load, free RAM, disk free, uptime, temperature. Not a made-up grade.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Summary checklist</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="summary-checklist">Summary checklist</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>✅ Clean temp, cache, recycle bin, old Windows Update files, thumbnails.</li>
           <li>✅ Clear browser cache (leave saved passwords alone).</li>
@@ -167,7 +173,7 @@
           <li>❌ Don't trust "Health Score — 42/100" marketing.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="free-browser-cache-cleaner-windows.html" style="color:var(--accent-light);">Free Browser Cache Cleaner — Chrome, Edge, Firefox, Brave, Opera</a> — clear all five browsers in one click.</li>
           <li><a href="clear-discord-teams-spotify-cache-windows.html" style="color:var(--accent-light);">Clear Discord, Teams, Spotify &amp; VS Code Cache on Windows</a> — typically 5–15 GB hiding in Electron apps.</li>
@@ -178,12 +184,34 @@
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">🧹</div>
-          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;">Clean Windows 11 Safely — Free Tool</h3>
+          <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="clean-windows-11-safely-free-tool">Clean Windows 11 Safely — Free Tool</h3>
           <p style="color:var(--text-muted);margin-bottom:20px;">Windows 10/11 · ~61 MB · Every action rated · No registry</p>
-          <a href="../software/detail.html?id=rbs-pc-cleaner" class="btn btn-primary">⬇ Download RBS PC Cleaner</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-primary">⬇ Download RBS PC Cleaner</a>
         </div>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🧹</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS PC Cleaner &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want to actually run the cleanup steps in this post safely — every action is reversible, rated Safe / Caution / Risky before you click, and the registry is never touched.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-pc-cleaner.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~61 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="rbs-pc-cleaner-launch.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">RBS PC Cleaner v1.0.0 — Free Honest Windows Cleaner (No Registry)</div></a>
+        <a href="free-browser-cache-cleaner-windows.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Free Browser Cache Cleaner — Chrome, Edge, Firefox, Brave, Opera</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -209,11 +237,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

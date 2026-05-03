@@ -97,6 +97,12 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 26, 2026 · 10 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#quick-verdict-before-the-detail" style="color:var(--accent-light);text-decoration:none;">Quick verdict before the detail</a></li><li style=""><a href="#f5-tts" style="color:var(--accent-light);text-decoration:none;">F5-TTS</a></li><li style=""><a href="#xtts-v2-via-rbs-voice-cloner-v2" style="color:var(--accent-light);text-decoration:none;">XTTS v2 (via RBS Voice Cloner V2)</a></li><li style=""><a href="#indextts-2" style="color:var(--accent-light);text-decoration:none;">IndexTTS-2</a></li><li style=""><a href="#chatterbox" style="color:var(--accent-light);text-decoration:none;">Chatterbox</a></li><li style=""><a href="#fish-speech-v15" style="color:var(--accent-light);text-decoration:none;">Fish Speech V1.5</a></li><li style=""><a href="#cosyvoice-2" style="color:var(--accent-light);text-decoration:none;">CosyVoice 2</a></li><li style=""><a href="#side-by-side" style="color:var(--accent-light);text-decoration:none;">Side-by-side</a></li><li style=""><a href="#which-one-should-you-actually-pick" style="color:var(--accent-light);text-decoration:none;">Which one should you actually pick?</a></li><li style=""><a href="#a-note-on-benchmarks" style="color:var(--accent-light);text-decoration:none;">A note on benchmarks</a></li><li style=""><a href="#related" style="color:var(--accent-light);text-decoration:none;">Related</a></li></ul>
+        </nav>
+
+
 
         <p>Open-source voice cloning had a quiet revolution between mid-2025 and now. XTTS v2 was the only serious option for years; in the last six months four or five new models have shown up that genuinely move the state of the art forward. I spent a weekend installing all of them on the same Windows machine and putting them through the same prompts so you don't have to.</p>
 
@@ -104,18 +110,18 @@
 
         <p>The test set: a 60-second voice sample of myself, three prompts in English (a short ad read, a long narrative paragraph, and a question with rising intonation), one prompt in Spanish, one in Mandarin. Same five inputs across all six models.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Quick verdict before the detail</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="quick-verdict-before-the-detail">Quick verdict before the detail</h2>
 
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Best overall English quality:</strong> F5-TTS</li>
           <li><strong>Best Asian-language quality:</strong> IndexTTS-2 (Mandarin/Japanese), CosyVoice 2 close behind</li>
-          <li><strong>Easiest to install on Windows for a non-developer:</strong> XTTS v2 (via <a href="../software/detail.html?id=rbs-voice-cloner-v2" style="color:var(--accent-light);">RBS Voice Cloner V2</a> — disclosure, mine)</li>
+          <li><strong>Easiest to install on Windows for a non-developer:</strong> XTTS v2 (via <a href="../software/rbs-voice-cloner-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V2</a> — disclosure, mine)</li>
           <li><strong>Lowest VRAM requirement:</strong> XTTS v2 (4 GB), Chatterbox (4 GB)</li>
           <li><strong>Best emotional delivery:</strong> CosyVoice 2</li>
           <li><strong>Best documentation / friendliest dev experience:</strong> Chatterbox</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">F5-TTS</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="f5-tts">F5-TTS</h2>
 
         <p>The newest of the bunch and the most impressive on raw quality. F5-TTS is a flow-matching model from a Hong Kong research group, released late 2025 and refined through Q1 2026. The architectural change versus XTTS v2 is significant — flow matching produces noticeably more natural prosody on long inputs, and the silences between sentences sound right.</p>
 
@@ -125,7 +131,7 @@
 
         <p>Hardware reality: I had to use the smaller checkpoint to fit in 12 GB VRAM. The full model wants 16 GB. Generation took about 4 seconds per sentence on my card.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">XTTS v2 (via RBS Voice Cloner V2)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="xtts-v2-via-rbs-voice-cloner-v2">XTTS v2 (via RBS Voice Cloner V2)</h2>
 
         <p>Disclosure first: this is what I build. The model itself is Coqui's XTTS v2, which has been around since 2023 and is still the workhorse of the open-source TTS world. The packaging is mine — I bundle PyTorch and CUDA 12.8 inside the installer so you skip the Python setup step entirely.</p>
 
@@ -137,7 +143,7 @@
 
         <p>Where it loses to F5-TTS: long-form prosody and the very subtle emotional cues. Where it wins: install pain, hardware floor, and language coverage (17 languages with a built-in translator).</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">IndexTTS-2</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="indextts-2">IndexTTS-2</h2>
 
         <p>From a Chinese research lab and very obviously trained primarily on Chinese-language data. The Mandarin output is the best of any model in the test — tones are accurate, the prosody sounds genuinely native. Japanese was a close second.</p>
 
@@ -145,7 +151,7 @@
 
         <p>Setup pain: similar to F5-TTS. Hardware: 8 GB VRAM minimum. Generation: ~3 seconds per sentence on the RTX 3060.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Chatterbox</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="chatterbox">Chatterbox</h2>
 
         <p>Chatterbox surprised me. It's been topping the Hugging Face Spaces trending list for a few months and I assumed it was hype, but the developer experience is genuinely the best of the open-source options. Clean web UI, good documentation, easy to demo to a non-technical friend.</p>
 
@@ -153,7 +159,7 @@
 
         <p>Hardware: 4 GB VRAM, runs on CPU if needed. Generation ~3 seconds per sentence on RTX 3060.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Fish Speech V1.5</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="fish-speech-v15">Fish Speech V1.5</h2>
 
         <p>Fish Speech has been iterating quickly. V1.5 (released February 2026) added multi-speaker dialogue support and improved Chinese-language quality. Quality on English is roughly tied with XTTS v2 — not as polished as F5-TTS, not as approachable as Chatterbox.</p>
 
@@ -161,7 +167,7 @@
 
         <p>Setup pain: medium. Hardware: 6 GB VRAM. Generation ~3-4 seconds per sentence.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">CosyVoice 2</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="cosyvoice-2">CosyVoice 2</h2>
 
         <p>Alibaba's open-source TTS, 0.5B parameter version. The thing that surprised me here was emotional control. CosyVoice 2 has explicit "happy", "sad", "angry", "surprised" tags that you can include inline with the text, and it actually changes the delivery in a way that feels natural. ElevenLabs has had this for a while; CosyVoice 2 is the first open-source model where it works.</p>
 
@@ -169,7 +175,7 @@
 
         <p>Setup pain: medium-high, with thinner English-language documentation than the alternatives. Hardware: 8 GB VRAM. Generation ~4 seconds per sentence.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Side-by-side</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="side-by-side">Side-by-side</h2>
 
         <div style="overflow-x:auto;margin:20px 0;">
           <table style="width:100%;border-collapse:collapse;font-size:.9rem;">
@@ -193,7 +199,7 @@
           </table>
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Which one should you actually pick?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="which-one-should-you-actually-pick">Which one should you actually pick?</h2>
 
         <p>If you're a creator who just wants something that works on Windows without spending an afternoon on installation, the answer is XTTS v2 via RBS Voice Cloner V2 or directly. The quality gap to F5-TTS is real but small, the install gap is enormous.</p>
 
@@ -207,11 +213,11 @@
 
         <p>If you want the smoothest demo experience for showing AI voice cloning to a non-technical person, Chatterbox.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">A note on benchmarks</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="a-note-on-benchmarks">A note on benchmarks</h2>
 
         <p>Most published TTS benchmarks (MOS scores, character error rate, speaker similarity) are research metrics that don't always correlate with how the audio actually sounds to a listener. I weighted my comparison heavily toward the listening experience because that's what your audience will care about. If you want the rigorous metrics, the Hugging Face TTS Arena leaderboard is the place to look — and the rankings there match my subjective rankings reasonably well as of April 2026.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related">Related</h2>
 
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="elevenlabs-pricing-2026-free-alternatives.html" style="color:var(--accent-light);">ElevenLabs pricing 2026 — 5 free local voice cloners</a></li>
@@ -221,6 +227,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;overflow:hidden;flex-shrink:0;background:#0a1628;"><img src="../assets/images/software/rbs-voice-cloner-v2-icon.png" alt="RBS Voice Cloner V2 logo" style="width:100%;height:100%;object-fit:contain;display:block;" /></div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Voice Cloner V2 &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">16 built-in voices plus unlimited custom clones from a 30-second sample, 17 languages with auto-translate, 7-band EQ tuned for voice. Runs locally, no monthly cap, no cloud.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBS-RareBuildSoftware-V2/releases/download/VoiceCloner/RBSVoiceCloner_Setup.V2.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-voice-cloner-v2.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~2.0 GB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="microsoft-removing-copilot-windows-11-local-ai-alternatives.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Microsoft Is Pulling Copilot From Windows Apps — 7 Free Local AI Tools to Use Instead</div></a>
+        <a href="elevenlabs-pricing-2026-free-alternatives.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">ElevenLabs Pricing 2026 ($990/mo Business) — 5 Free Local Voice Cloners That Match the Quality</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -246,11 +274,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

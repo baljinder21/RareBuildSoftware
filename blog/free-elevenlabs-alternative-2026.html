@@ -97,12 +97,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 April 26, 2026 · 8 min read · By Rai (RBS)</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#what-you-should-expect-from-a-free-alternative" style="color:var(--accent-light);text-decoration:none;">What you should expect from a free alternative</a></li><li style=""><a href="#1-rbs-voice-cloner-v2-easiest-fully-bundled" style="color:var(--accent-light);text-decoration:none;">1. RBS Voice Cloner V2 — easiest, fully bundled</a></li><li style=""><a href="#2-coqui-xtts-v2-open-source-manual-setup" style="color:var(--accent-light);text-decoration:none;">2. Coqui XTTS v2 (open-source, manual setup)</a></li><li style=""><a href="#3-tortoise-tts-slow-but-very-high-quality" style="color:var(--accent-light);text-decoration:none;">3. Tortoise TTS (slow, but very high quality)</a></li><li style=""><a href="#4-bark-text-to-speech-with-non-speech-sounds" style="color:var(--accent-light);text-decoration:none;">4. Bark (text-to-speech with non-speech sounds)</a></li><li style=""><a href="#side-by-side-comparison" style="color:var(--accent-light);text-decoration:none;">Side-by-side comparison</a></li><li style=""><a href="#which-one-should-you-pick" style="color:var(--accent-light);text-decoration:none;">Which one should you pick?</a></li><li style=""><a href="#a-note-on-legal-use" style="color:var(--accent-light);text-decoration:none;">A note on legal use</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#try-rbs-voice-cloner-v2-free" style="color:var(--accent-light);text-decoration:none;">Try RBS Voice Cloner V2 — Free</a></li><li style=""><a href="#related-articles" style="color:var(--accent-light);text-decoration:none;">Related articles</a></li></ul>
+        </nav>
+
+
 
         <p>ElevenLabs is the most polished AI voice cloning service on the market — but the free tier limits you to about 10 minutes of generation per month, voice cloning sits behind the $5+ tier, and every word you generate runs through their cloud. If you want <strong>unlimited generation</strong>, real <strong>voice cloning</strong>, and want everything to <strong>stay on your PC</strong>, you need a free, offline alternative.</p>
 
         <p>I've tested four of them on Windows 11 in April 2026. Here's what's actually worth downloading, what's not, and why most of the "free" tools you find on Google are either paid trials in disguise, abandoned in 2023, or don't actually run locally.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What you should expect from a free alternative</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-you-should-expect-from-a-free-alternative">What you should expect from a free alternative</h2>
         <p>Before the comparison, set expectations. A free, offline voice cloner will not match ElevenLabs' studio quality on every single voice. What it <em>will</em> give you:</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>Unlimited generation</strong> — no monthly word cap, no per-minute billing.</li>
@@ -113,8 +119,8 @@
         </ul>
         <p>What you'll give up: a polished web UI, a paid-for voice library, and per-emotion controls that the closed-source services have.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">1. RBS Voice Cloner V2 — easiest, fully bundled</h2>
-        <p>Disclosure: I make this one. <a href="../software/detail.html?id=rbs-voice-cloner-v2" style="color:var(--accent-light);">RBS Voice Cloner V2</a> is built on the same XTTS v2 engine the open-source community uses, with the parts that usually make XTTS painful (Python, PyTorch, CUDA versions) <strong>bundled inside the installer</strong>. You install it like any normal Windows app, click "Generate", done.</p>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="1-rbs-voice-cloner-v2-easiest-fully-bundled">1. RBS Voice Cloner V2 — easiest, fully bundled</h2>
+        <p>Disclosure: I make this one. <a href="../software/rbs-voice-cloner-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V2</a> is built on the same XTTS v2 engine the open-source community uses, with the parts that usually make XTTS painful (Python, PyTorch, CUDA versions) <strong>bundled inside the installer</strong>. You install it like any normal Windows app, click "Generate", done.</p>
         <ul style="padding-left:24px;margin:16px 0;">
           <li>16 built-in voices (6 male, 6 female, 2 boy, 2 girl) plus unlimited custom clones from a 30-second sample.</li>
           <li>17 languages with auto-translate built in (no API key needed).</li>
@@ -126,19 +132,19 @@
         </ul>
         <p>Best for: most people who want voice cloning and TTS without setting up a Python environment.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">2. Coqui XTTS v2 (open-source, manual setup)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="2-coqui-xtts-v2-open-source-manual-setup">2. Coqui XTTS v2 (open-source, manual setup)</h2>
         <p>Coqui's XTTS v2 is the engine. It's free, open-source, and the most flexible. The catch: you set it up yourself — install Python, install PyTorch with the right CUDA version for your GPU, install the XTTS package, write some Python to drive it. If you're a developer this is fine. If you're not, expect a couple of hours of debugging "why doesn't CUDA work" errors.</p>
         <p>Best for: developers who want to build voice cloning into their own scripts or apps.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">3. Tortoise TTS (slow, but very high quality)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="3-tortoise-tts-slow-but-very-high-quality">3. Tortoise TTS (slow, but very high quality)</h2>
         <p>Tortoise TTS produces some of the most natural-sounding output in the open-source world, but it's <em>slow</em> — minutes per sentence even on a good GPU. It's also memory-hungry and harder to install than XTTS. Worth knowing about for one-off high-quality renders, not for daily use.</p>
         <p>Best for: occasional high-quality renders where speed doesn't matter.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">4. Bark (text-to-speech with non-speech sounds)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="4-bark-text-to-speech-with-non-speech-sounds">4. Bark (text-to-speech with non-speech sounds)</h2>
         <p>Bark by Suno is interesting because it can generate music, laughter, sighs, and other non-speech audio in addition to TTS. Cloning a specific voice is harder than with XTTS — Bark uses "voice presets" rather than direct cloning. It's free and runs locally.</p>
         <p>Best for: creative projects where you want non-speech audio (gasps, laughter, music) alongside the voice.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Side-by-side comparison</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="side-by-side-comparison">Side-by-side comparison</h2>
         <div style="overflow-x:auto;margin:20px 0;">
           <table style="width:100%;border-collapse:collapse;font-size:.92rem;">
             <thead>
@@ -160,7 +166,7 @@
           </table>
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Which one should you pick?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="which-one-should-you-pick">Which one should you pick?</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><strong>You just want voice cloning that works:</strong> RBS Voice Cloner V2. The installer handles everything.</li>
           <li><strong>You're a developer building an app:</strong> Coqui XTTS v2 directly — same engine, you control everything.</li>
@@ -168,17 +174,17 @@
           <li><strong>You want creative non-speech audio:</strong> Bark.</li>
         </ul>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">A note on legal use</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="a-note-on-legal-use">A note on legal use</h2>
         <p>Voice cloning is powerful, and free voice cloning is more powerful still. <strong>Only clone voices you have permission to clone</strong> — your own voice, public-domain recordings, or someone who has explicitly agreed. Cloning a real person's voice without consent for misleading content is illegal in many places and unethical everywhere. The open-source tools listed above don't enforce this for you; you're responsible.</p>
 
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:40px 0;text-align:center;">
           <div style="font-size:2rem;margin-bottom:12px;">🎙️</div>
-          <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;">Try RBS Voice Cloner V2 — Free</h3>
+          <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:8px;" id="try-rbs-voice-cloner-v2-free">Try RBS Voice Cloner V2 — Free</h3>
           <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:20px;">~2.0 GB · Windows 10/11 · 100% offline · No subscription, ever.</p>
-          <a href="../software/detail.html?id=rbs-voice-cloner-v2" class="btn btn-primary">⬇ Download Free</a>
+          <a href="../software/rbs-voice-cloner-v2.html" class="btn btn-primary">⬇ Download Free</a>
         </div>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related articles</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related-articles">Related articles</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="rbs-ai-voice-studio-v2-launch.html" style="color:var(--accent-light);">RBS Voice Cloner V2 — Launch announcement</a></li>
           <li><a href="rbs-voice-cloner-v1-vs-v2.html" style="color:var(--accent-light);">RBS Voice Cloner V1 vs V2 — which to download</a></li>
@@ -186,6 +192,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;overflow:hidden;flex-shrink:0;background:#0a1628;"><img src="../assets/images/software/rbs-voice-cloner-v2-icon.png" alt="RBS Voice Cloner V2 logo" style="width:100%;height:100%;object-fit:contain;display:block;" /></div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Voice Cloner V2 &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">16 built-in voices plus unlimited custom clones from a 30-second sample, 17 languages with auto-translate, 7-band EQ tuned for voice. Runs locally, no monthly cap, no cloud.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBS-RareBuildSoftware-V2/releases/download/VoiceCloner/RBSVoiceCloner_Setup.V2.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-voice-cloner-v2.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~2.0 GB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="is-ai-voice-cloning-legal-2026-guide.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Is AI Voice Cloning Legal in 2026? A Plain-English Guide for Creators</div></a>
+        <a href="how-to-clone-your-voice-tutorial.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">How to Clone Your Voice in 5 Minutes — Free, Offline, Windows</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -211,11 +239,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

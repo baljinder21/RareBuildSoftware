@@ -97,12 +97,18 @@
       <p style="color:var(--text-muted);margin-bottom:40px;">📅 May 2, 2026 · 9 min read · By Rai</p>
 
       <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#what-kb5083769-actually-is" style="color:var(--accent-light);text-decoration:none;">What KB5083769 actually is</a></li><li style=""><a href="#the-real-problem-vss-third-party-backup-failures" style="color:var(--accent-light);text-decoration:none;">The real problem: VSS / third-party backup failures</a></li><li style=""><a href="#bitlocker-recovery-screen-on-a-narrow-set-of-machines" style="color:var(--accent-light);text-decoration:none;">BitLocker recovery screen on a narrow set of machines</a></li><li style=""><a href="#intel-wi-fi-and-bluetooth-conflicts" style="color:var(--accent-light);text-decoration:none;">Intel Wi-Fi and Bluetooth conflicts</a></li><li style=""><a href="#the-bsod-death-loop-rumour-mostly-noise" style="color:var(--accent-light);text-decoration:none;">The BSOD "death loop" rumour — mostly noise</a></li><li style=""><a href="#the-30-second-check-am-i-actually-affected" style="color:var(--accent-light);text-decoration:none;">The 30-second check: am I actually affected?</a></li><li style=""><a href="#how-to-roll-kb5083769-back-only-if-you-actually-need-to" style="color:var(--accent-light);text-decoration:none;">How to roll KB5083769 back (only if you actually need to)</a></li><li style=""><a href="#the-honest-takeaway" style="color:var(--accent-light);text-decoration:none;">The honest takeaway</a></li><li style=""><a href="#related" style="color:var(--accent-light);text-decoration:none;">Related</a></li></ul>
+        </nav>
+
+
 
         <p>My first instinct when KB5083769 dropped on April 14 was to install it on the test machine, run a quick QA pass on RBS PC Cleaner against the new build, and move on. By the long weekend I had three different "Windows 11 death loop" videos in my YouTube feed and at least one backup vendor I respect publicly telling their customers to hold off on the update. So I spent two days reading the actual Microsoft KB article, checking Event Viewer on the three Windows 11 machines I have here, and trying to separate the real bugs from the noise. Here is the picture as of early May 2026.</p>
 
         <p>Short version up front: there are <strong>two confirmed regressions</strong> — one of which only affects you if you run a specific kind of backup software — plus a driver-level Wi-Fi/Bluetooth issue Intel has already shipped a fix for. The viral "BSOD death loop" headlines turned out to trace back to about five forum posts that AI-content sites mass-reproduced into a hundred articles. Don't roll the update back on the basis of headlines alone — there are 167 security fixes in this one and you would be discarding all of them.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">What KB5083769 actually is</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="what-kb5083769-actually-is">What KB5083769 actually is</h2>
 
         <p>April 14, 2026 cumulative update for Windows 11 versions <strong>24H2</strong> and <strong>25H2</strong>. After install your build number is <code>26100.8246</code> (24H2) or <code>26200.8246</code> (25H2). You can check by hitting <kbd>Win + R</kbd> and typing <code>winver</code>.</p>
 
@@ -118,7 +124,7 @@
 
         <p>So this isn't an unimportant update. That's why "just uninstall it" isn't free advice.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The real problem: VSS / third-party backup failures</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-real-problem-vss-third-party-backup-failures">The real problem: VSS / third-party backup failures</h2>
 
         <p>The Volume Shadow Copy Service is what lets backup tools take a consistent snapshot of an in-use disk. After KB5083769 it can <strong>time out during snapshot creation</strong> when called by certain third-party backup tools. Vendors that have publicly confirmed they're hitting this:</p>
 
@@ -141,19 +147,19 @@
 
         <p>If you only use Windows' built-in File History or OneDrive sync, you're not affected — those don't go through the same VSS path.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">BitLocker recovery screen on a narrow set of machines</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="bitlocker-recovery-screen-on-a-narrow-set-of-machines">BitLocker recovery screen on a narrow set of machines</h2>
 
         <p>Microsoft confirmed a second regression that triggers the BitLocker recovery screen after the update on machines using a specific Group Policy configuration that Microsoft itself describes as "unrecommended". For most consumer machines this won't fire. For business / domain-joined laptops with strict policies, it might.</p>
 
         <p>If it does happen to you, you'll be asked for the 48-digit BitLocker recovery key. If you signed in to Windows with a Microsoft account when you set the machine up, that key is sitting at <strong>aka.ms/myrecoverykey</strong> right now. If you didn't, or you bought the laptop second-hand and never linked the account — that's the real problem to fix today, not next time. Get into <em>Manage BitLocker</em> in Control Panel and back the key up to a USB stick, your Microsoft account, or both.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Intel Wi-Fi and Bluetooth conflicts</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="intel-wi-fi-and-bluetooth-conflicts">Intel Wi-Fi and Bluetooth conflicts</h2>
 
         <p>Intel acknowledged a separate issue at the driver level — Wi-Fi and Bluetooth competing for the same 2.4 GHz channel, which shows up as Bluetooth audio dropouts or random Wi-Fi disconnects, especially on laptops. Intel rolled out a driver update at the end of April 2026.</p>
 
         <p>Two ways to get the fix: install <em>Intel Driver &amp; Support Assistant</em> from intel.com and let it find the new driver, or check your laptop maker's support site (Dell, HP, Lenovo, Asus all push their own validated builds — usually a few weeks behind Intel direct, but better tested for your specific machine). If you don't have an Intel Wi-Fi card, this section doesn't apply to you.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The BSOD "death loop" rumour — mostly noise</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-bsod-death-loop-rumour-mostly-noise">The BSOD "death loop" rumour — mostly noise</h2>
 
         <p>This is the headline that actually made me write this post. By April 22 there were dozens of articles claiming KB5083769 was "trapping PCs in death loops" with "pixelated BSODs" and so on. WindowsLatest dug into the source of these claims and found that almost all of them traced back to a <strong>single Microsoft Q&amp;A thread with about five named users</strong>. Microsoft told the same investigator they were not aware of any critical, widespread issue with KB5083769.</p>
 
@@ -161,7 +167,7 @@
 
         <p>Compare that to the VSS backup story, where Acronis, Macrium, NinjaOne and UrBackup all named the bug, gave the exact error code, and Microsoft acknowledged the regression. That's what a real Windows bug report looks like.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The 30-second check: am I actually affected?</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-30-second-check-am-i-actually-affected">The 30-second check: am I actually affected?</h2>
 
         <ol style="padding-left:24px;margin:16px 0;">
           <li><kbd>Win + R</kbd> → type <code>winver</code> → press Enter. If your build ends in <code>.8246</code>, you have KB5083769 installed. If not, you don't, and none of this applies to your machine.</li>
@@ -171,7 +177,7 @@
 
         <p>If steps 2 and 3 come back clean, the update is fine on your machine. Leave it.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">How to roll KB5083769 back (only if you actually need to)</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="how-to-roll-kb5083769-back-only-if-you-actually-need-to">How to roll KB5083769 back (only if you actually need to)</h2>
 
         <ol style="padding-left:24px;margin:16px 0;">
           <li>Settings → Windows Update → Update history → <em>Uninstall updates</em> (the link is at the bottom).</li>
@@ -181,13 +187,13 @@
 
         <p>This rolls back the security patches too. It is a real cost, not a clean undo. If your only reason for considering it is "I read a scary headline", do steps 1–3 of the check above first.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">The honest takeaway</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="the-honest-takeaway">The honest takeaway</h2>
 
         <p>KB5083769 is not the disaster it was being painted as on YouTube and the AI-content tier of tech blogs. It is also not entirely clean. If you run third-party backup software, you have a real problem to deal with this week. Everyone else, the right move is probably: install it, ignore the panic, but go find your BitLocker recovery key while you're thinking about it.</p>
 
-        <p>One small reason this whole thing matters to me: it's why every change <a href="../software/detail.html?id=rbs-pc-cleaner" style="color:var(--accent-light);">RBS PC Cleaner</a> makes is reversible. Every cleanup action has an undo. Every disabled startup entry is parked, not deleted, and can be restored exactly. Software you trust on your own machine should be honest about what it changed and how to put it back. Microsoft is mostly good about this with Windows Update — that "Uninstall updates" page exists precisely for weeks like this — but every layer of your system should give you the same out.</p>
+        <p>One small reason this whole thing matters to me: it's why every change <a href="../software/rbs-pc-cleaner.html" style="color:var(--accent-light);">RBS PC Cleaner</a> makes is reversible. Every cleanup action has an undo. Every disabled startup entry is parked, not deleted, and can be restored exactly. Software you trust on your own machine should be honest about what it changed and how to put it back. Microsoft is mostly good about this with Windows Update — that "Uninstall updates" page exists precisely for weeks like this — but every layer of your system should give you the same out.</p>
 
-        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);">Related</h2>
+        <h2 style="font-size:1.5rem;font-weight:700;margin:40px 0 16px;color:var(--text-primary);" id="related">Related</h2>
         <ul style="padding-left:24px;margin:16px 0;">
           <li><a href="how-to-clean-windows-11-without-breaking-it.html" style="color:var(--accent-light);">How to clean Windows 11 without breaking it</a></li>
           <li><a href="windows-11-running-slow-fix.html" style="color:var(--accent-light);">Windows 11 running slow? 12 ways to fix it</a></li>
@@ -196,6 +202,28 @@
         </ul>
 
       </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🔧</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Optimizer Pro &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want a one-click way to do most of what this post covers — junk cleaner, startup manager, RAM trim, real-time CPU/GPU monitoring — Optimizer Pro is the free Windows tool I built for it.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/rbs-optimizer-pro.html" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~23 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <div style="flex:1;min-width:240px;"></div>
+        <a href="claude-47-vs-gpt-54-vs-gemini-31-2026.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Claude Opus 4.7 vs GPT-5.4 vs Gemini 3.1 — The April 2026 AI Model Showdown</div></a>
+      </nav>
+
+
     </div>
   </article>
 
@@ -221,11 +249,11 @@
         <div>
           <p class="footer-heading">Software</p>
           <ul class="footer-links">
-            <li><a href="../software/detail.html?id=rbs-optimizer-pro">RBS Optimizer Pro</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner">RBS Voice Cloner</a></li>
-            <li><a href="../software/detail.html?id=rbs-voice-cloner-v2">RBS Voice Cloner V2</a></li>
-            <li><a href="../software/detail.html?id=life-dashboard">Life Dashboard</a></li>
-            <li><a href="../software/detail.html?id=rbs-pc-cleaner">RBS PC Cleaner</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
           </ul>
         </div>
         <div>

@@ -51,6 +51,44 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# ── Redirect old dynamic detail URLs to new static pages ──
+# /software/detail.html?id=<slug> → /software/<slug>.html (preserves any
+# existing backlinks; the new static pages are the SEO canonical).
+[[redirects]]
+  from = "/software/detail.html"
+  query = { id = "rbs-optimizer-pro" }
+  to = "/software/rbs-optimizer-pro.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/software/detail.html"
+  query = { id = "rbs-voice-cloner" }
+  to = "/software/rbs-voice-cloner.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/software/detail.html"
+  query = { id = "rbs-voice-cloner-v2" }
+  to = "/software/rbs-voice-cloner-v2.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/software/detail.html"
+  query = { id = "life-dashboard" }
+  to = "/software/life-dashboard.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/software/detail.html"
+  query = { id = "rbs-pc-cleaner" }
+  to = "/software/rbs-pc-cleaner.html"
+  status = 301
+  force = true
+
 # ── Redirect old/wrong domain if someone types it ──
 [[redirects]]
   from = "https://rbs-software.com/*"
