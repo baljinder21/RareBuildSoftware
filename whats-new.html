@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="What's new at RBS — every blog post and every software release in one timeline. Honest, free Windows software by Rai (Singapore solo dev)." />
+  <meta name="keywords" content="RBS changelog, Rare Build Software news, what's new, free Windows software updates, RBS blog feed, RBS releases" />
+  <title>What's New at RBS — Releases &amp; Blog Posts | Rare Build Software</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="RBS" />
+  <meta property="og:title"       content="What's New at RBS — Releases &amp; Blog Posts" />
+  <meta property="og:description" content="Every blog post and software release in one timeline. Free Windows software by Rai." />
+  <meta property="og:url"         content="https://rarebuildsoftware.com/whats-new.html" />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/home.svg" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <link rel="canonical"           href="https://rarebuildsoftware.com/whats-new.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",        "item": "https://rarebuildsoftware.com/" },
+      { "@type": "ListItem", "position": 2, "name": "What's New",  "item": "https://rarebuildsoftware.com/whats-new.html" }
+    ]
+  }
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="RBS Blog RSS" href="https://rarebuildsoftware.com/feed.xml" />
+  <link rel="preload" href="assets/css/style.css" as="style" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="page-loader"><div class="loader-ring"></div></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><div class="logo-icon">RBS</div>RBS</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme">☀️</button></li>
+        <li><a href="software.html" class="nav-cta">⬇ Download Free</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="software.html">Software</a>
+    <a href="blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="software.html" class="nav-cta">⬇ Download Free</a>
+  </div>
+
+  <div id="rbs-announcement" style="display:none;"></div>
+
+  <main id="main-content">
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="section-tag">Updates</div>
+        <h1 class="page-hero-title">What's <span class="accent">New</span> at RBS</h1>
+        <p class="page-hero-subtitle">
+          Every blog post and software release in one timeline. 39 posts and 5 releases — newest first. Subscribe via <a href="feed.xml" style="color:var(--accent-light);">RSS</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width:820px;">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+      <a href="blog/windows-11-kb5083769-update-issues-explained.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🛠️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Guide</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 May 2, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Windows 11 KB5083769 Update — What's Really Broken, What's Not</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Confirmed VSS backup and BitLocker bugs, the boot-loop rumour that traces back to five forum posts, and the 30-second check to see if you are actually affected.</p>
+      </a>
+
+      <a href="blog/claude-47-vs-gpt-54-vs-gemini-31-2026.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🧠</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">AI News</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Claude Opus 4.7 vs GPT-5.4 vs Gemini 3.1 — The April 2026 AI Model Showdown</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Three flagship AI models in eight weeks. Who actually wins which task, plus the open-weights models you can run on your own Windows PC for free.</p>
+      </a>
+
+      <a href="blog/microsoft-removing-copilot-windows-11-local-ai-alternatives.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🖥️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">AI News</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Microsoft Is Pulling Copilot From Windows Apps — 7 Free Local AI Tools to Use Instead</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Microsoft is rolling Copilot out of Photos, Notepad, Snipping Tool and Widgets in 2026. Here are 7 free local AI tools that run on your PC without sending data anywhere.</p>
+      </a>
+
+      <a href="blog/best-open-source-voice-cloning-2026.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🔬</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">AI</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Best Open-Source Voice Cloning Models in 2026 — 6 Models Tested on Windows</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Hands-on comparison of F5-TTS, IndexTTS-2, Chatterbox, XTTS v2, Fish Speech V1.5 and CosyVoice 2 on a regular RTX 3060. Which model wins for what.</p>
+      </a>
+
+      <a href="blog/elevenlabs-pricing-2026-free-alternatives.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">💰</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Comparison</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">ElevenLabs Pricing 2026 ($990/mo Business) — 5 Free Local Voice Cloners That Match the Quality</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Real ElevenLabs pricing in 2026 plus 5 free local alternatives that run on Windows without metering your characters.</p>
+      </a>
+
+      <a href="blog/is-ai-voice-cloning-legal-2026-guide.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">⚖️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">AI &amp; Law</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Is AI Voice Cloning Legal in 2026? A Plain-English Guide for Creators</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Plain-English breakdown of the ELVIS Act, California AB853, the federal Voice Cloning Protection Act, and the EU AI Act. What creators, podcasters and devs actually need to know.</p>
+      </a>
+
+      <a href="blog/free-elevenlabs-alternative-2026.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">⚡</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">AI</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Free ElevenLabs Alternative — 4 Free Voice Cloning Tools (2026)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Tested 4 free, offline AI voice cloning tools for Windows in 2026. Unlimited generation, no monthly cap, no cloud — proper alternatives to ElevenLabs paid plans.</p>
+      </a>
+
+      <a href="blog/how-to-clone-your-voice-tutorial.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🎙️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">AI</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">How to Clone Your Voice in 5 Minutes — Free, Offline, Windows</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Step-by-step beginner walkthrough: install, record a 30-second sample, save the profile, generate any text in your own voice. No Python, no subscription, all offline.</p>
+      </a>
+
+      <a href="blog/free-habit-tracker-windows-desktop.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">📅</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Productivity</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Best Free Habit Tracker for Windows Desktop (Offline, No Subscription) — 2026</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Most habit trackers are phone apps or cloud-bound web tools. Here is a free Windows desktop habit tracker that works fully offline — plus 15 more widgets in one window.</p>
+      </a>
+
+      <a href="blog/rbs-ai-voice-studio-v2-launch.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🎙️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">AI</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">RBS Voice Cloner V2 — Major Update with 16 Voices &amp; 7-Band EQ</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">The biggest Voice Cloner update yet. 16 built-in voices, 7-band parametric EQ tuned for voice, in-app translator across 17 languages, redesigned audio editor, and CUDA 12.8 runtime. New EQ-bar logo. Free.</p>
+      </a>
+
+      <a href="blog/rbs-voice-cloner-v1-vs-v2.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">⚖️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Comparison</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">RBS Voice Cloner V1 vs V2 — Which Should You Download?</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Side-by-side comparison: V1 (~248 MB, lighter) vs V2 (~2 GB, much better). Pick the right version for your PC and use case.</p>
+      </a>
+
+      <a href="blog/rbs-ai-voice-studio-v2-eq-guide.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🎚️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">AI</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">7-Band Parametric EQ for Voice — Which Preset to Pick</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">What each EQ band does (60 Hz Sub through 12 kHz Air), when to use Natural / Warm / Bright / Podcast / Phone / Flat presets, and how to fix common voice problems with EQ.</p>
+      </a>
+
+      <a href="software/rbs-voice-cloner-v2.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #33d4aa;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#33d4aa';this.style.borderLeftColor='#33d4aa'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#33d4aa'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🎙️</span>
+          <span style="background:rgba(0,200,150,0.15);color:#33d4aa;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Release</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Release · RBS Voice Cloner V2</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 26, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">RBS Voice Cloner V2 v2.0.0</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">16 built-in voices — 6 Male, 6 Female, 2 Boy, 2 Girl · 7-band parametric equaliser tuned for voice + 6 presets (Natural, Warm, Bright, Podcast, Phone, Flat) · Translator on the Text-to-Speech page across all 17 supported languages</p>
+      </a>
+
+      <a href="blog/free-bleachbit-alternative-windows-11.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🛡️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Comparison</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 24, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Free BleachBit Alternative for Windows 11 (2026)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">BleachBit is powerful but intimidating. Here is a friendlier free alternative that keeps the privacy-first / no-telemetry stance.</p>
+      </a>
+
+      <a href="blog/remove-msi-bloatware-windows-11.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🐉</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 23, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">How to Remove MSI Bloatware from Windows 11 (2026 Guide)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">MSI Center vs Dragon Center, Mystic Light, MSI App Player — what to keep, what to nuke. Specifics for Stealth, Vector, Raider, Cyborg.</p>
+      </a>
+
+      <a href="blog/rbs-voice-cloner-vs-murf-vs-speechify-2026.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🎤</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Comparison</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 22, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">RBS Voice Cloner vs Murf AI vs Speechify (2026)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Free local voice cloner against two of the biggest paid TTS services. Honest pricing, quality and use-case comparison for 2026.</p>
+      </a>
+
+      <a href="blog/rbs-pc-cleaner-launch.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🧹</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 19, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">RBS PC Cleaner v1.0.0 — Free Honest Windows Cleaner (No Registry)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">RBS PC Cleaner is out — safe junk cleaner, duplicate finder, bulk uninstaller, startup manager, gaming mode, and 9 theme packs. 100% free, reversible, never scans the registry.</p>
+      </a>
+
+      <a href="blog/how-to-clean-windows-11-without-breaking-it.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🧽</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Guide</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 19, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">How to Clean Windows 11 Without Breaking It — Safe Guide</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Which junk is safe to remove, which to leave alone, and a free tool that rates every cleanup action before you run it. Step-by-step guide for Windows 10/11.</p>
+      </a>
+
+      <a href="blog/free-browser-cache-cleaner-windows.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🌐</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Tutorial</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 19, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Free Browser Cache Cleaner — Chrome, Edge, Firefox, Brave, Opera</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Clear cache, cookies, and history across all five major browsers in one click. Saved passwords are reported but never deleted. Free for Windows 10/11.</p>
+      </a>
+
+      <a href="blog/find-duplicate-files-windows-free.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🔍</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Guide</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 19, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">How to Find and Delete Duplicate Files on Windows (Free, Safe)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Hash-based duplicate file finder that always keeps the oldest file and auto-skips system folders. Reclaim gigabytes from Downloads, Photos, and Videos safely.</p>
+      </a>
+
+      <a href="blog/best-free-startup-manager-windows-11.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🚀</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Review</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 19, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Best Free Startup Manager for Windows 11 (2026)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Safely disable Windows 11 startup entries and cut boot time by 40–70%. Fully reversible — disabled entries are parked in a sibling key, not deleted.</p>
+      </a>
+
+      <a href="blog/bulk-uninstall-programs-windows.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🗑️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Tutorial</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 19, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Uninstall Multiple Programs at Once on Windows — Free Bulk Uninstaller</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Tick multiple programs and uninstall in sequence. Silent mode auto-detected. Sort by size to find the biggest targets. Free for Windows 10/11.</p>
+      </a>
+
+      <a href="blog/customize-windows-11-icons-themes.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🎨</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Tutorial</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 19, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Customize Windows 11 Icons &amp; Themes — 9 Free Theme Packs</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">9 ready-made Windows 11 theme packs with matching icons and 2560×1440 wallpapers. Apply in one click — Restore Original reverts exactly.</p>
+      </a>
+
+      <a href="blog/gaming-mode-windows-boost-fps-free.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🎮</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 19, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Gaming Mode for Windows — Boost FPS Without Shady "Game Boosters"</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">One click: safe clean + memory trim + High Performance power plan + suspend background apps. Resume button undoes everything. 100% free.</p>
+      </a>
+
+      <a href="blog/clear-discord-teams-spotify-cache-windows.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">📦</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Tutorial</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 19, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Clear Discord, Teams, Spotify &amp; VS Code Cache on Windows</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">One click to clear cache for Discord, Microsoft Teams, Spotify, VS Code, Slack and Zoom. Reclaim 5–15 GB of Electron app cache safely.</p>
+      </a>
+
+      <a href="blog/free-disk-space-analyzer-windows.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">📈</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Guide</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 19, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Free Disk Space Analyzer for Windows — See What's Using Your Space</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Read-only folder tree with drill-down. Find the gigabytes Windows Storage settings won't show you. No admin required, no cloud upload.</p>
+      </a>
+
+      <a href="software/rbs-pc-cleaner.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #33d4aa;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#33d4aa';this.style.borderLeftColor='#33d4aa'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#33d4aa'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🧹</span>
+          <span style="background:rgba(0,200,150,0.15);color:#33d4aa;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Release</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Release · RBS PC Cleaner</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 19, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">RBS PC Cleaner v1.0.0</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Initial public release · Junk, browser, and app cache cleaners with Safe/Caution/Risky ratings · Disk analyzer and hash-based duplicate finder</p>
+      </a>
+
+      <a href="blog/life-dashboard-vs-notion-vs-obsidian-2026.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">📊</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Comparison</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 17, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Life Dashboard vs Notion vs Obsidian (2026) — Honest Comparison</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Three very different tools for personal productivity. What each is genuinely good at, what each is bad at, and which to pick.</p>
+      </a>
+
+      <a href="blog/remove-lenovo-bloatware-windows-11.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🖥️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 16, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">How to Remove Lenovo Bloatware from Windows 11 (2026 Guide)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Vantage, Now, Welcome, McAfee — what to keep, what to nuke. Specifics for ThinkPad, IdeaPad, Yoga, Legion, ThinkBook.</p>
+      </a>
+
+      <a href="blog/life-dashboard-launch.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">📊</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Productivity</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 14, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Life Dashboard v1.0.0 — Your All-in-One Productivity App</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Track your habits, finances, sleep, diet, tasks, and goals all in one beautiful dashboard. 16 customisable widgets, drag-and-drop layout, all data stored locally. Free forever.</p>
+      </a>
+
+      <a href="software/life-dashboard.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #33d4aa;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#33d4aa';this.style.borderLeftColor='#33d4aa'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#33d4aa'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">📅</span>
+          <span style="background:rgba(0,200,150,0.15);color:#33d4aa;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Release</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Release · Life Dashboard</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 14, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Life Dashboard v1.0.0</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Initial release · 16 widgets including tasks, habits, finance, weather, sleep, diet · Drag and resize widgets</p>
+      </a>
+
+      <a href="blog/rbs-voice-cloner-launch.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🎙️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">AI</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 12, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">RBS Voice Cloner v1.0.0 — Free AI Voice Cloning for Windows</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Clone any voice in seconds with just a 5-second audio sample. RBS Voice Cloner uses the XTTS v2 AI engine to generate natural speech in 28+ languages — completely free and runs offline.</p>
+      </a>
+
+      <a href="software/rbs-voice-cloner.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #33d4aa;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#33d4aa';this.style.borderLeftColor='#33d4aa'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#33d4aa'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🎤</span>
+          <span style="background:rgba(0,200,150,0.15);color:#33d4aa;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Release</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Release · RBS Voice Cloner</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 12, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">RBS Voice Cloner v1.0.0</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Initial release · XTTS v2 voice cloning engine · 28+ language support</p>
+      </a>
+
+      <a href="blog/remove-acer-bloatware-windows-11.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">💻</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 11, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">How to Remove Acer Bloatware from Windows 11 (2026 Guide)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Acer Care Center, NitroSense, Quick Access, Norton trial — what to keep, what to remove. Specifics for Aspire, Swift, Nitro, Predator.</p>
+      </a>
+
+      <a href="blog/windows-11-running-slow-fix.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🐌</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 10, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Windows 11 Running Slow? 12 Ways to Fix It (Free)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Windows 11 running slow on your PC? 12 step-by-step free fixes — from quick wins to deep optimizations. No reinstall, no paid software needed.</p>
+      </a>
+
+      <a href="blog/remove-asus-bloatware-windows-11.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🎮</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 9, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">How to Remove Asus Bloatware from Windows 11 (2026 Guide)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Armoury Crate, MyAsus, GameFirst — what to keep, what to nuke. Specifics for ROG, TUF, ZenBook, VivoBook, ProArt.</p>
+      </a>
+
+      <a href="blog/free-stardock-iconpackager-alternative-windows-11.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🎨</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Comparison</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 8, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Free Stardock IconPackager Alternative for Windows 11 (2026)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Stardock IconPackager is $30. Here is how to get most of the same look on Windows 11 for free, without patching system files.</p>
+      </a>
+
+      <a href="blog/remove-dell-bloatware-windows-11.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🖥️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 6, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">How to Remove Dell Bloatware from Windows 11</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Step-by-step guide to uninstalling Dell pre-installed apps on Windows 11 — speed up your Dell laptop and reclaim RAM and storage for free.</p>
+      </a>
+
+      <a href="blog/rbs-pc-cleaner-vs-ccleaner-2026.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">⚖️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Comparison</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 5, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">RBS PC Cleaner vs CCleaner (2026) — Honest Comparison</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Side-by-side: free tier features, ads, telemetry, registry cleaner, and which one to pick. Written by the developer of one of them.</p>
+      </a>
+
+      <a href="blog/how-to-free-up-ram-windows-11.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">💾</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 4, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">How to Free Up RAM on Windows 11 — Complete Guide (2026)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Is your Windows 11 PC running slow with high RAM usage? 10 proven free methods to free up RAM — from closing background apps to one-click optimization.</p>
+      </a>
+
+      <a href="blog/best-free-tools-2025.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🛠️</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 3, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">Best Free PC Optimization Tools 2026</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">We compare the top free Windows optimization tools available today. Find out which ones actually work and which to avoid.</p>
+      </a>
+
+      <a href="blog/remove-hp-bloatware-windows-11.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🧹</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 2, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">How to Remove HP Bloatware from Windows 11 (2026 Guide)</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">What HP preinstalls on every Pavilion / Envy / Omen, what is safe to uninstall, what to keep, and the fastest way to debloat.</p>
+      </a>
+
+      <a href="blog/speed-windows-11.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #4d94ff;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#4d94ff';this.style.borderLeftColor='#4d94ff'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#4d94ff'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🚀</span>
+          <span style="background:rgba(77,148,255,0.15);color:#4d94ff;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Blog</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Optimization</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 1, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">How to Speed Up Windows 11 in 2026</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Windows 11 can slow down over time with junk files, startup bloat, and background processes. Here are the most effective steps to restore peak performance.</p>
+      </a>
+
+      <a href="software/rbs-optimizer-pro.html" class="wn-item" style="display:block;padding:22px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid #33d4aa;border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform='translateX(4px)';this.style.borderColor='#33d4aa';this.style.borderLeftColor='#33d4aa'" onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='#33d4aa'">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:10px;">
+          <span style="font-size:1.5rem;line-height:1;">🔧</span>
+          <span style="background:rgba(0,200,150,0.15);color:#33d4aa;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;">Release</span>
+          <span style="color:var(--text-muted);font-size:.85rem;font-weight:500;">Release · RBS Optimizer Pro</span>
+          <span style="color:var(--text-muted);font-size:.85rem;margin-left:auto;">📅 Apr 1, 2026</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);line-height:1.35;">RBS Optimizer Pro v1.0.0</h3>
+        <p style="font-size:.92rem;color:var(--text-secondary);line-height:1.55;margin:0;">Initial release · Junk cleaner, startup manager, performance monitor · One-click optimize mode</p>
+      </a>
+        </div>
+
+        <div style="margin-top:48px;text-align:center;">
+          <p style="color:var(--text-muted);font-size:.92rem;margin-bottom:16px;">Want only one of these?</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+            <a href="blog.html" class="btn btn-secondary btn-sm">📖 All blog posts</a>
+            <a href="software.html" class="btn btn-secondary btn-sm">⬇ All software</a>
+            <a href="feed.xml" class="btn btn-secondary btn-sm">📡 RSS feed</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
+          <p class="footer-tagline">Building free, useful tools for everyone.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="whats-new.html">What's New</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Software</p>
+          <ul class="footer-links">
+            <li><a href="software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Legal</p>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025–2026 RBS (Rare Build Software). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

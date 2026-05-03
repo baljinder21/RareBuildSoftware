@@ -156,7 +156,9 @@ ONE-COMMAND REBUILD (after a batch of edits)
   node scripts\build-search-index.js && ^
   node scripts\build-category-pages.js && ^
   node scripts\build-blog-enhancements.js && ^
-  node scripts\build-software-pages.js
+  node scripts\build-software-pages.js && ^
+  node scripts\build-rss-feed.js && ^
+  node scripts\build-whats-new.js
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

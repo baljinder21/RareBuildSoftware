@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RBS — Rare Build Software</title>
+    <link>https://rarebuildsoftware.com</link>
+    <atom:link href="https://rarebuildsoftware.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Free Windows software and honest guides — voice cloning, optimization, cleaner, dashboard. By Rai, solo dev, Singapore.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 May 2026 00:00:00 GMT</lastBuildDate>
+    <generator>scripts/build-rss-feed.js</generator>
+    <item>
+      <title>Windows 11 KB5083769 Update — What&apos;s Really Broken, What&apos;s Not</title>
+      <link>https://rarebuildsoftware.com/blog/windows-11-kb5083769-update-issues-explained.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/windows-11-kb5083769-update-issues-explained.html</guid>
+      <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
+      <category>Guide</category>
+      <description>Confirmed VSS backup and BitLocker bugs, the boot-loop rumour that traces back to five forum posts, and the 30-second check to see if you are actually affected.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Claude Opus 4.7 vs GPT-5.4 vs Gemini 3.1 — The April 2026 AI Model Showdown</title>
+      <link>https://rarebuildsoftware.com/blog/claude-47-vs-gpt-54-vs-gemini-31-2026.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/claude-47-vs-gpt-54-vs-gemini-31-2026.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>AI News</category>
+      <description>Three flagship AI models in eight weeks. Who actually wins which task, plus the open-weights models you can run on your own Windows PC for free.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Microsoft Is Pulling Copilot From Windows Apps — 7 Free Local AI Tools to Use Instead</title>
+      <link>https://rarebuildsoftware.com/blog/microsoft-removing-copilot-windows-11-local-ai-alternatives.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/microsoft-removing-copilot-windows-11-local-ai-alternatives.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>AI News</category>
+      <description>Microsoft is rolling Copilot out of Photos, Notepad, Snipping Tool and Widgets in 2026. Here are 7 free local AI tools that run on your PC without sending data anywhere.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Best Open-Source Voice Cloning Models in 2026 — 6 Models Tested on Windows</title>
+      <link>https://rarebuildsoftware.com/blog/best-open-source-voice-cloning-2026.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/best-open-source-voice-cloning-2026.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>AI</category>
+      <description>Hands-on comparison of F5-TTS, IndexTTS-2, Chatterbox, XTTS v2, Fish Speech V1.5 and CosyVoice 2 on a regular RTX 3060. Which model wins for what.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>ElevenLabs Pricing 2026 ($990/mo Business) — 5 Free Local Voice Cloners That Match the Quality</title>
+      <link>https://rarebuildsoftware.com/blog/elevenlabs-pricing-2026-free-alternatives.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/elevenlabs-pricing-2026-free-alternatives.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Comparison</category>
+      <description>Real ElevenLabs pricing in 2026 plus 5 free local alternatives that run on Windows without metering your characters.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Is AI Voice Cloning Legal in 2026? A Plain-English Guide for Creators</title>
+      <link>https://rarebuildsoftware.com/blog/is-ai-voice-cloning-legal-2026-guide.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/is-ai-voice-cloning-legal-2026-guide.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>AI &amp; Law</category>
+      <description>Plain-English breakdown of the ELVIS Act, California AB853, the federal Voice Cloning Protection Act, and the EU AI Act. What creators, podcasters and devs actually need to know.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Free ElevenLabs Alternative — 4 Free Voice Cloning Tools (2026)</title>
+      <link>https://rarebuildsoftware.com/blog/free-elevenlabs-alternative-2026.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/free-elevenlabs-alternative-2026.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>AI</category>
+      <description>Tested 4 free, offline AI voice cloning tools for Windows in 2026. Unlimited generation, no monthly cap, no cloud — proper alternatives to ElevenLabs paid plans.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Clone Your Voice in 5 Minutes — Free, Offline, Windows</title>
+      <link>https://rarebuildsoftware.com/blog/how-to-clone-your-voice-tutorial.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/how-to-clone-your-voice-tutorial.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>AI</category>
+      <description>Step-by-step beginner walkthrough: install, record a 30-second sample, save the profile, generate any text in your own voice. No Python, no subscription, all offline.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Best Free Habit Tracker for Windows Desktop (Offline, No Subscription) — 2026</title>
+      <link>https://rarebuildsoftware.com/blog/free-habit-tracker-windows-desktop.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/free-habit-tracker-windows-desktop.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Productivity</category>
+      <description>Most habit trackers are phone apps or cloud-bound web tools. Here is a free Windows desktop habit tracker that works fully offline — plus 15 more widgets in one window.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>RBS Voice Cloner V2 — Major Update with 16 Voices &amp; 7-Band EQ</title>
+      <link>https://rarebuildsoftware.com/blog/rbs-ai-voice-studio-v2-launch.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/rbs-ai-voice-studio-v2-launch.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>AI</category>
+      <description>The biggest Voice Cloner update yet. 16 built-in voices, 7-band parametric EQ tuned for voice, in-app translator across 17 languages, redesigned audio editor, and CUDA 12.8 runtime. New EQ-bar logo. Free.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>RBS Voice Cloner V1 vs V2 — Which Should You Download?</title>
+      <link>https://rarebuildsoftware.com/blog/rbs-voice-cloner-v1-vs-v2.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/rbs-voice-cloner-v1-vs-v2.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Comparison</category>
+      <description>Side-by-side comparison: V1 (~248 MB, lighter) vs V2 (~2 GB, much better). Pick the right version for your PC and use case.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>7-Band Parametric EQ for Voice — Which Preset to Pick</title>
+      <link>https://rarebuildsoftware.com/blog/rbs-ai-voice-studio-v2-eq-guide.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/rbs-ai-voice-studio-v2-eq-guide.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>AI</category>
+      <description>What each EQ band does (60 Hz Sub through 12 kHz Air), when to use Natural / Warm / Bright / Podcast / Phone / Flat presets, and how to fix common voice problems with EQ.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Free BleachBit Alternative for Windows 11 (2026)</title>
+      <link>https://rarebuildsoftware.com/blog/free-bleachbit-alternative-windows-11.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/free-bleachbit-alternative-windows-11.html</guid>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Comparison</category>
+      <description>BleachBit is powerful but intimidating. Here is a friendlier free alternative that keeps the privacy-first / no-telemetry stance.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Remove MSI Bloatware from Windows 11 (2026 Guide)</title>
+      <link>https://rarebuildsoftware.com/blog/remove-msi-bloatware-windows-11.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/remove-msi-bloatware-windows-11.html</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>MSI Center vs Dragon Center, Mystic Light, MSI App Player — what to keep, what to nuke. Specifics for Stealth, Vector, Raider, Cyborg.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>RBS Voice Cloner vs Murf AI vs Speechify (2026)</title>
+      <link>https://rarebuildsoftware.com/blog/rbs-voice-cloner-vs-murf-vs-speechify-2026.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/rbs-voice-cloner-vs-murf-vs-speechify-2026.html</guid>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Comparison</category>
+      <description>Free local voice cloner against two of the biggest paid TTS services. Honest pricing, quality and use-case comparison for 2026.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>RBS PC Cleaner v1.0.0 — Free Honest Windows Cleaner (No Registry)</title>
+      <link>https://rarebuildsoftware.com/blog/rbs-pc-cleaner-launch.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/rbs-pc-cleaner-launch.html</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>RBS PC Cleaner is out — safe junk cleaner, duplicate finder, bulk uninstaller, startup manager, gaming mode, and 9 theme packs. 100% free, reversible, never scans the registry.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Clean Windows 11 Without Breaking It — Safe Guide</title>
+      <link>https://rarebuildsoftware.com/blog/how-to-clean-windows-11-without-breaking-it.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/how-to-clean-windows-11-without-breaking-it.html</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Guide</category>
+      <description>Which junk is safe to remove, which to leave alone, and a free tool that rates every cleanup action before you run it. Step-by-step guide for Windows 10/11.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Free Browser Cache Cleaner — Chrome, Edge, Firefox, Brave, Opera</title>
+      <link>https://rarebuildsoftware.com/blog/free-browser-cache-cleaner-windows.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/free-browser-cache-cleaner-windows.html</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Tutorial</category>
+      <description>Clear cache, cookies, and history across all five major browsers in one click. Saved passwords are reported but never deleted. Free for Windows 10/11.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Find and Delete Duplicate Files on Windows (Free, Safe)</title>
+      <link>https://rarebuildsoftware.com/blog/find-duplicate-files-windows-free.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/find-duplicate-files-windows-free.html</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Guide</category>
+      <description>Hash-based duplicate file finder that always keeps the oldest file and auto-skips system folders. Reclaim gigabytes from Downloads, Photos, and Videos safely.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Best Free Startup Manager for Windows 11 (2026)</title>
+      <link>https://rarebuildsoftware.com/blog/best-free-startup-manager-windows-11.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/best-free-startup-manager-windows-11.html</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Review</category>
+      <description>Safely disable Windows 11 startup entries and cut boot time by 40–70%. Fully reversible — disabled entries are parked in a sibling key, not deleted.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Uninstall Multiple Programs at Once on Windows — Free Bulk Uninstaller</title>
+      <link>https://rarebuildsoftware.com/blog/bulk-uninstall-programs-windows.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/bulk-uninstall-programs-windows.html</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Tutorial</category>
+      <description>Tick multiple programs and uninstall in sequence. Silent mode auto-detected. Sort by size to find the biggest targets. Free for Windows 10/11.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Customize Windows 11 Icons &amp; Themes — 9 Free Theme Packs</title>
+      <link>https://rarebuildsoftware.com/blog/customize-windows-11-icons-themes.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/customize-windows-11-icons-themes.html</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Tutorial</category>
+      <description>9 ready-made Windows 11 theme packs with matching icons and 2560×1440 wallpapers. Apply in one click — Restore Original reverts exactly.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Gaming Mode for Windows — Boost FPS Without Shady &quot;Game Boosters&quot;</title>
+      <link>https://rarebuildsoftware.com/blog/gaming-mode-windows-boost-fps-free.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/gaming-mode-windows-boost-fps-free.html</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>One click: safe clean + memory trim + High Performance power plan + suspend background apps. Resume button undoes everything. 100% free.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Clear Discord, Teams, Spotify &amp; VS Code Cache on Windows</title>
+      <link>https://rarebuildsoftware.com/blog/clear-discord-teams-spotify-cache-windows.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/clear-discord-teams-spotify-cache-windows.html</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Tutorial</category>
+      <description>One click to clear cache for Discord, Microsoft Teams, Spotify, VS Code, Slack and Zoom. Reclaim 5–15 GB of Electron app cache safely.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Free Disk Space Analyzer for Windows — See What&apos;s Using Your Space</title>
+      <link>https://rarebuildsoftware.com/blog/free-disk-space-analyzer-windows.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/free-disk-space-analyzer-windows.html</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Guide</category>
+      <description>Read-only folder tree with drill-down. Find the gigabytes Windows Storage settings won&apos;t show you. No admin required, no cloud upload.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Life Dashboard vs Notion vs Obsidian (2026) — Honest Comparison</title>
+      <link>https://rarebuildsoftware.com/blog/life-dashboard-vs-notion-vs-obsidian-2026.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/life-dashboard-vs-notion-vs-obsidian-2026.html</guid>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Comparison</category>
+      <description>Three very different tools for personal productivity. What each is genuinely good at, what each is bad at, and which to pick.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Remove Lenovo Bloatware from Windows 11 (2026 Guide)</title>
+      <link>https://rarebuildsoftware.com/blog/remove-lenovo-bloatware-windows-11.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/remove-lenovo-bloatware-windows-11.html</guid>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>Vantage, Now, Welcome, McAfee — what to keep, what to nuke. Specifics for ThinkPad, IdeaPad, Yoga, Legion, ThinkBook.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Life Dashboard v1.0.0 — Your All-in-One Productivity App</title>
+      <link>https://rarebuildsoftware.com/blog/life-dashboard-launch.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/life-dashboard-launch.html</guid>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Productivity</category>
+      <description>Track your habits, finances, sleep, diet, tasks, and goals all in one beautiful dashboard. 16 customisable widgets, drag-and-drop layout, all data stored locally. Free forever.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>RBS Voice Cloner v1.0.0 — Free AI Voice Cloning for Windows</title>
+      <link>https://rarebuildsoftware.com/blog/rbs-voice-cloner-launch.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/rbs-voice-cloner-launch.html</guid>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
+      <category>AI</category>
+      <description>Clone any voice in seconds with just a 5-second audio sample. RBS Voice Cloner uses the XTTS v2 AI engine to generate natural speech in 28+ languages — completely free and runs offline.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Remove Acer Bloatware from Windows 11 (2026 Guide)</title>
+      <link>https://rarebuildsoftware.com/blog/remove-acer-bloatware-windows-11.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/remove-acer-bloatware-windows-11.html</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>Acer Care Center, NitroSense, Quick Access, Norton trial — what to keep, what to remove. Specifics for Aspire, Swift, Nitro, Predator.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Windows 11 Running Slow? 12 Ways to Fix It (Free)</title>
+      <link>https://rarebuildsoftware.com/blog/windows-11-running-slow-fix.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/windows-11-running-slow-fix.html</guid>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>Windows 11 running slow on your PC? 12 step-by-step free fixes — from quick wins to deep optimizations. No reinstall, no paid software needed.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Remove Asus Bloatware from Windows 11 (2026 Guide)</title>
+      <link>https://rarebuildsoftware.com/blog/remove-asus-bloatware-windows-11.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/remove-asus-bloatware-windows-11.html</guid>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>Armoury Crate, MyAsus, GameFirst — what to keep, what to nuke. Specifics for ROG, TUF, ZenBook, VivoBook, ProArt.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Free Stardock IconPackager Alternative for Windows 11 (2026)</title>
+      <link>https://rarebuildsoftware.com/blog/free-stardock-iconpackager-alternative-windows-11.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/free-stardock-iconpackager-alternative-windows-11.html</guid>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Comparison</category>
+      <description>Stardock IconPackager is $30. Here is how to get most of the same look on Windows 11 for free, without patching system files.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Remove Dell Bloatware from Windows 11</title>
+      <link>https://rarebuildsoftware.com/blog/remove-dell-bloatware-windows-11.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/remove-dell-bloatware-windows-11.html</guid>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>Step-by-step guide to uninstalling Dell pre-installed apps on Windows 11 — speed up your Dell laptop and reclaim RAM and storage for free.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>RBS PC Cleaner vs CCleaner (2026) — Honest Comparison</title>
+      <link>https://rarebuildsoftware.com/blog/rbs-pc-cleaner-vs-ccleaner-2026.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/rbs-pc-cleaner-vs-ccleaner-2026.html</guid>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Comparison</category>
+      <description>Side-by-side: free tier features, ads, telemetry, registry cleaner, and which one to pick. Written by the developer of one of them.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Free Up RAM on Windows 11 — Complete Guide (2026)</title>
+      <link>https://rarebuildsoftware.com/blog/how-to-free-up-ram-windows-11.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/how-to-free-up-ram-windows-11.html</guid>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>Is your Windows 11 PC running slow with high RAM usage? 10 proven free methods to free up RAM — from closing background apps to one-click optimization.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Best Free PC Optimization Tools 2026</title>
+      <link>https://rarebuildsoftware.com/blog/best-free-tools-2025.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/best-free-tools-2025.html</guid>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>We compare the top free Windows optimization tools available today. Find out which ones actually work and which to avoid.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Remove HP Bloatware from Windows 11 (2026 Guide)</title>
+      <link>https://rarebuildsoftware.com/blog/remove-hp-bloatware-windows-11.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/remove-hp-bloatware-windows-11.html</guid>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>What HP preinstalls on every Pavilion / Envy / Omen, what is safe to uninstall, what to keep, and the fastest way to debloat.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Speed Up Windows 11 in 2026</title>
+      <link>https://rarebuildsoftware.com/blog/speed-windows-11.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/speed-windows-11.html</guid>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>Windows 11 can slow down over time with junk files, startup bloat, and background processes. Here are the most effective steps to restore peak performance.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+  </channel>
+</rss>

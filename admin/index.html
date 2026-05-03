@@ -886,7 +886,7 @@
           <div class="fg">
             <label>QR Code Image</label>
             <div class="qr-preview-wrap" id="don-crypto-qr-wrap" onclick="document.getElementById('don-crypto-qr-input').click()" style="cursor:pointer;">
-              <img id="don-crypto-qr-preview" src="" alt="" style="display:none;width:140px;height:140px;object-fit:contain;border-radius:8px;border:2px solid var(--border);" />
+              <img loading="lazy" id="don-crypto-qr-preview" src="" alt="" style="display:none;width:140px;height:140px;object-fit:contain;border-radius:8px;border:2px solid var(--border);" />
               <div class="qr-hint" id="don-crypto-qr-hint"><span>📷</span>Click to upload QR</div>
             </div>
             <input type="file" id="don-crypto-qr-input" accept="image/*" style="display:none;" onchange="previewDonCryptoQR(event)" />
@@ -1482,7 +1482,7 @@ If this tool helped you, consider supporting development ❤</textarea>
         <div class="img-preview-wrap" id="sw-screenshot-wrap"
              onclick="document.getElementById('sw-screenshot-input').click()"
              style="margin-bottom:8px;">
-          <img id="sw-screenshot-preview" src="" alt="" style="display:none;" />
+          <img loading="lazy" id="sw-screenshot-preview" src="" alt="" style="display:none;" />
           <div class="upload-hint"><span>🖼️</span>Click to upload screenshot<br/><small>PNG/JPG — keep under 500 KB for best performance</small></div>
         </div>
         <input type="file" id="sw-screenshot-input" accept="image/*" style="display:none;" />
@@ -2338,7 +2338,7 @@ function renderDonCryptoList() {
          style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--bg);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;cursor:grab;transition:all .2s;"
          ondragstart="donDragStart(event,${i},'crypto')" ondragover="donDragOver(event,this)" ondrop="donDrop(event,${i},'crypto')">
       <span style="color:var(--text3);font-size:1.1rem;cursor:grab;">⠿</span>
-      ${c.qr ? `<img src="${c.qr}" style="width:36px;height:36px;object-fit:cover;border-radius:6px;border:1px solid var(--border);flex-shrink:0;">` : '<span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--bg-secondary);border-radius:6px;font-size:1.2rem;flex-shrink:0;">🪙</span>'}
+      ${c.qr ? `<img loading="lazy" src="${c.qr}" style="width:36px;height:36px;object-fit:cover;border-radius:6px;border:1px solid var(--border);flex-shrink:0;">` : '<span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--bg-secondary);border-radius:6px;font-size:1.2rem;flex-shrink:0;">🪙</span>'}
       <div style="flex:1;min-width:0;">
         <div style="font-weight:700;font-size:.9rem;">${escHtml(c.coin)}${c.network?` <span style="font-size:.72rem;color:var(--text3);font-weight:400;">(${escHtml(c.network)})</span>`:''}</div>
         <div style="font-size:.75rem;color:var(--text3);font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escHtml(c.address)}</div>
@@ -2775,7 +2775,7 @@ async function startSetup2FA() {
       and scan the QR code below. If you can't scan, enter the secret key manually.
     </div>
     <div class="tfa-qr-wrap">
-      <img src="${qrUrl}" alt="2FA QR Code" onerror="this.style.display='none';document.getElementById('qr-fallback').style.display='block'" />
+      <img loading="lazy" src="${qrUrl}" alt="2FA QR Code" onerror="this.style.display='none';document.getElementById('qr-fallback').style.display='block'" />
       <div id="qr-fallback" style="display:none;font-size:.8rem;color:var(--text3);margin-top:8px;">
         (QR image requires internet — use manual entry below)
       </div>
