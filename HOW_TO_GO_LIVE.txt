@@ -158,7 +158,13 @@ ONE-COMMAND REBUILD (after a batch of edits)
   node scripts\build-blog-enhancements.js && ^
   node scripts\build-software-pages.js && ^
   node scripts\build-rss-feed.js && ^
-  node scripts\build-whats-new.js
+  node scripts\build-whats-new.js && ^
+  node scripts\ping-indexnow.js
+
+  The last step (ping-indexnow.js) instantly notifies Bing / DuckDuckGo /
+  Yandex about every URL in sitemap.xml. Run AFTER deploying — IndexNow
+  re-fetches the URLs immediately, so if you ping before Netlify finishes
+  publishing, search engines see the old version.
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
