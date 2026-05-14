@@ -18,6 +18,102 @@
   /* ── Defaults ── */
   const DEFAULT_SOFTWARE = [
     {
+      id: 'rbs-pdf-editor',
+      name: 'RBS PDF Editor',
+      icon: '📄',
+      iconImage: 'assets/images/software/pdf-editor/icons/icon_256.png',
+      version: '1.0.0',
+      buildId: '20260514-1204',
+      category: 'Productivity',
+      categories: ['Productivity', 'PDF Tools', 'Office'],
+      seoTitle: 'Free PDF Editor for Windows — No Watermark, No Signup, No Subscription | RBS PDF Editor',
+      seoDescription: 'Free PDF editor for Windows 10 and 11. Edit text, sign PDFs, OCR scanned documents, merge / split / rotate pages, convert PDF to Word and Excel. No watermark, no signup, no subscription, works offline. Free Adobe Acrobat alternative with a portable USB build.',
+      seoKeywords: 'free pdf editor, free pdf editor for windows, free pdf editor no watermark, free pdf editor no signup, free pdf editor no subscription, free pdf editor for windows 10, free pdf editor for windows 11, edit pdf free, edit pdf text free, edit pdf without adobe, how to edit pdf for free, pdf editor without signup, pdf editor without account, pdf editor without watermark, portable pdf editor, pdf editor usb, pdf editor no install, offline pdf editor, pdf editor without internet, free adobe acrobat alternative, foxit alternative, sejda alternative, smallpdf alternative, ilovepdf alternative, pdfescape alternative, pdf24 alternative, nitro pdf alternative, lightpdf alternative, ocr scanned pdf free, free ocr software for pdf, make pdf searchable, how to ocr a scanned pdf, sign pdf free, how to sign a pdf for free, free electronic signature pdf, pdf to word free no email, pdf to excel free, compress pdf without losing quality, merge pdf without uploading, split pdf free, rotate pdf pages free, pdf password protect, bates numbering free, bates stamping software, legal pdf editor, pdf for lawyers, pdf form filler free, lightweight pdf editor, pdf editor for old pc, RBS PDF Editor',
+      description: 'A free, offline, portable Windows PDF editor. Edit text in place, place images freeform with resize and rotate, OCR scanned papers with Tesseract, sign documents in one click, merge / split / rotate / reorder pages, convert PDF to Word / Excel / JPG / PNG, compress PDFs, add Bates numbering, password protection, hyperlinks and watermarks. Two builds shipped together — a standard installer that registers PDF file associations, and a single-file portable .exe that runs from a USB stick with no install and no admin rights. No account, no cloud, no telemetry, no watermark, no subscription. A genuine free Adobe Acrobat alternative for Windows 10 and Windows 11.',
+      faqs: [
+        { q: 'Is RBS PDF Editor really free?',
+          a: 'Yes. Completely free for personal and commercial use. No trial, no time limit, no feature gating, no subscription. You can download it once and use it forever — and use it on as many computers as you want. If it saves you time and you want to drop a tip, donations help keep the project alive but they are never required.' },
+        { q: 'Does it add a watermark to my PDFs?',
+          a: 'No. Never. Every other "free" PDF editor I tried either adds a watermark to the output or limits free use to a few documents per day. RBS PDF Editor does neither. Whatever you save looks exactly like what you edited — clean, unmarked.' },
+        { q: 'Do I need to sign up or create an account?',
+          a: 'No. There is no account system in the app. There is no email field, no sign-in screen, no cloud sync. You download the .zip, run the installer or portable .exe, and start editing. The app never asks for credentials of any kind.' },
+        { q: 'Does it work offline / without internet?',
+          a: 'Yes, fully offline. The only network call the app ever makes is the one-time Tesseract OCR installer download (around 80 MB) the first time you choose to OCR a scanned PDF. After that, OCR also runs offline. If you never use OCR, the app has zero internet contact.' },
+        { q: 'Can I run it without installing — like from a USB stick?',
+          a: 'Yes. The download includes a portable build called RBSPDFEditor_Portable.exe. Copy it to a USB stick, a Desktop folder, or a network share. Double-click to launch — no installation, no admin rights required. Settings live in a folder next to the .exe so they travel with you between PCs.' },
+        { q: 'Is this a good Adobe Acrobat alternative?',
+          a: 'For most people, yes. RBS PDF Editor covers edit text, add images, sign documents, OCR scans, merge / split / rotate / reorder pages, password protection, Bates numbering, watermarks, hyperlinks, and conversion to Word / Excel / JPG / PNG. Adobe Acrobat costs around 20 USD per month; RBS PDF Editor is free, offline, and includes a portable build. If you need the advanced redaction or PDF/A archival features Adobe sells to enterprises, that is still a niche where Adobe wins. For everyday editing, signing and form filling, this replaces Acrobat completely.' },
+        { q: 'Can it edit scanned PDFs (with OCR)?',
+          a: 'Yes. Click the OCR button on the toolbar, choose "Searchable PDF", and the editor will run Tesseract OCR on the scan. After OCR you can search the document with Ctrl+F, select and copy text, and even edit any word with the Edit Text tool. It also handles stacked OCR layers — files where someone ran OCR twice and you see "Regarding Regarding" doubling — and cleans that up automatically.' },
+        { q: 'Can I sign a PDF for free with it?',
+          a: 'Yes. Open the Signature tool, draw your signature once with the mouse, and after that you can drop the same signature onto any document with a single click. Your signature is stored only on your computer, never uploaded anywhere.' },
+        { q: 'Can it convert PDF to Word and Excel?',
+          a: 'Yes. The Convert menu exports your PDF to .docx (Word), .xlsx (Excel — pulls out tables), .jpg, and .png. There is also a Compress action that shrinks PDF file size without obvious quality loss. All conversions happen locally on your machine — your file is never uploaded.' },
+        { q: 'Does it work on Windows 10?',
+          a: 'Yes. RBS PDF Editor supports Windows 10 and Windows 11 (64-bit). You need around 250 MB of free disk space for the installed version, or about 110 MB for the portable .exe alone.' },
+        { q: 'Is OCR included or does it cost extra?',
+          a: 'Included and free. The OCR engine is Tesseract — an open-source project — and the app downloads it on first use (about 80 MB, one time only). After that, OCR works offline forever, with no per-page fees or upload limits.' },
+        { q: 'Can it do Bates numbering for legal documents?',
+          a: 'Yes. Open the More menu, choose Bates numbering, set your prefix, starting number, and position. The editor applies the stamp across every page in the document. Useful for legal discovery, paralegals and small law firms that need Bates without buying a dedicated 400 USD specialist tool.' },
+        { q: 'Where are my files stored — locally or in the cloud?',
+          a: 'Always locally. Your PDFs never leave your computer. The app does not upload, sync or back up anything. The only files the app writes to disk are its own settings (under %APPDATA%\\RBSPDFEditor for the installer build, or in a folder next to the .exe for the portable build), plus a small log of clicks and edits — never the contents of your PDFs.' },
+        { q: 'Why is the download 216 MB? That is bigger than other PDF editors.',
+          a: 'Because the .zip contains both builds — the regular installer AND the portable .exe — bundled together so you have a choice. Each .exe inside is around 108 MB. The size also covers the full PyMuPDF rendering engine, pikepdf, and the GUI toolkit; we ship everything needed so the app works on a fresh Windows install without you having to install Python or other runtimes.' }
+      ],
+      fileSize: '216 MB ZIP (Installer + Portable, ~108 MB each inside)',
+      downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSPDFEditor_Data.zip',
+      downloadType: 'external',
+      sha256: 'EC864450792199E86F3211FA724A121DEE8312D1C620FD9E2F410C01B98F5FD1',
+      virustotal: 'https://www.virustotal.com/gui/file/ec864450792199e86f3211fa724a121dee8312d1c620fd9e2f410c01b98f5fd1',
+      screenshot: 'assets/images/software/pdf-editor/screenshots/editor_wide_1400x850.png',
+      screenshotPath: 'assets/images/software/pdf-editor/screenshots/editor_wide_1400x850.png',
+      heroImage: 'assets/images/software/pdf-editor/product_hero_1600x900.png',
+      ogImage: 'assets/images/software/pdf-editor/og_image_1200x630.png',
+      visible: true,
+      released: '2026-05-14',
+      downloads: 0,
+      features: [
+        { icon: '✏️', title: 'Edit text in place',           desc: 'Click any word on the PDF and the text becomes editable right where it sits — same font, same size, no copy-paste dance.' },
+        { icon: '🖼️', title: 'Place images freeform',         desc: 'Drop in a picture, drag the corner and edge handles to resize, rotate, or snap to page width. Click it later to adjust or delete.' },
+        { icon: '🔍', title: 'OCR scanned PDFs',              desc: 'Make scans searchable and editable. Tesseract installs itself the first time you ask, then runs offline forever.' },
+        { icon: '✍️', title: 'One-click signature',           desc: 'Draw your signature once with the mouse. After that, drop it on any document in one click. Saved only on your computer.' },
+        { icon: '📑', title: 'Tabs, not windows',             desc: 'Open multiple PDFs in browser-style tabs. Double-clicking a PDF in Explorer opens it as a new tab in the running app.' },
+        { icon: '💾', title: 'Carry it on a USB stick',       desc: 'The portable .exe runs from anywhere. Settings travel in a folder next to the file — same setup across every PC you touch.' },
+        { icon: '📊', title: 'Convert PDF to Word / Excel',   desc: 'Export to .docx, .xlsx (pulls out tables), .jpg, .png. Compress PDFs to shrink file size without losing readability.' },
+        { icon: '🔐', title: 'Password & permissions',        desc: 'Protect PDFs with passwords, set print / copy / edit permissions. Add Bates numbering for legal work, watermarks, and hyperlinks.' },
+        { icon: '📐', title: 'Page management',               desc: 'Merge, split, rotate, reorder, auto-crop, and number pages. Drag and drop page thumbnails to reorganise.' },
+        { icon: '🛡️', title: '100% offline & private',         desc: 'No account, no cloud sync, no telemetry, no analytics, no watermark. The only network call is the optional one-time OCR download.' }
+      ],
+      sysReqs: [
+        'Windows 10 or Windows 11 (64-bit)',
+        '~250 MB free disk space (installed) or ~110 MB (portable .exe alone)',
+        '2 GB RAM minimum (4 GB recommended for large PDFs)',
+        'Internet only needed once, for the optional Tesseract OCR download (~80 MB)',
+        'No admin rights required for the portable build',
+        'No account, no subscription, no internet otherwise'
+      ],
+      changelog: [
+        {
+          version: '1.0.0',
+          date: '2026-05-14',
+          notes: [
+            'Initial public release — installer and portable builds in one ZIP',
+            'Edit text in place — click a word, type the new text, keeps the original font',
+            'Place images freeform with resize, rotate, lock aspect, snap to page width',
+            'OCR scanned PDFs with Tesseract (auto-downloads on first use, offline thereafter)',
+            'One-click signature — draw once, drop on any document',
+            'Multi-PDF tabs — double-click in Explorer adds a new tab',
+            'Stacked OCR-layer detection — cleans up "Regarding Regarding" doubling',
+            'Convert PDF to Word (.docx), Excel (.xlsx), JPG, PNG; compress PDFs',
+            'Page management — merge, split, rotate, reorder, auto-crop, Bates numbering',
+            'Password protection, watermarks, hyperlinks, page numbers',
+            'F1 / Help menu / right-click → guided first-time tour replay',
+            'Portable .exe — no install, runs from USB, settings travel with the file'
+          ]
+        }
+      ]
+    },
+    {
       id: 'rbs-optimizer-pro',
       name: 'RBS Optimizer Pro',
       icon: '🔧',
@@ -1172,6 +1268,15 @@
   // for the category-page render path.
   const STATIC_BLOG_ARTICLES = [
       {
+        id: 'rbs-pdf-editor-launch',
+        title: 'RBS PDF Editor — Free, Offline, Portable. The Adobe Alternative I Actually Use.',
+        excerpt: 'I built a free Windows PDF editor that edits text in place, places images freeform, OCRs scanned papers, signs in one click, and runs from a USB stick. No cloud, no account, no telemetry, no watermark.',
+        emoji: '📄',
+        tag: 'Release',
+        date: '2026-05-14',
+        url: 'blog/rbs-pdf-editor-launch.html'
+      },
+      {
         id: 'windows-11-kb5083769-update-issues-explained',
         title: 'Windows 11 KB5083769 Update — What\'s Really Broken, What\'s Not',
         excerpt: 'Confirmed VSS backup and BitLocker bugs, the boot-loop rumour that traces back to five forum posts, and the 30-second check to see if you are actually affected.',
@@ -1653,6 +1758,15 @@
     /* ── App recommendation card: pick the RBS app that best matches this post ── */
     if (!article.querySelector('.blog-app-reco')) {
       const APP_RECOS = {
+        'rbs-pdf-editor': {
+          icon: '📄',
+          iconImg: '../assets/images/software/pdf-editor/icons/icon_128.png',
+          name: 'RBS PDF Editor',
+          pitch: 'Edit text in place, place images, OCR scans, sign with one click, merge / split / rotate / reorder pages, convert to Word and Excel. Installer + portable USB build in one free download. Offline, no account, no watermark.',
+          detail: '../software/rbs-pdf-editor.html',
+          download: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSPDFEditor_Data.zip',
+          size: '~216 MB'
+        },
         'rbs-optimizer-pro': {
           icon: '🔧',
           name: 'RBS Optimizer Pro',
@@ -1696,15 +1810,17 @@
       const tag = (idx >= 0 ? (allArticles[idx].tag || '') : '').toLowerCase();
 
       const pickReco = () => {
-        // 1. Voice / AI cloning posts → V2
+        // 1. PDF / Acrobat / Foxit / Sejda / Smallpdf / OCR / sign / merge-pdf → PDF Editor
+        if (/pdf|acrobat|foxit|sejda|smallpdf|ilovepdf|pdfescape|nitro|pdf24|ocr|esign|e-sign|sign-pdf|merge-pdf|split-pdf|bates/.test(slug)) return 'rbs-pdf-editor';
+        // 2. Voice / AI cloning posts → V2
         if (/voice|cloner|tts|elevenlabs|murf|speechify|xtts|cloning|eq-guide/.test(slug)) return 'rbs-voice-cloner-v2';
         if (tag === 'ai' || tag === 'ai news') return 'rbs-voice-cloner-v2';
-        // 2. Productivity / dashboard / habit tracking → Life Dashboard
+        // 3. Productivity / dashboard / habit tracking → Life Dashboard
         if (/habit|dashboard|notion|obsidian/.test(slug)) return 'life-dashboard';
         if (tag === 'productivity') return 'life-dashboard';
-        // 3. Cleanup / cache / cleaner / themes → PC Cleaner
+        // 4. Cleanup / cache / cleaner / themes → PC Cleaner
         if (/cleaner|ccleaner|bleachbit|cache|duplicate|discord|spotify|teams|uninstall|disk-space|stardock|themes|how-to-clean/.test(slug)) return 'rbs-pc-cleaner';
-        // 4. Default — Optimizer Pro covers RAM, startup, slow PC, bloatware, gaming, KB updates
+        // 5. Default — Optimizer Pro covers RAM, startup, slow PC, bloatware, gaming, KB updates
         return 'rbs-optimizer-pro';
       };
 
@@ -1830,12 +1946,13 @@
        `RBSVoiceCloner_Setup.V2.zip` — the substring `RBSVoiceCloner` would
        otherwise wrongly bucket it as V1, so we test for `_Setup.V2` first. */
     const ASSET_PATTERNS = [
-      { pattern: '_Setup.V2',       id: 'rbs-voice-cloner-v2' },
-      { pattern: 'RBSOptimizerPro', id: 'rbs-optimizer-pro' },
-      { pattern: 'RBSVoiceCloner',  id: 'rbs-voice-cloner' },
-      { pattern: 'Life-Dashboard',  id: 'life-dashboard' },
-      { pattern: 'Life.Dashboard',  id: 'life-dashboard' },
-      { pattern: 'RBS.PC.Cleaner',  id: 'rbs-pc-cleaner' }
+      { pattern: '_Setup.V2',        id: 'rbs-voice-cloner-v2' },
+      { pattern: 'RBSPDFEditor',     id: 'rbs-pdf-editor' },
+      { pattern: 'RBSOptimizerPro',  id: 'rbs-optimizer-pro' },
+      { pattern: 'RBSVoiceCloner',   id: 'rbs-voice-cloner' },
+      { pattern: 'Life-Dashboard',   id: 'life-dashboard' },
+      { pattern: 'Life.Dashboard',   id: 'life-dashboard' },
+      { pattern: 'RBS.PC.Cleaner',   id: 'rbs-pc-cleaner' }
     ];
 
     // Try cache first

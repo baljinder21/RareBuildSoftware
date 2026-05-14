@@ -56,6 +56,13 @@
 # existing backlinks; the new static pages are the SEO canonical).
 [[redirects]]
   from = "/software/detail.html"
+  query = { id = "rbs-pdf-editor" }
+  to = "/software/rbs-pdf-editor.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/software/detail.html"
   query = { id = "rbs-optimizer-pro" }
   to = "/software/rbs-optimizer-pro.html"
   status = 301

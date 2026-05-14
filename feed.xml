@@ -6,8 +6,17 @@
     <atom:link href="https://rarebuildsoftware.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Free Windows software and honest guides — voice cloning, optimization, cleaner, dashboard. By Rai, solo dev, Singapore.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 02 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2026 00:00:00 GMT</lastBuildDate>
     <generator>scripts/build-rss-feed.js</generator>
+    <item>
+      <title>RBS PDF Editor — Free, Offline, Portable. The Adobe Alternative I Actually Use.</title>
+      <link>https://rarebuildsoftware.com/blog/rbs-pdf-editor-launch.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/rbs-pdf-editor-launch.html</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <category>Release</category>
+      <description>I built a free Windows PDF editor that edits text in place, places images freeform, OCRs scanned papers, signs in one click, and runs from a USB stick. No cloud, no account, no telemetry, no watermark.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
     <item>
       <title>Windows 11 KB5083769 Update — What&apos;s Really Broken, What&apos;s Not</title>
       <link>https://rarebuildsoftware.com/blog/windows-11-kb5083769-update-issues-explained.html</link>

@@ -103,6 +103,22 @@ function renderRelatedApps(sw) {
   ).join('\n');
 }
 
+function renderFaqs(sw) {
+  if (!sw.faqs || !sw.faqs.length) return '';
+  const items = sw.faqs.map((f, i) =>
+    '            <details class="faq-item" style="background:var(--bg-card,#111d2c);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:10px;">\n' +
+    '              <summary style="cursor:pointer;font-weight:700;font-size:1rem;color:var(--text-primary);">' + escText(f.q) + '</summary>\n' +
+    '              <div style="margin-top:10px;color:var(--text-secondary);line-height:1.7;font-size:.96rem;">' + escText(f.a) + '</div>\n' +
+    '            </details>'
+  ).join('\n');
+  return '\n        <section class="section" style="padding-top:24px;">\n' +
+         '          <div class="container" style="max-width:820px;">\n' +
+         '            <h2 style="font-size:1.6rem;margin-bottom:18px;">Frequently asked questions</h2>\n' +
+         items + '\n' +
+         '          </div>\n' +
+         '        </section>\n';
+}
+
 function buildJsonLd(sw) {
   const url = SITE + '/software/' + sw.id + '.html';
   const screenshotUrl = sw.screenshotPath ? SITE + sw.screenshotPath : SITE + '/assets/images/og/software.svg';
@@ -132,15 +148,32 @@ function buildJsonLd(sw) {
       { '@type': 'ListItem', 'position': 3, 'name': decodeHtml(sw.name), 'item': url }
     ]
   };
-  return '<script type="application/ld+json">' + JSON.stringify(swSchema) + '</script>\n' +
-         '  <script type="application/ld+json">' + JSON.stringify(breadcrumb) + '</script>';
+  let out = '<script type="application/ld+json">' + JSON.stringify(swSchema) + '</script>\n' +
+            '  <script type="application/ld+json">' + JSON.stringify(breadcrumb) + '</script>';
+  if (sw.faqs && sw.faqs.length) {
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': sw.faqs.map(f => ({
+        '@type': 'Question',
+        'name': decodeHtml(f.q),
+        'acceptedAnswer': { '@type': 'Answer', 'text': decodeHtml(f.a) }
+      }))
+    };
+    out += '\n  <script type="application/ld+json">' + JSON.stringify(faqSchema) + '</script>';
+  }
+  return out;
 }
 
 // ── Page builder ──
 function buildPage(sw) {
   const url = SITE + '/software/' + sw.id + '.html';
-  const title = decodeHtml(sw.name) + ' v' + sw.version + ' — Free for Windows | RBS';
-  const desc = (decodeHtml(sw.description) + ' Free download for Windows 10/11, version ' + sw.version + ', ' + (sw.fileSize||'') + '.').replace(/\s+/g,' ').trim();
+  const title = sw.seoTitle
+    ? decodeHtml(sw.seoTitle)
+    : decodeHtml(sw.name) + ' v' + sw.version + ' — Free for Windows | RBS';
+  const desc = sw.seoDescription
+    ? decodeHtml(sw.seoDescription)
+    : (decodeHtml(sw.description) + ' Free download for Windows 10/11, version ' + sw.version + ', ' + (sw.fileSize||'') + '.').replace(/\s+/g,' ').trim();
   const ogImage = sw.screenshotPath ? SITE + sw.screenshotPath : SITE + '/assets/images/og/software.svg';
   const released = sw.released ? fmtDate(sw.released) : '';
 
@@ -150,7 +183,7 @@ function buildPage(sw) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="${escAttr(desc)}" />
-  <meta name="keywords" content="${escAttr(sw.name)}, free ${escAttr(sw.category||'Windows software')}, ${escAttr(sw.name)} download, free windows software, ${escAttr(sw.name)} v${escAttr(sw.version)}, no subscription windows app" />
+  <meta name="keywords" content="${escAttr(sw.seoKeywords || (sw.name + ', free ' + (sw.category||'Windows software') + ', ' + sw.name + ' download, free windows software, ' + sw.name + ' v' + sw.version + ', no subscription windows app'))}" />
   <title>${escText(title)}</title>
 
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
@@ -273,6 +306,8 @@ ${renderChangelog(sw)}
                 <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(location.href).then(()=>{this.textContent='✓ Copied!'})">🔗 Copy Link</button>
               </div>
             </div>
+
+            ${renderFaqs(sw)}
 
             <!-- More from RBS — cross-link to other free apps -->
             <div class="animate-on-scroll" style="margin-top:48px;">

@@ -563,7 +563,7 @@ ul { list-style: none; }
 .hero-graphic {
   position: relative;
   width: 100%;
-  height: 700px;
+  height: 540px;
   pointer-events: none;
   z-index: 1;
   flex-shrink: 0;
@@ -596,35 +596,39 @@ ul { list-style: none; }
   box-shadow: 0 12px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
   width: 300px;
 }
+/* 3-card hero stack — TIGHT spacing. Cards visually connect, no big gaps.
+   Each card ~170px tall, only 10-20px visible gap between. */
 .hac-1 {
-  top: 0; left: 60px;
+  top: 0; left: 40px;
   animation: floatY2 5.5s ease-in-out infinite;
-  border-color: rgba(0, 200, 150, 0.3);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 24px rgba(0,200,150,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+  border-color: rgba(51, 212, 170, 0.40);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 28px rgba(51,212,170,0.18), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 .hac-2 {
+  /* legacy 5-card position — kept so older blog/article pages don't break */
   top: 124px; left: 0;
   animation: floatY 6s ease-in-out infinite 1.2s;
   border-color: rgba(0, 102, 255, 0.3);
   box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 24px rgba(0,102,255,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 .hac-3 {
-  top: 252px; left: 70px;
-  animation: floatY3 4.8s ease-in-out infinite 2.4s;
-  border-color: rgba(168, 85, 247, 0.3);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 24px rgba(168,85,247,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+  top: 170px; left: 0;
+  animation: floatY3 4.8s ease-in-out infinite 1.6s;
+  border-color: rgba(168, 85, 247, 0.40);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 28px rgba(168,85,247,0.18), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 .hac-4 {
+  /* legacy 5-card position */
   top: 384px; left: 10px;
   animation: floatY2 5.2s ease-in-out infinite 3.6s;
   border-color: rgba(0, 200, 150, 0.3);
   box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 24px rgba(0,200,150,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 .hac-5 {
-  top: 522px; left: 60px;
-  animation: floatY 5.6s ease-in-out infinite 4.8s;
-  border-color: rgba(0, 102, 255, 0.3);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 24px rgba(0,102,255,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+  top: 340px; left: 50px;
+  animation: floatY 5.6s ease-in-out infinite 3.2s;
+  border-color: rgba(0, 102, 255, 0.40);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 28px rgba(0,102,255,0.18), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .hac-header {
