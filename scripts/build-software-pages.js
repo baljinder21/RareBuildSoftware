@@ -43,16 +43,28 @@ function fmtDate(iso) {
 }
 
 // ── Per-app rendering ──
+// Normalise a relative asset path so it works from /software/<slug>.html.
+// Accepts both "assets/foo.png" and "/assets/foo.png", returns "../assets/foo.png".
+function rel(p) {
+  if (!p) return '';
+  return '../' + String(p).replace(/^\/+/, '');
+}
+// Same but absolute URL (for JSON-LD, OG tags).
+function abs(p) {
+  if (!p) return '';
+  return SITE + '/' + String(p).replace(/^\/+/, '');
+}
+
 function renderIcon(sw) {
   if (sw.iconImage) {
-    return '<img src="' + escAttr('..' + sw.iconImage) + '" alt="' + escAttr(sw.name) + ' icon" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:inherit;" />';
+    return '<img src="' + escAttr(rel(sw.iconImage)) + '" alt="' + escAttr(sw.name) + ' icon" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:inherit;" />';
   }
   return sw.icon || '📦';
 }
 
 function renderScreenshot(sw) {
   if (sw.screenshotPath) {
-    return '<img src="' + escAttr('..' + sw.screenshotPath) + '" alt="' + escAttr(sw.name) + ' screenshot" style="width:100%;border-radius:var(--radius);border:1px solid var(--border);display:block;" />';
+    return '<img src="' + escAttr(rel(sw.screenshotPath)) + '" alt="' + escAttr(sw.name) + ' screenshot" style="width:100%;border-radius:var(--radius);border:1px solid var(--border);display:block;" />';
   }
   // Fallback: plain branded panel (mirrors the JS fallback for apps without a real screenshot)
   return '<div style="width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,var(--bg-card),#1a3a6b);border-radius:var(--radius);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:var(--text-muted);"><span style="font-size:3rem">' + (sw.icon||'🖥️') + '</span><span style="font-size:.95rem;font-weight:600;color:var(--text-secondary);">' + escText(sw.name) + '</span><span style="font-size:.78rem;">v' + escText(sw.version) + '</span></div>';
@@ -121,7 +133,7 @@ function renderFaqs(sw) {
 
 function buildJsonLd(sw) {
   const url = SITE + '/software/' + sw.id + '.html';
-  const screenshotUrl = sw.screenshotPath ? SITE + sw.screenshotPath : SITE + '/assets/images/og/software.svg';
+  const screenshotUrl = sw.screenshotPath ? abs(sw.screenshotPath) : SITE + '/assets/images/og/software.svg';
   const swSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -174,7 +186,7 @@ function buildPage(sw) {
   const desc = sw.seoDescription
     ? decodeHtml(sw.seoDescription)
     : (decodeHtml(sw.description) + ' Free download for Windows 10/11, version ' + sw.version + ', ' + (sw.fileSize||'') + '.').replace(/\s+/g,' ').trim();
-  const ogImage = sw.screenshotPath ? SITE + sw.screenshotPath : SITE + '/assets/images/og/software.svg';
+  const ogImage = sw.ogImage ? abs(sw.ogImage) : (sw.screenshotPath ? abs(sw.screenshotPath) : SITE + '/assets/images/og/software.svg');
   const released = sw.released ? fmtDate(sw.released) : '';
 
   return `<!DOCTYPE html>

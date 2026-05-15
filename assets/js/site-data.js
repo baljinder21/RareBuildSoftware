@@ -1938,7 +1938,7 @@
       'baljinder21/RBSsoftware',
       'baljinder21/RBS-RareBuildSoftware-V2'
     ];
-    const CACHE_KEY = 'rbs_gh_counts_v2'; // bumped to invalidate V1-only cached counts
+    const CACHE_KEY = 'rbs_gh_counts_v3'; // bumped to add rbs-pdf-editor; v2 cache had no PDF entry
     const CACHE_TTL = 60 * 60 * 1000; // 1 hour
 
     /* Asset filename → software id, checked in order, FIRST MATCH WINS.
