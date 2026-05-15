@@ -1,10 +1,122 @@
 [
   {
+    "id": "rbs-pdf-editor",
+    "name": "RBS PDF Editor",
+    "icon": "📄",
+    "iconImage": "assets/images/software/pdf-editor/icons/icon_256.png",
+    "version": "1.0.0",
+    "buildId": "20260514-1204",
+    "category": "Productivity",
+    "categories": [
+      "Productivity",
+      "PDF Tools",
+      "Office"
+    ],
+    "seoTitle": "Free PDF Editor for Windows — No Watermark, No Signup, No Subscription | RBS PDF Editor",
+    "seoDescription": "Free PDF editor for Windows 10 and 11. Edit text, sign PDFs, OCR scanned documents, merge / split / rotate pages, convert PDF to Word and Excel. No watermark, no signup, no subscription, works offline. Free Adobe Acrobat alternative with a portable USB build.",
+    "description": "A free, offline, portable Windows PDF editor. Edit text in place, place images freeform with resize and rotate, OCR scanned papers with Tesseract, sign documents in one click, merge / split / rotate / reorder pages, convert PDF to Word / Excel / JPG / PNG, compress PDFs, add Bates numbering, password protection, hyperlinks and watermarks. Two builds shipped together — a standard installer that registers PDF file associations, and a single-file portable .exe that runs from a USB stick with no install and no admin rights. No account, no cloud, no telemetry, no watermark, no subscription. A genuine free Adobe Acrobat alternative for Windows 10 and Windows 11.",
+    "fileSize": "216 MB ZIP (Installer + Portable, ~108 MB each inside)",
+    "downloadUrl": "https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSPDFEditor_Data.zip",
+    "downloadType": "external",
+    "sha256": "EC864450792199E86F3211FA724A121DEE8312D1C620FD9E2F410C01B98F5FD1",
+    "virustotal": "https://www.virustotal.com/gui/file/ec864450792199e86f3211fa724a121dee8312d1c620fd9e2f410c01b98f5fd1",
+    "screenshot": "assets/images/software/pdf-editor/screenshots/editor_wide_1400x850.png",
+    "screenshotPath": "assets/images/software/pdf-editor/screenshots/editor_wide_1400x850.png",
+    "heroImage": "assets/images/software/pdf-editor/product_hero_1600x900.png",
+    "ogImage": "assets/images/software/pdf-editor/og_image_1200x630.png",
+    "visible": true,
+    "released": "2026-05-14",
+    "downloads": 0,
+    "features": [
+      {
+        "icon": "✏️",
+        "title": "Edit text in place",
+        "desc": "Click any word on the PDF and the text becomes editable right where it sits — same font, same size, no copy-paste dance."
+      },
+      {
+        "icon": "🖼️",
+        "title": "Place images freeform",
+        "desc": "Drop in a picture, drag the corner and edge handles to resize, rotate, or snap to page width. Click it later to adjust or delete."
+      },
+      {
+        "icon": "🔍",
+        "title": "OCR scanned PDFs",
+        "desc": "Make scans searchable and editable. Tesseract installs itself the first time you ask, then runs offline forever."
+      },
+      {
+        "icon": "✍️",
+        "title": "One-click signature",
+        "desc": "Draw your signature once with the mouse. After that, drop it on any document in one click. Saved only on your computer."
+      },
+      {
+        "icon": "📑",
+        "title": "Tabs, not windows",
+        "desc": "Open multiple PDFs in browser-style tabs. Double-clicking a PDF in Explorer opens it as a new tab in the running app."
+      },
+      {
+        "icon": "💾",
+        "title": "Carry it on a USB stick",
+        "desc": "The portable .exe runs from anywhere. Settings travel in a folder next to the file — same setup across every PC you touch."
+      },
+      {
+        "icon": "📊",
+        "title": "Convert PDF to Word / Excel",
+        "desc": "Export to .docx, .xlsx (pulls out tables), .jpg, .png. Compress PDFs to shrink file size without losing readability."
+      },
+      {
+        "icon": "🔐",
+        "title": "Password & permissions",
+        "desc": "Protect PDFs with passwords, set print / copy / edit permissions. Add Bates numbering for legal work, watermarks, and hyperlinks."
+      },
+      {
+        "icon": "📐",
+        "title": "Page management",
+        "desc": "Merge, split, rotate, reorder, auto-crop, and number pages. Drag and drop page thumbnails to reorganise."
+      },
+      {
+        "icon": "🛡️",
+        "title": "100% offline & private",
+        "desc": "No account, no cloud sync, no telemetry, no analytics, no watermark. The only network call is the optional one-time OCR download."
+      }
+    ],
+    "sysReqs": [
+      "Windows 10 or Windows 11 (64-bit)",
+      "~250 MB free disk space (installed) or ~110 MB (portable .exe alone)",
+      "2 GB RAM minimum (4 GB recommended for large PDFs)",
+      "Internet only needed once, for the optional Tesseract OCR download (~80 MB)",
+      "No admin rights required for the portable build",
+      "No account, no subscription, no internet otherwise"
+    ],
+    "changelog": [
+      {
+        "version": "1.0.0",
+        "date": "2026-05-14",
+        "notes": [
+          "Initial public release — installer and portable builds in one ZIP",
+          "Edit text in place — click a word, type the new text, keeps the original font",
+          "Place images freeform with resize, rotate, lock aspect, snap to page width",
+          "OCR scanned PDFs with Tesseract (auto-downloads on first use, offline thereafter)",
+          "One-click signature — draw once, drop on any document",
+          "Multi-PDF tabs — double-click in Explorer adds a new tab",
+          "Stacked OCR-layer detection — cleans up \"Regarding Regarding\" doubling",
+          "Convert PDF to Word (.docx), Excel (.xlsx), JPG, PNG; compress PDFs",
+          "Page management — merge, split, rotate, reorder, auto-crop, Bates numbering",
+          "Password protection, watermarks, hyperlinks, page numbers",
+          "F1 / Help menu / right-click → guided first-time tour replay",
+          "Portable .exe — no install, runs from USB, settings travel with the file"
+        ]
+      }
+    ]
+  },
+  {
     "id": "rbs-optimizer-pro",
     "name": "RBS Optimizer Pro",
     "version": "1.0.0",
     "category": "Optimization",
-    "categories": ["Optimization", "System Tools"],
+    "categories": [
+      "Optimization",
+      "System Tools"
+    ],
     "description": "A free Windows optimization suite — junk cleaner, startup manager, and performance monitor. Boost performance and monitor your system in real time, all in one polished application.",
     "fileSize": "~23 MB",
     "downloadUrl": "https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip",
@@ -17,12 +129,36 @@
     "released": "2025-01-01",
     "downloads": 0,
     "features": [
-      { "icon": "🧹", "title": "Deep Junk Cleaner",   "desc": "Remove temporary files, cache, old logs, and other system clutter safely and automatically." },
-      { "icon": "🚀", "title": "Startup Manager",      "desc": "Control which programs launch at startup. Disable unnecessary entries to reduce boot time." },
-      { "icon": "📊", "title": "Performance Monitor",  "desc": "Real-time graphs for CPU, RAM, and disk usage so you always know what's running." },
-      { "icon": "⚙️", "title": "One-Click Optimize",   "desc": "Single button runs a full system tune-up — clean, optimize, and boost all at once." },
-      { "icon": "🛡️", "title": "Privacy First",        "desc": "No telemetry, no data collection, no internet required. Your data stays on your machine." },
-      { "icon": "🎨", "title": "Modern Interface",     "desc": "Clean, dark-themed UI that is intuitive for beginners and powerful for advanced users." }
+      {
+        "icon": "🧹",
+        "title": "Deep Junk Cleaner",
+        "desc": "Remove temporary files, cache, old logs, and other system clutter safely and automatically."
+      },
+      {
+        "icon": "🚀",
+        "title": "Startup Manager",
+        "desc": "Control which programs launch at startup. Disable unnecessary entries to reduce boot time."
+      },
+      {
+        "icon": "📊",
+        "title": "Performance Monitor",
+        "desc": "Real-time graphs for CPU, RAM, and disk usage so you always know what's running."
+      },
+      {
+        "icon": "⚙️",
+        "title": "One-Click Optimize",
+        "desc": "Single button runs a full system tune-up — clean, optimize, and boost all at once."
+      },
+      {
+        "icon": "🛡️",
+        "title": "Privacy First",
+        "desc": "No telemetry, no data collection, no internet required. Your data stays on your machine."
+      },
+      {
+        "icon": "🎨",
+        "title": "Modern Interface",
+        "desc": "Clean, dark-themed UI that is intuitive for beginners and powerful for advanced users."
+      }
     ],
     "sysReqs": [
       "Windows 10 or Windows 11 (64-bit)",
@@ -33,7 +169,16 @@
       "Administrator rights for full features"
     ],
     "changelog": [
-      { "version": "1.0.0", "date": "2025-01-01", "notes": ["Initial release", "Junk cleaner, startup manager, performance monitor", "One-click optimize mode", "Dark mode UI"] }
+      {
+        "version": "1.0.0",
+        "date": "2025-01-01",
+        "notes": [
+          "Initial release",
+          "Junk cleaner, startup manager, performance monitor",
+          "One-click optimize mode",
+          "Dark mode UI"
+        ]
+      }
     ]
   },
   {
@@ -41,7 +186,10 @@
     "name": "RBS Voice Cloner",
     "version": "1.0.0",
     "category": "AI Tools",
-    "categories": ["AI Tools", "Audio"],
+    "categories": [
+      "AI Tools",
+      "Audio"
+    ],
     "description": "Clone any voice with just a 5-second audio sample. Powered by XTTS v2 AI engine, generate natural-sounding speech in 28+ languages — completely free, runs locally on your PC.",
     "fileSize": "~248 MB",
     "downloadUrl": "https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSVoiceCloner_Setup.zip",
@@ -54,12 +202,36 @@
     "released": "2026-04-12",
     "downloads": 0,
     "features": [
-      { "icon": "🎙️", "title": "Voice Cloning",        "desc": "Clone any voice from a 5-30 second audio sample with stunning realism using XTTS v2." },
-      { "icon": "🌍", "title": "28+ Languages",         "desc": "Generate speech in English, Spanish, French, German, Hindi, Japanese, Chinese, and many more." },
-      { "icon": "📝", "title": "Text to Speech",        "desc": "Convert any text to natural speech using your cloned voice profiles." },
-      { "icon": "🎚️", "title": "Audio Editor",          "desc": "Built-in audio editor with waveform view, trim, noise reduction and pitch control." },
-      { "icon": "⚡", "title": "GPU Accelerated",       "desc": "Runs on your RTX GPU via CUDA for ultra-fast generation — CPU fallback for other PCs." },
-      { "icon": "🔒", "title": "100% Offline",          "desc": "After the first model download, everything runs locally. No cloud, no data sent anywhere." }
+      {
+        "icon": "🎙️",
+        "title": "Voice Cloning",
+        "desc": "Clone any voice from a 5-30 second audio sample with stunning realism using XTTS v2."
+      },
+      {
+        "icon": "🌍",
+        "title": "28+ Languages",
+        "desc": "Generate speech in English, Spanish, French, German, Hindi, Japanese, Chinese, and many more."
+      },
+      {
+        "icon": "📝",
+        "title": "Text to Speech",
+        "desc": "Convert any text to natural speech using your cloned voice profiles."
+      },
+      {
+        "icon": "🎚️",
+        "title": "Audio Editor",
+        "desc": "Built-in audio editor with waveform view, trim, noise reduction and pitch control."
+      },
+      {
+        "icon": "⚡",
+        "title": "GPU Accelerated",
+        "desc": "Runs on your RTX GPU via CUDA for ultra-fast generation — CPU fallback for other PCs."
+      },
+      {
+        "icon": "🔒",
+        "title": "100% Offline",
+        "desc": "After the first model download, everything runs locally. No cloud, no data sent anywhere."
+      }
     ],
     "sysReqs": [
       "Windows 10 or Windows 11 (64-bit)",
@@ -70,7 +242,18 @@
       "Administrator rights for installation"
     ],
     "changelog": [
-      { "version": "1.0.0", "date": "2026-04-12", "notes": ["Initial release", "XTTS v2 voice cloning engine", "28+ language support", "Built-in audio editor", "Batch processing", "GPU acceleration via CUDA"] }
+      {
+        "version": "1.0.0",
+        "date": "2026-04-12",
+        "notes": [
+          "Initial release",
+          "XTTS v2 voice cloning engine",
+          "28+ language support",
+          "Built-in audio editor",
+          "Batch processing",
+          "GPU acceleration via CUDA"
+        ]
+      }
     ]
   },
   {
@@ -78,7 +261,10 @@
     "name": "RBS Voice Cloner V2",
     "version": "2.0.0",
     "category": "AI Tools",
-    "categories": ["AI Tools", "Audio"],
+    "categories": [
+      "AI Tools",
+      "Audio"
+    ],
     "description": "Major V2 release of the free AI voice cloner. 16 built-in voices plus unlimited custom clones from a 30-second sample, 17 languages with auto-translate, 7-band parametric equaliser with voice presets, and a redesigned audio editor (cut · fade · merge · normalise · live waveform cursor). 100% offline after the one-time model download.",
     "fileSize": "~2.0 GB",
     "downloadUrl": "https://github.com/baljinder21/RBS-RareBuildSoftware-V2/releases/download/VoiceCloner/RBSVoiceCloner_Setup.V2.zip",
@@ -92,12 +278,36 @@
     "released": "2026-04-26",
     "downloads": 0,
     "features": [
-      { "icon": "🎤", "title": "16 Built-in Voices + Unlimited Clones", "desc": "6 male, 6 female, 2 boy, 2 girl ready to go. Plus clone any voice from a 30-second sample and save unlimited custom voice profiles." },
-      { "icon": "🌐", "title": "17 Languages + Auto-Translate",         "desc": "Native XTTS v2 generation in English, Spanish, French, German, Italian, Portuguese, Polish, Turkish, Russian, Dutch, Czech, Arabic, Chinese, Japanese, Hungarian, Korean, Hindi. Translator built into the TTS page." },
-      { "icon": "🎚️", "title": "7-Band Parametric Equaliser",           "desc": "Voice-tuned EQ (Sub 60 Hz / Bass 200 Hz / Low Mid 500 Hz / Mid 1.5 kHz / Hi Mid 3.5 kHz / Presence 8 kHz / Air 12 kHz) with 6 presets — Natural, Warm, Bright, Podcast, Phone, Flat." },
-      { "icon": "✂️", "title": "Redesigned Audio Editor",                "desc": "Hero waveform with live playback cursor, drag-to-select with right-click Cut / Delete / Crop / Copy, tabbed effects (Quick · Adjust · Trim & Fade · Equaliser), and full keyboard shortcuts." },
-      { "icon": "⚡", "title": "GPU Accelerated (CUDA 12.x / 13.x)",     "desc": "Ships PyTorch with CUDA 12.8 runtime — 5–10× faster than CPU. Falls back to CPU automatically if no CUDA GPU is present. Diagnose page (Ctrl+D) shows GPU vs CPU mode." },
-      { "icon": "🔒", "title": "Fully Offline After Setup",              "desc": "XTTS v2 model loads locally, no telemetry, no cloud. Internet only needed for the one-time ~2 GB model download and the optional translator." }
+      {
+        "icon": "🎤",
+        "title": "16 Built-in Voices + Unlimited Clones",
+        "desc": "6 male, 6 female, 2 boy, 2 girl ready to go. Plus clone any voice from a 30-second sample and save unlimited custom voice profiles."
+      },
+      {
+        "icon": "🌐",
+        "title": "17 Languages + Auto-Translate",
+        "desc": "Native XTTS v2 generation in English, Spanish, French, German, Italian, Portuguese, Polish, Turkish, Russian, Dutch, Czech, Arabic, Chinese, Japanese, Hungarian, Korean, Hindi. Translator built into the TTS page."
+      },
+      {
+        "icon": "🎚️",
+        "title": "7-Band Parametric Equaliser",
+        "desc": "Voice-tuned EQ (Sub 60 Hz / Bass 200 Hz / Low Mid 500 Hz / Mid 1.5 kHz / Hi Mid 3.5 kHz / Presence 8 kHz / Air 12 kHz) with 6 presets — Natural, Warm, Bright, Podcast, Phone, Flat."
+      },
+      {
+        "icon": "✂️",
+        "title": "Redesigned Audio Editor",
+        "desc": "Hero waveform with live playback cursor, drag-to-select with right-click Cut / Delete / Crop / Copy, tabbed effects (Quick · Adjust · Trim & Fade · Equaliser), and full keyboard shortcuts."
+      },
+      {
+        "icon": "⚡",
+        "title": "GPU Accelerated (CUDA 12.x / 13.x)",
+        "desc": "Ships PyTorch with CUDA 12.8 runtime — 5–10× faster than CPU. Falls back to CPU automatically if no CUDA GPU is present. Diagnose page (Ctrl+D) shows GPU vs CPU mode."
+      },
+      {
+        "icon": "🔒",
+        "title": "Fully Offline After Setup",
+        "desc": "XTTS v2 model loads locally, no telemetry, no cloud. Internet only needed for the one-time ~2 GB model download and the optional translator."
+      }
     ],
     "sysReqs": [
       "Windows 10 or Windows 11 (64-bit)",
@@ -108,20 +318,24 @@
       "Administrator rights for installation"
     ],
     "changelog": [
-      { "version": "2.0.0", "date": "2026-04-26", "notes": [
-        "16 built-in voices — 6 Male, 6 Female, 2 Boy, 2 Girl",
-        "7-band parametric equaliser tuned for voice + 6 presets (Natural, Warm, Bright, Podcast, Phone, Flat)",
-        "Translator on the Text-to-Speech page across all 17 supported languages",
-        "Redesigned Audio Editor with tabbed effects and hero waveform",
-        "Live playback cursor + time readout while playing",
-        "Drag-to-select + right-click Cut / Delete / Crop / Copy on the waveform",
-        "Keyboard shortcuts: Ctrl+X cut, Ctrl+C copy, Del delete, Ctrl+Shift+X crop, Esc clear, Ctrl+Z/Y undo·redo",
-        "Diagnose page (Ctrl+D) with GPU detection + per-package check",
-        "Accent colour picker in Settings (Green / Blue / Purple / Orange / Pink) with one-click 'Restart App Now'",
-        "New equaliser-bar logo + matching app icon — RBS Voice Cloner V2 brand",
-        "Sentence-level rendering for noticeably more natural prosody",
-        "Ships with PyTorch + CUDA 12.8 runtime (works with any CUDA 12.x or 13.x driver)"
-      ] }
+      {
+        "version": "2.0.0",
+        "date": "2026-04-26",
+        "notes": [
+          "16 built-in voices — 6 Male, 6 Female, 2 Boy, 2 Girl",
+          "7-band parametric equaliser tuned for voice + 6 presets (Natural, Warm, Bright, Podcast, Phone, Flat)",
+          "Translator on the Text-to-Speech page across all 17 supported languages",
+          "Redesigned Audio Editor with tabbed effects and hero waveform",
+          "Live playback cursor + time readout while playing",
+          "Drag-to-select + right-click Cut / Delete / Crop / Copy on the waveform",
+          "Keyboard shortcuts: Ctrl+X cut, Ctrl+C copy, Del delete, Ctrl+Shift+X crop, Esc clear, Ctrl+Z/Y undo·redo",
+          "Diagnose page (Ctrl+D) with GPU detection + per-package check",
+          "Accent colour picker in Settings (Green / Blue / Purple / Orange / Pink) with one-click 'Restart App Now'",
+          "New equaliser-bar logo + matching app icon — RBS Voice Cloner V2 brand",
+          "Sentence-level rendering for noticeably more natural prosody",
+          "Ships with PyTorch + CUDA 12.8 runtime (works with any CUDA 12.x or 13.x driver)"
+        ]
+      }
     ]
   },
   {
@@ -129,7 +343,10 @@
     "name": "Life Dashboard",
     "version": "1.0.0",
     "category": "Productivity",
-    "categories": ["Productivity", "Lifestyle"],
+    "categories": [
+      "Productivity",
+      "Lifestyle"
+    ],
     "description": "Your all-in-one personal productivity command center. 16 powerful widgets — track habits, tasks, finances, weather, sleep, diet and more — all in one beautiful dashboard.",
     "fileSize": "~104 MB",
     "downloadUrl": "https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/Life.Dashboard.Setup.1.0.0.zip",
@@ -142,12 +359,36 @@
     "released": "2026-04-14",
     "downloads": 0,
     "features": [
-      { "icon": "✅", "title": "Tasks & Habits",      "desc": "To-do list with priorities and a daily habit tracker with streak counter to keep you on track." },
-      { "icon": "💰", "title": "Finance Tracker",     "desc": "Log income and expenses with visual charts to understand where your money goes." },
-      { "icon": "🌤️", "title": "Live Weather",        "desc": "Real-time weather with a 3-day forecast for any city in the world." },
-      { "icon": "🎯", "title": "Goals & Countdown",   "desc": "Set long-term goals with progress bars and count down to important events." },
-      { "icon": "🍎", "title": "Health Tracking",     "desc": "Track water intake, sleep quality, and diet plans with country-based meal templates." },
-      { "icon": "🧩", "title": "16 Widgets",          "desc": "Clock, calendar, notes, Pomodoro timer, RSS news, quick links, motivational quotes and more." }
+      {
+        "icon": "✅",
+        "title": "Tasks & Habits",
+        "desc": "To-do list with priorities and a daily habit tracker with streak counter to keep you on track."
+      },
+      {
+        "icon": "💰",
+        "title": "Finance Tracker",
+        "desc": "Log income and expenses with visual charts to understand where your money goes."
+      },
+      {
+        "icon": "🌤️",
+        "title": "Live Weather",
+        "desc": "Real-time weather with a 3-day forecast for any city in the world."
+      },
+      {
+        "icon": "🎯",
+        "title": "Goals & Countdown",
+        "desc": "Set long-term goals with progress bars and count down to important events."
+      },
+      {
+        "icon": "🍎",
+        "title": "Health Tracking",
+        "desc": "Track water intake, sleep quality, and diet plans with country-based meal templates."
+      },
+      {
+        "icon": "🧩",
+        "title": "16 Widgets",
+        "desc": "Clock, calendar, notes, Pomodoro timer, RSS news, quick links, motivational quotes and more."
+      }
     ],
     "sysReqs": [
       "Windows 10 or Windows 11 (64-bit)",
@@ -157,7 +398,16 @@
       "No administrator rights required"
     ],
     "changelog": [
-      { "version": "1.0.0", "date": "2026-04-14", "notes": ["Initial release", "16 widgets including tasks, habits, finance, weather, sleep, diet", "Drag and resize widgets", "All data saved locally"] }
+      {
+        "version": "1.0.0",
+        "date": "2026-04-14",
+        "notes": [
+          "Initial release",
+          "16 widgets including tasks, habits, finance, weather, sleep, diet",
+          "Drag and resize widgets",
+          "All data saved locally"
+        ]
+      }
     ]
   },
   {
@@ -165,7 +415,11 @@
     "name": "RBS PC Cleaner",
     "version": "1.0.0",
     "category": "Optimization",
-    "categories": ["Optimization", "System Tools", "Utilities"],
+    "categories": [
+      "Optimization",
+      "System Tools",
+      "Utilities"
+    ],
     "description": "Honest Windows maintenance utility with real numbers, reversible changes, and no fake scores. Clean junk safely, manage startup, find duplicates, uninstall in bulk, apply 9 theme packs — and never touch the registry.",
     "fileSize": "~61 MB",
     "downloadUrl": "https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip",
@@ -178,18 +432,66 @@
     "released": "2026-04-19",
     "downloads": 0,
     "features": [
-      { "icon": "🧽", "title": "Safe Junk Cleaner",    "desc": "Temp, recycle bin, Windows Update cache, prefetch, logs — each rated Safe / Caution / Risky, nothing deleted without confirmation." },
-      { "icon": "🌐", "title": "Browser Cleaner",      "desc": "Clears cache, cookies, history for Chrome, Edge, Firefox, Brave, Opera. Saved passwords are reported but never deleted." },
-      { "icon": "📦", "title": "App Cache Cleaner",    "desc": "Wipes Discord, Microsoft Teams, Spotify, VS Code, Slack, Zoom cache in one click." },
-      { "icon": "📊", "title": "Disk Analyzer",        "desc": "Read-only folder tree — see exactly what is using your space and drill down click by click." },
-      { "icon": "🔍", "title": "Duplicate Finder",     "desc": "Hash-based duplicate detection, always keeps the oldest file, auto-skips Windows and Program Files." },
-      { "icon": "🗑️", "title": "Bulk Uninstaller",     "desc": "Tick multiple installed programs and uninstall in sequence — silent mode when supported." },
-      { "icon": "🚀", "title": "Startup Manager",      "desc": "Toggle any startup entry on/off. Disabled entries are parked in a sibling key — fully reversible." },
-      { "icon": "🎮", "title": "Gaming Mode",          "desc": "One click: safe clean + memory trim + High-Performance power plan + suspend background apps. Resume brings everything back." },
-      { "icon": "🎨", "title": "9 Theme Packs",        "desc": "Real icon packs + matching 2560×1440 wallpapers + taskbar accent. Reversible with one click — Restore Original." },
-      { "icon": "⏰", "title": "Scheduler",            "desc": "Daily or weekly silent auto-clean via Windows Task Scheduler." },
-      { "icon": "🛡️", "title": "Safety Gate",          "desc": "Blocks deletion inside C:\\Windows, Program Files, ProgramData, drive roots — and never scans the registry." },
-      { "icon": "💼", "title": "Portable Mode",        "desc": "Store settings + backups next to the exe — perfect for USB sticks and IT technicians." }
+      {
+        "icon": "🧽",
+        "title": "Safe Junk Cleaner",
+        "desc": "Temp, recycle bin, Windows Update cache, prefetch, logs — each rated Safe / Caution / Risky, nothing deleted without confirmation."
+      },
+      {
+        "icon": "🌐",
+        "title": "Browser Cleaner",
+        "desc": "Clears cache, cookies, history for Chrome, Edge, Firefox, Brave, Opera. Saved passwords are reported but never deleted."
+      },
+      {
+        "icon": "📦",
+        "title": "App Cache Cleaner",
+        "desc": "Wipes Discord, Microsoft Teams, Spotify, VS Code, Slack, Zoom cache in one click."
+      },
+      {
+        "icon": "📊",
+        "title": "Disk Analyzer",
+        "desc": "Read-only folder tree — see exactly what is using your space and drill down click by click."
+      },
+      {
+        "icon": "🔍",
+        "title": "Duplicate Finder",
+        "desc": "Hash-based duplicate detection, always keeps the oldest file, auto-skips Windows and Program Files."
+      },
+      {
+        "icon": "🗑️",
+        "title": "Bulk Uninstaller",
+        "desc": "Tick multiple installed programs and uninstall in sequence — silent mode when supported."
+      },
+      {
+        "icon": "🚀",
+        "title": "Startup Manager",
+        "desc": "Toggle any startup entry on/off. Disabled entries are parked in a sibling key — fully reversible."
+      },
+      {
+        "icon": "🎮",
+        "title": "Gaming Mode",
+        "desc": "One click: safe clean + memory trim + High-Performance power plan + suspend background apps. Resume brings everything back."
+      },
+      {
+        "icon": "🎨",
+        "title": "9 Theme Packs",
+        "desc": "Real icon packs + matching 2560×1440 wallpapers + taskbar accent. Reversible with one click — Restore Original."
+      },
+      {
+        "icon": "⏰",
+        "title": "Scheduler",
+        "desc": "Daily or weekly silent auto-clean via Windows Task Scheduler."
+      },
+      {
+        "icon": "🛡️",
+        "title": "Safety Gate",
+        "desc": "Blocks deletion inside C:\\Windows, Program Files, ProgramData, drive roots — and never scans the registry."
+      },
+      {
+        "icon": "💼",
+        "title": "Portable Mode",
+        "desc": "Store settings + backups next to the exe — perfect for USB sticks and IT technicians."
+      }
     ],
     "sysReqs": [
       "Windows 10 or Windows 11 (64-bit)",
@@ -200,7 +502,22 @@
       "Installer (recommended) or portable ZIP — both supported"
     ],
     "changelog": [
-      { "version": "1.0.0", "date": "2026-04-19", "notes": ["Initial public release", "Junk, browser, and app cache cleaners with Safe/Caution/Risky ratings", "Disk analyzer and hash-based duplicate finder", "Bulk uninstaller with silent-mode support", "Startup manager with reversible disable", "Gaming Mode with Resume button", "9 theme packs (Monochrome, Neon, Minimal, Retro, Cyberpunk, Ocean, Sunset, Forest, Windows Default)", "Scheduled auto-clean via Task Scheduler", "Portable mode and installer options", "Central safety gate — never scans or modifies the registry"] }
+      {
+        "version": "1.0.0",
+        "date": "2026-04-19",
+        "notes": [
+          "Initial public release",
+          "Junk, browser, and app cache cleaners with Safe/Caution/Risky ratings",
+          "Disk analyzer and hash-based duplicate finder",
+          "Bulk uninstaller with silent-mode support",
+          "Startup manager with reversible disable",
+          "Gaming Mode with Resume button",
+          "9 theme packs (Monochrome, Neon, Minimal, Retro, Cyberpunk, Ocean, Sunset, Forest, Windows Default)",
+          "Scheduled auto-clean via Task Scheduler",
+          "Portable mode and installer options",
+          "Central safety gate — never scans or modifies the registry"
+        ]
+      }
     ]
   }
 ]
