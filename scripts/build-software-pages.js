@@ -232,9 +232,22 @@ function buildPage(sw) {
   const title = sw.seoTitle
     ? decodeHtml(sw.seoTitle)
     : decodeHtml(sw.name) + ' v' + sw.version + ' — Free for Windows | RBS';
+  // Auto-trim meta description to fit Bing/Google's "good" range. Bing
+  // flags both "too long" (>160 in source) and "too short" (<70). We target
+  // 150 chars so HTML-encoded entities (e.g. "&" -> "&amp;" adds 4 chars)
+  // don't blow past 160 in the final markup. Trim at the last word boundary
+  // so we never cut a word in half.
+  function fitDescription(raw) {
+    const MAX = 150;
+    const flat = raw.replace(/\s+/g, ' ').trim();
+    if (flat.length <= MAX) return flat;
+    let cut = flat.lastIndexOf(' ', MAX - 1);
+    if (cut < 80) cut = MAX - 1;             // pathological case: no spaces
+    return flat.slice(0, cut).replace(/[.,;:\s]+$/, '') + '…';
+  }
   const desc = sw.seoDescription
-    ? decodeHtml(sw.seoDescription)
-    : (decodeHtml(sw.description) + ' Free download for Windows 10/11, version ' + sw.version + ', ' + (sw.fileSize||'') + '.').replace(/\s+/g,' ').trim();
+    ? fitDescription(decodeHtml(sw.seoDescription))
+    : fitDescription(decodeHtml(sw.description) + ' Free download for Windows 10/11, v' + sw.version + ', ' + (sw.fileSize||'') + '.');
   const ogImage = sw.ogImage ? abs(sw.ogImage) : (sw.screenshotPath ? abs(sw.screenshotPath) : SITE + '/assets/images/og/software.svg');
   const released = sw.released ? fmtDate(sw.released) : '';
 
@@ -298,6 +311,12 @@ function buildPage(sw) {
   <div id="rbs-announcement" style="display:none;"></div>
 
   <main id="main-content">
+
+    <!-- rbs-detail-root: lets ratings.js find this page as a software detail
+         page and inject the review/star-rating UI into the share section.
+         data-software-id tells it WHICH app, so it doesn't fall back to the
+         first item in the global software array. -->
+    <div id="rbs-detail-root" data-software-id="${escAttr(sw.id)}">
 
     <!-- Hero -->
     <section class="software-detail-hero">
@@ -455,6 +474,8 @@ ${renderSysReqs(sw)}
       </div>
     </div>
   </section>
+
+    </div><!-- /rbs-detail-root -->
 
   <!-- Footer -->
   <footer class="footer">

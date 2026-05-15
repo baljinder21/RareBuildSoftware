@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Your all-in-one personal productivity command center. 16 widgets — track habits, tasks, finances, weather, sleep, diet and more — all in one beautiful dashboard. Free download for Windows 10/11, version 1.0.0, ~104 MB." />
+  <meta name="description" content="Your all-in-one personal productivity command center. 16 widgets — track habits, tasks, finances, weather, sleep, diet and more — all in one…" />
   <meta name="keywords" content="Life Dashboard, free Productivity, Life Dashboard download, free windows software, Life Dashboard v1.0.0, no subscription windows app" />
   <title>Life Dashboard v1.0.0 — Free for Windows | RBS</title>
 
@@ -12,7 +12,7 @@
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="RBS" />
   <meta property="og:title"       content="Life Dashboard — Free for Windows" />
-  <meta property="og:description" content="Your all-in-one personal productivity command center. 16 widgets — track habits, tasks, finances, weather, sleep, diet and more — all in one beautiful dashboard. Free download for Windows 10/11, version 1.0.0, ~104 MB." />
+  <meta property="og:description" content="Your all-in-one personal productivity command center. 16 widgets — track habits, tasks, finances, weather, sleep, diet and more — all in one…" />
   <meta property="og:url"         content="https://rarebuildsoftware.com/software/life-dashboard.html" />
   <meta property="og:image"       content="https://rarebuildsoftware.com/assets/images/og/software.svg" />
   <meta name="twitter:card"       content="summary_large_image" />
@@ -59,6 +59,12 @@
   <div id="rbs-announcement" style="display:none;"></div>
 
   <main id="main-content">
+
+    <!-- rbs-detail-root: lets ratings.js find this page as a software detail
+         page and inject the review/star-rating UI into the share section.
+         data-software-id tells it WHICH app, so it doesn't fall back to the
+         first item in the global software array. -->
+    <div id="rbs-detail-root" data-software-id="life-dashboard">
 
     <!-- Hero -->
     <section class="software-detail-hero">
@@ -294,6 +300,8 @@
       </div>
     </div>
   </section>
+
+    </div><!-- /rbs-detail-root -->
 
   <!-- Footer -->
   <footer class="footer">

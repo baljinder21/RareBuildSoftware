@@ -26,7 +26,7 @@
       buildId: '20260514-1204',
       category: 'Productivity',
       categories: ['Productivity', 'PDF Tools', 'Office'],
-      seoTitle: 'Free PDF Editor for Windows — No Watermark, No Signup, No Subscription | RBS PDF Editor',
+      seoTitle: 'Free PDF Editor for Windows — No Watermark, No Signup | RBS',
       seoDescription: 'Free PDF editor for Windows 10/11. Edit text, OCR scans, sign, merge & convert PDFs. No watermark, no signup, offline. Adobe Acrobat alternative.',
       howTo: {
         name: 'How to edit a PDF for free on Windows',

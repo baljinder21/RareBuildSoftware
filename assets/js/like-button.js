@@ -86,6 +86,9 @@
         map[slug] = true;
         saveLiked(map);
         render(host, slug, count, true);
+        // Soft prompt: invite the user to leave a proper review now that
+        // we know they're happy with the app. Only nudge, never block.
+        showReviewPrompt(host);
       })
       .catch(err => {
         btn.disabled = false;
@@ -98,6 +101,72 @@
         note.style.cssText = 'margin:10px 0 0;color:#f59e0b;font-size:.85rem;';
         host.querySelector('.rbs-like-wrap').appendChild(note);
       });
+  }
+
+  // After a successful Like, gently invite the user to leave a proper
+  // review. The review form (managed by ratings.js) is further down the
+  // page — we scroll to it on click, never on auto.
+  function showReviewPrompt(host) {
+    const wrap = host.querySelector('.rbs-like-wrap');
+    if (!wrap || wrap.querySelector('.rbs-review-nudge')) return;
+    const nudge = document.createElement('div');
+    nudge.className = 'rbs-review-nudge';
+    nudge.style.cssText = 'margin-top:18px;padding:16px 18px;background:rgba(77,148,255,0.08);border:1px dashed rgba(77,148,255,0.30);border-radius:10px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;animation:rbsFadeIn .35s ease-out;';
+    nudge.innerHTML = `
+      <span style="font-size:1.4rem;flex-shrink:0;line-height:1;">✍️</span>
+      <div style="flex:1;min-width:200px;">
+        <p style="margin:0 0 2px;font-weight:700;color:var(--text-primary);font-size:.95rem;">Thanks! Got 30 seconds for a quick review too?</p>
+        <p style="margin:0;color:var(--text-muted);font-size:.85rem;line-height:1.5;">Even one line helps other people decide. No signup, no email needed.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button type="button" class="rbs-review-yes btn btn-primary btn-sm" style="white-space:nowrap;">Yes — write a review</button>
+        <button type="button" class="rbs-review-no" style="background:transparent;color:var(--text-muted);border:1px solid var(--border);padding:8px 14px;border-radius:6px;font-size:.88rem;cursor:pointer;white-space:nowrap;">Maybe later</button>
+      </div>
+    `;
+    // Inject animation keyframes once
+    if (!document.getElementById('rbs-fade-keyframes')) {
+      const style = document.createElement('style');
+      style.id = 'rbs-fade-keyframes';
+      style.textContent = '@keyframes rbsFadeIn{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}';
+      document.head.appendChild(style);
+    }
+    wrap.appendChild(nudge);
+
+    nudge.querySelector('.rbs-review-yes').addEventListener('click', () => {
+      // Scroll to whichever review-form anchor exists. ratings.js renders
+      // the form lazily into #rbs-ratings-section — fall back to other
+      // common IDs in case the file is loaded before ratings.js mounts.
+      const target = document.getElementById('rbs-ratings-section')
+                  || document.getElementById('rbs-rate-section')
+                  || document.querySelector('[id*="rbs-rate"], [id*="rbs-review"]');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Focus the textarea if it's already in the DOM
+        setTimeout(() => {
+          const textarea = document.getElementById('rbs-review-text');
+          if (textarea) textarea.focus();
+        }, 600);
+      } else {
+        // ratings.js hasn't mounted yet — try once more after a short wait
+        setTimeout(() => {
+          const t = document.getElementById('rbs-ratings-section');
+          if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 400);
+      }
+    });
+
+    nudge.querySelector('.rbs-review-no').addEventListener('click', () => {
+      nudge.style.transition = 'opacity .25s, max-height .25s, padding .25s, margin .25s';
+      nudge.style.maxHeight = nudge.offsetHeight + 'px';
+      // Two-stage hide so the height collapse animates smoothly.
+      requestAnimationFrame(() => {
+        nudge.style.opacity = '0';
+        nudge.style.maxHeight = '0';
+        nudge.style.padding = '0 18px';
+        nudge.style.margin = '0';
+        setTimeout(() => nudge.remove(), 260);
+      });
+    });
   }
 
   function hydrate() {

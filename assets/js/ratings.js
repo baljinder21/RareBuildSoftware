@@ -137,11 +137,25 @@
     const root = document.getElementById('rbs-detail-root');
     if (!root) return;
 
-    // Wait for detail content to be rendered by site-data.js
+    // Wait for detail content to be rendered. On the new STATIC pages
+    // (/software/<slug>.html) the share section is in the HTML from page
+    // load — no wait needed. On the legacy detail.html?id=<slug> page,
+    // site-data.js renders it client-side so we poll until it appears.
     const checkReady = () => {
       const shareSection = root.querySelector('.share-section, .share-btns, [onclick*="shareOn"]');
       if (shareSection) {
-        const swId = new URLSearchParams(location.search).get('id') || (window._rbsSoftware && window._rbsSoftware[0] && window._rbsSoftware[0].id) || '';
+        // Priority order for resolving which software this page is for:
+        //   1. data-software-id on #rbs-detail-root — set by build-software-pages.js
+        //      on every static /software/<slug>.html page (one app per page).
+        //   2. ?id= URL parameter — used by the legacy detail.html?id=<slug> URL.
+        //   3. window._rbsSoftware[0] — last-resort fallback for the dynamic
+        //      first-app preview on the software listing page (only correct
+        //      because that route uses the same template); avoid relying on
+        //      this from a per-app static page or you'll get the wrong reviews.
+        const swId = root.dataset.softwareId
+                  || new URLSearchParams(location.search).get('id')
+                  || (window._rbsSoftware && window._rbsSoftware[0] && window._rbsSoftware[0].id)
+                  || '';
         if (swId) renderDetailRatings(root, swId, jsonReviews);
       } else {
         setTimeout(checkReady, 120);
