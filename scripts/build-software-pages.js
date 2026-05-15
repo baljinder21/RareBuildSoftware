@@ -57,14 +57,19 @@ function abs(p) {
 
 function renderIcon(sw) {
   if (sw.iconImage) {
-    return '<img src="' + escAttr(rel(sw.iconImage)) + '" alt="' + escAttr(sw.name) + ' icon" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:inherit;" />';
+    // Width/height on icon prevent CLS; loading="lazy" because icon is rarely in
+    // the LCP critical path (page header text + h1 are above it on mobile).
+    return '<img src="' + escAttr(rel(sw.iconImage)) + '" alt="' + escAttr(sw.name) + ' icon — free Windows ' + escAttr(sw.category || 'app') + '" width="128" height="128" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:inherit;" />';
   }
   return sw.icon || '📦';
 }
 
 function renderScreenshot(sw) {
   if (sw.screenshotPath) {
-    return '<img src="' + escAttr(rel(sw.screenshotPath)) + '" alt="' + escAttr(sw.name) + ' screenshot" style="width:100%;border-radius:var(--radius);border:1px solid var(--border);display:block;" />';
+    // The hero screenshot sits in the sidebar — usually below fold on mobile,
+    // above fold on desktop. loading="lazy" is fine because we set fetchpriority
+    // implicitly via order in HTML; explicit width/height kill CLS.
+    return '<img src="' + escAttr(rel(sw.screenshotPath)) + '" alt="' + escAttr(sw.name) + ' — screenshot of the free Windows app in action" width="1400" height="850" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--border);display:block;" />';
   }
   // Fallback: plain branded panel (mirrors the JS fallback for apps without a real screenshot)
   return '<div style="width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,var(--bg-card),#1a3a6b);border-radius:var(--radius);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:var(--text-muted);"><span style="font-size:3rem">' + (sw.icon||'🖥️') + '</span><span style="font-size:.95rem;font-weight:600;color:var(--text-secondary);">' + escText(sw.name) + '</span><span style="font-size:.78rem;">v' + escText(sw.version) + '</span></div>';
@@ -174,7 +179,51 @@ function buildJsonLd(sw) {
     };
     out += '\n  <script type="application/ld+json">' + JSON.stringify(faqSchema) + '</script>';
   }
+  if (sw.howTo && sw.howTo.steps && sw.howTo.steps.length) {
+    const howToSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      'name': decodeHtml(sw.howTo.name),
+      'description': decodeHtml(sw.howTo.description || ''),
+      'totalTime': sw.howTo.totalTime || 'PT5M',
+      'supply': (sw.howTo.supply || []).map(s => ({ '@type': 'HowToSupply', 'name': s })),
+      'tool': (sw.howTo.tool || []).map(t => ({ '@type': 'HowToTool', 'name': t })),
+      'step': sw.howTo.steps.map((s, i) => ({
+        '@type': 'HowToStep',
+        'position': i + 1,
+        'name': decodeHtml(s.name),
+        'text': decodeHtml(s.text),
+        ...(s.url ? { 'url': s.url } : {})
+      }))
+    };
+    out += '\n  <script type="application/ld+json">' + JSON.stringify(howToSchema) + '</script>';
+  }
   return out;
+}
+
+// Render an internal-link "Related reading" strip between FAQs and Related apps.
+// Pure SEO move: spreads link equity into blog posts that target adjacent
+// queries, and helps users discover comparison / how-to content.
+function renderRelatedPosts(sw) {
+  if (!sw.relatedPosts || !sw.relatedPosts.length) return '';
+  const items = sw.relatedPosts.map(p =>
+    '            <a href="' + escAttr('../' + p.url.replace(/^\/+/, '')) + '" style="display:block;padding:16px 18px;background:var(--bg-card,#111d2c);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s;" onmouseover="this.style.transform=\'translateY(-2px)\';this.style.borderColor=\'var(--accent-light)\'" onmouseout="this.style.transform=\'\';this.style.borderColor=\'var(--border)\'">\n' +
+    '              <div style="display:flex;gap:10px;align-items:flex-start;">\n' +
+    '                <span style="font-size:1.4rem;line-height:1;flex-shrink:0;">' + (p.emoji || '📖') + '</span>\n' +
+    '                <div>\n' +
+    '                  <div style="color:var(--text-primary);font-weight:700;font-size:.98rem;line-height:1.35;margin-bottom:4px;">' + escText(p.title) + '</div>\n' +
+    '                  <div style="color:var(--text-muted);font-size:.84rem;line-height:1.5;">' + escText(p.excerpt || '') + '</div>\n' +
+    '                </div>\n' +
+    '              </div>\n' +
+    '            </a>'
+  ).join('\n');
+  return '\n            <div class="animate-on-scroll" style="margin-top:48px;">\n' +
+         '              <h2 class="section-title" style="font-size:1.5rem;margin-bottom:8px;">Related reading</h2>\n' +
+         '              <p style="color:var(--text-muted);font-size:.92rem;margin-bottom:24px;">Guides and comparisons related to ' + escText(sw.name) + '.</p>\n' +
+         '              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;">\n' +
+         items + '\n' +
+         '              </div>\n' +
+         '            </div>\n';
 }
 
 // ── Page builder ──
@@ -320,6 +369,7 @@ ${renderChangelog(sw)}
             </div>
 
             ${renderFaqs(sw)}
+            ${renderRelatedPosts(sw)}
 
             <!-- More from RBS — cross-link to other free apps -->
             <div class="animate-on-scroll" style="margin-top:48px;">

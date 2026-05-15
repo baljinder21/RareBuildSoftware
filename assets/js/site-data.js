@@ -27,7 +27,48 @@
       category: 'Productivity',
       categories: ['Productivity', 'PDF Tools', 'Office'],
       seoTitle: 'Free PDF Editor for Windows — No Watermark, No Signup, No Subscription | RBS PDF Editor',
-      seoDescription: 'Free PDF editor for Windows 10 and 11. Edit text, sign PDFs, OCR scanned documents, merge / split / rotate pages, convert PDF to Word and Excel. No watermark, no signup, no subscription, works offline. Free Adobe Acrobat alternative with a portable USB build.',
+      seoDescription: 'Free PDF editor for Windows 10/11. Edit text, OCR scans, sign, merge & convert PDFs. No watermark, no signup, offline. Adobe Acrobat alternative.',
+      howTo: {
+        name: 'How to edit a PDF for free on Windows',
+        description: 'Edit text, add a signature and OCR a scanned PDF on Windows 10 or 11 using RBS PDF Editor — free, offline, no watermark, no account required.',
+        totalTime: 'PT3M',
+        supply: ['Windows 10 or 11 PC', 'The PDF you want to edit'],
+        tool:   ['RBS PDF Editor (free)'],
+        steps: [
+          { name: 'Download RBS PDF Editor',         text: 'Download the free 216 MB ZIP from rarebuildsoftware.com. The ZIP contains both an installer and a portable .exe — pick whichever you prefer. No account, no email, no payment required.' },
+          { name: 'Open your PDF',                   text: 'Run the app, drag your PDF onto the window (or click Open PDF). The document opens as a tab — open more PDFs to add more tabs.' },
+          { name: 'Edit text in place',              text: 'Click the Edit Text tool, then click any word in the PDF. A yellow box opens with the current text. Type the replacement and press Enter. The original font and size are preserved.' },
+          { name: 'OCR a scanned PDF (optional)',    text: 'If your PDF is a scan, click the OCR button on the toolbar, pick Searchable PDF. The app downloads Tesseract OCR once (about 80 MB), then runs offline forever. After OCR you can search, copy and edit text.' },
+          { name: 'Sign the document (optional)',    text: 'Open More menu → Signature. Draw your signature once with the mouse. After that, drop your saved signature on any document in one click. Stored only on your computer.' },
+          { name: 'Save the result',                 text: 'Click Done at the top. Pick Overwrite to save in place, or Save as new to keep the original untouched. No watermark is added, ever.' }
+        ]
+      },
+      relatedPosts: [
+        {
+          url: 'blog/rbs-pdf-editor-launch.html',
+          emoji: '📄',
+          title: 'RBS PDF Editor — Free, Offline, Portable. The Adobe Alternative I Actually Use.',
+          excerpt: 'The full launch post — why I built another PDF editor, what it does, side-by-side comparison with Adobe, Foxit, Sejda and Smallpdf.'
+        },
+        {
+          url: 'blog/windows-11-kb5083769-update-issues-explained.html',
+          emoji: '🛠️',
+          title: 'Windows 11 KB5083769 Update — What\'s Really Broken, What\'s Not',
+          excerpt: 'Backup tools and VSS broke for a lot of people this month. If you use PDFs for your work, this post lists the workarounds.'
+        },
+        {
+          url: 'blog/microsoft-removing-copilot-windows-11-local-ai-alternatives.html',
+          emoji: '🤖',
+          title: 'Microsoft Removing Copilot Sidebar — Local AI Alternatives for Windows',
+          excerpt: 'Cloud AI keeps disappearing. Local apps are how you keep your workflow private — same reason RBS PDF Editor runs offline.'
+        },
+        {
+          url: 'blog/free-elevenlabs-alternative-2026.html',
+          emoji: '🎙️',
+          title: 'Free ElevenLabs Alternative for 2026',
+          excerpt: 'Another \'free\' SaaS app that nickel-and-dimes you. If you liked RBS PDF Editor\'s no-subscription stance, try RBS Voice Cloner V2.'
+        }
+      ],
       seoKeywords: 'free pdf editor, free pdf editor for windows, free pdf editor no watermark, free pdf editor no signup, free pdf editor no subscription, free pdf editor for windows 10, free pdf editor for windows 11, edit pdf free, edit pdf text free, edit pdf without adobe, how to edit pdf for free, pdf editor without signup, pdf editor without account, pdf editor without watermark, portable pdf editor, pdf editor usb, pdf editor no install, offline pdf editor, pdf editor without internet, free adobe acrobat alternative, foxit alternative, sejda alternative, smallpdf alternative, ilovepdf alternative, pdfescape alternative, pdf24 alternative, nitro pdf alternative, lightpdf alternative, ocr scanned pdf free, free ocr software for pdf, make pdf searchable, how to ocr a scanned pdf, sign pdf free, how to sign a pdf for free, free electronic signature pdf, pdf to word free no email, pdf to excel free, compress pdf without losing quality, merge pdf without uploading, split pdf free, rotate pdf pages free, pdf password protect, bates numbering free, bates stamping software, legal pdf editor, pdf for lawyers, pdf form filler free, lightweight pdf editor, pdf editor for old pc, RBS PDF Editor',
       description: 'A free, offline, portable Windows PDF editor. Edit text in place, place images freeform with resize and rotate, OCR scanned papers with Tesseract, sign documents in one click, merge / split / rotate / reorder pages, convert PDF to Word / Excel / JPG / PNG, compress PDFs, add Bates numbering, password protection, hyperlinks and watermarks. Two builds shipped together — a standard installer that registers PDF file associations, and a single-file portable .exe that runs from a USB stick with no install and no admin rights. No account, no cloud, no telemetry, no watermark, no subscription. A genuine free Adobe Acrobat alternative for Windows 10 and Windows 11.',
       faqs: [
