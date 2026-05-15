@@ -369,6 +369,12 @@ ${renderChangelog(sw)}
             </div>
 
             ${renderFaqs(sw)}
+
+            <!-- Anonymous one-click Like counter. The detailed star-rating
+                 review form below remains the proper-feedback channel — this
+                 is a lower-friction signal for users who don't want to write. -->
+            <div data-rbs-like="${escAttr(sw.id)}"></div>
+
             ${renderRelatedPosts(sw)}
 
             <!-- More from RBS — cross-link to other free apps -->
@@ -508,6 +514,7 @@ ${software.map(s => '            <li><a href="' + escAttr(s.id) + '.html">' + es
   <script src="../assets/js/site-data.js?v=26"></script>
   <script src="../assets/js/download.js"></script>
   <script src="../assets/js/ratings.js"></script>
+  <script src="../assets/js/like-button.js" defer></script>
 </body>
 </html>
 `;

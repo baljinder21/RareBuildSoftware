@@ -6,6 +6,11 @@
 [build]
   publish = "."
 
+# ── Netlify Functions: serverless backend for the anonymous like counter ──
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # ── Global security headers (applied to every page) ──
 [[headers]]
   for = "/*"
