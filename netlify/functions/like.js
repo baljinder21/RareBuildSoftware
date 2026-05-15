@@ -67,7 +67,7 @@ export default async function handler(req) {
       const list = ids.split(',').map(s => s.trim()).filter(s => VALID_IDS.has(s));
       const out = {};
       await Promise.all(list.map(async id => {
-        const raw = await counts.get(id);
+        const raw = await counts.get(id, { consistency: 'strong' });
         out[id] = raw ? parseInt(raw, 10) || 0 : 0;
       }));
       return json(200, { counts: out });
