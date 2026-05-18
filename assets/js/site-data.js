@@ -1082,6 +1082,18 @@
     const container = document.getElementById('rbs-detail-root');
     if (!container) return;
 
+    // If the root has data-software-id, the page is already statically rendered
+    // by build-software-pages.js (the new /software/<slug>.html URLs). The
+    // static HTML is canonical — never let the client-side renderer below
+    // clobber it with a dynamic re-render. This was causing the PNG icon and
+    // hero screenshot to disappear because the old renderer here uses emoji
+    // fallback for icons and skips screenshotPath. ratings.js still attaches
+    // independently because it reads data-software-id itself.
+    //
+    // applyDetailPage continues to run on the legacy /software/detail.html?id=
+    // URL only — that page leaves #rbs-detail-root empty for the JS to fill.
+    if (container.dataset.softwareId) return;
+
     const params = new URLSearchParams(location.search);
     const id = params.get('id');
     const sw = software.find(s => s.id === id) || software[0];
