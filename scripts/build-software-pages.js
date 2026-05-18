@@ -57,19 +57,22 @@ function abs(p) {
 
 function renderIcon(sw) {
   if (sw.iconImage) {
-    // Width/height on icon prevent CLS; loading="lazy" because icon is rarely in
-    // the LCP critical path (page header text + h1 are above it on mobile).
-    return '<img src="' + escAttr(rel(sw.iconImage)) + '" alt="' + escAttr(sw.name) + ' icon — free Windows ' + escAttr(sw.category || 'app') + '" width="128" height="128" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:inherit;" />';
+    // Icon is above the fold (right next to the H1) — loading="eager" so it
+    // appears immediately. Lazy on hero/LCP images is a Lighthouse warning
+    // and was making the icon area look blank on slow connections.
+    // fetchpriority="high" hints the browser to prioritise this over later
+    // images.
+    return '<img src="' + escAttr(rel(sw.iconImage)) + '" alt="' + escAttr(sw.name) + ' icon — free Windows ' + escAttr(sw.category || 'app') + '" width="96" height="96" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:inherit;" />';
   }
   return sw.icon || '📦';
 }
 
 function renderScreenshot(sw) {
   if (sw.screenshotPath) {
-    // The hero screenshot sits in the sidebar — usually below fold on mobile,
-    // above fold on desktop. loading="lazy" is fine because we set fetchpriority
-    // implicitly via order in HTML; explicit width/height kill CLS.
-    return '<img src="' + escAttr(rel(sw.screenshotPath)) + '" alt="' + escAttr(sw.name) + ' — screenshot of the free Windows app in action" width="1400" height="850" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--border);display:block;" />';
+    // The Preview screenshot is the visual proof of the page — eager load it.
+    // It used to be lazy + wrapped in animate-on-scroll (opacity 0) so on slow
+    // connections / certain browser states it stayed invisible.
+    return '<img src="' + escAttr(rel(sw.screenshotPath)) + '" alt="' + escAttr(sw.name) + ' — screenshot of the free Windows app in action" width="1400" height="850" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--border);display:block;" />';
   }
   // Fallback: plain branded panel (mirrors the JS fallback for apps without a real screenshot)
   return '<div style="width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,var(--bg-card),#1a3a6b);border-radius:var(--radius);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:var(--text-muted);"><span style="font-size:3rem">' + (sw.icon||'🖥️') + '</span><span style="font-size:.95rem;font-weight:600;color:var(--text-secondary);">' + escText(sw.name) + '</span><span style="font-size:.78rem;">v' + escText(sw.version) + '</span></div>';
@@ -357,7 +360,11 @@ function buildPage(sw) {
 
           <!-- Left -->
           <div>
-            <div class="animate-on-scroll">
+            <!-- Preview is critical content — never wrap in animate-on-scroll
+                 because that defaults to opacity:0 and only becomes visible
+                 if the IntersectionObserver fires. On slow connections or
+                 if JS errors, the screenshot would stay invisible forever. -->
+            <div>
               <h2 class="section-title" style="font-size:1.5rem;margin-bottom:24px;">Preview</h2>
               ${renderScreenshot(sw)}
             </div>

@@ -1309,6 +1309,15 @@
   // for the category-page render path.
   const STATIC_BLOG_ARTICLES = [
       {
+        id: 'how-to-edit-pdf-free-windows-2026',
+        title: 'How to Edit a PDF for Free on Windows (2026 Guide)',
+        excerpt: 'The three free options that actually work on Windows 10/11 — RBS PDF Editor, LibreOffice Draw, Edge\'s built-in markup — plus step-by-step for signing, OCR, merging and converting.',
+        emoji: '📄',
+        tag: 'Guide',
+        date: '2026-05-15',
+        url: 'blog/how-to-edit-pdf-free-windows-2026.html'
+      },
+      {
         id: 'rbs-pdf-editor-launch',
         title: 'RBS PDF Editor — Free, Offline, Portable. The Adobe Alternative I Actually Use.',
         excerpt: 'I built a free Windows PDF editor that edits text in place, places images freeform, OCRs scanned papers, signs in one click, and runs from a USB stick. No cloud, no account, no telemetry, no watermark.',

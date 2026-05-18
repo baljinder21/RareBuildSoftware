@@ -105,7 +105,11 @@
 
           <!-- Left -->
           <div>
-            <div class="animate-on-scroll">
+            <!-- Preview is critical content — never wrap in animate-on-scroll
+                 because that defaults to opacity:0 and only becomes visible
+                 if the IntersectionObserver fires. On slow connections or
+                 if JS errors, the screenshot would stay invisible forever. -->
+            <div>
               <h2 class="section-title" style="font-size:1.5rem;margin-bottom:24px;">Preview</h2>
               <div style="width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,var(--bg-card),#1a3a6b);border-radius:var(--radius);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:var(--text-muted);"><span style="font-size:3rem">🔧</span><span style="font-size:.95rem;font-weight:600;color:var(--text-secondary);">RBS Optimizer Pro</span><span style="font-size:.78rem;">v1.0.0</span></div>
             </div>

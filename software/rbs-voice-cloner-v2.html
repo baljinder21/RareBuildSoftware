@@ -74,7 +74,7 @@
           <a href="../software.html" style="color:var(--accent-light);">Software</a> › RBS Voice Cloner V2
         </div>
         <div class="software-detail-header">
-          <div class="software-detail-icon"><img src="../assets/images/software/rbs-voice-cloner-v2-icon.png" alt="RBS Voice Cloner V2 icon — free Windows AI Tools" width="128" height="128" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:inherit;" /></div>
+          <div class="software-detail-icon"><img src="../assets/images/software/rbs-voice-cloner-v2-icon.png" alt="RBS Voice Cloner V2 icon — free Windows AI Tools" width="96" height="96" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:inherit;" /></div>
           <div style="flex:1;">
             <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px;">
               <span class="badge badge-teal">v2.0.0</span>
@@ -105,9 +105,13 @@
 
           <!-- Left -->
           <div>
-            <div class="animate-on-scroll">
+            <!-- Preview is critical content — never wrap in animate-on-scroll
+                 because that defaults to opacity:0 and only becomes visible
+                 if the IntersectionObserver fires. On slow connections or
+                 if JS errors, the screenshot would stay invisible forever. -->
+            <div>
               <h2 class="section-title" style="font-size:1.5rem;margin-bottom:24px;">Preview</h2>
-              <img src="../assets/images/software/rbs-voice-cloner-v2-preview.png" alt="RBS Voice Cloner V2 — screenshot of the free Windows app in action" width="1400" height="850" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--border);display:block;" />
+              <img src="../assets/images/software/rbs-voice-cloner-v2-preview.png" alt="RBS Voice Cloner V2 — screenshot of the free Windows app in action" width="1400" height="850" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--border);display:block;" />
             </div>
 
             <div class="animate-on-scroll" style="margin-top:48px;">

@@ -6,8 +6,17 @@
     <atom:link href="https://rarebuildsoftware.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Free Windows software and honest guides — voice cloning, optimization, cleaner, dashboard. By Rai, solo dev, Singapore.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 14 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2026 00:00:00 GMT</lastBuildDate>
     <generator>scripts/build-rss-feed.js</generator>
+    <item>
+      <title>How to Edit a PDF for Free on Windows (2026 Guide)</title>
+      <link>https://rarebuildsoftware.com/blog/how-to-edit-pdf-free-windows-2026.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/how-to-edit-pdf-free-windows-2026.html</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <category>Guide</category>
+      <description>The three free options that actually work on Windows 10/11 — RBS PDF Editor, LibreOffice Draw, Edge&apos;s built-in markup — plus step-by-step for signing, OCR, merging and converting.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
     <item>
       <title>RBS PDF Editor — Free, Offline, Portable. The Adobe Alternative I Actually Use.</title>
       <link>https://rarebuildsoftware.com/blog/rbs-pdf-editor-launch.html</link>
