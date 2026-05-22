@@ -2000,7 +2000,7 @@
       'baljinder21/RBSsoftware',
       'baljinder21/RBS-RareBuildSoftware-V2'
     ];
-    const CACHE_KEY = 'rbs_gh_counts_v3'; // bumped to add rbs-pdf-editor; v2 cache had no PDF entry
+    const CACHE_KEY = 'rbs_gh_counts_v4'; // bumped 2026-05-19 to evict poisoned partial caches (v3 sometimes stored only V2 when V1 fetch failed)
     const CACHE_TTL = 60 * 60 * 1000; // 1 hour
 
     /* Asset filename → software id, checked in order, FIRST MATCH WINS.
@@ -2029,12 +2029,20 @@
     Promise.all(
       REPOS.map(repo =>
         fetch(`https://api.github.com/repos/${repo}/releases`)
-          .then(r => r.ok ? r.json() : [])
-          .catch(() => [])
+          // Return null (NOT []) for failures so we can tell the difference
+          // between "repo legitimately has zero releases" and "request failed".
+          // A failed request must not poison the cache — otherwise a partial
+          // snapshot (e.g. only V2 fetched, V1 rate-limited) gets cached for
+          // an hour and the homepage shows a tiny total like 67 when reality
+          // is 291. That's exactly the bug Rai reported on 2026-05-19.
+          .then(r => r.ok ? r.json() : null)
+          .catch(() => null)
       )
     ).then(perRepo => {
       const counts = {};
+      let allReposOK = true;
       perRepo.forEach(releases => {
+        if (releases === null) { allReposOK = false; return; }
         if (!Array.isArray(releases)) return;
         releases.forEach(release => {
           (release.assets || []).forEach(asset => {
@@ -2047,7 +2055,12 @@
           });
         });
       });
-      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), counts })); } catch (_) {}
+      // Only persist to cache if EVERY repo responded successfully. A partial
+      // snapshot is worse than no cache at all because it serves stale, wrong
+      // numbers for up to an hour.
+      if (allReposOK) {
+        try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), counts })); } catch (_) {}
+      }
       applyGitHubCounts(counts);
     });
   }
