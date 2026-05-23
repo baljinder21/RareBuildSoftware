@@ -112,7 +112,12 @@
       ogImage: 'assets/images/software/pdf-editor/og_image_1200x630.png',
       visible: true,
       released: '2026-05-14',
-      downloads: 0,
+      // Baseline download count as of 2026-05-19. Acts as a fallback when
+      // GitHub's API is rate-limited or unreachable so the homepage never
+      // shows 0. The live fetch overwrites this with the current number
+      // whenever it succeeds. Always set slightly below reality so we
+      // never overstate.
+      downloads: 55,
       features: [
         { icon: '✏️', title: 'Edit text in place',           desc: 'Click any word on the PDF and the text becomes editable right where it sits — same font, same size, no copy-paste dance.' },
         { icon: '🖼️', title: 'Place images freeform',         desc: 'Drop in a picture, drag the corner and edge handles to resize, rotate, or snap to page width. Click it later to adjust or delete.' },
@@ -171,7 +176,7 @@
       screenshotPath: '',
       visible: true,
       released: '2026-04-01',
-      downloads: 0,
+      downloads: 90,  // baseline as of 2026-05-19 (~94 on GitHub); overwritten by live fetch
       features: [
         { icon: '🧹', title: 'Deep Junk Cleaner',   desc: 'Remove temporary files, cache, and old logs safely and automatically.' },
         { icon: '🚀', title: 'Startup Manager',      desc: 'Control which programs launch at startup to reduce boot time.' },
@@ -209,7 +214,7 @@
       screenshotPath: '',
       visible: true,
       released: '2026-04-12',
-      downloads: 0,
+      downloads: 48,  // baseline as of 2026-05-19 (~51 on GitHub); overwritten by live fetch
       features: [
         { icon: '🎙️', title: 'Voice Cloning',    desc: 'Clone any voice from a 5-30 second audio sample with stunning realism using XTTS v2.' },
         { icon: '🌍', title: '28+ Languages',     desc: 'Generate speech in English, Spanish, French, German, Hindi, Japanese, Chinese, and many more.' },
@@ -248,7 +253,7 @@
       screenshotPath: '/assets/images/software/rbs-voice-cloner-v2-preview.png',
       visible: true,
       released: '2026-04-26',
-      downloads: 0,
+      downloads: 65,  // baseline as of 2026-05-19 (~67 on GitHub); overwritten by live fetch
       features: [
         { icon: '🎤', title: '16 Built-in Voices + Unlimited Clones', desc: '6 male, 6 female, 2 boy, 2 girl ready to go. Plus clone any voice from a 30-second sample and save unlimited custom voice profiles.' },
         { icon: '🌐', title: '17 Languages + Auto-Translate',         desc: 'Native XTTS v2 generation in English, Spanish, French, German, Italian, Portuguese, Polish, Turkish, Russian, Dutch, Czech, Arabic, Chinese, Japanese, Hungarian, Korean, Hindi. Translator built into the TTS page.' },
@@ -299,7 +304,7 @@
       screenshotPath: '',
       visible: true,
       released: '2026-04-14',
-      downloads: 0,
+      downloads: 10,  // baseline as of 2026-05-19 (~11 on GitHub); overwritten by live fetch
       features: [
         { icon: '✅', title: 'Tasks & Habits',   desc: 'To-do list with priorities and a daily habit tracker with streak counter to keep you on track.' },
         { icon: '💰', title: 'Finance Tracker',  desc: 'Log income and expenses with visual charts to understand where your money goes.' },
@@ -336,7 +341,7 @@
       screenshotPath: '',
       visible: true,
       released: '2026-04-19',
-      downloads: 0,
+      downloads: 8,  // baseline as of 2026-05-19 (~9 on GitHub); overwritten by live fetch
       features: [
         { icon: '🧽', title: 'Safe Junk Cleaner',    desc: 'Temp, recycle bin, Windows Update cache, prefetch, logs — each rated Safe / Caution / Risky, nothing deleted without confirmation.' },
         { icon: '🌐', title: 'Browser Cleaner',      desc: 'Clears cache, cookies, history for Chrome, Edge, Firefox, Brave, Opera. Saved passwords are reported but never deleted.' },
@@ -2017,12 +2022,25 @@
       { pattern: 'RBS.PC.Cleaner',   id: 'rbs-pc-cleaner' }
     ];
 
-    // Try cache first
+    // ── Stale-while-revalidate ──
+    // Always render the last cached counts first (even if expired) so the
+    // user never sees a flash of 0 / blank state — counts only ever go up,
+    // never disappear. Then trigger a background fetch.
+    //
+    // GitHub's unauthenticated REST API allows 60 req/hour PER IP. Heavy
+    // refreshers hit that limit and every subsequent fetch comes back 403
+    // for an hour. Before this guard, a rate-limited browser saw the total
+    // counter drop to 0 because nothing fresh aggregated. Now stale data
+    // stays on screen until a fresh successful fetch arrives.
+    let cachedCounts = null;
+    let cachedFresh = false;
     try {
       const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
-      if (cached && (Date.now() - cached.ts) < CACHE_TTL) {
-        applyGitHubCounts(cached.counts);
-        return;
+      if (cached && cached.counts) {
+        cachedCounts = cached.counts;
+        cachedFresh = (Date.now() - cached.ts) < CACHE_TTL;
+        applyGitHubCounts(cachedCounts);
+        if (cachedFresh) return; // Recent cache — no need to refetch
       }
     } catch (_) {}
 
@@ -2031,10 +2049,7 @@
         fetch(`https://api.github.com/repos/${repo}/releases`)
           // Return null (NOT []) for failures so we can tell the difference
           // between "repo legitimately has zero releases" and "request failed".
-          // A failed request must not poison the cache — otherwise a partial
-          // snapshot (e.g. only V2 fetched, V1 rate-limited) gets cached for
-          // an hour and the homepage shows a tiny total like 67 when reality
-          // is 291. That's exactly the bug Rai reported on 2026-05-19.
+          // A failed request must not poison the cache.
           .then(r => r.ok ? r.json() : null)
           .catch(() => null)
       )
@@ -2055,13 +2070,24 @@
           });
         });
       });
-      // Only persist to cache if EVERY repo responded successfully. A partial
-      // snapshot is worse than no cache at all because it serves stale, wrong
-      // numbers for up to an hour.
+
       if (allReposOK) {
+        // Full success — render and persist.
         try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), counts })); } catch (_) {}
+        applyGitHubCounts(counts);
+      } else if (cachedCounts) {
+        // Partial / total failure but we have stale cache showing — leave it
+        // alone. NEVER overwrite a working display with zero.
+        return;
+      } else if (Object.keys(counts).length > 0) {
+        // No cache at all but we got SOMETHING from at least one repo —
+        // render that as a fallback. Don't save (partial snapshot would
+        // poison future loads), but don't show zeros either.
+        applyGitHubCounts(counts);
       }
-      applyGitHubCounts(counts);
+      // else: total failure, no cache. Leave the static HTML default
+      // (counter starts at 0 with data-target="0") in place. Next visit
+      // tries again. Better than showing a wrong number.
     });
   }
 
