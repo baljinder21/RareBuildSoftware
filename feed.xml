@@ -6,8 +6,17 @@
     <atom:link href="https://rarebuildsoftware.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Free Windows software and honest guides — voice cloning, optimization, cleaner, dashboard. By Rai, solo dev, Singapore.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 15 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 00:00:00 GMT</lastBuildDate>
     <generator>scripts/build-rss-feed.js</generator>
+    <item>
+      <title>Microsoft Recall Is Back in Windows 11 — How to Disable It (May 2026)</title>
+      <link>https://rarebuildsoftware.com/blog/microsoft-recall-windows-11-disable-2026.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/microsoft-recall-windows-11-disable-2026.html</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+      <category>Guide</category>
+      <description>TotalRecall Reloaded walks past the new TPM/Hello protection in under a second. Microsoft says it&apos;s &quot;not a vulnerability&quot;. Here&apos;s the 60-second fix on Pro and Home.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
     <item>
       <title>How to Edit a PDF for Free on Windows (2026 Guide)</title>
       <link>https://rarebuildsoftware.com/blog/how-to-edit-pdf-free-windows-2026.html</link>

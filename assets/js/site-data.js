@@ -1326,6 +1326,15 @@
   // for the category-page render path.
   const STATIC_BLOG_ARTICLES = [
       {
+        id: 'microsoft-recall-windows-11-disable-2026',
+        title: 'Microsoft Recall Is Back in Windows 11 — How to Disable It (May 2026)',
+        excerpt: 'TotalRecall Reloaded walks past the new TPM/Hello protection in under a second. Microsoft says it\'s "not a vulnerability". Here\'s the 60-second fix on Pro and Home.',
+        emoji: '🕵️',
+        tag: 'Guide',
+        date: '2026-05-19',
+        url: 'blog/microsoft-recall-windows-11-disable-2026.html'
+      },
+      {
         id: 'how-to-edit-pdf-free-windows-2026',
         title: 'How to Edit a PDF for Free on Windows (2026 Guide)',
         excerpt: 'The three free options that actually work on Windows 10/11 — RBS PDF Editor, LibreOffice Draw, Edge\'s built-in markup — plus step-by-step for signing, OCR, merging and converting.',
