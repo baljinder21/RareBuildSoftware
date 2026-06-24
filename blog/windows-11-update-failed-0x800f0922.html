@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Windows 11's May 2026 update fails at 35% with error 0x800f0922. Here's the real cause (a full EFI System Partition) and how to fix it step by step." />
+  <meta name="keywords" content="0x800f0922, windows 11 update failed, windows 11 update error 0x800f0922, kb5089549, windows 11 may 2026 update, windows update stuck 35 percent, efi system partition full, windows 11 update install failed, 0x800f0922 fix, windows 11 update won't install, fix windows update error, windows 11 update failing, free up disk space windows 11, esp partition full update fail" />
+  <title>Fix Windows 11 Update Error 0x800f0922 (May 2026) | RBS</title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="RBS" />
+  <meta property="og:title"       content="Fix Windows 11 Update Error 0x800f0922 (May 2026)" />
+  <meta property="og:description" content="The May 2026 update fails at 35% because your EFI System Partition is full. Here's how to fix error 0x800f0922 on Windows 11 — step by step." />
+  <meta property="og:url"         content="https://rarebuildsoftware.com/blog/windows-11-update-failed-0x800f0922.html" />
+  <meta property="og:image"       content="https://rarebuildsoftware.com/blog/assets/windows-11-update-failed-0x800f0922/og_image_1200x630.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:title"      content="Fix Windows 11 Update Error 0x800f0922 (May 2026)" />
+  <meta name="twitter:description" content="May 2026 update stuck at 35% with 0x800f0922? Your EFI partition is full. Here's the fix." />
+  <meta name="twitter:image"      content="https://rarebuildsoftware.com/blog/assets/windows-11-update-failed-0x800f0922/twitter_card_1200x600.jpg" />
+  <link rel="canonical"           href="https://rarebuildsoftware.com/blog/windows-11-update-failed-0x800f0922.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Fix Windows 11 Update Error 0x800f0922 (May 2026 Guide)",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": { "@type": "Person", "name": "Rai", "url": "https://rarebuildsoftware.com/about.html" },
+    "publisher": { "@type": "Organization", "name": "RBS", "logo": { "@type": "ImageObject", "url": "https://rarebuildsoftware.com/assets/images/favicon.svg" }, "url": "https://rarebuildsoftware.com" },
+    "description": "Why the May 2026 Windows 11 update fails at 35% with error 0x800f0922 — a full EFI System Partition — and how to fix it on Windows 11.",
+    "image": "https://rarebuildsoftware.com/blog/assets/windows-11-update-failed-0x800f0922/og_image_1200x630.jpg",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://rarebuildsoftware.com/blog/windows-11-update-failed-0x800f0922.html" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rarebuildsoftware.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://rarebuildsoftware.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Fix Windows 11 Error 0x800f0922", "item": "https://rarebuildsoftware.com/blog/windows-11-update-failed-0x800f0922.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to fix Windows 11 update error 0x800f0922",
+    "description": "Resolve the May 2026 Windows 11 update failure (error 0x800f0922) caused by a full EFI System Partition.",
+    "totalTime": "PT15M",
+    "tool": [ { "@type": "HowToTool", "name": "Windows 11 PC" } ],
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Free up disk space", "text": "Open Settings, System, Storage and clear temporary files, the Windows.old folder, and Recycle Bin to give the update room to work." },
+      { "@type": "HowToStep", "position": 2, "name": "Run the Windows Update troubleshooter", "text": "Go to Settings, System, Troubleshoot, Other troubleshooters and run Windows Update. It resets stuck update components automatically." },
+      { "@type": "HowToStep", "position": 3, "name": "Install the KB5089573 fix update", "text": "Microsoft released optional update KB5089573 that fixes the EFI partition root cause. Install it from Windows Update before retrying the failed update." },
+      { "@type": "HowToStep", "position": 4, "name": "Reset Windows Update components", "text": "If it still fails, stop the wuauserv and bits services, rename the SoftwareDistribution folder, then restart the services and retry the update." }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="../assets/css/style.css" as="style" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="RBS Blog RSS" href="https://rarebuildsoftware.com/feed.xml" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="page-loader"><div class="loader-ring"></div></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo"><div class="logo-icon">RBS</div>RBS</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../software.html">Software</a></li>
+        <li><a href="../blog.html" class="active">Blog</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme">☀️</button></li>
+        <li><a href="../software.html" class="nav-cta">⬇ Download Free</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../software.html">Software</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../faq.html">FAQ</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../software.html" class="nav-cta">⬇ Download Free</a>
+  </div>
+
+  <div id="rbs-announcement" style="display:none;"></div>
+
+  <main id="main-content">
+
+  <article class="blog-post-layout">
+    <div class="container" style="max-width:800px;">
+
+      <div style="margin-bottom:16px;">
+        <a href="../blog.html" style="color:var(--text-muted);font-size:0.9rem;">← Back to Blog</a>
+      </div>
+
+      <div class="blog-card-tag" style="display:inline-block;margin-bottom:16px;">Guide</div>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:16px;">
+        Windows 11 Update Failing With 0x800f0922? Here's the Fix
+      </h1>
+      <p style="color:var(--text-muted);margin-bottom:24px;">📅 June 25, 2026 · 8 min read · By Rai</p>
+
+      <img src="assets/windows-11-update-failed-0x800f0922/hero_1600x900.jpg" alt="Frustrated person at a laptop showing a Windows update stuck at 35% with error 0x800f0922" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:auto;border-radius:14px;margin-bottom:32px;border:1px solid var(--border);" />
+
+      <div class="blog-post-content" style="line-height:1.8;color:var(--text-secondary);">
+        <nav class="blog-toc" aria-label="Table of contents" style="margin:0 0 32px;padding:18px 22px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📑 In this post</div>
+          <ul style="list-style:none;padding:0;margin:0;line-height:1.8;font-size:.95rem;"><li style=""><a href="#what-error-0x800f0922-actually-means" style="color:var(--accent-light);text-decoration:none;">What error 0x800f0922 actually means</a></li><li style=""><a href="#why-a-partition-youve-never-heard-of-is-the-problem" style="color:var(--accent-light);text-decoration:none;">Why a partition you've never heard of is the problem</a></li><li style=""><a href="#the-fastest-fix-get-current-on-updates" style="color:var(--accent-light);text-decoration:none;">The fastest fix: get current on updates</a></li><li style=""><a href="#step-by-step-free-up-space-and-force-the-update-through" style="color:var(--accent-light);text-decoration:none;">Step-by-step: free up space and force the update through</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#step-1-clear-the-easy-disk-space-first" style="color:var(--accent-light);text-decoration:none;">Step 1 — Clear the easy disk space first</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#step-2-run-the-windows-update-troubleshooter" style="color:var(--accent-light);text-decoration:none;">Step 2 — Run the Windows Update troubleshooter</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#step-3-reset-windows-update-components-manually-if-it-still-" style="color:var(--accent-light);text-decoration:none;">Step 3 — Reset Windows Update components manually (if it still fails)</a></li><li style="padding-left:18px;font-size:.9em;"><a href="#step-4-last-resort-expand-the-efi-partition" style="color:var(--accent-light);text-decoration:none;">Step 4 — Last resort: expand the EFI partition</a></li><li style=""><a href="#how-to-stop-it-happening-every-month" style="color:var(--accent-light);text-decoration:none;">How to stop it happening every month</a></li><li style=""><a href="#bottom-line" style="color:var(--accent-light);text-decoration:none;">Bottom line</a></li></ul>
+        </nav>
+
+
+
+
+
+
+        <p style="font-size:1.1rem;margin-bottom:22px;">If your PC keeps trying to install the May 2026 Windows 11 update, grinds to a halt around 35%, reboots, and then throws <strong>error 0x800f0922</strong> — you're not alone, and your PC isn't broken. This one has a specific, boring cause and a fix that takes about ten minutes.</p>
+
+        <p>I dug through Microsoft's own advisory and the pile of Reddit threads to figure out exactly what's going on. Short version: a tiny, hidden partition on your drive filled up, and the update has nowhere to put its files. Here's the full story and how to get the update to actually install.</p>
+
+        <h2 id="what-is-happening">What error 0x800f0922 actually means</h2>
+
+        <p>The May 2026 cumulative update (<strong>KB5089549</strong>) fails on a subset of PCs during the <em>reboot</em> phase of installation — typically stalling at around 35% before rolling back. When you check Windows Update history, you see the cryptic code <strong>0x800f0922</strong>.</p>
+
+        <p>Microsoft confirmed the cause: the update can't complete because there isn't enough free space in the <strong>EFI System Partition (ESP)</strong> — a small, hidden partition that stores the files your PC needs to boot. Systems with roughly <strong>10 MB or less</strong> free in that partition are the ones that fail. Everything else about your PC can be perfectly healthy and you'll still hit it.</p>
+
+        <p>If you dig into the update logs on an affected machine, you'll spot entries like <code>SpaceCheck</code> and <code>ServicingBootFiles failed</code> — that's Windows literally telling you it ran out of room in the boot partition during the reboot stage.</p>
+
+        <h2 id="why-the-efi-partition">Why a partition you've never heard of is the problem</h2>
+
+        <img src="assets/windows-11-update-failed-0x800f0922/partition.jpg" alt="Diagram of a hard drive showing a full EFI System Partition in red next to healthy C, D and E partitions" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:12px;margin:24px 0;border:1px solid var(--border);" />
+
+        <p>Your drive isn't one single block of space. It's split into <strong>partitions</strong>, and one of them — the EFI System Partition — is usually only 100–260 MB. You never see it in File Explorer. It holds the boot loader and a few system files, and Windows manages it silently.</p>
+
+        <p>Here's the catch: every few updates, Microsoft adds new boot files to that partition. On PCs that were upgraded from older Windows versions (rather than clean-installed), the ESP is often on the smaller side. Over time it fills up. The May 2026 update needed a bit more room than was available, the write failed mid-reboot, and you got 0x800f0922.</p>
+
+        <p>So this isn't a virus, a failing drive, or a broken Windows install. It's a full cupboard. We just need to clear a shelf.</p>
+
+        <h2 id="the-fastest-fix">The fastest fix: get current on updates</h2>
+
+        <p>Good news — Microsoft already fixed this. The fix first shipped on <strong>May 26, 2026</strong> as the optional preview update <strong>KB5089573</strong> (for Windows 11 24H2 and 25H2), and the permanent fix rolled into the <strong>June 9 Patch Tuesday</strong> update. So in most cases you just need to get current:</p>
+
+        <ol>
+          <li>Open <strong>Settings → Windows Update</strong>.</li>
+          <li>Click <strong>Check for updates</strong> and install everything offered — including <strong>KB5089573</strong> or the June cumulative update if you see it.</li>
+          <li>Reboot, then retry the update that kept failing. On most affected PCs it now installs cleanly.</li>
+        </ol>
+
+        <p>If your PC doesn't have enough free space to even download that fix, clear some room first (Step 1 below), then check for updates again.</p>
+
+        <h2 id="step-by-step-fix">Step-by-step: free up space and force the update through</h2>
+
+        <h3 id="step-1-clear-the-easy-disk-space-first">Step 1 — Clear the easy disk space first</h3>
+        <p>The update also wants breathing room on your main C: drive, and clearing junk here sometimes resolves it on its own:</p>
+        <ul>
+          <li>Open <strong>Settings → System → Storage</strong>.</li>
+          <li>Click <strong>Temporary files</strong>, tick everything safe (Temp files, Recycle Bin, old delivery-optimization files, and the <strong>Windows.old</strong> folder if present), and click <strong>Remove files</strong>.</li>
+          <li>The Windows.old folder alone is often 10–30 GB. Removing it gives the updater plenty of room.</li>
+        </ul>
+
+        <h3 id="step-2-run-the-windows-update-troubleshooter">Step 2 — Run the Windows Update troubleshooter</h3>
+        <p>This resets stuck update components without you touching the command line:</p>
+        <ul>
+          <li>Go to <strong>Settings → System → Troubleshoot → Other troubleshooters</strong>.</li>
+          <li>Find <strong>Windows Update</strong> and click <strong>Run</strong>.</li>
+          <li>Let it finish, reboot, and try the update again.</li>
+        </ul>
+
+        <h3 id="step-3-reset-windows-update-components-manually-if-it-still-">Step 3 — Reset Windows Update components manually (if it still fails)</h3>
+        <p>Open <strong>Command Prompt as Administrator</strong> (right-click Start → Terminal (Admin)) and run these one at a time:</p>
+        <pre style="background:var(--bg-card,#0f1b2d);border:1px solid var(--border);border-radius:8px;padding:14px 16px;overflow-x:auto;font-size:.85rem;line-height:1.7;color:var(--text-secondary);"><code>net stop wuauserv
+net stop bits
+ren %systemroot%\SoftwareDistribution SoftwareDistribution.old
+net start wuauserv
+net start bits</code></pre>
+        <p>This renames the folder where Windows stores half-downloaded update files, forcing a clean re-download. Reboot and retry. This clears the large majority of stubborn 0x800f0922 cases.</p>
+
+        <h3 id="step-4-last-resort-expand-the-efi-partition">Step 4 — Last resort: expand the EFI partition</h3>
+        <p>If nothing above works, the ESP itself genuinely needs to be enlarged. This is more involved (it requires disk-management tools and a little care), so unless you're comfortable with partitions, it's worth waiting a few days — Microsoft is actively pushing the KB5089573 fix to more machines, and it solves this without any partition surgery.</p>
+
+        <h2 id="keep-it-from-happening">How to stop it happening every month</h2>
+
+        <img src="assets/windows-11-update-failed-0x800f0922/cleanup.jpg" alt="Windows laptop showing a 100% complete update with a green checkmark next to a broom sweeping away junk files" width="1200" height="675" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:12px;margin:24px 0;border:1px solid var(--border);" />
+
+        <p>The pattern behind almost every "update won't install" error is the same: <strong>not enough free space</strong>. Windows updates are large, they stage files in several places, and a drive that's 95% full is a drive that fails updates.</p>
+
+        <p>Keeping 15–20 GB free on your C: drive prevents the overwhelming majority of these failures. The boring-but-true maintenance habit:</p>
+        <ul>
+          <li>Empty the Recycle Bin and clear temp files monthly.</li>
+          <li>Remove the Windows.old folder after a feature update (you don't need it after a couple of weeks).</li>
+          <li>Uninstall apps you stopped using — each one leaves cache behind.</li>
+        </ul>
+
+        <p>One honest caveat: <strong>no cleaning tool — including mine — fixes the EFI partition or repairs Windows Update itself.</strong> That's what the KB5089573 / June update above is for. What a cleaner <em>does</em> do is stop your <strong>C: drive</strong> from filling up, which is the cause of most <em>other</em> update failures and general slowdowns. That's why I built <a href="../software/rbs-pc-cleaner.html"><strong>RBS PC Cleaner</strong></a>: it safely clears temp files, the Windows Update cache, browser and app cache, shows you exactly how much space it reclaimed, and never touches the registry or the boot partition. Free, offline, no subscription. <a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a> adds startup and performance management if you want the wider tune-up — but neither one reverts or repairs a Windows update. Use them to keep space free so updates stop failing next month, not to undo this one.</p>
+
+        <div style="background:linear-gradient(135deg,rgba(51,212,170,0.06),rgba(77,148,255,0.06));border:1px solid rgba(51,212,170,0.25);border-radius:12px;padding:20px 22px;margin:28px 0;">
+          <p style="margin:0 0 12px;font-weight:700;color:var(--text-primary);">TL;DR — the 0x800f0922 fix</p>
+          <ol style="margin:0;padding-left:20px;">
+            <li>Install the latest Windows update (<strong>KB5089573</strong> or the June Patch Tuesday update) — it contains Microsoft's fix.</li>
+            <li>Clear temp files + Windows.old in <strong>Settings → System → Storage</strong>.</li>
+            <li>Run the <strong>Windows Update troubleshooter</strong>.</li>
+            <li>Still stuck? Reset update components with the 5 commands above.</li>
+          </ol>
+        </div>
+
+        <h2 id="bottom-line">Bottom line</h2>
+
+        <p>Error 0x800f0922 on the May 2026 update looks scary but it's one of the more fixable Windows errors. It's almost always a full EFI System Partition or a low-on-space C: drive — not a hardware fault. Install KB5089573, clear some space, and the update goes through.</p>
+
+        <p>If your PC has also been feeling full and sluggish, cleaning up the C: drive is worth doing while you're here — grab <a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a> free if you want it in a couple of clicks. Just don't expect any cleaner to repair Windows Update; for that, the KB5089573 / June update is the actual fix.</p>
+
+        <p style="margin-top:36px;color:var(--text-muted);font-size:.92rem;border-top:1px solid var(--border);padding-top:24px;">
+          Hit a different update error or want a walkthrough for your specific PC? Reach me on the <a href="../contact.html">contact page</a> — solo dev, Singapore, I read every message.
+        </p>
+
+      </div>
+      <aside class="blog-app-reco" style="margin-top:48px;padding:24px;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(77,148,255,0.06));border:1px solid rgba(0,200,150,0.25);border-radius:14px;">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;margin-bottom:18px;">
+          <div style="width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,rgba(0,200,150,0.20),rgba(77,148,255,0.20));border:1px solid rgba(0,200,150,0.30);display:flex;align-items:center;justify-content:center;font-size:1.9rem;flex-shrink:0;">🔧</div>
+          <div style="flex:1;min-width:220px;">
+            <div style="font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent-light);margin-bottom:6px;">From the maker of this blog</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:0 0 10px;color:var(--text-primary);line-height:1.25;">Try RBS Optimizer Pro &mdash; Free</h3>
+            <p style="font-size:.95rem;line-height:1.6;color:var(--text-secondary);margin:0;">If you want a one-click way to do most of what this post covers — junk cleaner, startup manager, RAM trim, real-time CPU/GPU monitoring — Optimizer Pro is the free Windows tool I built for it.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <a href="https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip" class="btn btn-primary btn-sm">⬇ Download Free</a>
+          <a href="../software/detail.html?id=rbs-optimizer-pro" class="btn btn-secondary btn-sm">App details →</a>
+          <span style="color:var(--text-muted);font-size:.78rem;margin-left:4px;">Windows 10 / 11 · ~23 MB</span>
+        </div>
+        <p style="margin:14px 0 0;font-size:.78rem;color:var(--text-muted);">Free forever · No sign-up · No telemetry · Built by Rai in Singapore</p>
+      </aside>
+      <nav class="blog-post-nav" aria-label="Blog post navigation" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);">
+        <a href="replaced-subscriptions-free-apps-2026.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:left;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">← Newer Post</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">I Replaced 
+
+
+
+
+    </div>
+  </article>87/Month of Subscriptions With Free Apps</div></a>
+        <a href="microsoft-recall-windows-11-disable-2026.html" style="flex:1;min-width:240px;display:block;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;text-decoration:none;text-align:right;transition:border-color .15s, transform .15s;" onmouseover="this.style.borderColor='var(--accent-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''"><div style="font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">Older Post →</div><div style="color:var(--text-primary);font-size:1rem;font-weight:600;line-height:1.4;">Microsoft Recall Is Back in Windows 11 — How to Disable It (May 2026)</div></a>
+      </nav>
+
+
+
+
+
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo"><div class="logo-icon">RBS</div>RBS</a>
+          <p class="footer-tagline">Building free, useful tools for everyone.</p>
+          <p style="margin-top:12px;font-size:.88rem;">📷 <a href="https://instagram.com/rarebuildsoftware" target="_blank" rel="noopener" style="color:var(--accent-light);">@rarebuildsoftware</a> on Instagram</p>
+        </div>
+        <div>
+          <p class="footer-heading">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../software.html">Software</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Software</p>
+          <ul class="footer-links">
+            <li><a href="../software/rbs-pdf-editor.html">RBS PDF Editor</a></li>
+            <li><a href="../software/rbs-optimizer-pro.html">RBS Optimizer Pro</a></li>
+            <li><a href="../software/rbs-voice-cloner.html">RBS Voice Cloner</a></li>
+            <li><a href="../software/rbs-voice-cloner-v2.html">RBS Voice Cloner V2</a></li>
+            <li><a href="../software/life-dashboard.html">Life Dashboard</a></li>
+            <li><a href="../software/rbs-pc-cleaner.html">RBS PC Cleaner</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Legal</p>
+          <ul class="footer-links">
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025–2026 RBS (Rare Build Software). All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../privacy.html">Privacy</a>
+          <a href="../terms.html">Terms</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </main>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/site-data.js"></script>
+</body>
+</html>

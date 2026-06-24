@@ -6,8 +6,44 @@
     <atom:link href="https://rarebuildsoftware.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Free Windows software and honest guides — voice cloning, optimization, cleaner, dashboard. By Rai, solo dev, Singapore.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 19 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2026 00:00:00 GMT</lastBuildDate>
     <generator>scripts/build-rss-feed.js</generator>
+    <item>
+      <title>Windows 10 Is Dead. Make an Old PC Fast on Windows 11.</title>
+      <link>https://rarebuildsoftware.com/blog/windows-10-end-of-life-speed-up-old-pc.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/windows-10-end-of-life-speed-up-old-pc.html</guid>
+      <pubDate>Thu, 25 Jun 2026 00:00:00 GMT</pubDate>
+      <category>Optimization</category>
+      <description>Windows 10 security support ended October 2025. Your real options now — ESU, upgrade, or Linux — plus the free steps that make an old PC genuinely quick on Windows 11.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>How to Tell If a Voice Is AI-Cloned (Before You Get Scammed)</title>
+      <link>https://rarebuildsoftware.com/blog/detect-ai-voice-clone-scam-2026.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/detect-ai-voice-clone-scam-2026.html</guid>
+      <pubDate>Thu, 25 Jun 2026 00:00:00 GMT</pubDate>
+      <category>Guide</category>
+      <description>AI clones a convincing copy of any voice from seconds of audio, and scammers are calling families with it. From a voice-tech dev: the red flags, why your ears can&apos;t help, and the code-word defense.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>I Replaced $187/Month of Subscriptions With Free Apps</title>
+      <link>https://rarebuildsoftware.com/blog/replaced-subscriptions-free-apps-2026.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/replaced-subscriptions-free-apps-2026.html</guid>
+      <pubDate>Thu, 25 Jun 2026 00:00:00 GMT</pubDate>
+      <category>Guide</category>
+      <description>A solo dev&apos;s honest weekend project: dropping from $187 to $32 a month by swapping paid software for free, mostly-offline apps. Real list, real trade-offs.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
+    <item>
+      <title>Windows 11 Update Failing With 0x800f0922? Here&apos;s the Fix</title>
+      <link>https://rarebuildsoftware.com/blog/windows-11-update-failed-0x800f0922.html</link>
+      <guid isPermaLink="true">https://rarebuildsoftware.com/blog/windows-11-update-failed-0x800f0922.html</guid>
+      <pubDate>Thu, 25 Jun 2026 00:00:00 GMT</pubDate>
+      <category>Guide</category>
+      <description>The May 2026 update (KB5089549) stalls at 35% and rolls back with error 0x800f0922 because your hidden EFI System Partition is full. Here&apos;s the real cause and the step-by-step fix.</description>
+      <author>noreply@rarebuildsoftware.com (Rai)</author>
+    </item>
     <item>
       <title>Microsoft Recall Is Back in Windows 11 — How to Disable It (May 2026)</title>
       <link>https://rarebuildsoftware.com/blog/microsoft-recall-windows-11-disable-2026.html</link>

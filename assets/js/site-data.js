@@ -1326,6 +1326,42 @@
   // for the category-page render path.
   const STATIC_BLOG_ARTICLES = [
       {
+        id: 'windows-10-end-of-life-speed-up-old-pc',
+        title: 'Windows 10 Is Dead. Make an Old PC Fast on Windows 11.',
+        excerpt: 'Windows 10 security support ended October 2025. Your real options now — ESU, upgrade, or Linux — plus the free steps that make an old PC genuinely quick on Windows 11.',
+        emoji: '⚡',
+        tag: 'Optimization',
+        date: '2026-06-25',
+        url: 'blog/windows-10-end-of-life-speed-up-old-pc.html'
+      },
+      {
+        id: 'detect-ai-voice-clone-scam-2026',
+        title: 'How to Tell If a Voice Is AI-Cloned (Before You Get Scammed)',
+        excerpt: 'AI clones a convincing copy of any voice from seconds of audio, and scammers are calling families with it. From a voice-tech dev: the red flags, why your ears can\'t help, and the code-word defense.',
+        emoji: '🎙️',
+        tag: 'Guide',
+        date: '2026-06-25',
+        url: 'blog/detect-ai-voice-clone-scam-2026.html'
+      },
+      {
+        id: 'replaced-subscriptions-free-apps-2026',
+        title: 'I Replaced $187/Month of Subscriptions With Free Apps',
+        excerpt: 'A solo dev\'s honest weekend project: dropping from $187 to $32 a month by swapping paid software for free, mostly-offline apps. Real list, real trade-offs.',
+        emoji: '✂️',
+        tag: 'Guide',
+        date: '2026-06-25',
+        url: 'blog/replaced-subscriptions-free-apps-2026.html'
+      },
+      {
+        id: 'windows-11-update-failed-0x800f0922',
+        title: 'Windows 11 Update Failing With 0x800f0922? Here\'s the Fix',
+        excerpt: 'The May 2026 update (KB5089549) stalls at 35% and rolls back with error 0x800f0922 because your hidden EFI System Partition is full. Here\'s the real cause and the step-by-step fix.',
+        emoji: '🛠️',
+        tag: 'Guide',
+        date: '2026-06-25',
+        url: 'blog/windows-11-update-failed-0x800f0922.html'
+      },
+      {
         id: 'microsoft-recall-windows-11-disable-2026',
         title: 'Microsoft Recall Is Back in Windows 11 — How to Disable It (May 2026)',
         excerpt: 'TotalRecall Reloaded walks past the new TPM/Hello protection in under a second. Microsoft says it\'s "not a vulnerability". Here\'s the 60-second fix on Pro and Home.',
