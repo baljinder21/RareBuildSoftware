@@ -9,7 +9,7 @@
  * Run after adding/editing a post:
  *   node scripts/build-search-index.js
  *
- * Output is one array of { slug, body } objects, lowercased, ~270 KB for 38 posts.
+ * Output is one array of { slug, body } objects, lowercased, ~360 KB for 46 posts.
  */
 const fs = require('fs');
 const path = require('path');

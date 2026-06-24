@@ -141,7 +141,7 @@ function renderFaqs(sw) {
 
 function buildJsonLd(sw) {
   const url = SITE + '/software/' + sw.id + '.html';
-  const screenshotUrl = sw.screenshotPath ? abs(sw.screenshotPath) : SITE + '/assets/images/og/software.svg';
+  const screenshotUrl = sw.screenshotPath ? abs(sw.screenshotPath) : SITE + '/assets/images/og/software.png';
   const swSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -240,18 +240,21 @@ function buildPage(sw) {
   // 150 chars so HTML-encoded entities (e.g. "&" -> "&amp;" adds 4 chars)
   // don't blow past 160 in the final markup. Trim at the last word boundary
   // so we never cut a word in half.
-  function fitDescription(raw) {
-    const MAX = 150;
+  function fitDescription(raw, max) {
+    const MAX = max || 150;
     const flat = raw.replace(/\s+/g, ' ').trim();
     if (flat.length <= MAX) return flat;
     let cut = flat.lastIndexOf(' ', MAX - 1);
     if (cut < 80) cut = MAX - 1;             // pathological case: no spaces
     return flat.slice(0, cut).replace(/[.,;:\s]+$/, '') + '…';
   }
+  // A hand-written seoDescription is trusted verbatim (only clipped if it
+  // somehow exceeds 158 — Bing's ceiling). Only the AUTO-generated fallback
+  // gets the aggressive 150-char trim, since it's built from a long blurb.
   const desc = sw.seoDescription
-    ? fitDescription(decodeHtml(sw.seoDescription))
+    ? fitDescription(decodeHtml(sw.seoDescription), 158)
     : fitDescription(decodeHtml(sw.description) + ' Free download for Windows 10/11, v' + sw.version + ', ' + (sw.fileSize||'') + '.');
-  const ogImage = sw.ogImage ? abs(sw.ogImage) : (sw.screenshotPath ? abs(sw.screenshotPath) : SITE + '/assets/images/og/software.svg');
+  const ogImage = sw.ogImage ? abs(sw.ogImage) : (sw.screenshotPath ? abs(sw.screenshotPath) : SITE + '/assets/images/og/software.png');
   const released = sw.released ? fmtDate(sw.released) : '';
 
   return `<!DOCTYPE html>
@@ -271,7 +274,10 @@ function buildPage(sw) {
   <meta property="og:description" content="${escAttr(desc)}" />
   <meta property="og:url"         content="${url}" />
   <meta property="og:image"       content="${escAttr(ogImage)}" />
-  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="${escAttr(title)}" />
+  <meta name="twitter:description" content="${escAttr(desc)}" />
+  <meta name="twitter:image"       content="${escAttr(ogImage)}" />
   <link rel="canonical"           href="${url}" />
 
   ${buildJsonLd(sw)}

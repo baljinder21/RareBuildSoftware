@@ -69,7 +69,7 @@
           excerpt: 'Another \'free\' SaaS app that nickel-and-dimes you. If you liked RBS PDF Editor\'s no-subscription stance, try RBS Voice Cloner V2.'
         }
       ],
-      seoKeywords: 'free pdf editor, free pdf editor for windows, free pdf editor no watermark, free pdf editor no signup, free pdf editor no subscription, free pdf editor for windows 10, free pdf editor for windows 11, edit pdf free, edit pdf text free, edit pdf without adobe, how to edit pdf for free, pdf editor without signup, pdf editor without account, pdf editor without watermark, portable pdf editor, pdf editor usb, pdf editor no install, offline pdf editor, pdf editor without internet, free adobe acrobat alternative, foxit alternative, sejda alternative, smallpdf alternative, ilovepdf alternative, pdfescape alternative, pdf24 alternative, nitro pdf alternative, lightpdf alternative, ocr scanned pdf free, free ocr software for pdf, make pdf searchable, how to ocr a scanned pdf, sign pdf free, how to sign a pdf for free, free electronic signature pdf, pdf to word free no email, pdf to excel free, compress pdf without losing quality, merge pdf without uploading, split pdf free, rotate pdf pages free, pdf password protect, bates numbering free, bates stamping software, legal pdf editor, pdf for lawyers, pdf form filler free, lightweight pdf editor, pdf editor for old pc, RBS PDF Editor',
+      seoKeywords: 'free pdf editor for windows, free pdf editor no watermark, edit pdf free, offline pdf editor, portable pdf editor, free adobe acrobat alternative, ocr scanned pdf free, sign pdf free, pdf to word free, merge pdf, bates numbering, RBS PDF Editor',
       description: 'A free, offline, portable Windows PDF editor. Edit text in place, place images freeform with resize and rotate, OCR scanned papers with Tesseract, sign documents in one click, merge / split / rotate / reorder pages, convert PDF to Word / Excel / JPG / PNG, compress PDFs, add Bates numbering, password protection, hyperlinks and watermarks. Two builds shipped together — a standard installer that registers PDF file associations, and a single-file portable .exe that runs from a USB stick with no install and no admin rights. No account, no cloud, no telemetry, no watermark, no subscription. A genuine free Adobe Acrobat alternative for Windows 10 and Windows 11.',
       faqs: [
         { q: 'Is RBS PDF Editor really free?',
@@ -166,6 +166,8 @@
       version: '1.0.0',
       category: 'Optimization',
       categories: ['Optimization', 'System Tools'],
+      seoTitle: 'Free Windows Optimizer — Clean Junk & Speed Up Your PC | RBS',
+      seoDescription: 'Free Windows optimizer — clean junk files, manage startup apps, and monitor CPU, RAM and disk in real time. No subscription, no telemetry, fully offline.',
       description: 'A free Windows optimization suite — junk cleaner, startup manager, and performance monitor. Boost performance and monitor your system in real time, all in one polished application.',
       fileSize: '~23 MB',
       downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSOptimizerProRelease.zip',
@@ -204,6 +206,8 @@
       version: '1.0.0',
       category: 'AI Tools',
       categories: ['AI Tools', 'Audio'],
+      seoTitle: 'Free AI Voice Cloner for Windows — 28+ Languages | RBS',
+      seoDescription: 'Free AI voice cloner for Windows. Clone any voice from a 5-second sample and generate speech in 28+ languages with XTTS v2. Runs locally, no subscription.',
       description: 'Clone any voice with just a 5-second audio sample. Powered by XTTS v2 AI engine, generate natural-sounding speech in 28+ languages — completely free, runs locally on your PC.',
       fileSize: '~248 MB',
       downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBSVoiceCloner_Setup.zip',
@@ -242,6 +246,8 @@
       version: '2.0.0',
       category: 'AI Tools',
       categories: ['AI Tools', 'Audio'],
+      seoTitle: 'Free AI Voice Cloner V2 — 16 Voices, 17 Languages | RBS',
+      seoDescription: 'Free AI voice cloner V2 for Windows — 16 built-in voices, unlimited custom clones, 17 languages with auto-translate and a 7-band EQ. Runs locally, offline.',
       description: 'Major V2 release of the free AI voice cloner. 16 built-in voices plus unlimited custom clones from a 30-second sample, 17 languages with auto-translate, 7-band parametric equaliser with voice presets, and a redesigned audio editor (cut · fade · merge · normalise · live waveform cursor). 100% offline after the one-time model download.',
       fileSize: '~2.0 GB',
       downloadUrl: 'https://github.com/baljinder21/RBS-RareBuildSoftware-V2/releases/download/VoiceCloner/RBSVoiceCloner_Setup.V2.zip',
@@ -294,6 +300,8 @@
       version: '1.0.0',
       category: 'Productivity',
       categories: ['Productivity', 'Lifestyle'],
+      seoTitle: 'Free Windows Productivity Dashboard — Habits & Tasks | RBS',
+      seoDescription: 'Free Windows productivity dashboard — 16 widgets for habits, tasks, finances, weather and sleep in one window. All data stays local. No account needed.',
       description: 'Your all-in-one personal productivity command center. 16 widgets — track habits, tasks, finances, weather, sleep, diet and more — all in one beautiful dashboard.',
       fileSize: '~104 MB',
       downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/Life.Dashboard.Setup.1.0.0.zip',
@@ -331,6 +339,8 @@
       version: '1.0.0',
       category: 'Optimization',
       categories: ['Optimization', 'System Tools', 'Utilities'],
+      seoTitle: 'Free PC Cleaner for Windows — No Ads, No Registry Edits | RBS',
+      seoDescription: 'Free Windows PC cleaner — safely clear junk, browser and app cache, find duplicates and manage startup. Reversible, never touches the registry. No ads.',
       description: 'Honest Windows maintenance utility with real numbers, reversible changes, and no fake scores. Clean junk safely, manage startup, find duplicates, uninstall in bulk, apply 9 theme packs — and never touch the registry.',
       fileSize: '~61 MB',
       downloadUrl: 'https://github.com/baljinder21/RBSsoftware/releases/download/v1.0.0/RBS.PC.Cleaner.zip',
@@ -372,7 +382,7 @@
 
   const DEFAULT_CONTENT = {
     hero: {
-      tag:         '5 Free Windows Apps — No Subscriptions, Ever',
+      tag:         '6 Free Windows Apps — No Subscriptions, Ever',
       titleLine1:  'Free Windows Software',
       titleLine2:  'for Everyone',
       description: 'RBS builds free, useful tools for everyone. No subscriptions, no paywalls — just high-quality software that gets the job done.'
@@ -423,7 +433,7 @@
   /* Async: fetch data/software.json and merge if localStorage is empty */
   function fetchAndMerge() {
     if (localStorage.getItem('rbs_software')) return; // LS has admin data, skip
-    fetch('data/software.json?' + Date.now())
+    fetch('/data/software.json?' + Date.now())   // root-relative: a bare "data/..." 404s on /blog/* and /software/* pages
       .then(r => r.ok ? r.json() : null)
       .then(data => {
         if (!Array.isArray(data) || !data.length) return;
@@ -649,7 +659,7 @@
       if (ls) { donationData = JSON.parse(ls); cb(); return; }
     } catch (_) {}
     // 2. Fetch data/donation.json
-    fetch('data/donation.json?' + Date.now())
+    fetch('/data/donation.json?' + Date.now())   // root-relative: fixes 404 on non-root pages
       .then(r => r.ok ? r.json() : null)
       .then(d => { if (d) donationData = d; cb(); })
       .catch(() => cb());
@@ -988,8 +998,12 @@
     /* Category chips */
     document.querySelectorAll('.filter-chip[data-cat]').forEach(chip => {
       chip.addEventListener('click', () => {
-        document.querySelectorAll('.filter-chip[data-cat]').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.filter-chip[data-cat]').forEach(c => {
+          c.classList.remove('active');
+          c.setAttribute('aria-pressed', 'false');
+        });
         chip.classList.add('active');
+        chip.setAttribute('aria-pressed', 'true');   // expose pressed state to assistive tech, not colour alone
         runFilter();
       });
     });
@@ -2173,6 +2187,27 @@
     applyFaq();
     applyFilters();
     updateCounterDisplay();
+    updateSiteStats();
+  }
+
+  /* Auto-fill the homepage footer "stats" line from live data so it never
+     goes stale. Counts visible apps + blog posts and uses the newest post
+     date as the "last updated" stamp. */
+  function updateSiteStats() {
+    const el = document.getElementById('rbs-site-stats');
+    if (!el) return;
+    const apps = (software || []).filter(s => s.visible !== false).length;
+    const articles = (typeof getAllArticles === 'function') ? getAllArticles() : STATIC_BLOG_ARTICLES;
+    const posts = (articles || []).length;
+    let newest = '';
+    (articles || []).forEach(a => { if (a.date && a.date > newest) newest = a.date; });
+    let stamp = '';
+    if (newest) {
+      const M = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      const [y, m, d] = newest.split('-').map(Number);
+      stamp = 'Last updated ' + M[m - 1] + ' ' + d + ', ' + y + ' · ';
+    }
+    el.innerHTML = stamp + apps + ' apps · ' + posts + ' posts · Built &amp; maintained by Rai in Singapore.';
   }
 
   if (document.readyState === 'loading') {

@@ -44,6 +44,23 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to clean Windows 11 without breaking it",
+    "description": "Safely free up space and speed up Windows 11 without registry hacks or risky tools.",
+    "totalTime": "PT15M",
+    "tool": [ { "@type": "HowToTool", "name": "Windows 11 PC" } ],
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Clear temporary files", "text": "Open Settings, System, Storage, then Temporary files, and remove temp files, the Recycle Bin and old update leftovers." },
+      { "@type": "HowToStep", "position": 2, "name": "Remove Windows.old after a feature update", "text": "If a Windows.old folder is present, remove it from Storage to reclaim 10-30 GB you no longer need." },
+      { "@type": "HowToStep", "position": 3, "name": "Trim startup and background apps", "text": "In Task Manager, Startup apps, disable apps you don't need at boot; in Settings, Apps, turn off background activity for unused apps." },
+      { "@type": "HowToStep", "position": 4, "name": "Avoid registry cleaners", "text": "Skip registry cleaners and 'one-click optimizers' that make risky changes. Stick to clearing junk, cache and startup items." }
+    ]
+  }
+  </script>
+
   <link rel="preload" href="../assets/css/style.css" as="style" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="alternate" type="application/rss+xml" title="RBS Blog RSS" href="https://rarebuildsoftware.com/feed.xml" />
@@ -63,7 +80,7 @@
         <li><a href="../faq.html">FAQ</a></li>
         <li><a href="../about.html">About</a></li>
         <li><a href="../contact.html">Contact</a></li>
-        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme">☀️</button></li>
+        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme" aria-label="Toggle light/dark mode">☀️</button></li>
         <li><a href="../software.html" class="nav-cta">⬇ Download Free</a></li>
       </ul>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>

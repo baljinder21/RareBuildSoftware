@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /data/
 Disallow: /downloads/
 
 Sitemap: https://rarebuildsoftware.com/sitemap.xml

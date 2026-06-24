@@ -734,14 +734,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         (s.category || '').toLowerCase().includes(ql)
       );
 
-      // Also search blog and FAQ from localStorage
+      // Clean, short one-liner: first sentence of the description, de-fluffed.
+      // CSS truncates with an ellipsis at the edge, so no ugly mid-word cuts.
+      const shortDesc = (s) => {
+        let d = (s.description || '').split(/\.\s/)[0].trim();
+        d = d.replace(/^(A|An|The)\s+/i, '');
+        d = d.charAt(0).toUpperCase() + d.slice(1);
+        const cat = s.category ? s.category + ' · ' : '';
+        return cat + d;
+      };
+
+      // Also search blog and FAQ. Root-relative URLs so they work from any page.
       const extraPages = [
-        { icon: '❓', name: 'FAQ', desc: 'Common questions answered', url: 'faq.html' },
-        { icon: '📝', name: 'Blog', desc: 'Tips and guides', url: 'blog.html' },
+        { icon: '❓', name: 'FAQ',  ver: '', desc: 'Common questions answered', url: '/faq.html' },
+        { icon: '📝', name: 'Blog', ver: '', desc: 'Tips and guides',           url: '/blog.html' },
       ].filter(p => p.name.toLowerCase().includes(q.toLowerCase()) || p.desc.toLowerCase().includes(q.toLowerCase()));
 
       const all = [
-        ...matches.map(s => ({ icon: '⚡', name: s.name, desc: (s.description||'').slice(0,60)+'…', url: `software/detail.html?id=${s.id}` })),
+        ...matches.map(s => ({
+          icon: s.icon || '⚡',
+          name: s.name,
+          ver: s.version ? 'v' + s.version : '',
+          desc: shortDesc(s),
+          url: `/software/${s.id}.html`   // canonical static page; works from any path
+        })),
         ...extraPages
       ];
 
@@ -753,7 +769,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       dropdown.innerHTML = all.map(r =>
         `<a class="search-result-item" href="${r.url}">
           <span class="search-result-icon">${r.icon}</span>
-          <div><div class="search-result-name">${r.name}</div><div class="search-result-desc">${r.desc}</div></div>
+          <div class="search-result-body">
+            <div class="search-result-row">
+              <span class="search-result-name">${r.name}</span>
+              ${r.ver ? `<span class="search-result-ver">${r.ver}</span>` : ''}
+            </div>
+            <div class="search-result-desc">${r.desc}</div>
+          </div>
         </a>`
       ).join('');
       dropdown.classList.add('show');

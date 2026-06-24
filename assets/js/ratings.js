@@ -197,8 +197,8 @@
       : `
     <div class="rbs-rate-section" id="rbs-rate-section">
       <h3 class="rbs-section-heading">Rate This Software</h3>
-      <div class="rbs-interactive-stars" id="rbs-interactive-stars" data-selected="0">
-        ${[1,2,3,4,5].map(i => `<span class="rbs-istar" data-val="${i}" title="${i} star${i>1?'s':''}">★</span>`).join('')}
+      <div class="rbs-interactive-stars" id="rbs-interactive-stars" data-selected="0" role="radiogroup" aria-label="Rate this software from 1 to 5 stars">
+        ${[1,2,3,4,5].map(i => `<span class="rbs-istar" data-val="${i}" role="radio" aria-checked="false" aria-label="${i} star${i>1?'s':''}" tabindex="${i===1?'0':'-1'}" title="${i} star${i>1?'s':''}">★</span>`).join('')}
       </div>
       <p class="rbs-star-hint" id="rbs-star-hint">Click a star to rate</p>
       <div class="rbs-review-form" id="rbs-review-form" style="display:none;">
@@ -272,7 +272,25 @@
     const labels = ['','Terrible','Poor','Average','Good','Excellent'];
     let selected = 0;
 
-    container.querySelectorAll('.rbs-istar').forEach(star => {
+    const stars = Array.from(container.querySelectorAll('.rbs-istar'));
+
+    // Commit a rating selection (shared by mouse + keyboard) and expose it to
+    // assistive tech via aria-checked + roving tabindex (not colour alone).
+    function selectRating(val) {
+      selected = val;
+      container.dataset.selected = selected;
+      highlightStars(container, selected);
+      stars.forEach(s => {
+        const on = +s.dataset.val === val;
+        s.setAttribute('aria-checked', on ? 'true' : 'false');
+        s.setAttribute('tabindex', on ? '0' : '-1');
+      });
+      if (hint) hint.textContent = labels[selected];
+      if (form) form.style.display = 'block';
+      if (submitBtn) submitBtn.dataset.rating = selected;
+    }
+
+    stars.forEach(star => {
       star.addEventListener('mouseenter', () => {
         const val = +star.dataset.val;
         highlightStars(container, val);
@@ -282,13 +300,22 @@
         highlightStars(container, selected);
         if (hint) hint.textContent = selected ? labels[selected] : 'Click a star to rate';
       });
-      star.addEventListener('click', () => {
-        selected = +star.dataset.val;
-        container.dataset.selected = selected;
-        highlightStars(container, selected);
-        if (hint) hint.textContent = labels[selected];
-        if (form) form.style.display = 'block';
-        if (submitBtn) submitBtn.dataset.rating = selected;
+      star.addEventListener('click', () => selectRating(+star.dataset.val));
+      // Keyboard: Enter/Space selects this star; arrows move focus + selection.
+      star.addEventListener('keydown', (e) => {
+        const val = +star.dataset.val;
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectRating(val);
+        } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          const next = Math.min(5, val + 1);
+          selectRating(next); stars[next - 1].focus();
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          const prev = Math.max(1, val - 1);
+          selectRating(prev); stars[prev - 1].focus();
+        }
       });
     });
 

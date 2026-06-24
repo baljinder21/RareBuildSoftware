@@ -50,6 +50,23 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to edit a PDF for free on Windows",
+    "description": "Edit PDF text, sign and save a PDF on Windows 10 or 11 for free using RBS PDF Editor — no Adobe, no watermark, no account.",
+    "totalTime": "PT3M",
+    "tool": [ { "@type": "HowToTool", "name": "RBS PDF Editor (free)" } ],
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Download a free PDF editor", "text": "Download RBS PDF Editor (or another free editor like LibreOffice Draw) and open it. No account or payment is required." },
+      { "@type": "HowToStep", "position": 2, "name": "Open your PDF", "text": "Drag the PDF onto the window or click Open. Multiple PDFs open as tabs." },
+      { "@type": "HowToStep", "position": 3, "name": "Edit the text", "text": "Click the Edit Text tool, click the word or line to change, type the new text and press Enter. The original font and size are preserved." },
+      { "@type": "HowToStep", "position": 4, "name": "Save the result", "text": "Click Done and choose Overwrite to save in place, or Save as new to keep the original. No watermark is added." }
+    ]
+  }
+  </script>
+
   <link rel="preload" href="../assets/css/style.css" as="style" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="alternate" type="application/rss+xml" title="RBS Blog RSS" href="https://rarebuildsoftware.com/feed.xml" />
@@ -69,7 +86,7 @@
         <li><a href="../faq.html">FAQ</a></li>
         <li><a href="../about.html">About</a></li>
         <li><a href="../contact.html">Contact</a></li>
-        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme">☀️</button></li>
+        <li><button class="theme-toggle" id="theme-toggle" title="Toggle theme" aria-label="Toggle light/dark mode">☀️</button></li>
         <li><a href="../software.html" class="nav-cta">⬇ Download Free</a></li>
       </ul>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
