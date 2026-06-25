@@ -189,6 +189,7 @@ ul { list-style: none; }
   border-radius: var(--radius-sm);
   transition: color var(--transition), background var(--transition);
   font-size: 0.95rem;
+  white-space: nowrap;   /* never let a menu item (e.g. "AI News") wrap to two lines */
 }
 
 .nav-links a:hover,
@@ -1910,7 +1911,8 @@ ul { list-style: none; }
 .nav-search-input:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 2px rgba(0,200,150,0.15);
-  width: 220px;
+  /* no width change on focus — growing the field reflowed the navbar and
+     wrapped "AI News" onto two lines. Focus is shown by border + shadow. */
 }
 .nav-search-icon {
   position: absolute;
