@@ -42,6 +42,7 @@
     return map[source] || 'var(--accent-light)';
   }
 
+  // Compact, text-only row — used on the homepage grid.
   function item(it) {
     return `
       <a href="${esc(it.link)}" target="_blank" rel="noopener noreferrer"
@@ -60,15 +61,52 @@
       </a>`;
   }
 
+  // Image card — Google-News style. Used only on the full /ai-news page.
+  // The thumbnail is the publisher's own image (RSS or og:image), loaded
+  // straight from their CDN. If it's missing or fails, a branded tile shows.
+  function thumb(it) {
+    const c = srcColor(it.source);
+    const fallback =
+      `<div class="ai-news-fallback" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,${c}22,var(--bg-tertiary));">
+         <span style="font-weight:800;color:${c};font-size:.82rem;letter-spacing:.3px;opacity:.85;">${esc(it.source)}</span>
+       </div>`;
+    const img = it.image
+      ? `<img src="${esc(it.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"
+              style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"
+              onerror="this.style.display='none'">`
+      : '';
+    return `<div class="ai-news-thumb" style="position:relative;flex-shrink:0;width:168px;align-self:stretch;min-height:118px;overflow:hidden;background:var(--bg-tertiary);">${fallback}${img}</div>`;
+  }
+
+  function itemCard(it) {
+    const c = srcColor(it.source);
+    return `
+      <a href="${esc(it.link)}" target="_blank" rel="noopener noreferrer"
+         class="ai-news-card"
+         style="display:flex;gap:0;align-items:stretch;background:var(--bg-secondary);border:1px solid var(--border);border-left:3px solid ${c};border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .15s, border-color .15s, box-shadow .15s;"
+         onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='${c}';this.style.borderLeftColor='${c}';this.style.boxShadow='0 8px 24px rgba(0,0,0,.18)'"
+         onmouseout="this.style.transform='';this.style.borderColor='var(--border)';this.style.borderLeftColor='${c}';this.style.boxShadow='none'">
+        ${thumb(it)}
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:16px 18px;">
+          <div style="font-weight:700;color:var(--text-primary);font-size:1.02rem;line-height:1.4;margin-bottom:8px;">${esc(it.title)}</div>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+            <span style="color:${c};font-weight:700;font-size:.78rem;">${esc(it.source)}</span>
+            <span style="color:var(--text-muted);font-size:.78rem;">${timeAgo(it.date)}</span>
+            <span style="color:var(--text-muted);font-size:.78rem;margin-left:auto;">Read ↗</span>
+          </div>
+        </div>
+      </a>`;
+  }
+
   function renderFull(items, updatedAt) {
     if (!items || !items.length) {
       full.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:40px 0;">AI news feed is taking a breather — check back shortly.</p>';
       return;
     }
     full.innerHTML = `
-      <div style="display:flex;flex-direction:column;gap:12px;">${items.map(item).join('')}</div>
+      <div style="display:flex;flex-direction:column;gap:14px;">${items.map(itemCard).join('')}</div>
       <p style="text-align:center;color:var(--text-muted);font-size:.8rem;margin-top:20px;">
-        Auto-updated from public news feeds${updatedAt ? ' · refreshed ' + timeAgo(updatedAt) : ''}. Headlines link to their original sources.
+        Auto-updated from public news feeds${updatedAt ? ' · refreshed ' + timeAgo(updatedAt) : ''}. Images and headlines belong to their original sources, which each card links to.
       </p>`;
   }
 

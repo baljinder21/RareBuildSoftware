@@ -63,6 +63,48 @@ function tag(block, name) {
   return m ? m[1] : '';
 }
 
+// Image URLs in feeds come HTML-entity-encoded (&amp;, &#038;). Decode to a
+// plain URL so the browser fetches the real asset; the renderer re-escapes it.
+function decodeImgUrl(u) {
+  return String(u || '')
+    .replace(/&amp;/g, '&').replace(/&#0?3[48];/g, '&').replace(/&#x26;/gi, '&')
+    .trim();
+}
+
+// Pull a usable image out of one RSS/Atom <item> block, preferring the
+// publisher's declared media over a stray inline <img>. Skips chrome (favicons,
+// avatars, theme assets). Returns '' if the block carries no real image.
+function extractImage(block) {
+  let m = block.match(/<media:(?:content|thumbnail)[^>]*\burl="([^"]+)"/i);
+  if (m && /^https?:/i.test(m[1])) return decodeImgUrl(m[1]);
+  m = block.match(/<enclosure[^>]*\burl="([^"]+)"[^>]*\btype="image\//i)
+   || block.match(/<enclosure[^>]*\btype="image\/[^"]*"[^>]*\burl="([^"]+)"/i);
+  if (m && /^https?:/i.test(m[1])) return decodeImgUrl(m[1]);
+  m = block.match(/<img[^>]*\bsrc="([^"]+)"/i);
+  if (m && /^https?:/i.test(m[1]) &&
+      !/favicon|gravatar|feedburner|\/themes\/|\/plugins\/|\/emoji\//i.test(m[1])) {
+    return decodeImgUrl(m[1]);
+  }
+  return '';
+}
+
+// Fetch an article's social-preview image (og:image / twitter:image). Only
+// called for items whose feed gave us no image — runs once per refresh cycle.
+async function ogImage(url) {
+  try {
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; RBSNewsBot/1.0; +https://rarebuildsoftware.com)' },
+      signal: AbortSignal.timeout(5000)
+    });
+    if (!res.ok) return '';
+    const head = (await res.text()).slice(0, 80000); // og tags live in <head>
+    const m = head.match(/<meta[^>]+property="og:image(?::secure_url)?"[^>]*content="([^"]+)"/i)
+           || head.match(/<meta[^>]+content="([^"]+)"[^>]*property="og:image"/i)
+           || head.match(/<meta[^>]+name="twitter:image(?::src)?"[^>]*content="([^"]+)"/i);
+    return m && /^https?:\/\//i.test(decodeImgUrl(m[1])) ? decodeImgUrl(m[1]) : '';
+  } catch (_) { return ''; }
+}
+
 function parseFeed(xml, source) {
   const items = [];
   // RSS uses <item>, Atom uses <entry>
@@ -80,7 +122,7 @@ function parseFeed(xml, source) {
     const dateRaw = tag(b, 'pubDate') || tag(b, 'published') || tag(b, 'updated') || tag(b, 'dc:date');
     let ts = Date.parse(decodeEntities(dateRaw));
     if (isNaN(ts)) ts = 0;
-    items.push({ title, link: link.trim(), source, ts });
+    items.push({ title, link: link.trim(), source, ts, image: extractImage(b) });
   }
   return items;
 }
@@ -111,8 +153,18 @@ async function buildFresh() {
     deduped.push(it);
   }
   deduped.sort((a, b) => b.ts - a.ts);
-  return deduped.slice(0, MAX_ITEMS).map(({ title, link, source, ts }) => ({
+  const top = deduped.slice(0, MAX_ITEMS);
+
+  // Backfill images for items whose feed gave us none, via the article's
+  // og:image. Parallel + per-fetch timeout, so worst case adds ~5s once per
+  // 3-hour refresh (not per visitor). Failures just leave image empty.
+  await Promise.allSettled(top.map(async (it) => {
+    if (!it.image) it.image = await ogImage(it.link);
+  }));
+
+  return top.map(({ title, link, source, ts, image }) => ({
     title, link, source,
+    image: image || null,
     date: ts ? new Date(ts).toISOString() : null
   }));
 }

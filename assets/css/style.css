@@ -3723,3 +3723,14 @@ body.light-mode { --rating-star-empty: rgba(0,0,0,0.15); }
   font-size: .78rem;
   color: var(--text-secondary);
 }
+
+/* AI News image cards (full /ai-news page): stack the thumbnail on top on
+   phones so the headline keeps full width. Desktop keeps image-left. */
+@media (max-width: 560px) {
+  .ai-news-card { flex-direction: column; }
+  .ai-news-card .ai-news-thumb {
+    width: 100% !important;
+    align-self: auto !important;
+    min-height: 175px !important;
+  }
+}
