@@ -177,8 +177,13 @@ export default async function handler(req) {
   let cached = null;
   try { cached = JSON.parse((await store.get('latest')) || 'null'); } catch (_) {}
 
-  const fresh = cached && cached.updatedAt && (Date.now() - Date.parse(cached.updatedAt) < REFRESH_MS);
-  if (fresh && Array.isArray(cached.items) && cached.items.length) {
+  // Serve cache only if it's recent AND matches the current item schema. The
+  // schema check forces a one-time rebuild when we add a field (e.g. `image`)
+  // so new features don't wait out the old cache's TTL.
+  const schemaOK = cached && Array.isArray(cached.items) && cached.items.length > 0 &&
+    cached.items.every(it => Object.prototype.hasOwnProperty.call(it, 'image'));
+  const fresh = schemaOK && cached.updatedAt && (Date.now() - Date.parse(cached.updatedAt) < REFRESH_MS);
+  if (fresh) {
     return json(200, cached);
   }
 
